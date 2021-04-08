@@ -7,7 +7,7 @@
 > Malware Analysis Laboratory built using Agents (`Malware-Analysis-Lab`), is an example of a distributed application made up of JADE Agents[1]. This application uses three classes of agents: </br>
 > - **Class-A**: Blackboard agent. Responsible for displaying analysis results and managing the flow of analyzes. It is connected to a HSQLite database[2]. It is only required to deploy a single agent of this class. </br>
 > - **Class-B**: Agents with integrated expert-system. They use an inference engine with SNORT rules[3], to detect malware through datagram filtering. </br>
-> - **Class-C**: WireShark[4] file reading and conversion agents in .PCAP format. These agents transform the .PCAP datagram files into the plain text format .PCAP.facts (_facts_), which are understandable by the CLIPS[5] or Jess[6] inference engines. </br> </br> 
+> - **Class-C**: Wireshark[4] file reading and conversion agents in .PCAP format. These agents transform the .PCAP datagram files into the plain text format .PCAP.facts (_facts_), which are understandable by the CLIPS[5] or Jess[6] inference engines. </br> </br> 
 
 
 
@@ -18,7 +18,7 @@
 > This is an example of agent-oriented application deployment. It uses the JADE Framework[1] and the Middle-ware dpsFramework[7]. This example consists of three agent templates. The agents created from these templates have capabilities to: read and transform .PCAP files[4]; Malware analysis on the .PCAP files transformed into Facts and; storage and presentation functions of the results. 
 
 
-> The datagram packets with protocols in their headers of UDP and SSDP types have been obtained with WireShark [4]. This has been done like this, just to simplify this example. The SSDP protocol is characteristic of automatically initiated communications between IoT devices. SSDP is commonly used in home routers with UPnP enabled. This example has been developed for demonstration and academic purposes only.
+> The datagram packets with protocols in their headers of UDP and SSDP types have been obtained with Wireshark [4]. This has been done like this, just to simplify this example. The SSDP protocol is characteristic of automatically initiated communications between IoT devices. SSDP is commonly used in home routers with UPnP enabled. This example has been developed for demonstration and academic purposes only.
        
            
    
@@ -94,10 +94,10 @@ _University of León, Campus of Vegazana s/n, León, 24071 León, Spain_ [9]
 
 
 
-###  1.3. Class-C: WireShark[4] file reading and conversion agents in .PCAP format.
+###  1.3. Class-C: Wireshark[4] .PCAP format file reading and conversion agents.
 
 
-#### **Image 3.** Class-C: Agent `WatchdogAgent201` WireShark[4] file ing and conversion agents in .PCAP format.
+#### **Image 3.** Class-C: `WatchdogAgent201` agent: a Wireshark[4] .PCAP format file reading and conversion agent.
 
 ![](images/watchdog201-00.png)
 
@@ -371,15 +371,15 @@ public class BoardGridLocal extends OneShotBehaviour {
 
 
 
-### 2.3. Class-C: WireShark[4] file reading and conversion agents in .PCAP format: build details
+### 2.3. Class-C: Wireshark[4] .PCAP format file reading and conversion agents: build details
 
 
 
 
-#### 2.3.1. How to customize an `WatchdogAgentXXX` agent from JADE-Shell and RSyntaxTextArea Editor
+#### 2.3.1. How to customize an `WatchdogAgentXXX` agent from JADE-Shell and Editor
 
 
-#### **Image 18.** `WatchdogAgentXXX`: launch test to read WireShark .pcap files.
+#### **Image 18.** `WatchdogAgentXXX`: launch test to read Wireshark .pcap files.
 
 ![](images/watchdogAgent201-231-00.png)
 
@@ -387,7 +387,7 @@ public class BoardGridLocal extends OneShotBehaviour {
 
 
 
-#### **Image 19.** `WatchdogAgentXXX`: WireShark .pcap file detailed results about datagrams.
+#### **Image 19.** `WatchdogAgentXXX`: Wireshark .pcap file detailed results about datagrams.
 
 ![](images/watchdogAgent201-231-01.png)
 
@@ -647,7 +647,7 @@ From command-line and on the application directory `Malware-Analysis-Lab` type:
 ```
 
 
-### 5.4. Launch of **Class-C**: WireShark[4] file reading and conversion agents in .PCAP format. `WatchdogAgentYYY`:
+### 5.4. Launch of **Class-C**: Wireshark[4] file reading and conversion agents in .PCAP format. `WatchdogAgentYYY`:
 
 ```bash
   $   java launcher monitor localhost WatchdogAgent201  &     (Linux  and  OS X)
@@ -749,12 +749,12 @@ From command-line and on the application directory `Malware-Analysis-Lab` type:
 
 [14]: **Parse PCAP files in Java.** https://www.javahelps.com/2017/08/parse-pcap-files-in-java.html (accessed Mar. 26, 2021).
 
-[15]: **Parsing pcap taken from wireshark file using - Java - Stack Overflow.** https://stackoverflow.com/questions/31630646/parsing-pcap-taken-from-wireshark-file-using-java (accessed Mar. 23, 2021).
+[15]: **Parsing pcap taken from Wireshark file using - Java - Stack Overflow.** https://stackoverflow.com/questions/31630646/parsing-pcap-taken-from-Wireshark-file-using-java (accessed Mar. 23, 2021).
 
 
 [16]: **Ransomware PCAP repository.** http://dataset.tlm.unavarra.es/ransomware/ (accessed Mar. 23, 2021).
 
-[17]: **SSDP - The Wireshark Wiki.** https://wiki.wireshark.org/SSDP (accessed Mar. 23, 2021).
+[17]: **SSDP - The Wireshark Wiki.** https://wiki.Wireshark.org/SSDP (accessed Mar. 23, 2021).
 
 [18]: **SQuirreL SQL Client Home Page.** http://squirrel-sql.sourceforge.net/ (accessed Mar. 30, 2021).
 
