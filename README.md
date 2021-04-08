@@ -4,7 +4,7 @@
 
 ### Abstract
 
-> A Malware Analysis Laboratory built using Agents (`Malware-Analysis-Lab`), is an example of a distributed application made up of JADE Agents[1]. This application uses three classes of agents: </br>
+> Malware Analysis Laboratory built using Agents (`Malware-Analysis-Lab`), is an example of a distributed application made up of JADE Agents[1]. This application uses three classes of agents: </br>
 > - **Class-A**: Blackboard agent. Responsible for displaying analysis results and managing the flow of analyzes. It is connected to a HSQLite database[2]. It is only required to deploy a single agent of this class. </br>
 > - **Class-B**: Agents with integrated expert-system. They use an inference engine with SNORT rules[3], to detect malware through datagram filtering. </br>
 > - **Class-C**: WireShark[4] file reading and conversion agents in .PCAP format. These agents transform the .PCAP datagram files into the plain text format .PCAP.facts (_facts_), which are understandable by the CLIPS[5] or Jess[6] inference engines. </br> </br> 
