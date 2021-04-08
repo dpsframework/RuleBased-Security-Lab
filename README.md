@@ -15,7 +15,7 @@
 
 ### 1.5. Brief description of this example
    
-> This is an example of agent-oriented application deployment. It uses the JADE Framework[1] and the Middle-ware dpsFramework[7]. This example consists of three agent templates. The agents created from these templates have capabilities to: read and transform .PCAP files[4]; Malware analysis on the .PCAP files transformed into Facts and; storage and presentation functions of the results. 
+> This is an example of agent-oriented application deployment. It uses the JADE Framework[1] and the Middle-ware dpsFramework[7]. This example consists of three agent templates. The agents created from these templates have capabilities to: read and transform .PCAP files[4]; to analyze Malware on the .PCAP files transformed into Facts and; to storage and show functions of the results. 
 
 
 > The datagram packets with protocols in their headers of UDP and SSDP types have been obtained with Wireshark [4]. This has been done like this, just to simplify this example. The SSDP protocol is characteristic of automatically initiated communications between IoT devices. SSDP is commonly used in home routers with UPnP enabled. This example has been developed for demonstration and academic purposes only.
