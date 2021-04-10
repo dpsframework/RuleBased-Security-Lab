@@ -34,8 +34,8 @@
 > * Type of article: Standard working document. </br>
 > * Department of: Electrical and Systems Engineering and Automation. University of León. </br>
 > * Authors (PhD): Aguayo-Canela FJ<sup>1</sup>, Alaiz-Moretón H<sup>1</sup>, García-Ordás T<sup>1</sup>, Benítez-Andrades JA<sup>2</sup>, Benavides C<sup>1</sup>, and  García-Rodríguez I<sup>1</sup>. </br>
->   * (1) **SECOMUCI Research Group**, Escuela de Ingenierías Industrial e Informática.
->   * (2) **SALBIS Research Group**, Department of Electric, Systems and Automatics Engineering.
+>   * (1) _SECOMUCI Research Group_, School of Industrial Engineering and Informatics.
+>   * (2) _SALBIS Research Group_, Department of Electric, Systems and Automatics Engineering.
 
 
 
