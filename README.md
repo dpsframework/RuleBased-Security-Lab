@@ -4,7 +4,7 @@
 
 ### Abstract
 
-> Malware Analysis Laboratory built using Agents (`Malware-Analysis-Lab`), is an example of a distributed application made up of JADE Agents[1]. This application uses three classes of agents: </br>
+> Malware Analysis Laboratory built using Agents, is an example of a distributed application made up of JADE Agents[1]. This application uses three classes of agents: </br>
 > - **Class-A**: Blackboard agent. Responsible for displaying analysis results and managing the flow of analyzes. It is connected to a HSQLite database[2]. It is only required to deploy a single agent of this class. </br>
 > - **Class-B**: Agents with integrated expert-system. They use an inference engine with SNORT rules[3], to detect malware through datagram filtering. </br>
 > - **Class-C**: Wireshark[4] file reading and conversion agents in .PCAP format. These agents transform the .PCAP datagram files into the plain text format .PCAP.facts (_facts_), which are understandable by the CLIPS[5] or Jess[6] inference engines. </br> </br> 
@@ -15,7 +15,7 @@
 
 ### 1.5. Brief description of this example
    
-> This is an example of agent-oriented application deployment. It uses the JADE Framework[1] and the Middle-ware dpsFramework[7]. This example consists of three agent templates. The agents created from these templates have capabilities to: read and transform .PCAP files[4]; to analyze Malware on the .PCAP files transformed into Facts and; to storage and show functions of the results. 
+> This is an example of agent-oriented distributed application deployment. It uses the JADE Framework[1] and the Middle-ware dpsFramework[7]. This example consists of three agent templates. The agents created from these templates have capabilities to: read and transform .PCAP files[4]; to analyze Malware on the .PCAP files transformed into Facts and; to storage and show functions of the results. 
 
 
 > The datagram packets with protocols in their headers of UDP and SSDP types have been obtained with Wireshark [4]. This has been done like this, just to simplify this example. The SSDP protocol is characteristic of automatically initiated communications between IoT devices. SSDP is commonly used in home routers with UPnP enabled. This example has been developed for demonstration and academic purposes only.
