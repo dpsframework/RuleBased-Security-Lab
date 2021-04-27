@@ -1,50 +1,48 @@
-# Malware-Analysis-Lab
+
+## Document title:  _Enriched multi‑agent middleware for building rule‑based distributed security solutions for IoT environments_
+
+- The Journal of Supercomputing
+- https://doi.org/10.1007/s11227-021-03797-2
+
+- Accepted: 5 April 2021.
+
+- © The Author(s), under exclusive licence to **Springer Science+Business Media**, LLC, part of **Springer Nature  2021**
+
+   - Francisco José Aguayo‑Canela[^1]  · Héctor Alaiz‑Moretón[^1]  · María Teresa García‑Ordás[^1]  · José Alberto Benítez‑Andrades[^2]  · Carmen Benavides 2  · Isaías García‑Rodríguez[^1]
+
+
+>   [[1]] _SECOMUCI Research Group_, School of Industrial Engineering and Informatics.
+>   [[2]] _SALBIS Research Group_, Department of Electric, Systems and Automatics Engineering.
 
 
 
-### Abstract
+#### Keywords 
 
-> Malware Analysis Laboratory built using Agents, is an example of a distributed application made up of JADE Agents[1]. This application uses three classes of agents: </br>
-> - **Class-A**: Blackboard agent. Responsible for displaying analysis results and managing the flow of analyzes. It is connected to a HSQLite database[2]. It is only required to deploy a single agent of this class. </br>
-> - **Class-B**: Agents with integrated expert-system. They use an inference engine with SNORT rules[3], to detect malware through datagram filtering. </br>
-> - **Class-C**: Wireshark[4] file reading and conversion agents in .PCAP format. These agents transform the .PCAP datagram files into the plain text format .PCAP.facts (_facts_), which are understandable by the CLIPS[5] or Jess[6] inference engines. </br> </br> 
+Rule-based agent · Multi-agent systems · Intrusion detection system · Development environment
 
 
+## Example title: _Malware-Analysis-Lab_
 
 
+## Example abstrac:
 
-### 1.5. Brief description of this example
-   
-> This is an agent-oriented distributed application deployment example. It uses the JADE Framework[1] and the Middle-ware dpsFramework[7]. This example consists of three agent templates. The agents created from these templates have capabilities to: read and transform .PCAP files[4]; to analyze Malware on the .PCAP files transformed into Facts and; to storage and show functions of the results. 
+> Malware Analysis Laboratory is an example of a distributed application made up of JADE Agents[1]. This example uses three classes of agents: </br>
+> - **Class-A**: A blackboard agent. It is responsible for displaying analysis results and managing the flow of analyzes. And it is connected to a HSQLite database[2].</br>
+> - **Class-B**: Agents with integrated CLIPS[5] or Jess[6] expert-system . They use an inference engine with SNORT[3] rules, to detect malware through datagram filtering. </br>
+> - **Class-C**: Agents with .PCAP format file reading capabilities. They transform datagram segments in  (_facts_) format files, which are understandable by CLIPS[5] or Jess[6] inference engines. </br> </br> 
 
 
-> The datagram packets with protocols in their headers of UDP and SSDP types have been obtained with Wireshark [4]. This has been done like this, just to simplify this example. The SSDP protocol is characteristic of automatically initiated communications between IoT devices. SSDP is commonly used in home routers with UPnP enabled. This example has been developed for demonstration and academic purposes only.
-       
-           
-   
-#### 1.5.1. Keywords:
-     
-> Rule-based agent; Multi-agent Systems; Intrusion Detection System; development environment
+  
+This example foccuses on implementation and testing of an intrusion detection system which uses an agent-oriented distributed application deployment. It uses the JADE Framework[1] and the Middle-ware dpsFramework[7]. This example consists of three agent templates. The created agents from these templates have capabilities to: read and transform .PCAP files[4]; to analyze Malware on the .PCAP files transformed into Facts and; to storage and show functions of the results. 
 
 
 
-#### 1.5.2. Meta-data:
-                        
-> * Objective: Annex to the Working Document (2021.03.27). </br>
-> * Type of article: Standard working document. </br>
-> * Department of: Electrical and Systems Engineering and Automation. University of León. </br>
-> * Authors (PhD): Aguayo-Canela FJ<sup>1</sup>, Alaiz-Moretón H<sup>1</sup>, García-Ordás T<sup>1</sup>, Benítez-Andrades JA<sup>2</sup>, Benavides C<sup>1</sup>, and  García-Rodríguez I<sup>1</sup>. </br>
->   * (1) _SECOMUCI Research Group_, School of Industrial Engineering and Informatics.
->   * (2) _SALBIS Research Group_, Department of Electric, Systems and Automatics Engineering.
-
-
-
+The datagram packets with protocols in their headers of UDP and SSDP types have been obtained with Wireshark [4] and SNORT[3]. This has been done like this, just to simplify this example. The SSDP protocol is characteristic of automatically initiated communications between IoT devices. SSDP is commonly used in home routers with UPnP enabled. This example has been developed for demonstration and academic purposes only.
    
 ![Universidad de Leon - Spain](images/marca-logo-color.jpg)
 
 _University of León, Campus of Vegazana s/n, León, 24071 León, Spain_ [9] 
     
-
 
 
 ----
@@ -770,3 +768,4 @@ From command-line and on the application directory `Malware-Analysis-Lab` type:
 
 [23]: **FIPA ACL**. [FIPA00008] FIPA Agent Communication Language Specification. Foundation for Intelligent Physical Agents, 2000. http://www.fipa.org/specs/fipa00008/ 
 
+[^1]: 
