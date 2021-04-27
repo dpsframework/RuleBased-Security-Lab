@@ -9,7 +9,7 @@ Accepted: 5 April 2021.
 
 © The Author(s), under exclusive licence to **Springer Science+Business Media**, LLC, part of **Springer Nature  2021**
 
-   - Francisco José Aguayo‑Canela<sup>1</sup>  · Héctor Alaiz‑Moretón<sup>1</sup>  · María Teresa García‑Ordás<sup>1</sup>  · José Alberto Benítez‑Andrades<sup>2</sup>  · Carmen Benavides<sup>2</sup>  · Isaías García‑Rodríguez<sup>1</sup>
+Francisco José Aguayo‑Canela<sup>1</sup>  ·  Héctor Alaiz‑Moretón<sup>1</sup>  · María Teresa García‑Ordás<sup>1</sup>  · José Alberto Benítez‑Andrades<sup>2</sup>  · Carmen Benavides<sup>2</sup>  · Isaías García‑Rodríguez<sup>1</sup>
 
 
 >   [1] _SECOMUCI Research Group_, School of Industrial Engineering and Informatics.<br>
