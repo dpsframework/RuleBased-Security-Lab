@@ -9,7 +9,7 @@ Accepted: 5 April 2021.
 
 © The Author(s), under exclusive licence to **Springer Science+Business Media**, LLC, part of **Springer Nature  2021**
 
-Francisco José Aguayo‑Canela<sup>1</sup>  ·  Héctor Alaiz‑Moretón<sup>1</sup>  · María Teresa García‑Ordás<sup>1</sup>  · José Alberto Benítez‑Andrades<sup>2</sup>  · Carmen Benavides<sup>2</sup>  · Isaías García‑Rodríguez<sup>1</sup>
+Francisco José Aguayo‑Canela<sup>1</sup>  ·  Héctor Alaiz‑Moretón<sup>1</sup>  ·  María Teresa García‑Ordás<sup>1</sup>  ·  José Alberto Benítez‑Andrades<sup>2</sup>  ·  Carmen Benavides<sup>2</sup>  · Isaías García‑Rodríguez<sup>1</sup>
 
 
 >   [1] _SECOMUCI Research Group_, School of Industrial Engineering and Informatics.<br>
@@ -28,13 +28,13 @@ Rule-based agent · Multi-agent systems · Intrusion detection system · Deve
 > This _Malware Analysis Laboratory_ is an example of a distributed application made up of JADE Agents[1]. This example uses three main agent classes:
 
 
-* **Blackboard-Class**: The blackboard agents are responsible for displaying analysis results, managing the flow of analyzes and, update lastest Malware Rules from SNORT-Community[3]. This type of agents are connected to a HSQLite database[2].
+* **Blackboard-Class**: The blackboard-class agents are responsible for displaying analysis results, managing the flow of analyzes and, update lastest Malware Rules from SNORT-Community[3]. This type of agents are connected to a HSQLite database[2].
 
 
-* **Analyzer-Class**: This type of agents have an integrated CLIPS[5] or Jess[6] expert-system. They use the SNORT[3] Rules inside of its Working-Memory to detect malware on TCP, IP or UDP datagrams. 
+* **Analyzer-Class**: This type of agents have an integrated CLIPS[5] or Jess[6] expert-system. They use the SNORT[3] Rules inside of its Working-Memory to detect malware on TCP, IP or UDP datagrams.
 
 
-* **Reader-Monitor-Class**: They are agents with reading .PCAP format capabilities. They can to  transform datagram segments in  (_facts_) format files, which are understandable by CLIPS[5] or Jess[6] inference engines.
+* **Reader-Monitor-Class**: They are agents with reading .PCAP file format capabilities. They can to transform datagram segments in (facts) format files, which are understandable by CLIPS[5] or Jess[6] inference engines.
 
 
  
@@ -43,7 +43,7 @@ Malware Analysis Laboratory example foccuses on implementation and testing of an
    
 ![Universidad de Leon - Spain](images/marca-logo-color.jpg)
 
-_University of León, Campus of Vegazana s/n, León, 24071 León, Spain_ [9] 
+Universidad de León (Spain)[9] 
     
 
 
