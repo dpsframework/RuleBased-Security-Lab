@@ -1,18 +1,19 @@
 
 ## Document:  _Enriched multi‑agent middleware for building rule‑based distributed security solutions for IoT environments_
 
-- The Journal of Supercomputing
-- https://doi.org/10.1007/s11227-021-03797-2
+The Journal of Supercomputing
 
-- Accepted: 5 April 2021.
+https://doi.org/10.1007/s11227-021-03797-2
 
-- © The Author(s), under exclusive licence to **Springer Science+Business Media**, LLC, part of **Springer Nature  2021**
+Accepted: 5 April 2021.
 
-   - Francisco José Aguayo‑Canela[^1]  · Héctor Alaiz‑Moretón[^1]  · María Teresa García‑Ordás[^1]  · José Alberto Benítez‑Andrades[^2]  · Carmen Benavides[^2]  · Isaías García‑Rodríguez[^1]
+© The Author(s), under exclusive licence to **Springer Science+Business Media**, LLC, part of **Springer Nature  2021**
+
+   - Francisco José Aguayo‑Canela<sup>1</sup>  · Héctor Alaiz‑Moretón<sup>1</sup>  · María Teresa García‑Ordás<sup>1</sup>  · José Alberto Benítez‑Andrades<sup>2</sup>  · Carmen Benavides<sup>2</sup>  · Isaías García‑Rodríguez<sup>1</sup>
 
 
->   [[1]] _SECOMUCI Research Group_, School of Industrial Engineering and Informatics.
->   [[2]] _SALBIS Research Group_, Department of Electric, Systems and Automatics Engineering.
+>   [1] _SECOMUCI Research Group_, School of Industrial Engineering and Informatics.<br>
+>   [2] _SALBIS Research Group_, Department of Electric, Systems and Automatics Engineering.
 
 
 
