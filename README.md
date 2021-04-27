@@ -1,5 +1,5 @@
 
-## Document title:  _Enriched multi‑agent middleware for building rule‑based distributed security solutions for IoT environments_
+## Document:  _Enriched multi‑agent middleware for building rule‑based distributed security solutions for IoT environments_
 
 - The Journal of Supercomputing
 - https://doi.org/10.1007/s11227-021-03797-2
@@ -8,7 +8,7 @@
 
 - © The Author(s), under exclusive licence to **Springer Science+Business Media**, LLC, part of **Springer Nature  2021**
 
-   - Francisco José Aguayo‑Canela[^1]  · Héctor Alaiz‑Moretón[^1]  · María Teresa García‑Ordás[^1]  · José Alberto Benítez‑Andrades[^2]  · Carmen Benavides 2  · Isaías García‑Rodríguez[^1]
+   - Francisco José Aguayo‑Canela[^1]  · Héctor Alaiz‑Moretón[^1]  · María Teresa García‑Ordás[^1]  · José Alberto Benítez‑Andrades[^2]  · Carmen Benavides[^2]  · Isaías García‑Rodríguez[^1]
 
 
 >   [[1]] _SECOMUCI Research Group_, School of Industrial Engineering and Informatics.
@@ -21,23 +21,24 @@
 Rule-based agent · Multi-agent systems · Intrusion detection system · Development environment
 
 
-## Example title: _Malware-Analysis-Lab_
+## Example: _Malware-Analysis-Lab_
 
 
-## Example abstrac:
-
-> Malware Analysis Laboratory is an example of a distributed application made up of JADE Agents[1]. This example uses three classes of agents: </br>
-> - **Class-A**: A blackboard agent. It is responsible for displaying analysis results and managing the flow of analyzes. And it is connected to a HSQLite database[2].</br>
-> - **Class-B**: Agents with integrated CLIPS[5] or Jess[6] expert-system . They use an inference engine with SNORT[3] rules, to detect malware through datagram filtering. </br>
-> - **Class-C**: Agents with .PCAP format file reading capabilities. They transform datagram segments in  (_facts_) format files, which are understandable by CLIPS[5] or Jess[6] inference engines. </br> </br> 
+> This _Malware Analysis Laboratory_ is an example of a distributed application made up of JADE Agents[1]. This example uses three main agent classes:
 
 
-  
-This example foccuses on implementation and testing of an intrusion detection system which uses an agent-oriented distributed application deployment. It uses the JADE Framework[1] and the Middle-ware dpsFramework[7]. This example consists of three agent templates. The created agents from these templates have capabilities to: read and transform .PCAP files[4]; to analyze Malware on the .PCAP files transformed into Facts and; to storage and show functions of the results. 
+* **Blackboard-Class**: The blackboard agents are responsible for displaying analysis results, managing the flow of analyzes and, update lastest Malware Rules from SNORT-Community[3]. This type of agents are connected to a HSQLite database[2].
 
 
+* **Analyzer-Class**: This type of agents have an integrated CLIPS[5] or Jess[6] expert-system. They use the SNORT[3] Rules inside of its Working-Memory to detect malware on TCP, IP or UDP datagrams. 
 
-The datagram packets with protocols in their headers of UDP and SSDP types have been obtained with Wireshark [4] and SNORT[3]. This has been done like this, just to simplify this example. The SSDP protocol is characteristic of automatically initiated communications between IoT devices. SSDP is commonly used in home routers with UPnP enabled. This example has been developed for demonstration and academic purposes only.
+
+* **Reader-Monitor-Class**: They are agents with reading .PCAP format capabilities. They can to  transform datagram segments in  (_facts_) format files, which are understandable by CLIPS[5] or Jess[6] inference engines.
+
+
+ 
+Malware Analysis Laboratory example foccuses on implementation and testing of an intrusion detection system which uses an agent-oriented distributed application deployment. It uses the JADE Framework[1] and the Middle-ware dpsFramework[7].  This example has been developed for demonstration and academic purposes only.
+
    
 ![Universidad de Leon - Spain](images/marca-logo-color.jpg)
 
@@ -49,32 +50,24 @@ _University of León, Campus of Vegazana s/n, León, 24071 León, Spain_ [9]
 
 
 
-## 1. Class-{A, B and C} Agents Screenshots (summary)
+## 1. Agents of Blackboard-Class
 
 
-
-###  1.1. Class-A: Blackboard agent 
-
-#### **Image 1.** Class-A: Blackboard agent `NIDsBoardAgent`. Responsible for displaying analysis results and managing the flow of analyzes.  
 
 ![](images/nidsBoardAgent-00.png)
+**Image 1.** Firt tab of GUI from a Blackboard-Class Agent named `NIDsBoardAgent`. 
 
 
 
-
-#### **Image 1 (Left-side).** Class-A: Blackboard agent `NIDsBoardAgent`. Responsible for displaying analysis results and managing the flow of analyzes.  
 
 ![](images/nidsBoardAgent-01.png)
+**Image 1 (Left-side).** The Blackboard-Class Agent named `NIDsBoardAgent`
 
 
 
-
-
-
-
-#### **Image 1 (Right-side).** Class-A: Blackboard agent `NIDsBoardAgent`. Responsible for displaying analysis results and managing the flow of analyzes. 
 
 ![](images/nidsBoardAgent-02.png)
+**Image 1 (Rigth-side).** The Blackboard-Class Agent named `NIDsBoardAgent`
 
 
 
@@ -83,12 +76,11 @@ _University of León, Campus of Vegazana s/n, León, 24071 León, Spain_ [9]
 
 
 
-###  1.2.  Class-B: Agents with integrated expert-system
+## 2.  Agents of Analyzer-Class
 
-#### **Image 2.** Class-B: Agent `SsdpAgent501` with integrated expert-system: detail file loading sequence of rules that make up the expert system called `CLISP.UDP-Loader.clp`
 
 ![](images/ssdpAgent501-00.png)
-
+**Image 2.** Class-B: Agent `SsdpAgent501` with integrated expert-system: detail file loading sequence of rules that make up the expert system called `CLISP.UDP-Loader.clp`
 
 
 
