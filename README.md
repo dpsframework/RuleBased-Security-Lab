@@ -115,43 +115,6 @@ Malware Analysis Laboratory example foccuses on implementation and testing of an
 
 
 
-**Table 1**. Main contents location at this web, by Agent Classes.
-
-
-| dpsAgent Classes      | Papers & Drafts   | Third party components<br>and Developer guides  |
-|:--------  |:--------------------- |:---------   |
-| **Monitor-Agent** ![Monitor](images/assets/logoPsMonitorAgent.gif) allows to user developing on a enriched graphical agent interface.  | • How to develop and debug JADE Behaviour Classes on agents at runtime (Pending)   | • [_Java BeanShell_](#) 2.0b4 Manual <br><br>• [_RSyntaxtTextArea_](#) at GitHub   | 
-| **Board-Agent** ![TicketBoard](images/assets/logoPsBoard.gif)  is a kind of _Blackboard_ where other agents can store or retrieve ACLMessages and data. It uses JADE _Yellow-Pages Service_ and _HyperSQL_.  | • Problem-Solvers Ontology: an upper ontology proposal to distribute _rule-based expert systems_ through agent technology (Pending)  | • [_Problem-Solver_](#) Ontology API<br><br>• [_HyperSQL_](#) Database Engine 2.3.4 Manual      | 
-| **Node-Agent** ![Node](images/assets/logoPsNode.gif)  uses and manages CLIPS[^CLIPS] or Jess[^JESS] _rule-based engines_. This agent class was built to work under extreme conditions.  | • Three proposal methods to manage the _rule-based engine Agenda_ from software-agents efficiently (Pending)<br><br>• Long life applied techniques in Knowledge-base Agents: implemented and proposed solutions (Draft)  |  • [_CLIPSJNI_](#)[^CLIPS] 0.5 API<br><br>• [_Jess engine_](#) API  | 
-| **Stage-Agent** ![Stage-Node](images/assets/logoPsStageBussy.gif){:width="48px" align="left" hspace="4px"  border="0px"} is an extension of previous _Node-Agent_ class. This is an enriched graphical user interface agent and, it is used to customize the _Node-Agent_ instances. It has a plenty of integrated development tools. | • Programming _rule-based expert systems_ from inside an agent at runtime: Applied techniques (Approval-Pending)<br><br> • Comparative study of inferences in _rule-based expert systems_ and collaborative agents connected to _rule-based expert systems_ (Draft)    |  • [_CLIPS_](#) 6.30 On-line HTML-converted Manual<br><br>• [_Jess_](#) 8.0a1 Manual  | 
-
-
-
-_dpsFramework_ includes an installer utility (**_Table.2_**) to deploy each distributed repository on JADE platform managed hosts. So, an application can run alone in a  host or personal computer or, in a distributed way using JADE multi-agent platform network connectivity bus. Following table shows the _dpsFrameworkBuilder_ description associates to working-papers and drafts. 
-
-
-
-**Table 2**. _dpsFramework_ associated papers and drafts, by tools.
-
-
-| dpsFramework software installer   | Papers & Drafts   | 
-|:--------------------------------- |:--------------------- |
-| ![Stage-Node](images/assets/logo_dpsframework_bw.png)  <br> **dpsFrameworkBuilder** is a _Java_ .JAR setup program. This utility generates a directories structure on file-system from which, the _dpsAgents_ are launched in JADE Platform and where these agents can store their configuration files, HSQL databases schemes or, their _Working-Memory/Knowledg-Base_ backup files.   |  • A Brief Introduction to _dpsFramework_ (Draft)<br><br> • Three command-lines to create an integrated development environment _dpsFramework_ (Draft)   | 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
