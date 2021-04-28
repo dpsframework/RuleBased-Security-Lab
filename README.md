@@ -101,13 +101,10 @@ Universidad de León[9] (_Spain_)
    * ` $       java launcher monitor localhost WatchdogAgent201  &`  (Linux & OS-X)
    * ` $ start java launcher monitor localhost WatchdogAgent201 `    (Windows)
 
+1. From the graphical interface of the agents, raise their execution level up to `5`  with:
+   * Click on button [5] on the menu bar.
 
-#### From GUI of Agents _Malware-Analysis-Lab_ application    
-
-1. Raising the level of execution of Agents from `1` until `5` with:
-   * (With mouse...) Click on button [5] on the menu bar.
-
-1. Start malware scan with:
+1. From command-line, start the malware scan with:
    * ` $ cp    pcap/examples/case01.pcap   var/pending/.`     (Linux & OS-X)
    * ` $ copy  pcap/examples/case01.pcap   var/pending/. `    (Windows)
 
