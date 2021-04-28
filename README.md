@@ -60,200 +60,79 @@ Universidad de León (Spain)[9]
 
   
    
-##  How to deploy and run a _Malware-Analysis-Lab_
+###  How to deploy and run a _Malware-Analysis-Lab_
 
 
-1. Download Middle-ware dpsFramework.
+1. Download Middle-ware dpsFramework:
    * [From URL Website https://github.com/dpsframework/...](https://github.com/dpsframework/dpsFrameworkBuilder/releases)
    * From command-line:
-     $ wget https://github.com/dpsframework/dpsFrameworkBuilder/releases/download/1.8/dpsFrameworkBuilder-full-1.8.jar
+     ` $ wget https://github.com/dpsframework/dpsFrameworkBuilder/releases/download/1.8/dpsFrameworkBuilder-full-1.8.jar`
 
-1. Set the CLASSPATH variable: 
-   *  $  export CLASSPATH=lib/*:      (Unix / OS X)
-   *  >> set    CLASSPATH=lib/*;      (Windows OS)
-```
+1. Create a new Agent-Development Environment: 
+   * ` $ java -jar dpsFrameworkBuilder-full-1.8.jar --new=Malware-Analysis-Lab`
+   * ` $ cd Malware-Analysis-Lab`
 
+1. Adapt application skeleton to the new Agents of this example: 
+   * ` $ mv README.md   README.old
+   * ` $ mv config      config_Old
 
+1. Initialize the Git local repository:
+   * ` $ git init . `
 
-### 3.3. Create a new agent-development environment: 
+1. Set CLASSPATH variable: 
+   * ` $  export CLASSPATH=lib/*:lib/pcap/*:  ` (Unix / OS X)
+   * ` $  set    CLASSPATH=lib/*;lib/pcap/*;  ` (Windows OS)
 
-```bash
-  $ java -jar dpsFrameworkBuilder-full-1.8.jar --new=My-Agent-App
-  $ cd My-Agent-App
-```
+1. Update this local repository with:
+   * ` $ git branch -M master`
+   * ` $ git remote add origin https://github.com/dpsframework/Malware-Analysis-Lab.git`
+   * ` $ git pull origin master`
 
- 
+1. Remove that remote repository with:
+   * ` $ git remote remove origin`
 
 
-  
-   
-##  4. How to create this `Malware-Analysis-Lab` application example
+#### Running a _Malware-Analysis-Lab_
 
-Step-by-step installation process detail: 
+1. Launch the JADE multi-agent platform on `localhost` with: 
+   * ` $ java       launcher platform localhost  & `     (Linux & OS-X)
+   * ` $ start java launcher platform localhost `        (Windows)
 
-### 4.1. Download Middle-ware  dpsFramework: [dpsFrameworkBuilder-full-1.8.jar]
+1. Launch a Blackboard-Class Agent `NIDsBoardAgent` with:
+   * ` $       java launcher board localhost NIDsBoardAgent  &`  (Linux & OS-X)
+   * ` $ start java launcher board localhost NIDsBoardAgent `    (Windows)
 
-  * From: https://github.com/dpsframework/dpsFrameworkBuilder/releases/tag/1.8
-  * Or from command-line with:
+1. Launch an Analyzer-Class Agent `SsdpAgent501` with:
+   * ` $       java launcher stage-node localhost SsdpAgent501 CLIPS  &`  (Linux & OS-X)
+   * ` $ start java launcher stage-node localhost SsdpAgent501 CLIPS `    (Windows)
 
-```bash
-  $ wget https://github.com/dpsframework/dpsFrameworkBuilder/releases/download/1.8/dpsFrameworkBuilder-full-1.8.jar
-```
+1. Launch an Analyzer-Class Agent `SsdpAgent515` with:
+   * ` $       java launcher stage-node localhost SsdpAgent515 Jess  &`  (Linux & OS-X)
+   * ` $ start java launcher stage-node localhost SsdpAgent515 Jess `    (Windows)
 
+1. Launch an Reader-Monitor-Class Agent `WatchdogAgent201` with:
+   * ` $       java launcher monitor localhost WatchdogAgent201  &`  (Linux & OS-X)
+   * ` $ start java launcher monitor localhost WatchdogAgent201 `    (Windows)
 
 
+#### From GUI of Agents from _Malware-Analysis-Lab_ application    
 
-### 4.2. Set the CLASSPATH variable: 
+1. Raising the level of execution of Agents from `1` until `5` with:
+   * (With mouse...) Click on button [5] on the menu bar.
 
-```bash
-  $ export CLASSPATH=lib/*:lib/pcap/*:      (Unix / OS X)
-  > set    CLASSPATH=lib/*;lib/pcap/*;      (Windows OS)
-```
+1. Start malware scan with:
+   * ` $ cp    pcap/examples/case01.pcap   var/pending/.`     (Linux & OS-X)
+   * ` $ copy  pcap/examples/case01.pcap   var/pending/. `    (Windows)
 
 
 
-### 4.3. Create a new JADE application: 
 
-```bash
-  $ java -jar dpsFrameworkBuilder-full-1.8.jar --new=Malware-Analysis-Lab
-```
 
 
 
 
-### 4.4. Prepare this new application, to incorporate the agents into it: 
 
-```bash
-  $ cd Malware-Analysis-Lab
-  $ mv README.md   README.md_APP
-  $ mv config      config_APP
-  $ git init .
-```
-        
-        
-
-
-### 4.5. Update local Working-directory with this GitHub repository: 
-
-
-```bash
-  $ git branch -M master
-  $ git remote add origin https://github.com/dpsframework/Malware-Analysis-Lab.git
-  $ git pull origin master
-```
-
-
-
-
-### 4.6. (Optional) Freeing local Working-directory from GitHub's `origin`
-
-
-```bash
-  $ git remote remove origin
-```
-
-
-
-
-
-## 5. How to deploy this `Malware-Analysis-Lab` application example
-
-From command-line and on the application directory `Malware-Analysis-Lab` type:
-
-
-### 5.1. Launch of JADE multi-agent platform on `localhost`: 
-
-```bash
-  $      java launcher platform localhost  &        (Linux  and  OS X)
-  
- > start java launcher platform localhost           (Windows OS)
-```
-
-### 5.2. Launch **Class-A**: Blackboard agent `NIDsBoardAgent`:
-
-```bash
-  $      java launcher board localhost NIDsBoardAgent  &     (Linux  and  OS X)
-  
- > start ...                                                 (Windows OS)
-```
-
-### 5.3. Launch of **Class-B**: Agents with integrated expert-system: `SsdpAgentXXX`:
-
-```bash
-  $   java launcher stage-node localhost SsdpAgent501  CLIPS   &      (Linux  and  OS X)
-  $   java launcher stage-node localhost SsdpAgent515   JESS   &      (Linux  and  OS X)
-
- > start java launcher stage-node localhost SsdpAgent501  CLIPS       (Windows OS)
- > start java launcher stage-node localhost SsdpAgent515  JESS        (Windows OS)
- 
-```
-
-
-### 5.4. Launch of **Class-C**: Wireshark[4] file reading and conversion agents in .PCAP format. `WatchdogAgentYYY`:
-
-```bash
-  $   java launcher monitor localhost WatchdogAgent201  &     (Linux  and  OS X)
-
-
- > start ...                                                  (Windows OS)
-```
-
- 
-      
- 
-
-        
-
-      
-
-## 6. How to put the application  `Malware-Analysis-Lab` into operation 
-
-
-### 6.1. Raising the level of execution of Agents to "5": 
-
-    * (With mouse ...) From the graphical interface of the agents, click on button [5] on the menu bar. 
-                              
-
-
-### 6.2. Start malware scan: 
-
-
-```bash
-  $ cp  pcap/examples/case01.pcap   var/pending/.     (Linux  and  OS X)
-  $ cp  pcap/examples/case02.pcap   var/pending/.
-
- > copy ...                                           (Windows OS)
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## 1. Agents of Blackboard-Class
+### 1. A Blackboard-Class NIDSBoard-Agent screenshot
 
 
 
@@ -275,152 +154,30 @@ From command-line and on the application directory `Malware-Analysis-Lab` type:
 
 
 
-
-
-
-
-## 2.  Agents of Analyzer-Class
-
-
-![](images/ssdpAgent501-00.png)
-**Image 2.** Class-B: Agent `SsdpAgent501` with integrated expert-system: detail file loading sequence of rules that make up the expert system called `CLISP.UDP-Loader.clp`
-
-
-
-###  1.3. Class-C: Wireshark[4] .PCAP format file reading and conversion agents.
-
-
-#### **Image 3.** Class-C: `WatchdogAgent201` agent: a Wireshark[4] .PCAP format file reading and conversion agent.
-
-![](images/watchdog201-00.png)
-
-
-
-
-
-
-
-
-
-### 1.4. JADE-RMA agent with DF services window deployed
-
-
-#### **Image 4.** JADE RMA agent: detail of the distributed application `Malware-Analysis-Lab`, deployed on JADE multi-agent platform. 
-
-
-![](images/rmaJade1099-00.png)
-
-
-
-
-
-
-
-
-
-----
-
-
-
-## 2. Screenshot gallery
-
-
-----
-
-
-
-
-
-###  2.1. Class-A: Blackboard agent `NIDsBoardAgent` detailed
-
-
-
-#### 2.1.1. How to create a `NIDsBoardAgent` agent from scratch
-
-#### **Image 5.** `NIDsBoardAgent`: creation from command line 
-
-
-
 ![](images/nidsBoardAgent-211-01.png)
+**Image 5.** `NIDsBoardAgent`: creation from command line 
 
-
-
-#### 2.1.2. How to launch the blackboard agent `NIDsBoardAgent` on the JADE platform
-
-#### **Image 6.** `NIDsBoardAgent`: launch the agent 
 
 
 ![](images/nidsBoardAgent-212-02.png)
-
-
-
-
-
-
-
-#### 2.1.3. What are and how to access the variables of the board-agent `NIDsBoardAgent` at runtime
-
-#### **Image 7.** `NIDsBoardAgent`: Development environment utilities incorporated into the blackboard agent (part 1). 
+**Image 6.** `NIDsBoardAgent`: launch the agent 
 
 
 ![](images/nidsBoardAgent-213-01.png)
+**Image 7.** `NIDsBoardAgent`: Development environment utilities incorporated into the blackboard agent (part 1). 
 
 
 
-
-
-| Variable     | Current value |
-|:----------  |:-------  |
-| frameworkConfigPath   |   ~/research/Malware-Analysis-Lab/config/    |
-| NEGATIVO   |   Oops____!   |
-| relativeConfigPath   |   nodes/NIDsBoardAgent/config/   |
-| relativeBoardPath   |   nodes/NIDsBoardAgent/   |
-| boardName   |   NIDsBoardAgent   |
-| AFIRMATIVO   |   Correct !   |
-| frameworkRootPath   |   ~/research/Malware-Analysis-Lab/   |
-| nodeVarPath   |   ~/research/Malware-Analysis-Lab/nodes/NIDsBoardAgent/var/   |
-| myGui   |   com.dpsframework.PsBoardAgentGui[frame0,223,63,1103x649,invalid,layout=java.awt.BorderLayout,title=TE.NIDsBoardAgent@127.0.0.1:1099/JADE. DataBase type: 'HSQLDB',resizable,normal,defaultCloseOperation=DO_NOTHING_ON_CLOSE,rootPane=javax.swing.JRootPane[,8,31,1087x610,invalid,layout=javax.swing.JRootPane$RootLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=16777673,maximumSize=,minimumSize=,preferredSize=],rootPaneCheckingEnabled=true]   |
-| nodeEnginePath   |   ~/research/Malware-Analysis-Lab/nodes/NIDsBoardAgent/engine/   |
-| b2nr   |   B2NREResponder@17ea484   |
-| NEGATIVE   |   Oops____!   |
-| myAgent   |   com.dpsframework.PsBoardAgent@ce5102   |
-| nodeRootPath   |   ~/research/Malware-Analysis-Lab/nodes/NIDsBoardAgent/   |
-| testArea   |   {}   |
-| jamo   |   JAMONodeManagement2@f7597   |
-| boardVarPath   |   ~/research/Malware-Analysis-Lab/nodes/NIDsBoardAgent/var/   |
-| TICKET_DB_FILE_NAME   |   ticketDB   |
-| mySd   |   jade.domain.FIPAAgentManagement.ServiceDescription@ed63ba   |
-| myNode   |    NLayer:com.dpsframework.PsNodeSettings@fb86c   |
-| myDfd   |   jade.domain.FIPAAgentManagement.DFAgentDescription@40799e   |
-| boardConfigPath   |   ~/research/Malware-Analysis-Lab/nodes/NIDsBoardAgent/config/   |
-| myBOB   |   {0C:1:3:bcpb:basal:bhv.bcpb.bsh=BoardCapabilitiesLoader2@1b86575, 00:0:1:jamo:basal:bhv.jamo.bsh=JAMONodeManagement2@f7597, A0:3:5:b2nr:basal:bhv.b2nr.bsh=B2NREResponder@17ea484, 0B:3:5:grid:basal:bhv.grid.bsh=BoardGridLocal@1edf921}   |
-| nodeConfigPath   |   ~/research/Malware-Analysis-Lab/nodes/NIDsBoardAgent/config/   |
-| grid   |   BoardGridLocal@1edf921   |
-| jconsole   |   BeanShell Console Class adapted to JADE, for Windows, GNU-Linux and OS-X operating systems.   |
-| DATABASE_PASSWORD   |   password   |
-| AFFIRMATIVE   |   Correct !   |
-| myDB   |   org.hsqldb.jdbc.JDBCConnection@d95940   |
-| dbConnection   |   jdbc:hsqldb:file:nodes/NIDsBoardAgent/var/data/ticketDB;ifexits=true   |
-| nodeProp2   |   {ps.node.behaviour-grid=yes, ps.node.agent.framework-board-name=NIDsBoardAgent, ps.node.agent.verbose.mode=yes, ps.node.behaviour-b2nr=yes, //=, ps.node.agent.framework-board-service=ticket-board, ps.node.agent.framework-owner-name=UniLeon, ps.node.behaviour-jamo=yes, ps.node.behaviour-bcpb=yes, ps.node.agent.debugging.mode=yes, ps.node.agent.default-execution-level=1}   |
-
-
-
-#### **Table 1.** Result of:  `for ( t : this .variables ) { print( t + ": ____ " + eval( t )); }` from agent JADE-Shell.
-
-
-
-#### **Image 8.** `NIDsBoardAgent`: Development environment utilities incorporated into the blackboard agent (part 2). 
-
+ 
 ![](images/nidsBoardAgent-213-02.png)
+**Image 8.** `NIDsBoardAgent`: Development environment utilities incorporated into the blackboard agent (part 2). 
 
 
 
 
-
-
-#### **Image 9.** `NIDsBoardAgent`: Development environment utilities incorporated into the blackboard agent (part 3). 
 
 ![](images/nidsBoardAgent-213-03.png)
+**Image 9.** `NIDsBoardAgent`: Development environment utilities incorporated into the blackboard agent (part 3). 
 
 
 
@@ -429,120 +186,102 @@ From command-line and on the application directory `Malware-Analysis-Lab` type:
 
 
 
-#### **Image 10.** `NIDsBoardAgent`: Development environment utilities incorporated into the blackboard agent (part 4). 
 
 ![](images/nidsBoardAgent-213-04.png)
-
-
-
-* One of the important objects for the blackboard agent is `myDB`.
-* It is always present in this class of agents and offers direct access to the database.
-* Can be disassembled with `javap(myDB);` 
+**Image 10.** `NIDsBoardAgent`: Development environment utilities incorporated into the blackboard agent (part 4). 
 
 
 
 
 
-#### **Image 11.**  `NIDsBoardAgent`: Development environment utilities incorporated into the blackboard agent (part 5).
 
+ 
 ![](images/nidsBoardAgent-213-05.png)
+**Image 11.**  `NIDsBoardAgent`: Development environment utilities incorporated into the blackboard agent (part 5).
 
 
-
-```java
-
-public class BoardGridLocal extends OneShotBehaviour {
-	PsBoardAgent		theBoard;
-	int 				exitValue;
-	boolean  			debugMode;	
-	boolean  			verboseMode;
-	
-	DefaultTableModel 	tableModel;
-	ResultSet 			rs;
-	ResultSetMetaData 	meta;
-	int 				columnCount;
-
-	public BoardGridLocal(Agent a, ResultSet rowSet) {
-		super(a);
-		rs = rowSet;
-
-		if (a instanceof PsBoardAgent) {
-			theBoard = (PsBoardAgent) a;
-			verboseMode		= theBoard.myNode().verboseMode;
-			debugMode 		= theBoard.myNode().debuggingMode;
-			exitValue		= 0;
-		}
-	}
-```
-
-
-
-
-
-
-
-#### **Image 12.** `NIDsBoardAgent`: Development environment utilities incorporated into the blackboard agent (part 6).
 
 ![](images/nidsBoardAgent-213-06.png)
+**Image 12.** `NIDsBoardAgent`: Development environment utilities incorporated into the blackboard agent (part 6).
 
 
 
 
-### 2.2. Class-B: `SsdpAgent501` Agent with integrated expert-system: build details
 
 
 
-#### 2.2.1. How to create an `SsdpAgent501` agent from scratch
 
-#### **Image 13.** `SsdpAgentXXX`: create from command line
+
+
+
+### 2. Analyzer-Class Agents `SsdpAgent501` screenshot
+
+
+![](images/ssdpAgent501-00.png)
+**Image 2.** Analyzer-Class  Agent `SsdpAgent501` with integrated expert-system: detail file loading sequence of rules that make up the expert system called `CLISP.UDP-Loader.clp`
+
+
+
+
 
 ![](images/ssdpAgent501-221-01.png)
+**Image 13.** `SsdpAgentXXX`: create from command line
 
 
 
 
-
-
-
-
-
-#### 2.2.2. How behaviors are edited and expert-system is managed in each agent `SsdpAgentXXX` 
-
-#### **Image 14.** `SsdpAgentXXX`: Incorporation of **Detailed Report ** with dates and identifiers of the datagrams that have produced the alert. 
 
 ![](images/ssdpAgent501-222-01.png)
-
-* It incorporates a `assert` at the end of each rule you want to be part of the **Detailed Report**.
-
-* Required values are incorporated in the so-called `detailed_report` template. This generates _facts_ in the Working-Memory that are used at the end of the analysis with the lowest priority rule `generate_inform`.
+**Image 14.** `SsdpAgentXXX`: Incorporation of **Detailed Report ** with dates and identifiers of the datagrams that have produced the alert. 
 
 
 
 
-
-#### **Image 15.** `SsdpAgentXXX`: Editing the load behavior of the capabilities `acpb` agent expert system Integrated (part 1).
 
 ![](images/ssdpAgent501-222-02.png)
+**Image 15.** `SsdpAgentXXX`: Editing the load behavior of the capabilities `acpb` agent expert system Integrated (part 1).
 
 
 
 
 
 
-
-
-
-#### **Image 16.** `SsdpAgentXXX`: Editing the load behavior of the capabilities `acpb` agent expert system Integrated (part 2).
-
+ 
 ![](images/ssdpAgent501-222-03.png)
+**Image 16.** `SsdpAgentXXX`: Editing the load behavior of the capabilities `acpb` agent expert system Integrated (part 2).
 
 
 
 
-
-#### **Image 17.** `SsdpAgentXXX`: Activation of the `acpb` behavior aimed at initializing the Agent's Capabilities with an expert system. 
-
+ 
 ![](images/ssdpAgent501-222-04.png)
+**Image 17.** `SsdpAgentXXX`: Activation of the `acpb` behavior aimed at initializing the Agent's Capabilities with an expert system. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+![](images/watchdog201-00.png)
+**Image 3.** Analyzer-Class Agent `WatchdogAgent201` file reading and conversion agent.
+
+
+
+
+
+
+![](images/rmaJade1099-00.png)
+**Image 4.** JADE RMA agent: detail of the distributed application `Malware-Analysis-Lab`, deployed on JADE multi-agent platform. 
 
 
 
@@ -564,128 +303,57 @@ public class BoardGridLocal extends OneShotBehaviour {
 
 
 
-### 2.3. Class-C: Wireshark[4] .PCAP format file reading and conversion agents: build details
 
 
 
 
-#### 2.3.1. How to customize an `WatchdogAgentXXX` agent from JADE-Shell and Editor
 
 
-#### **Image 18.** `WatchdogAgentXXX`: launch test to read Wireshark .pcap files.
+
+
+
+
+
+
+
+
+
 
 ![](images/watchdogAgent201-231-00.png)
+**Image 18.** `WatchdogAgentXXX`: launch test to read Wireshark .pcap files.
 
 
 
-
-
-#### **Image 19.** `WatchdogAgentXXX`: Wireshark .pcap file detailed results about datagrams.
 
 ![](images/watchdogAgent201-231-01.png)
+**Image 19.** `WatchdogAgentXXX`: Wireshark .pcap file detailed results about datagrams.
 
 
 
-
-#### **Image 20.** `WatchdogAgentXXX`: how to make a new Service inside of agents.
 
 ![](images/watchdogAgent201-231-02.png)
-
-
-| Variable     | Current value |
-|:----------  |:-------  |
-| framework.config.path                    |  ==>  ~/research/Malware-Analysis-Lab/config/ |
-| framework.root.path                      |  ==>  ~/research/Malware-Analysis-Lab/ |
-| framework.name                           |  ==>  Malware-Analysis-Lab |
-| framework.bin.path                       |  ==>  null |
-| framework.nodes.path                     |  ==>  ~/research/Malware-Analysis-Lab/nodes/ |
-| framework.log.path                       |  ==>  ~/research/Malware-Analysis-Lab/logs/ |
-| framework.var.path                       |  ==>  ~/research/Malware-Analysis-Lab/var/ |
-|----------  |-------  |
-| node.config.path                         |  ==>  ~/research/Malware-Analysis-Lab/nodes/WatchdogAgent201/config/ |
-| node.engine.path                         |  ==>  ~/research/Malware-Analysis-Lab/nodes/WatchdogAgent201/engine/ |
-| node.var.path                            |  ==>  ~/research/Malware-Analysis-Lab/nodes/WatchdogAgent201/var/ |
-| node.root.path                           |  ==>  ~/research/Malware-Analysis-Lab/nodes/WatchdogAgent201/ |
-| node.name                                |  ==>  WatchdogAgent201 |
-|----------  |-------  |
-| relative.node.path                       |  ==>  nodes/WatchdogAgent201/ |
-| relative.config.path                     |  ==>  nodes/WatchdogAgent201/config/ |
-| relative.var.path                        |  ==>  nodes/WatchdogAgent201/var/ |
-| relative.engine.path                     |  ==>  nodes/WatchdogAgent201/engine/ |
-|----------  |-------  |
-| engine.requested                         |  ==>  none |
-| engine.selected                          |  ==>  none |
-|----------  |-------  |
-| agent.name                               |  ==>  WatchdogAgent201@127.0.0.1:1099/JADE |
-| agent.local.name                         |  ==>  WatchdogAgent201 |
-|----------  |-------  |
-| ps.framework.app.author                  |  ==>  UniLeon |
-| ps.framework.keypasswd                   |  ==>  password |
-| ps.framework.app.created                 |  ==>  Date |
-| ps.framework.app.objective               |  ==>  You can simulate multiple lines with /n symbol. |
-| ps.framework.node.serie                  |  ==>  WatchdogAgent204,WatchdogAgent201,SsdpAgent515,SsdpAgent501,NIDsBoardAgent,WatchdogAgent000 |
-| ps.framework.name                        |  ==>  Malware-Analysis-Lab |
-| ps.framework.publickey                   |  ==>  asfjksd98843.9692adsf |
-| ps.framework.app.title                   |  ==>  Malware Analysis Laboratory through JADE Agents |
-| ps.framework.app.nativelib               |  ==>   |
-|----------  |-------  |
-| ps.node.agent.framework-board-service    |  ==>  ticket-board |
-| ps.node.agent.time-to-agenda             |  ==>  180000 |
-| ps.node.agent.tickets-from-phase         |  ==>  0 |
-| ps.node.agent.framework-owner-name       |  ==>  SECOMUCI |
-| ps.node.agent.clips-pattern-serie        |  ==>   |
-| ps.node.agent.tickets-until-phase        |  ==>  -1 |
-| ps.node.agent.trusted.list               |  ==>  NIDsBoardAgent,WatchdogAgent201 |
-| ps.node.agent.execution-level-5-name     |  ==>  level.05.bsh |
-| ps.node.agent.jess-pattern-serie         |  ==>   |
-| ps.node.agent.execution-level-3-name     |  ==>  level.03.bsh |
-| ps.node.agent.dewey-description-capability |  ==>  PCAP file Reader and Transformer into .facts files |
-| ps.node.agent.execution-level-6-name     |  ==>  level.06.bsh |
-| ps.node.agent.time-to-board              |  ==>  8405 |
-| ps.node.agent.execution-level-0-name     |  ==>  level.00.bsh |
-| ps.node.agent.inference-firing-mode      |  ==>  2 |
-| ps.node.agent.inference-cycles           |  ==>  10000 |
-| ps.node.agent.default-execution-level    |  ==>  1 |
-| ps.node.agent.debugging.mode             |  ==>  1 |
-| ps.node.agent.framework-board-name       |  ==>  NIDsBoardAgent |
-| ps.node.agent.inference-cycles-serie     |  ==>  50,100,500,5000,10000 |
-| ps.node.agent.behaviour-pattern-serie    |  ==>  3277,4033,4681,8321,15841,29341,42799,90751 |
-| ps.node.agent.time-to-agenda-serie       |  ==>  5000,30000,180000 |
-| ps.node.agent.time-to-board-serie        |  ==>  1107,2047,8401,23521,55969,97567 |
-| ps.node.agent.dewey-code-capability      |  ==>  UDP-SSDP |
-| ps.node.agent.verbose.mode               |  ==>  1 |
-| ps.node.agent.execution-level-1-name     |  ==>  level.01.bsh |
+**Image 20.** `WatchdogAgentXXX`: how to make a new Service inside of agents.
 
 
 
-
-#### **Table 2.** Access to `myNode` object with:  `myNode .getProperties();` from agent JADE-Shell.
-
-
-
-#### **Image 21.** `WatchdogAgentXXX`: how develop new Behaviours on Java files.
 
 ![](images/watchdogAgent201-231-03.png)
+**Image 21.** `WatchdogAgentXXX`: how develop new Behaviours on Java files.
 
 
 
 
-#### **Image 22.** `WatchdogAgentXXX`: how to customize agent properties.
+
 
 ![](images/watchdogAgent201-231-04.png)
+**Image 22.** `WatchdogAgentXXX`: how to customize agent properties.
 
 
 
 
-#### **Image 23.** `WatchdogAgentXXX`: how to build new test.
-
+ 
 ![](images/watchdogAgent201-231-05.png)
-
-
-
-
-
-
+**Image 23.** `WatchdogAgentXXX`: how to build new test.
 
 
 
@@ -697,19 +365,7 @@ public class BoardGridLocal extends OneShotBehaviour {
 
 
 
-
-
-
-
-
-
-
-
-
-
 ## References
-
-
 
 
 
