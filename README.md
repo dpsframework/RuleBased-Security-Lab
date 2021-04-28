@@ -14,8 +14,8 @@ Francisco José Aguayo‑Canela<sup>1</sup>  ·  Héctor Alaiz‑Moretón<su
 :email: José Alberto Benítez-Andrades. <_jbena AT  unileon  DOT es_>
 
 
-<sup>(1)</sup>  _SECOMUCI Research Group_, School of Industrial Engineering and Informatics.<br>
-<sup>(2)</sup>  _SALBIS Research Group_, Department of Electric, Systems and Automatics Engineering.
+<sup>(1)</sup>  _**SECOMUCI Research Group**_, School of Industrial Engineering and Informatics.<br>
+<sup>(2)</sup>  _**SALBIS Research Group**_, Department of Electric, Systems and Automatics Engineering.
 
 
 #### Keywords 
