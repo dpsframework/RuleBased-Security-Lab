@@ -113,7 +113,7 @@ Malware Analysis Laboratory example foccuses on implementation and testing of an
 
 
 ![](images/nidsBoardAgent-00.png)  
-<img src="images/nidsBoardAgent-00.png" width="180">
+<img src="images/nidsBoardAgent-00.png" width="180">     
 **Image 1.** Firt tab of GUI from a Blackboard-Class Agent named `NIDsBoardAgent`. 
 
 
