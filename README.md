@@ -70,59 +70,39 @@ Malware Analysis Laboratory example foccuses on implementation and testing of an
    * ` $ git remote remove origin`
 
 
-### 1.2aa How to run this _Malware-Analysis-Lab_ (Unix / OS X)
+### 1.2 How to run this _Malware-Analysis-Lab_
 
 1. Set **CLASSPATH** variable: 
-   * ` $  export CLASSPATH=lib/*:lib/pcap/*:  ` 
+   * ` $  export CLASSPATH=lib/*:lib/pcap/*:  ` (Unix / OS X)
+   * ` $  set    CLASSPATH=lib/*;lib/pcap/*;  ` (Windows OS)
 
 1. Launch the **JADE** multi-agent platform on **localhost** with: 
-   * ` $ java       launcher platform localhost  & `     
+   * ` $ java       launcher platform localhost  & `     (Linux & OS-X)
+   * ` $ start java launcher platform localhost `        (Windows)
 
-1. Launch a Blackboard-Class Agent **NIDsBoardAgent** with:
-   * ` $       java launcher board localhost NIDsBoardAgent  &`  
- 
-1. Launch an Analyzer-Class Agent **SsdpAgent501** with:
-   * ` $       java launcher stage-node localhost SsdpAgent501 CLIPS  &`  
+1. Launch a Blackboard-Class Agent with:
+   * ` $       java launcher board localhost NIDsBoardAgent  &`  (Linux & OS-X)
+   * ` $ start java launcher board localhost NIDsBoardAgent `    (Windows)
 
-1. Launch an Analyzer-Class Agent **SsdpAgent515** with:
-   * ` $       java launcher stage-node localhost SsdpAgent515 Jess  &` 
+1. Launch first Analyzer-Class Agent with:
+   * ` $       java launcher stage-node localhost SsdpAgent501 CLIPS  &`  (Linux & OS-X)
+   * ` $ start java launcher stage-node localhost SsdpAgent501 CLIPS `    (Windows)
 
-1. Launch an Reader-Monitor-Class Agent **WatchdogAgent201** with:
-   * ` $       java launcher monitor localhost WatchdogAgent201  &`  
+1. Launch second Analyzer-Class Agent with:
+   * ` $       java launcher stage-node localhost SsdpAgent515 Jess  &`  (Linux & OS-X)
+   * ` $ start java launcher stage-node localhost SsdpAgent515 Jess `    (Windows)
 
-1. From the graphical interface of the agents, raise their execution level up to `5`  with:
+1. Launch a Reader-Monitor-Class Agent with:
+   * ` $       java launcher monitor localhost WatchdogAgent201  &`  (Linux & OS-X)
+   * ` $ start java launcher monitor localhost WatchdogAgent201 `    (Windows)
+
+1. Raise the execution agents run-level up to `5`  with:
    * Click on button [5] on the menu bar.
 
 1. From command-line, start the malware scan with:
-   * ` $ cp    pcap/examples/case01.pcap   var/pending/.` 
+   * ` $ cp    pcap/examples/case01.pcap   var/pending/.`     (Linux & OS-X)
+   * ` $ copy  pcap/examples/case01.pcap   var/pending/. `    (Windows)
 
-
-
-### 1.2b How to run this _Malware-Analysis-Lab_ (Windows OS)
-
-1. Set **CLASSPATH** variable: 
-   * ` $  set    CLASSPATH=lib/*;lib/pcap/*;  ` 
-
-1. Launch the **JADE** multi-agent platform on **localhost** with: 
-   * ` $ start java launcher platform localhost `        
-
-1. Launch a Blackboard-Class Agent **NIDsBoardAgent** with:
-   * ` $ start java launcher board localhost NIDsBoardAgent `   
-
-1. Launch an Analyzer-Class Agent **SsdpAgent501** with:
-   * ` $ start java launcher stage-node localhost SsdpAgent501 CLIPS `  
-
-1. Launch an Analyzer-Class Agent **SsdpAgent515** with:
-   * ` $ start java launcher stage-node localhost SsdpAgent515 Jess `  
-
-1. Launch an Reader-Monitor-Class Agent **WatchdogAgent201** with:
-   * ` $ start java launcher monitor localhost WatchdogAgent201 `   
-
-1. From the graphical interface of the agents, raise their execution level up to `5`  with:
-   * Click on button [5] on the menu bar.
-
-1. From command-line, start the malware scan with:
-   * ` $ copy  pcap/examples/case01.pcap   var/pending/. `  
 
 
 
@@ -134,7 +114,7 @@ Malware Analysis Laboratory example foccuses on implementation and testing of an
 
 
 ![](images/nidsBoardAgent-00.png)  
-<img src="images/nidsBoardAgent-00.png" width="180">     
+<img src="images/nidsBoardAgent-00.png" width="340">     
 **Image 1.** Firt tab of GUI from a Blackboard-Class Agent named `NIDsBoardAgent`. 
 
 
