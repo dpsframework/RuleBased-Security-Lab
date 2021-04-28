@@ -17,14 +17,15 @@ Francisco José Aguayo‑Canela<sup>1</sup>  ·  Héctor Alaiz‑Moretón<su
 <sup>(1)</sup>  _**SECOMUCI Research Group**_, School of Industrial Engineering and Informatics.<br>
 <sup>(2)</sup>  _**SALBIS Research Group**_, Department of Electric, Systems and Automatics Engineering.
 
-  
-![Universidad de Leon - Spain](images/marca-logo-color.jpg)  
-Universidad de León[9] (_Spain_) 
-
 
 #### Keywords 
 
 Rule-based agent · Multi-agent systems · Intrusion detection system · Development environment
+
+
+![Universidad de Leon - Spain](images/marca-logo-color.jpg)  
+Universidad de León[9] (_Spain_) 
+
 
 
 ## 1. Example name: _Malware-Analysis-Lab_
