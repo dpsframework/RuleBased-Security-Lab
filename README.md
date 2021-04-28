@@ -113,10 +113,10 @@ Universidad de León (Spain)[9]
 
 
 
-### Blackboard-Class Agents screenshot
+### Blackboard-Class Agents screenshot gallery
 
 
-![](images/nidsBoardAgent-00.png)
+![](images/nidsBoardAgent-00.png)<br>
 **Image 1.** Firt tab of GUI from a Blackboard-Class Agent named `NIDsBoardAgent`. 
 
 
@@ -124,41 +124,41 @@ Universidad de León (Spain)[9]
 **Image 1 (Left-side).** The Blackboard-Class Agent named `NIDsBoardAgent`
 
 
-![](images/nidsBoardAgent-02.png)
+![](images/nidsBoardAgent-02.png)<br>
 **Image 1 (Rigth-side).** The Blackboard-Class Agent named `NIDsBoardAgent`
 
 
-![](images/nidsBoardAgent-211-01.png)
+![](images/nidsBoardAgent-211-01.png)<br>
 **Image 5.** `NIDsBoardAgent`: creation from command line 
 
 
-![](images/nidsBoardAgent-212-02.png)
+![](images/nidsBoardAgent-212-02.png)<br>
 **Image 6.** `NIDsBoardAgent`: launch the agent 
 
 
-![](images/nidsBoardAgent-213-01.png)
+![](images/nidsBoardAgent-213-01.png)<br>
 **Image 7.** `NIDsBoardAgent`: Development environment utilities incorporated into the blackboard agent (part 1). 
 
 
  
-![](images/nidsBoardAgent-213-02.png)
+![](images/nidsBoardAgent-213-02.png)<br>
 **Image 8.** `NIDsBoardAgent`: Development environment utilities incorporated into the blackboard agent (part 2). 
 
 
-![](images/nidsBoardAgent-213-03.png)
+![](images/nidsBoardAgent-213-03.png)<br>
 **Image 9.** `NIDsBoardAgent`: Development environment utilities incorporated into the blackboard agent (part 3). 
 
 
 
-![](images/nidsBoardAgent-213-04.png)
+![](images/nidsBoardAgent-213-04.png)<br>
 **Image 10.** `NIDsBoardAgent`: Development environment utilities incorporated into the blackboard agent (part 4). 
 
 
-![](images/nidsBoardAgent-213-05.png)
+![](images/nidsBoardAgent-213-05.png)<br>
 **Image 11.**  `NIDsBoardAgent`: Development environment utilities incorporated into the blackboard agent (part 5).
 
 
-![](images/nidsBoardAgent-213-06.png)
+![](images/nidsBoardAgent-213-06.png)<br>
 **Image 12.** `NIDsBoardAgent`: Development environment utilities incorporated into the blackboard agent (part 6).
 
 
@@ -171,7 +171,7 @@ Universidad de León (Spain)[9]
 
 
 
-### Analyzer-Class Agents screenshot
+### Analyzer-Class Agents screenshot gallery
 
 
 ![](images/ssdpAgent501-00.png)
@@ -210,7 +210,7 @@ Universidad de León (Spain)[9]
 
 
 
-### Reader-Monitor-Class Agents screenshot
+### Reader-Monitor-Class Agents screenshot gallery
 
 
 ![](images/watchdog201-00.png)
