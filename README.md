@@ -18,11 +18,6 @@ Francisco José Aguayo‑Canela<sup>1</sup>  ·  Héctor Alaiz‑Moretón<su
 <sup>(2)</sup>  _**SALBIS Research Group**_, Department of Electric, Systems and Automatics Engineering.
 
 
-#### Keywords 
-
-Rule-based agent · Multi-agent systems · Intrusion detection system · Development environment
-
-
 ![Universidad de Leon - Spain](images/marca-logo-color.jpg)  
 Universidad de León[9] (_Spain_) 
 
