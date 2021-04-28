@@ -23,7 +23,7 @@ Francisco José Aguayo‑Canela<sup>1</sup>  ·  Héctor Alaiz‑Moretón<su
 Rule-based agent · Multi-agent systems · Intrusion detection system · Development environment
 
 
-## Example name: _Malware-Analysis-Lab_
+## 1. Example name: _Malware-Analysis-Lab_
 
 
 > This _Malware Analysis Laboratory_ is an example of a distributed application made up of JADE Agents[1]. This example uses three main agent classes:
@@ -49,10 +49,10 @@ Universidad de León (Spain)[9]
 ----
 
    
-###  How to deploy and run this _Malware-Analysis-Lab_ 
+### 1.1. How to deploy and run this _Malware-Analysis-Lab_ 
 
 
-1. Download Middle-ware dpsFramework from:
+1. Download Middle-ware dpsFramework[7] from:
    * https://github.com/dpsframework/dpsFrameworkBuilder/releases/download/1.8/dpsFrameworkBuilder-full-1.8.jar
 
 1. Create a new Agent-Development Environment with: 
@@ -113,7 +113,7 @@ Universidad de León (Spain)[9]
 
 
 
-### Blackboard-Class Agents screenshot gallery
+### 1.2. Blackboard-Class Agents screenshot gallery
 
 
 ![](images/nidsBoardAgent-00.png)
@@ -171,7 +171,7 @@ Universidad de León (Spain)[9]
 
 
 
-### Analyzer-Class Agents screenshot gallery
+### 1.3. Analyzer-Class Agents screenshot gallery
 
 
 ![](images/ssdpAgent501-00.png)
@@ -210,7 +210,7 @@ Universidad de León (Spain)[9]
 
 
 
-### Reader-Monitor-Class Agents screenshot gallery
+### 1.4. Reader-Monitor-Class Agents screenshot gallery
 
 
 ![](images/watchdog201-00.png)
@@ -257,7 +257,7 @@ Universidad de León (Spain)[9]
 
 
 
-## References
+## 2. References
 
 
 
