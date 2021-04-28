@@ -16,7 +16,6 @@ Francisco José Aguayo‑Canela<sup>1</sup>  ·  Héctor Alaiz‑Moretón<su
 >   [2] _SALBIS Research Group_, Department of Electric, Systems and Automatics Engineering.
 
 
-
 #### Keywords 
 
 Rule-based agent · Multi-agent systems · Intrusion detection system · Development environment
@@ -36,7 +35,6 @@ Rule-based agent · Multi-agent systems · Intrusion detection system · Deve
 
 * **Reader-Monitor-Class**: They are agents with reading .PCAP file format capabilities. They can to transform datagram segments in (facts) format files, which are understandable by CLIPS[5] or Jess[6] inference engines.
 
-
  
 Malware Analysis Laboratory example foccuses on implementation and testing of an intrusion detection system which uses an agent-oriented distributed application deployment. It uses the JADE Framework[1] and the Middle-ware dpsFramework[7].  This example has been developed for demonstration and academic purposes only.
 
@@ -46,19 +44,8 @@ Malware Analysis Laboratory example foccuses on implementation and testing of an
 Universidad de León (Spain)[9] 
     
 
-
 ----
 
-
-
-
-
-
-
-
-
-
-  
    
 ###  How to deploy and run this _Malware-Analysis-Lab_ 
 
@@ -126,37 +113,23 @@ Universidad de León (Spain)[9]
 
 
 
-
-
-
-
-
-
-### 1. A Blackboard-Class NIDSBoard-Agent screenshot
-
+### Blackboard-Class Agents screenshot
 
 
 ![](images/nidsBoardAgent-00.png)
 **Image 1.** Firt tab of GUI from a Blackboard-Class Agent named `NIDsBoardAgent`. 
 
 
-
-
 ![](images/nidsBoardAgent-01.png)
 **Image 1 (Left-side).** The Blackboard-Class Agent named `NIDsBoardAgent`
-
-
 
 
 ![](images/nidsBoardAgent-02.png)
 **Image 1 (Rigth-side).** The Blackboard-Class Agent named `NIDsBoardAgent`
 
 
-
-
 ![](images/nidsBoardAgent-211-01.png)
 **Image 5.** `NIDsBoardAgent`: creation from command line 
-
 
 
 ![](images/nidsBoardAgent-212-02.png)
@@ -167,13 +140,9 @@ Universidad de León (Spain)[9]
 **Image 7.** `NIDsBoardAgent`: Development environment utilities incorporated into the blackboard agent (part 1). 
 
 
-
  
 ![](images/nidsBoardAgent-213-02.png)
 **Image 8.** `NIDsBoardAgent`: Development environment utilities incorporated into the blackboard agent (part 2). 
-
-
-
 
 
 ![](images/nidsBoardAgent-213-03.png)
@@ -181,24 +150,12 @@ Universidad de León (Spain)[9]
 
 
 
-
-
-
-
-
-
 ![](images/nidsBoardAgent-213-04.png)
 **Image 10.** `NIDsBoardAgent`: Development environment utilities incorporated into the blackboard agent (part 4). 
 
 
-
-
-
-
- 
 ![](images/nidsBoardAgent-213-05.png)
 **Image 11.**  `NIDsBoardAgent`: Development environment utilities incorporated into the blackboard agent (part 5).
-
 
 
 ![](images/nidsBoardAgent-213-06.png)
@@ -214,13 +171,11 @@ Universidad de León (Spain)[9]
 
 
 
-### 2. Analyzer-Class Agents `SsdpAgent501` screenshot
+### Analyzer-Class Agents screenshot
 
 
 ![](images/ssdpAgent501-00.png)
 **Image 2.** Analyzer-Class  Agent `SsdpAgent501` with integrated expert-system: detail file loading sequence of rules that make up the expert system called `CLISP.UDP-Loader.clp`
-
-
 
 
 
@@ -229,12 +184,8 @@ Universidad de León (Spain)[9]
 
 
 
-
-
 ![](images/ssdpAgent501-222-01.png)
 **Image 14.** `SsdpAgentXXX`: Incorporation of **Detailed Report ** with dates and identifiers of the datagrams that have produced the alert. 
-
-
 
 
 
@@ -242,15 +193,9 @@ Universidad de León (Spain)[9]
 **Image 15.** `SsdpAgentXXX`: Editing the load behavior of the capabilities `acpb` agent expert system Integrated (part 1).
 
 
-
-
-
-
  
 ![](images/ssdpAgent501-222-03.png)
 **Image 16.** `SsdpAgentXXX`: Editing the load behavior of the capabilities `acpb` agent expert system Integrated (part 2).
-
-
 
 
  
@@ -265,57 +210,15 @@ Universidad de León (Spain)[9]
 
 
 
-
-
-
-
-
+### Reader-Monitor-Class Agents screenshot
 
 
 ![](images/watchdog201-00.png)
 **Image 3.** Analyzer-Class Agent `WatchdogAgent201` file reading and conversion agent.
 
 
-
-
-
-
 ![](images/rmaJade1099-00.png)
 **Image 4.** JADE RMA agent: detail of the distributed application `Malware-Analysis-Lab`, deployed on JADE multi-agent platform. 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -324,10 +227,8 @@ Universidad de León (Spain)[9]
 
 
 
-
 ![](images/watchdogAgent201-231-01.png)
 **Image 19.** `WatchdogAgentXXX`: Wireshark .pcap file detailed results about datagrams.
-
 
 
 
@@ -336,12 +237,8 @@ Universidad de León (Spain)[9]
 
 
 
-
 ![](images/watchdogAgent201-231-03.png)
 **Image 21.** `WatchdogAgentXXX`: how develop new Behaviours on Java files.
-
-
-
 
 
 
@@ -349,14 +246,9 @@ Universidad de León (Spain)[9]
 **Image 22.** `WatchdogAgentXXX`: how to customize agent properties.
 
 
-
-
  
 ![](images/watchdogAgent201-231-05.png)
 **Image 23.** `WatchdogAgentXXX`: how to build new test.
-
-
-
 
 
 
