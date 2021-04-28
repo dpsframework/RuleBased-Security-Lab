@@ -18,7 +18,7 @@ Francisco José Aguayo‑Canela<sup>1</sup>  ·  Héctor Alaiz‑Moretón<su
 <sup>(2)</sup>  _**SALBIS Research Group**_, Department of Electric, Systems and Automatics Engineering.
 
   
-![Universidad de Leon - Spain](images/marca-logo-color.jpg)  <br>
+![Universidad de Leon - Spain](images/marca-logo-color.jpg)  
 Universidad de León[9] (_Spain_) 
 
 
@@ -75,7 +75,7 @@ Malware Analysis Laboratory example foccuses on implementation and testing of an
    * ` $ git remote remove origin`
 
 
-#### Running this _Malware-Analysis-Lab_
+### 1.2 How to run this _Malware-Analysis-Lab_
 
 1. Set **CLASSPATH** variable: 
    * ` $  export CLASSPATH=lib/*:lib/pcap/*:  ` (Unix / OS X)
@@ -110,7 +110,7 @@ Malware Analysis Laboratory example foccuses on implementation and testing of an
 
 
 
-### 1.2. Blackboard-Class Agents screenshot gallery
+### 1.3. Blackboard-Class Agents screenshot gallery
 
 
 ![](images/nidsBoardAgent-00.png)
@@ -168,7 +168,7 @@ Malware Analysis Laboratory example foccuses on implementation and testing of an
 
 
 
-### 1.3. Analyzer-Class Agents screenshot gallery
+### 1.4. Analyzer-Class Agents screenshot gallery
 
 
 ![](images/ssdpAgent501-00.png)
@@ -207,7 +207,7 @@ Malware Analysis Laboratory example foccuses on implementation and testing of an
 
 
 
-### 1.4. Reader-Monitor-Class Agents screenshot gallery
+### 1.5. Reader-Monitor-Class Agents screenshot gallery
 
 
 ![](images/watchdog201-00.png)
