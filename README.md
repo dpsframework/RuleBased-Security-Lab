@@ -60,12 +60,12 @@ Universidad de León (Spain)[9]
 
   
    
-###  How to deploy and run a _Malware-Analysis-Lab_
+###  How to deploy and run this _Malware-Analysis-Lab_ 
 
 
 1. Download Middle-ware dpsFramework:
-   * From URL Website [https://github.com/dpsframework/...](https://github.com/dpsframework/dpsFrameworkBuilder/releases)
-   * From command-line:
+  * From URL Website [https://github.com/dpsframework/...](https://github.com/dpsframework/dpsFrameworkBuilder/releases)
+  * Or, from command-line:
      ` $ wget https://github.com/dpsframework/dpsFrameworkBuilder/releases/download/1.8/dpsFrameworkBuilder-full-1.8.jar`
 
 1. Create a new Agent-Development Environment: 
