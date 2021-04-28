@@ -93,13 +93,15 @@ Malware Analysis Laboratory example foccuses on implementation and testing of an
    * ` $ start java launcher stage-node localhost SsdpAgent515 Jess `    (Windows)
 
 1. Launch a Reader-Monitor-Class Agent with:
-  * ` $       java launcher monitor localhost WatchdogAgent201  &`  (Linux & OS-X)
-  * ` $ start java launcher monitor localhost WatchdogAgent201 `    (Windows)
+   * ` $       java launcher monitor localhost WatchdogAgent201  &`  (Linux & OS-X)
+   * ` $ start java launcher monitor localhost WatchdogAgent201 `    (Windows)
+
 1. Raise the execution level of agents to `5` with:
-  * Click on button [5] on the menu bar.
+   * Click on button [5] on the menu bar.
+
 1. From command-line, start the malware scan with:
-  * ` $ cp    pcap/examples/case01.pcap   var/pending/.`     (Linux & OS-X)
-  * ` $ copy  pcap/examples/case01.pcap   var/pending/. `    (Windows)
+   * ` $ cp    pcap/examples/case01.pcap   var/pending/.`     (Linux & OS-X)
+   * ` $ copy  pcap/examples/case01.pcap   var/pending/. `    (Windows)
 
 
 
