@@ -114,49 +114,49 @@ Malware Analysis Laboratory example foccuses on implementation and testing of an
 ### 1.3. Blackboard-Class Agents screenshot gallery
 
 
-![](images/nidsBoardAgent-00.png)
+![](images/nidsBoardAgent-00.png)    
 **Image 1.** Firt tab of GUI from a Blackboard-Class Agent named `NIDsBoardAgent`. 
 
 
-![](images/nidsBoardAgent-01.png)
+![](images/nidsBoardAgent-01.png)    
 **Image 1 (Left-side).** The Blackboard-Class Agent named `NIDsBoardAgent`
 
 
-![](images/nidsBoardAgent-02.png)
+![](images/nidsBoardAgent-02.png)    
 **Image 1 (Rigth-side).** The Blackboard-Class Agent named `NIDsBoardAgent`
 
 
-![](images/nidsBoardAgent-211-01.png)
+![](images/nidsBoardAgent-211-01.png)    
 **Image 5.** `NIDsBoardAgent`: creation from command line 
 
 
-![](images/nidsBoardAgent-212-02.png)
+![](images/nidsBoardAgent-212-02.png)    
 **Image 6.** `NIDsBoardAgent`: launch the agent 
 
 
-![](images/nidsBoardAgent-213-01.png)
+![](images/nidsBoardAgent-213-01.png)    
 **Image 7.** `NIDsBoardAgent`: Development environment utilities incorporated into the blackboard agent (part 1). 
 
 
  
-![](images/nidsBoardAgent-213-02.png)
+![](images/nidsBoardAgent-213-02.png)    
 **Image 8.** `NIDsBoardAgent`: Development environment utilities incorporated into the blackboard agent (part 2). 
 
 
-![](images/nidsBoardAgent-213-03.png)
+![](images/nidsBoardAgent-213-03.png)    
 **Image 9.** `NIDsBoardAgent`: Development environment utilities incorporated into the blackboard agent (part 3). 
 
 
 
-![](images/nidsBoardAgent-213-04.png)
+![](images/nidsBoardAgent-213-04.png)    
 **Image 10.** `NIDsBoardAgent`: Development environment utilities incorporated into the blackboard agent (part 4). 
 
 
-![](images/nidsBoardAgent-213-05.png)
+![](images/nidsBoardAgent-213-05.png)    
 **Image 11.**  `NIDsBoardAgent`: Development environment utilities incorporated into the blackboard agent (part 5).
 
 
-![](images/nidsBoardAgent-213-06.png)
+![](images/nidsBoardAgent-213-06.png)    
 **Image 12.** `NIDsBoardAgent`: Development environment utilities incorporated into the blackboard agent (part 6).
 
 
@@ -172,32 +172,32 @@ Malware Analysis Laboratory example foccuses on implementation and testing of an
 ### 1.4. Analyzer-Class Agents screenshot gallery
 
 
-![](images/ssdpAgent501-00.png)
+![](images/ssdpAgent501-00.png)    
 **Image 2.** Analyzer-Class  Agent `SsdpAgent501` with integrated expert-system: detail file loading sequence of rules that make up the expert system called `CLISP.UDP-Loader.clp`
 
 
 
-![](images/ssdpAgent501-221-01.png)
+![](images/ssdpAgent501-221-01.png)    
 **Image 13.** `SsdpAgentXXX`: create from command line
 
 
 
-![](images/ssdpAgent501-222-01.png)
+![](images/ssdpAgent501-222-01.png)    
 **Image 14.** `SsdpAgentXXX`: Incorporation of **Detailed Report ** with dates and identifiers of the datagrams that have produced the alert. 
 
 
 
-![](images/ssdpAgent501-222-02.png)
+![](images/ssdpAgent501-222-02.png)    
 **Image 15.** `SsdpAgentXXX`: Editing the load behavior of the capabilities `acpb` agent expert system Integrated (part 1).
 
 
  
-![](images/ssdpAgent501-222-03.png)
+![](images/ssdpAgent501-222-03.png)    
 **Image 16.** `SsdpAgentXXX`: Editing the load behavior of the capabilities `acpb` agent expert system Integrated (part 2).
 
 
  
-![](images/ssdpAgent501-222-04.png)
+![](images/ssdpAgent501-222-04.png)    
 **Image 17.** `SsdpAgentXXX`: Activation of the `acpb` behavior aimed at initializing the Agent's Capabilities with an expert system. 
 
 
@@ -211,41 +211,41 @@ Malware Analysis Laboratory example foccuses on implementation and testing of an
 ### 1.5. Reader-Monitor-Class Agents screenshot gallery
 
 
-![](images/watchdog201-00.png)
+![](images/watchdog201-00.png)    
 **Image 3.** Analyzer-Class Agent `WatchdogAgent201` file reading and conversion agent.
 
 
-![](images/rmaJade1099-00.png)
+![](images/rmaJade1099-00.png)    
 **Image 4.** JADE RMA agent: detail of the distributed application `Malware-Analysis-Lab`, deployed on JADE multi-agent platform. 
 
 
 
-![](images/watchdogAgent201-231-00.png)
+![](images/watchdogAgent201-231-00.png)    
 **Image 18.** `WatchdogAgentXXX`: launch test to read Wireshark .pcap files.
 
 
 
-![](images/watchdogAgent201-231-01.png)
+![](images/watchdogAgent201-231-01.png)    
 **Image 19.** `WatchdogAgentXXX`: Wireshark .pcap file detailed results about datagrams.
 
 
 
-![](images/watchdogAgent201-231-02.png)
+![](images/watchdogAgent201-231-02.png)    
 **Image 20.** `WatchdogAgentXXX`: how to make a new Service inside of agents.
 
 
 
-![](images/watchdogAgent201-231-03.png)
+![](images/watchdogAgent201-231-03.png)    
 **Image 21.** `WatchdogAgentXXX`: how develop new Behaviours on Java files.
 
 
 
-![](images/watchdogAgent201-231-04.png)
+![](images/watchdogAgent201-231-04.png)    
 **Image 22.** `WatchdogAgentXXX`: how to customize agent properties.
 
 
  
-![](images/watchdogAgent201-231-05.png)
+![](images/watchdogAgent201-231-05.png)    
 **Image 23.** `WatchdogAgentXXX`: how to build new test.
 
 
