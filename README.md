@@ -51,7 +51,7 @@ Malware Analysis Laboratory example foccuses on implementation and testing of an
    * https://github.com/dpsframework/dpsFrameworkBuilder/releases/download/1.8/dpsFrameworkBuilder-full-1.8.jar
 
 1. Create a new Agent-Development Environment with: 
-   * ` $ java -jar dpsFrameworkBuilder-full-1.8.jar --new=Malware-Analysis-Lab`
+   * ` $ java -jar dpsFrameworkBuilder-full-1.8.jar   --new=Malware-Analysis-Lab`
    * ` $ cd Malware-Analysis-Lab`
 
 1. Adapt application skeleton to the new Agents of this example with: 
@@ -93,15 +93,16 @@ Malware Analysis Laboratory example foccuses on implementation and testing of an
    * ` $ start java launcher stage-node localhost SsdpAgent515 Jess `    (Windows)
 
 1. Launch a Reader-Monitor-Class Agent with:
-   * ` $       java launcher monitor localhost WatchdogAgent201  &`  (Linux & OS-X)
-   * ` $ start java launcher monitor localhost WatchdogAgent201 `    (Windows)
-
-1. Raise the execution agents run-level up to `5`  with:
-   * Click on button [5] on the menu bar.
-
+  * ` $       java launcher monitor localhost WatchdogAgent201  &`  (Linux & OS-X)
+  * ` $ start java launcher monitor localhost WatchdogAgent201 `    (Windows)
+1. Raise the execution level of agents to `5` with:
+  * Click on button [5] on the menu bar.
 1. From command-line, start the malware scan with:
-   * ` $ cp    pcap/examples/case01.pcap   var/pending/.`     (Linux & OS-X)
-   * ` $ copy  pcap/examples/case01.pcap   var/pending/. `    (Windows)
+  * ` $ cp    pcap/examples/case01.pcap   var/pending/.`     (Linux & OS-X)
+  * ` $ copy  pcap/examples/case01.pcap   var/pending/. `    (Windows)
+
+
+
 
 
 
@@ -110,11 +111,7 @@ Malware Analysis Laboratory example foccuses on implementation and testing of an
 ### 1.3. Blackboard-Class Agents screenshot gallery
 
 
-
-
-
-![](images/nidsBoardAgent-00.png)  
-<img src="images/nidsBoardAgent-00.png" width="340">     
+![](images/nidsBoardAgent-00.png)     
 **Image 1.** Firt tab of GUI from a Blackboard-Class Agent named `NIDsBoardAgent`. 
 
 
