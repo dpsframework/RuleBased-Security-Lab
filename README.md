@@ -52,20 +52,18 @@ Universidad de León (Spain)[9]
 ###  How to deploy and run this _Malware-Analysis-Lab_ 
 
 
-1. Download Middle-ware dpsFramework:
-   * [From URL Website.](https://github.com/dpsframework/dpsFrameworkBuilder/releases)
-   * From command-line:
-     ` $ wget https://github.com/dpsframework/dpsFrameworkBuilder/releases/download/1.8/dpsFrameworkBuilder-full-1.8.jar`
+1. Download Middle-ware dpsFramework from:
+   * https://github.com/dpsframework/dpsFrameworkBuilder/releases/download/1.8/dpsFrameworkBuilder-full-1.8.jar
 
-1. Create a new Agent-Development Environment: 
+1. Create a new Agent-Development Environment with: 
    * ` $ java -jar dpsFrameworkBuilder-full-1.8.jar --new=Malware-Analysis-Lab`
    * ` $ cd Malware-Analysis-Lab`
 
-1. Adapt application skeleton to the new Agents of this example: 
+1. Adapt application skeleton to the new Agents of this example with: 
    * ` $ mv README.md   README.old`
    * ` $ mv config      config_Old`
 
-1. Initialize the Git local of _Malware-Analysis-Lab_ repository with:
+1. Initialize the Git _Malware-Analysis-Lab_ local repository with:
    * ` $ git init . `
 
 1. Update _Malware-Analysis-Lab_ local repository with:
@@ -73,7 +71,7 @@ Universidad de León (Spain)[9]
    * ` $ git remote add origin https://github.com/dpsframework/Malware-Analysis-Lab.git`
    * ` $ git pull origin master`
 
-1. Remove the remote repository of _Malware-Analysis-Lab_ with:
+1. Remove the remote-repository from _Malware-Analysis-Lab_ with:
    * ` $ git remote remove origin`
 
 
