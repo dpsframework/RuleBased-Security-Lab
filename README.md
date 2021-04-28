@@ -43,7 +43,7 @@ Malware Analysis Laboratory example foccuses on implementation and testing of an
    
 ![Universidad de Leon - Spain](images/marca-logo-color.jpg)
 
-Universidad de León (Spain)[9] 
+Universidad de León[9] (_Spain_) 
     
 
 ----
@@ -52,7 +52,7 @@ Universidad de León (Spain)[9]
 ### 1.1. How to deploy and run this _Malware-Analysis-Lab_ 
 
 
-1. Download Middle-ware dpsFramework[7] from:
+1. Download dpsFramework[7] middleware  from:
    * https://github.com/dpsframework/dpsFrameworkBuilder/releases/download/1.8/dpsFrameworkBuilder-full-1.8.jar
 
 1. Create a new Agent-Development Environment with: 
