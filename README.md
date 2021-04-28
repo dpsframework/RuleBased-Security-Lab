@@ -47,12 +47,12 @@ Malware Analysis Laboratory example foccuses on implementation and testing of an
 ### 1.1. How to deploy this _Malware-Analysis-Lab_ 
 
 
-#### 1. Download dpsFramework[7] middleware  from:
-* https://github.com/dpsframework/dpsFrameworkBuilder/releases/download/1.8/dpsFrameworkBuilder-full-1.8.jar
+1. Download dpsFramework[7] middleware  from:
+   * https://github.com/dpsframework/dpsFrameworkBuilder/releases/download/1.8/dpsFrameworkBuilder-full-1.8.jar
 
-#### 1. Create a new Agent-Development environment with: 
-* ` $ java -jar dpsFrameworkBuilder-full-1.8.jar   --new=Malware-Analysis-Lab`
-* ` $ cd Malware-Analysis-Lab`
+1. Create a new Agent-Development environment with: 
+   * ` $ java -jar dpsFrameworkBuilder-full-1.8.jar   --new=Malware-Analysis-Lab`
+   * ` $ cd Malware-Analysis-Lab`
 
 1. Adapt application skeleton to the new Agents of this example with: 
    * ` $ mv README.md   README.old`
