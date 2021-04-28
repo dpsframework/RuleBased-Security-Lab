@@ -49,26 +49,26 @@ Malware Analysis Laboratory example foccuses on implementation and testing of an
 
 
 1. Download dpsFramework[7] middleware  from:
-  * https://github.com/dpsframework/dpsFrameworkBuilder/releases/download/1.8/dpsFrameworkBuilder-full-1.8.jar
+   * https://github.com/dpsframework/dpsFrameworkBuilder/releases/download/1.8/dpsFrameworkBuilder-full-1.8.jar
 
 1. Create a new Agent-Development Environment with: 
-  * ` $ java -jar dpsFrameworkBuilder-full-1.8.jar --new=Malware-Analysis-Lab`
-  * ` $ cd Malware-Analysis-Lab`
+   * ` $ java -jar dpsFrameworkBuilder-full-1.8.jar --new=Malware-Analysis-Lab`
+   * ` $ cd Malware-Analysis-Lab`
 
 1. Adapt application skeleton to the new Agents of this example with: 
-  * ` $ mv README.md   README.old`
-  * ` $ mv config      config_Old`
+   * ` $ mv README.md   README.old`
+   * ` $ mv config      config_Old`
 
 1. Initialize the Git _Malware-Analysis-Lab_ local repository with:
-  * ` $ git init . `
+   * ` $ git init . `
 
 1. Update _Malware-Analysis-Lab_ local repository with:
-  * ` $ git branch -M master`
-  * ` $ git remote add origin https://github.com/dpsframework/Malware-Analysis-Lab.git`
-  * ` $ git pull origin master`
+   * ` $ git branch -M master`
+   * ` $ git remote add origin https://github.com/dpsframework/Malware-Analysis-Lab.git`
+   * ` $ git pull origin master`
 
 1. Remove the remote-repository from _Malware-Analysis-Lab_ with:
-  * ` $ git remote remove origin`
+   * ` $ git remote remove origin`
 
 
 ### 1.2 How to run this _Malware-Analysis-Lab_
