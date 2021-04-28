@@ -1,5 +1,5 @@
 
-## Document:  _Enriched multi‑agent middleware for building rule‑based distributed security solutions for IoT environments_
+## Document title:  _Enriched multi‑agent middleware for building rule‑based distributed security solutions for IoT environments_
 
 The Journal of Supercomputing
 
@@ -22,7 +22,7 @@ Francisco José Aguayo‑Canela<sup>1</sup>  ·  Héctor Alaiz‑Moretón<su
 Rule-based agent · Multi-agent systems · Intrusion detection system · Development environment
 
 
-## Example: _Malware-Analysis-Lab_
+## Example name: _Malware-Analysis-Lab_
 
 
 > This _Malware Analysis Laboratory_ is an example of a distributed application made up of JADE Agents[1]. This example uses three main agent classes:
@@ -48,6 +48,216 @@ Universidad de León (Spain)[9]
 
 
 ----
+
+
+
+
+
+
+
+
+
+
+  
+   
+##  How to deploy and run a _Malware-Analysis-Lab_
+
+
+1. Download Middle-ware dpsFramework.
+   * [From URL Website https://github.com/dpsframework/...](https://github.com/dpsframework/dpsFrameworkBuilder/releases)
+   * From command-line:
+     $ wget https://github.com/dpsframework/dpsFrameworkBuilder/releases/download/1.8/dpsFrameworkBuilder-full-1.8.jar
+
+
+2. 
+
+
+
+
+### 3.2. Set the CLASSPATH variable: 
+
+```bash
+  $ export CLASSPATH=lib/*:      (Unix / OS X)
+  > set    CLASSPATH=lib/*;      (Windows OS)
+```
+
+
+
+### 3.3. Create a new agent-development environment: 
+
+```bash
+  $ java -jar dpsFrameworkBuilder-full-1.8.jar --new=My-Agent-App
+  $ cd My-Agent-App
+```
+
+ 
+
+
+  
+   
+##  4. How to create this `Malware-Analysis-Lab` application example
+
+Step-by-step installation process detail: 
+
+### 4.1. Download Middle-ware  dpsFramework: [dpsFrameworkBuilder-full-1.8.jar]
+
+  * From: https://github.com/dpsframework/dpsFrameworkBuilder/releases/tag/1.8
+  * Or from command-line with:
+
+```bash
+  $ wget https://github.com/dpsframework/dpsFrameworkBuilder/releases/download/1.8/dpsFrameworkBuilder-full-1.8.jar
+```
+
+
+
+
+### 4.2. Set the CLASSPATH variable: 
+
+```bash
+  $ export CLASSPATH=lib/*:lib/pcap/*:      (Unix / OS X)
+  > set    CLASSPATH=lib/*;lib/pcap/*;      (Windows OS)
+```
+
+
+
+### 4.3. Create a new JADE application: 
+
+```bash
+  $ java -jar dpsFrameworkBuilder-full-1.8.jar --new=Malware-Analysis-Lab
+```
+
+
+
+
+### 4.4. Prepare this new application, to incorporate the agents into it: 
+
+```bash
+  $ cd Malware-Analysis-Lab
+  $ mv README.md   README.md_APP
+  $ mv config      config_APP
+  $ git init .
+```
+        
+        
+
+
+### 4.5. Update local Working-directory with this GitHub repository: 
+
+
+```bash
+  $ git branch -M master
+  $ git remote add origin https://github.com/dpsframework/Malware-Analysis-Lab.git
+  $ git pull origin master
+```
+
+
+
+
+### 4.6. (Optional) Freeing local Working-directory from GitHub's `origin`
+
+
+```bash
+  $ git remote remove origin
+```
+
+
+
+
+
+## 5. How to deploy this `Malware-Analysis-Lab` application example
+
+From command-line and on the application directory `Malware-Analysis-Lab` type:
+
+
+### 5.1. Launch of JADE multi-agent platform on `localhost`: 
+
+```bash
+  $      java launcher platform localhost  &        (Linux  and  OS X)
+  
+ > start java launcher platform localhost           (Windows OS)
+```
+
+### 5.2. Launch **Class-A**: Blackboard agent `NIDsBoardAgent`:
+
+```bash
+  $      java launcher board localhost NIDsBoardAgent  &     (Linux  and  OS X)
+  
+ > start ...                                                 (Windows OS)
+```
+
+### 5.3. Launch of **Class-B**: Agents with integrated expert-system: `SsdpAgentXXX`:
+
+```bash
+  $   java launcher stage-node localhost SsdpAgent501  CLIPS   &      (Linux  and  OS X)
+  $   java launcher stage-node localhost SsdpAgent515   JESS   &      (Linux  and  OS X)
+
+ > start java launcher stage-node localhost SsdpAgent501  CLIPS       (Windows OS)
+ > start java launcher stage-node localhost SsdpAgent515  JESS        (Windows OS)
+ 
+```
+
+
+### 5.4. Launch of **Class-C**: Wireshark[4] file reading and conversion agents in .PCAP format. `WatchdogAgentYYY`:
+
+```bash
+  $   java launcher monitor localhost WatchdogAgent201  &     (Linux  and  OS X)
+
+
+ > start ...                                                  (Windows OS)
+```
+
+ 
+      
+ 
+
+        
+
+      
+
+## 6. How to put the application  `Malware-Analysis-Lab` into operation 
+
+
+### 6.1. Raising the level of execution of Agents to "5": 
+
+    * (With mouse ...) From the graphical interface of the agents, click on button [5] on the menu bar. 
+                              
+
+
+### 6.2. Start malware scan: 
+
+
+```bash
+  $ cp  pcap/examples/case01.pcap   var/pending/.     (Linux  and  OS X)
+  $ cp  pcap/examples/case02.pcap   var/pending/.
+
+ > copy ...                                           (Windows OS)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -496,201 +706,6 @@ public class BoardGridLocal extends OneShotBehaviour {
 
 
 
-
-
-  
-   
-##  3. How to build an agent-development environment with `dpsFramework`
-
-
-### 3.1. Download Middle-ware  dpsFramework: [dpsFrameworkBuilder-full-1.8.jar]
-
-  * From URL Web: https://github.com/dpsframework/dpsFrameworkBuilder/releases/tag/1.8
-  * Or, from command-line with:
-
-```bash
-  $ wget https://github.com/dpsframework/dpsFrameworkBuilder/releases/download/1.8/dpsFrameworkBuilder-full-1.8.jar
-```
-
-
-
-
-### 3.2. Set the CLASSPATH variable: 
-
-```bash
-  $ export CLASSPATH=lib/*:      (Unix / OS X)
-  > set    CLASSPATH=lib/*;      (Windows OS)
-```
-
-
-
-### 3.3. Create a new agent-development environment: 
-
-```bash
-  $ java -jar dpsFrameworkBuilder-full-1.8.jar --new=My-Agent-App
-  $ cd My-Agent-App
-```
-
- 
-
-
-  
-   
-##  4. How to create this `Malware-Analysis-Lab` application example
-
-Step-by-step installation process detail: 
-
-### 4.1. Download Middle-ware  dpsFramework: [dpsFrameworkBuilder-full-1.8.jar]
-
-  * From: https://github.com/dpsframework/dpsFrameworkBuilder/releases/tag/1.8
-  * Or from command-line with:
-
-```bash
-  $ wget https://github.com/dpsframework/dpsFrameworkBuilder/releases/download/1.8/dpsFrameworkBuilder-full-1.8.jar
-```
-
-
-
-
-### 4.2. Set the CLASSPATH variable: 
-
-```bash
-  $ export CLASSPATH=lib/*:lib/pcap/*:      (Unix / OS X)
-  > set    CLASSPATH=lib/*;lib/pcap/*;      (Windows OS)
-```
-
-
-
-### 4.3. Create a new JADE application: 
-
-```bash
-  $ java -jar dpsFrameworkBuilder-full-1.8.jar --new=Malware-Analysis-Lab
-```
-
-
-
-
-### 4.4. Prepare this new application, to incorporate the agents into it: 
-
-```bash
-  $ cd Malware-Analysis-Lab
-  $ mv README.md   README.md_APP
-  $ mv config      config_APP
-  $ git init .
-```
-        
-        
-
-
-### 4.5. Update local Working-directory with this GitHub repository: 
-
-
-```bash
-  $ git branch -M master
-  $ git remote add origin https://github.com/dpsframework/Malware-Analysis-Lab.git
-  $ git pull origin master
-```
-
-
-
-
-### 4.6. (Optional) Freeing local Working-directory from GitHub's `origin`
-
-
-```bash
-  $ git remote remove origin
-```
-
-
-
-
-
-## 5. How to deploy this `Malware-Analysis-Lab` application example
-
-From command-line and on the application directory `Malware-Analysis-Lab` type:
-
-
-### 5.1. Launch of JADE multi-agent platform on `localhost`: 
-
-```bash
-  $      java launcher platform localhost  &        (Linux  and  OS X)
-  
- > start java launcher platform localhost           (Windows OS)
-```
-
-### 5.2. Launch **Class-A**: Blackboard agent `NIDsBoardAgent`:
-
-```bash
-  $      java launcher board localhost NIDsBoardAgent  &     (Linux  and  OS X)
-  
- > start ...                                                 (Windows OS)
-```
-
-### 5.3. Launch of **Class-B**: Agents with integrated expert-system: `SsdpAgentXXX`:
-
-```bash
-  $   java launcher stage-node localhost SsdpAgent501  CLIPS   &      (Linux  and  OS X)
-  $   java launcher stage-node localhost SsdpAgent515   JESS   &      (Linux  and  OS X)
-
- > start java launcher stage-node localhost SsdpAgent501  CLIPS       (Windows OS)
- > start java launcher stage-node localhost SsdpAgent515  JESS        (Windows OS)
- 
-```
-
-
-### 5.4. Launch of **Class-C**: Wireshark[4] file reading and conversion agents in .PCAP format. `WatchdogAgentYYY`:
-
-```bash
-  $   java launcher monitor localhost WatchdogAgent201  &     (Linux  and  OS X)
-
-
- > start ...                                                  (Windows OS)
-```
-
- 
-      
- 
-
-        
-
-      
-
-## 6. How to put the application  `Malware-Analysis-Lab` into operation 
-
-
-### 6.1. Raising the level of execution of Agents to "5": 
-
-    * (With mouse ...) From the graphical interface of the agents, click on button [5] on the menu bar. 
-                              
-
-
-### 6.2. Start malware scan: 
-
-
-```bash
-  $ cp  pcap/examples/case01.pcap   var/pending/.     (Linux  and  OS X)
-  $ cp  pcap/examples/case02.pcap   var/pending/.
-
- > copy ...                                           (Windows OS)
-```
-
-
-
-
-----
-
-
-
-## 7. Conclusions  
-
-* This example is currently in development process.
-  * Last revision: April 2nd, 2021.
-
-
-* Appendix B. GNU General Public License: NO WARRANTY
-  * 11. BECAUSE THE PROGRAM IS LICENSED FREE OF CHARGE, THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
-
-  * 12. IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY AND/OR REDISTRIBUTE THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED TO LOSS OF DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS), EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
 
 
 
