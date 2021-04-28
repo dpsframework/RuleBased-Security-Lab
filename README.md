@@ -68,17 +68,9 @@ Universidad de León (Spain)[9]
    * From command-line:
      $ wget https://github.com/dpsframework/dpsFrameworkBuilder/releases/download/1.8/dpsFrameworkBuilder-full-1.8.jar
 
-
-2. 
-
-
-
-
-### 3.2. Set the CLASSPATH variable: 
-
-```bash
-  $ export CLASSPATH=lib/*:      (Unix / OS X)
-  > set    CLASSPATH=lib/*;      (Windows OS)
+1. Set the CLASSPATH variable: 
+   *  $  export CLASSPATH=lib/*:      (Unix / OS X)
+   *  >> set    CLASSPATH=lib/*;      (Windows OS)
 ```
 
 
