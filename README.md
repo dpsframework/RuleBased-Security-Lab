@@ -64,7 +64,7 @@ Universidad de León (Spain)[9]
 
 
 1. Download Middle-ware dpsFramework:
-   * [From URL Website https://github.com/dpsframework/...](https://github.com/dpsframework/dpsFrameworkBuilder/releases)
+   * From URL Website [https://github.com/dpsframework/...](https://github.com/dpsframework/dpsFrameworkBuilder/releases)
    * From command-line:
      ` $ wget https://github.com/dpsframework/dpsFrameworkBuilder/releases/download/1.8/dpsFrameworkBuilder-full-1.8.jar`
 
@@ -73,22 +73,22 @@ Universidad de León (Spain)[9]
    * ` $ cd Malware-Analysis-Lab`
 
 1. Adapt application skeleton to the new Agents of this example: 
-   * ` $ mv README.md   README.old
-   * ` $ mv config      config_Old
+   * ` $ mv README.md   README.old`
+   * ` $ mv config      config_Old`
 
-1. Initialize the Git local repository:
+1. Initialize the Git local of _Malware-Analysis-Lab_ repository with:
    * ` $ git init . `
 
 1. Set CLASSPATH variable: 
    * ` $  export CLASSPATH=lib/*:lib/pcap/*:  ` (Unix / OS X)
    * ` $  set    CLASSPATH=lib/*;lib/pcap/*;  ` (Windows OS)
 
-1. Update this local repository with:
+1. Update _Malware-Analysis-Lab_ local repository with:
    * ` $ git branch -M master`
    * ` $ git remote add origin https://github.com/dpsframework/Malware-Analysis-Lab.git`
    * ` $ git pull origin master`
 
-1. Remove that remote repository with:
+1. Remove the remote repository of _Malware-Analysis-Lab_ with:
    * ` $ git remote remove origin`
 
 
