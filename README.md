@@ -79,10 +79,6 @@ Universidad de León (Spain)[9]
 1. Initialize the Git local of _Malware-Analysis-Lab_ repository with:
    * ` $ git init . `
 
-1. Set CLASSPATH variable: 
-   * ` $  export CLASSPATH=lib/*:lib/pcap/*:  ` (Unix / OS X)
-   * ` $  set    CLASSPATH=lib/*;lib/pcap/*;  ` (Windows OS)
-
 1. Update _Malware-Analysis-Lab_ local repository with:
    * ` $ git branch -M master`
    * ` $ git remote add origin https://github.com/dpsframework/Malware-Analysis-Lab.git`
@@ -92,30 +88,34 @@ Universidad de León (Spain)[9]
    * ` $ git remote remove origin`
 
 
-#### Running a _Malware-Analysis-Lab_
+#### Running this _Malware-Analysis-Lab_
 
-1. Launch the JADE multi-agent platform on `localhost` with: 
+1. Set **CLASSPATH** variable: 
+   * ` $  export CLASSPATH=lib/*:lib/pcap/*:  ` (Unix / OS X)
+   * ` $  set    CLASSPATH=lib/*;lib/pcap/*;  ` (Windows OS)
+
+1. Launch the **JADE** multi-agent platform on **localhost** with: 
    * ` $ java       launcher platform localhost  & `     (Linux & OS-X)
    * ` $ start java launcher platform localhost `        (Windows)
 
-1. Launch a Blackboard-Class Agent `NIDsBoardAgent` with:
+1. Launch a Blackboard-Class Agent **NIDsBoardAgent** with:
    * ` $       java launcher board localhost NIDsBoardAgent  &`  (Linux & OS-X)
    * ` $ start java launcher board localhost NIDsBoardAgent `    (Windows)
 
-1. Launch an Analyzer-Class Agent `SsdpAgent501` with:
+1. Launch an Analyzer-Class Agent **SsdpAgent501** with:
    * ` $       java launcher stage-node localhost SsdpAgent501 CLIPS  &`  (Linux & OS-X)
    * ` $ start java launcher stage-node localhost SsdpAgent501 CLIPS `    (Windows)
 
-1. Launch an Analyzer-Class Agent `SsdpAgent515` with:
+1. Launch an Analyzer-Class Agent **SsdpAgent515** with:
    * ` $       java launcher stage-node localhost SsdpAgent515 Jess  &`  (Linux & OS-X)
    * ` $ start java launcher stage-node localhost SsdpAgent515 Jess `    (Windows)
 
-1. Launch an Reader-Monitor-Class Agent `WatchdogAgent201` with:
+1. Launch an Reader-Monitor-Class Agent **WatchdogAgent201** with:
    * ` $       java launcher monitor localhost WatchdogAgent201  &`  (Linux & OS-X)
    * ` $ start java launcher monitor localhost WatchdogAgent201 `    (Windows)
 
 
-#### From GUI of Agents from _Malware-Analysis-Lab_ application    
+#### From GUI of Agents _Malware-Analysis-Lab_ application    
 
 1. Raising the level of execution of Agents from `1` until `5` with:
    * (With mouse...) Click on button [5] on the menu bar.
