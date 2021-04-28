@@ -49,7 +49,7 @@ Malware Analysis Laboratory example foccuses on implementation and testing of an
 ----
 
    
-### 1.1. How to deploy and run this _Malware-Analysis-Lab_ 
+### 1.1. How to deploy this _Malware-Analysis-Lab_ 
 
 
 1. Download dpsFramework[7] middleware  from:
