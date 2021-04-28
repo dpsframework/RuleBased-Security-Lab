@@ -11,6 +11,8 @@ Accepted: 5 April 2021.
 
 Francisco José Aguayo‑Canela<sup>1</sup>  ·  Héctor Alaiz‑Moretón<sup>1</sup>  ·  María Teresa García‑Ordás<sup>1</sup>  ·  José Alberto Benítez‑Andrades<sup>2</sup>  ·  Carmen Benavides<sup>2</sup>  · Isaías García‑Rodríguez<sup>1</sup>
 
+:email: José Alberto Benítez-Andrades. <jbena@unileon.es>
+
 
 >   [1] _SECOMUCI Research Group_, School of Industrial Engineering and Informatics.<br>
 >   [2] _SALBIS Research Group_, Department of Electric, Systems and Automatics Engineering.
