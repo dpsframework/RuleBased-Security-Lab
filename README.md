@@ -111,18 +111,9 @@ Malware Analysis Laboratory example foccuses on implementation and testing of an
 
 
 
-**Table 1**. Main contents location at this web, by Agent Classes.
 
-
-| dpsAgent Classes      | Papers & Drafts   | Third party components<br>and Developer guides  |
-|:--------  |:--------------------- |:---------   |
-| **Monitor-Agent** ![Monitor](images/assets/logoPsMonitorAgent.gif | width="48") allows to user developing on a enriched graphical agent interface.  | • How to develop and debug JADE Behaviour Classes on agents at runtime (Pending)   | • [_Java BeanShell_](#) 2.0b4 Manual <br><br>• [_RSyntaxtTextArea_](#) at GitHub   | 
-| **Board-Agent** ![TicketBoard](images/assets/logoPsBoard.gif | width=48)  is a kind of _Blackboard_ where other agents can store or retrieve ACLMessages and data. It uses JADE _Yellow-Pages Service_ and _HyperSQL_.  | • Problem-Solvers Ontology: an upper ontology proposal to distribute _rule-based expert systems_ through agent technology (Pending)  | • [_Problem-Solver_](#) Ontology API<br><br>• [_HyperSQL_](#) Database Engine 2.3.4 Manual      | 
-| **Node-Agent** ![Node](images/assets/logoPsNode.gif)  uses and manages CLIPS[^CLIPS] or Jess[^JESS] _rule-based engines_. This agent class was built to work under extreme conditions.  | • Three proposal methods to manage the _rule-based engine Agenda_ from software-agents efficiently (Pending)<br><br>• Long life applied techniques in Knowledge-base Agents: implemented and proposed solutions (Draft)  |  • [_CLIPSJNI_](#)[^CLIPS] 0.5 API<br><br>• [_Jess engine_](#) API  | 
-| **Stage-Agent** ![Stage-Node](images/assets/logoPsStageBussy.gif)  is an extension of previous _Node-Agent_ class. This is an enriched graphical user interface agent and, it is used to customize the _Node-Agent_ instances. It has a plenty of integrated development tools. | • Programming _rule-based expert systems_ from inside an agent at runtime: Applied techniques (Approval-Pending)<br><br> • Comparative study of inferences in _rule-based expert systems_ and collaborative agents connected to _rule-based expert systems_ (Draft)    |  • [_CLIPS_](#) 6.30 On-line HTML-converted Manual<br><br>• [_Jess_](#) 8.0a1 Manual  | 
-
-
-![](images/nidsBoardAgent-00.png | width=148)    
+![](images/nidsBoardAgent-00.png)  
+<img src="images/nidsBoardAgent-00.png" width="180">
 **Image 1.** Firt tab of GUI from a Blackboard-Class Agent named `NIDsBoardAgent`. 
 
 
