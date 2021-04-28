@@ -18,7 +18,7 @@ Francisco José Aguayo‑Canela<sup>1</sup>  ·  Héctor Alaiz‑Moretón<su
 <sup>(2)</sup>  _**SALBIS Research Group**_, Department of Electric, Systems and Automatics Engineering.
 
   
-![Universidad de Leon - Spain](images/marca-logo-color.jpg)  &nbsp; Universidad de León[9] (_Spain_) 
+ Universidad de León[9] (_Spain_)     ![Universidad de Leon - Spain](images/marca-logo-color.jpg)
 
 
 #### Keywords 
