@@ -761,4 +761,3 @@ From command-line and on the application directory `Malware-Analysis-Lab` type:
 
 [23]: **FIPA ACL**. [FIPA00008] FIPA Agent Communication Language Specification. Foundation for Intelligent Physical Agents, 2000. http://www.fipa.org/specs/fipa00008/ 
 
-[^1]: 
