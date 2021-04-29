@@ -1,6 +1,9 @@
 
 ## Document title:  _Enriched multi‑agent middleware for building rule‑based distributed security solutions for IoT environments_
 
+### Example addendum
+
+
 #### The Journal of Supercomputing
 
 https://doi.org/10.1007/s11227-021-03797-2
