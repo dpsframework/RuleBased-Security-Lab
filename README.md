@@ -51,7 +51,7 @@ This laboratory example foccuses on implementation and testing of an intrusion d
    * https://github.com/dpsframework/dpsFrameworkBuilder/releases/download/1.8/dpsFrameworkBuilder-full-1.8.jar
    * `  java -jar dpsFrameworkBuilder-full-1.8.jar   --new=RuleBased-Security-Lab`
    * `  cd RuleBased-Security-Lab`
-   
+
 1.Prepare that application skeleton to include the agents of this example: 
    * `  mv README.md   README.old`      &nbsp;&nbsp;&nbsp;(NOTE: ` $ rename ... ` for Windows users)
    * `  mv config      config_old`
@@ -62,12 +62,9 @@ This laboratory example foccuses on implementation and testing of an intrusion d
    * `  git branch -M master`
    * `  git remote add origin https://github.com/dpsframework/RuleBased-Security-Lab.git`
    * `  git pull origin master`
-   
-   
+
 1. Finally, remove the remote-origin from _RuleBased-Security-Lab_ repository on GitHub:
    * `  git remote remove origin`
-
-
 
 
 
