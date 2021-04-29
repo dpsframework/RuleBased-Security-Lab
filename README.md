@@ -200,7 +200,7 @@ Please, see [**Appendix A**](#appendix-a), for Windows users.
 ####  Board-Class Agents
 
 
-| Agent interface      | Behaviour & Functions   | Image Third party components<br>and Developer guides  |
+| Agent<br>interface      | Behaviour & Functions   | Image description  |
 |:--------             |:--------------------- |:---------   |
 |  <img src="images/logoPsMonitorAgent.gif" width="50px">   | • Behaviour:  <br> • Function:    | Image **1.**: Title of this image.   | 
 |  <img src="images/logoPsNode.gif" width="50px">   | • Behaviour:  <br> • Function:    | Image **2.**: Title of this image.   | 
