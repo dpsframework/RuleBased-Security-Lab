@@ -203,6 +203,6 @@ Please, see [**Appendix A**](#appendix-a), for Windows users.
 |  <img src="images/logoPsMonitorAgent.gif" width="50px">   | • Behaviour:  <br> • Function:    | Image **1.**: Title of this image.   | 
 |  <img src="images/logoPsNode.gif" width="50px">   | • Behaviour:  <br> • Function:    | Image **2.**: Title of this image.   | 
 |  <img src="images/logoPsStageBussy.gif" width="50px">   | • Behaviour:  <br> • Function:    | Image **3.**: Title of this image.   | 
-|  <img src="images/logoPsBoard.gif" width="50px">   | • Behaviour:  <br> • Function:    | Image **4.**: Title of this image.   | 
+|  <img src="images/logoPsBoard.gif" heigth="60px">   | • Behaviour:  <br> • Function:    | Image **4.**: Title of this image.   | 
 
 
