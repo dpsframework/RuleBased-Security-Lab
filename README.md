@@ -154,38 +154,6 @@ Please, see [**Appendix A**](#appendix-a), for Windows users.
 [9]: **Leon University** (SPAIN). <http://www.unileon.es>.  **Departamento de Ingeniería Eléctrica y de Sistemas y Automática**. Universidad de León. <https://departamentos.unileon.es/ingenieria-electrica-y-de-sistemas-y-automatica/>
 
 
-[10]: **RSyntaxTexArea**. A syntax highlighting, code folding text editor for Java Swing applications. . <https://github.com/bobbylight/RSyntaxTextArea/> (2017).
-
-[11]: **Yellow pages JADE Service**. [**1**] Bellifemine, F.L., Caire, G., Greenwood, D.: Developing Multi-Agent Systems with JADE. Wiley Series in Agent Technology. (2007). [**2**] Cancedda, P. & Caire, G. (2010). JADE Tutorial Creating Ontologies by means of the Bean-Ontology Class, volume 15-April-2010 - JADE 4.0. Telecom Italia S.p.A. [**3**] Yellow Pages examples: <https://jade.tilab.com/documentation/examples/yellow-pages/>
-
-[12]: **java - Read Packet Content using pcap4j - Stack Overflow.** https://stackoverflow.com/questions/62975959/read-packet-content-using-pcap4j (accessed Mar. 23, 2021).
-
-[13]: **Trabajando con Sockets UDP.** http://www.it.uc3m.es/celeste/docencia/cr/2003/PracticaSocketsUDP/ (accessed Mar. 19, 2021).
-
-[14]: **Parse PCAP files in Java.** https://www.javahelps.com/2017/08/parse-pcap-files-in-java.html (accessed Mar. 26, 2021).
-
-[15]: **Parsing pcap taken from Wireshark file using - Java - Stack Overflow.** https://stackoverflow.com/questions/31630646/parsing-pcap-taken-from-Wireshark-file-using-java (accessed Mar. 23, 2021).
-
-
-[16]: **Ransomware PCAP repository.** http://dataset.tlm.unavarra.es/ransomware/ (accessed Mar. 23, 2021).
-
-[17]: **SSDP - The Wireshark Wiki.** https://wiki.Wireshark.org/SSDP (accessed Mar. 23, 2021).
-
-[18]: **SQuirreL SQL Client Home Page.** http://squirrel-sql.sourceforge.net/ (accessed Mar. 30, 2021).
-
-
-[19]: **Chapter 1. Running and Using HyperSQL.** http://www.hsqldb.org/doc/2.0/guide/running-chapt.html (accessed Mar. 30, 2021).
-
-[20]: **Java Platform Standard Edition 8 Documentation.** https://docs.oracle.com/javase/8/docs/ (accessed Mar. 30, 2021).
-
-[21]: **Java SE Development Kit 8 - Downloads.** https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html (accessed Mar. 30, 2021).
-
-
-[22]: **Multi-Agent Systems**. Wooldridge, M. (2009). An Introduction to MultiAgent Systems, Second Edition. John Wiley & Sons Ltd. 
-
-[23]: **FIPA ACL**. [FIPA00008] FIPA Agent Communication Language Specification. Foundation for Intelligent Physical Agents, 2000. http://www.fipa.org/specs/fipa00008/ 
-
-
 
 -----
 
