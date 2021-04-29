@@ -22,19 +22,19 @@ Francisco José Aguayo‑Canela<sup>1</sup>  ·  Héctor Alaiz‑Moretón<su
 
 
 
-## 1. Example name: _Malware-Analysis-Lab_
+## 1. Example name: _RuleBased-Security-Lab_
 
 
-> This _Malware Analysis Laboratory_ is an example of a distributed application made up of JADE Agents[1]. This example uses three main agent classes:
+> This is an example of a distributed application made up of JADE Agents[1]. This example uses three main agent classes:
 
 
-* **Blackboard-Class**: The blackboard-class agents are responsible for displaying analysis results, managing the flow of analyzes and, update lastest Malware Rules from SNORT-Community[2]. This type of agents are connected to a HSQLite database[3].
+* **Board-Class**: The Board-class agents are responsible for displaying analysis results, managing the flow of analyzes and, update lastest Malware Rules from SNORT-Community[2]. This type of agents are connected to a HSQLite database[3].
 
 
 * **Analyzer-Class**: This type of agents have an integrated CLIPS[5] or Jess[6] expert-system. They use the SNORT[3] Rules inside of its Working-Memory to detect malware on TCP, IP or UDP datagrams[4].
 
 
-* **Reader-Monitor-Class**: They are agents with reading .PCAP file format capabilities. They can to transform datagram segments in (facts) format files, which are understandable by CLIPS[5] or Jess[6] inference engines.
+* **Reader-Class**: They are agents with reading .PCAP file format capabilities. They can to transform datagram segments in (facts) format files, which are understandable by CLIPS[5] or Jess[6] inference engines.
 
  
 Malware Analysis Laboratory example foccuses on implementation and testing of an intrusion detection system which uses an agent-oriented distributed application deployment. It uses the JADE Framework[1] and the Middle-ware dpsFramework[7].  This example has been developed for demonstration and academic purposes only.
@@ -44,13 +44,13 @@ Malware Analysis Laboratory example foccuses on implementation and testing of an
 ----
 
    
-### 1.1. How to deploy this _Malware-Analysis-Lab_ 
+### 1.1. How to build an empty _RuleBased-Security-Lab_ application
 
 
-1. Download dpsFramework[7] middleware and create new Agent-application titled _Malware-Analysis-Lab_:
+1. Download dpsFramework[7] middleware and create new Agent-application titled _RuleBased-Security-Lab_:
    * https://github.com/dpsframework/dpsFrameworkBuilder/releases/download/1.8/dpsFrameworkBuilder-full-1.8.jar
-   * `  java -jar dpsFrameworkBuilder-full-1.8.jar   --new=Malware-Analysis-Lab`
-   * `  cd Malware-Analysis-Lab`
+   * `  java -jar dpsFrameworkBuilder-full-1.8.jar   --new=RuleBased-Security-Lab`
+   * `  cd RuleBased-Security-Lab`
    
 1. Prepare that application skeleton to this example with: 
    * `  mv README.md   README.old`      &nbsp;&nbsp;&nbsp;(NOTE: ` $ rename ... ` for Windows users)
@@ -61,18 +61,18 @@ Malware Analysis Laboratory example foccuses on implementation and testing of an
 1. Create and update _Malware-Analysis-Lab_ local repository:
    * `  git init . `
    * `  git branch -M master`
-   * `  git remote add origin https://github.com/dpsframework/Malware-Analysis-Lab.git`
+   * `  git remote add origin https://github.com/dpsframework/RuleBased-Security-Lab.git`
    * `  git pull origin master`
    
    
-1. Finally, remove the remote-origin from _Malware-Analysis-Lab_ on GitHub repository with:
+1. Finally, remove the remote-origin from _RuleBased-Security-Lab_ repository on GitHub:
    * `  git remote remove origin`
 
 
 
 
 
-### 1.2 How to run this _Malware-Analysis-Lab_
+### 1.2 How to deploy and run those new agents of _RuleBased-Security-Lab_ 
 
 Please, see [**Appendix A**](#appendix-a), for Windows users.
 
@@ -166,7 +166,7 @@ Please, see [**Appendix A**](#appendix-a), for Windows users.
 
 ### Command-line sentences for Windows users
 
-####  How to run this _Malware-Analysis-Lab_ on Windows OS
+####  How to run those new agents of _RuleBased-Security-Lab__ on Windows OS
 
 
 
