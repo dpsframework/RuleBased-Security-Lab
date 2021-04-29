@@ -49,23 +49,23 @@ Malware Analysis Laboratory example foccuses on implementation and testing of an
 
 1. Download dpsFramework[7] middleware and create new Agent-application titled _Malware-Analysis-Lab_:
    * https://github.com/dpsframework/dpsFrameworkBuilder/releases/download/1.8/dpsFrameworkBuilder-full-1.8.jar
-   * ` $ java -jar dpsFrameworkBuilder-full-1.8.jar   --new=Malware-Analysis-Lab`
-   * ` $ cd Malware-Analysis-Lab`
+   * `  java -jar dpsFrameworkBuilder-full-1.8.jar   --new=Malware-Analysis-Lab`
+   * `  cd Malware-Analysis-Lab`
    
 1. Prepare that application skeleton to this example with: 
-   * ` $ mv README.md   README.old`      &nbsp;&nbsp;&nbsp;(NOTE: ` $ rename ... ` for Windows users)
-   * ` $ mv config      config_Old`
+   * `  mv README.md   README.old`      &nbsp;&nbsp;&nbsp;(NOTE: ` $ rename ... ` for Windows users)
+   * `  mv config      config_Old`
 
    
 1. Create and update _Malware-Analysis-Lab_ local repository:
-   * ` $ git init . `
-   * ` $ git branch -M master`
-   * ` $ git remote add origin https://github.com/dpsframework/Malware-Analysis-Lab.git`
-   * ` $ git pull origin master`
+   * `  git init . `
+   * `  git branch -M master`
+   * `  git remote add origin https://github.com/dpsframework/Malware-Analysis-Lab.git`
+   * `  git pull origin master`
    
    
 1. Finally, remove the remote-origin from _Malware-Analysis-Lab_ on GitHub repository with:
-   * ` $ git remote remove origin`
+   * `  git remote remove origin`
 
 
 
@@ -78,18 +78,18 @@ Please, see [**Appendix A**](#appendix-a), for Windows users.
 
 
 1. Set **CLASSPATH** variable and launch **JADE** multi-agent platform on **localhost**:
-   * ` $  export CLASSPATH=lib/*:lib/pcap/*:  ` 
-   * ` $ java       launcher platform localhost  & ` 
+   * `   export CLASSPATH=lib/*:lib/pcap/*:  ` 
+   * `  java       launcher platform localhost  & ` 
    
 1. Launch a Blackboard-Class Agent, Analyzer-Class Agents and, Reader-Monitor-Class Agent with:
-   * ` $       java launcher board      localhost IDSboard01  &`  
-   * ` $       java launcher stage-node localhost UDPanalyzer01 CLIPS  &`  
-   * ` $       java launcher stage-node localhost TCPanalyzer01 Jess  &`  
-   * ` $       java launcher monitor    localhost PCAPreader01  &` 
+   * `        java launcher board      localhost IDSboard01  &`  
+   * `        java launcher stage-node localhost UDPanalyzer01 CLIPS  &`  
+   * `        java launcher stage-node localhost TCPanalyzer01 Jess  &`  
+   * `        java launcher monitor    localhost PCAPreader01  &` 
    
 1. Raise the agents run-level to `5` and start malware scan with:
    * Click on button [5] on the menu bar.
-   * ` $ cp    pcap/examples/case01.pcap   var/pending/.`   
+   * `  cp    pcap/examples/case01.pcap   var/pending/.`   
 
 
 
@@ -171,16 +171,16 @@ Please, see [**Appendix A**](#appendix-a), for Windows users.
 
 
 1. Set **CLASSPATH** variable and launch **JADE** multi-agent platform on **localhost**:
-   * ` $  export CLASSPATH=lib/*;lib/pcap/*;  ` 
-   * ` $  start  java launcher platform localhost  & ` 
+   * `   export CLASSPATH=lib/*;lib/pcap/*;  ` 
+   * `   start  java launcher platform localhost  & ` 
    
 1. Launch a Blackboard-Class Agent, Analyzer-Class Agents and, Reader-Monitor-Class Agent with:
-   * ` $  start     java launcher board      localhost IDSboard01  `  
-   * ` $  start     java launcher stage-node localhost UDPanalyzer01 CLIPS  `  
-   * ` $  start     java launcher stage-node localhost TCPanalyzer01 Jess  `  
-   * ` $  start     java launcher monitor    localhost PCAPreader01  
+   * `   start     java launcher board      localhost IDSboard01  `  
+   * `   start     java launcher stage-node localhost UDPanalyzer01 CLIPS  `  
+   * `   start     java launcher stage-node localhost TCPanalyzer01 Jess  `  
+   * `   start     java launcher monitor    localhost PCAPreader01  
  ` 
    
 1. Raise the agents run-level to `5` and start malware scan with:
    * Click on button [5] on the menu bar.
-   * ` $ copy    pcap/examples/case01.pcap   var/pending/.`   
+   * `  copy    pcap/examples/case01.pcap   var/pending/.`   
