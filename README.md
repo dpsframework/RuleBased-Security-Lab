@@ -166,7 +166,7 @@ Please, see [**Appendix A**](#appendix-a), for Windows users.
 
 ### Command-line sentences for Windows users
 
-####  How to run those new agents of _RuleBased-Security-Lab__ on Windows OS
+####  How to deploy those new agents of _RuleBased-Security-Lab__ on Windows OS
 
 
 
@@ -175,7 +175,7 @@ Please, see [**Appendix A**](#appendix-a), for Windows users.
    * `   export CLASSPATH=lib/*;lib/pcap/*;  ` 
    * `   start  java launcher platform localhost  ` 
    
-1. Launch a Blackboard-Class Agent, Analyzer-Class Agents and, Reader-Monitor-Class Agent with:
+1. Launch a Board-Class Agent, Analyzer-Class Agents and, Reader-Class Agent with:
    * `   start     java launcher board      localhost IDSboard01  `  
    * `   start     java launcher stage-node localhost UDPanalyzer01 CLIPS  `  
    * `   start     java launcher stage-node localhost TCPanalyzer01 Jess  `  
