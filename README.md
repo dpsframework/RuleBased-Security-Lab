@@ -47,22 +47,24 @@ Malware Analysis Laboratory example foccuses on implementation and testing of an
 ### 1.1. How to deploy this _Malware-Analysis-Lab_ 
 
 
-
-1. Download dpsFramework[7] middleware  from:
+1. Download dpsFramework[7] middleware and create new Agent-application titled _Malware-Analysis-Lab_:
    * https://github.com/dpsframework/dpsFrameworkBuilder/releases/download/1.8/dpsFrameworkBuilder-full-1.8.jar
-1. Create a new Agent-Development environment with: 
    * ` $ java -jar dpsFrameworkBuilder-full-1.8.jar   --new=Malware-Analysis-Lab`
    * ` $ cd Malware-Analysis-Lab`
-1. Adapt application skeleton to the new Agents of this example with: 
+   
+1. Prepare that application skeleton to this example with: 
    * ` $ mv README.md   README.old`
    * ` $ mv config      config_Old`
-1. Initialize the Git _Malware-Analysis-Lab_ local repository with:
+
+   
+1. Create and update _Malware-Analysis-Lab_ local repository:
    * ` $ git init . `
-1. Update _Malware-Analysis-Lab_ local repository with:
    * ` $ git branch -M master`
    * ` $ git remote add origin https://github.com/dpsframework/Malware-Analysis-Lab.git`
    * ` $ git pull origin master`
-1. Remove the remote-repository from _Malware-Analysis-Lab_ with:
+   
+   
+1. Finally, remove the remote-repository from _Malware-Analysis-Lab_ with:
    * ` $ git remote remove origin`
 
 
@@ -311,22 +313,20 @@ Please, see [**Appendix A**](#appendix-a), for Windows users.
 
 ####  How to run this _Malware-Analysis-Lab_ on Windows OS
 
-1. Set **CLASSPATH** variable: 
-   * ` $  set    CLASSPATH=lib/*;lib/pcap/*;  `
-1. Launch the **JADE** multi-agent platform on **localhost** with: 
-   * ` $ start java launcher platform localhost `     
-1. Launch a Blackboard-Class Agent with:
-   * ` $ start java launcher board localhost NIDsBoardAgent `   
-1. Launch first Analyzer-Class Agent with:
-   * ` $ start java launcher stage-node localhost SsdpAgent501 CLIPS `    
-1. Launch second Analyzer-Class Agent with:
-   * ` $ start java launcher stage-node localhost SsdpAgent515 Jess `   
-1. Launch a Reader-Monitor-Class Agent with:
-   * ` $ start java launcher monitor localhost WatchdogAgent201 `   
-1. Raise the execution level of agents to `5` with:
+
+
+
+1. Set **CLASSPATH** variable and launch **JADE** multi-agent platform on **localhost**:
+   * ` $  export CLASSPATH=lib/*;lib/pcap/*;  ` 
+   * ` $  start  java launcher platform localhost  & ` 
+   
+1. Launch a Blackboard-Class Agent, Analyzer-Class Agents and, Reader-Monitor-Class Agent with:
+   * ` $  start     java launcher board      localhost NIDsBoardAgent  `  
+   * ` $  start     java launcher stage-node localhost SsdpAgent501 CLIPS  `  
+   * ` $  start     java launcher stage-node localhost SsdpAgent515 Jess  `  
+   * ` $  start     java launcher monitor    localhost WatchdogAgent201  ` 
+   
+1. Raise the agents run-level to `5` and start malware scan with:
    * Click on button [5] on the menu bar.
-1. From command-line, start the malware scan with:
-   * ` $ copy  pcap/examples/case01.pcap   var/pending/. `   
-
-
+   * ` $ copy    pcap/examples/case01.pcap   var/pending/.`   
 
