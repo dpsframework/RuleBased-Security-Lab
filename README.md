@@ -71,25 +71,22 @@ Malware Analysis Laboratory example foccuses on implementation and testing of an
 
 ### 1.2 How to run this _Malware-Analysis-Lab_
 
-_Please, see [**Appendix A**](#appendix-a), for Windows Operating System users._
+Please, see [**Appendix A**](#appendix-a), for Windows users.
 
 
 
-1. Set **CLASSPATH** variable: 
+1. Set **CLASSPATH** variable and launch **JADE** multi-agent platform on **localhost**:
    * ` $  export CLASSPATH=lib/*:lib/pcap/*:  ` 
-1. Launch the **JADE** multi-agent platform on **localhost** with: 
-   * ` $ java       launcher platform localhost  & `     
-1. Launch a Blackboard-Class Agent with:
-   * ` $       java launcher board localhost NIDsBoardAgent  &`  
-1. Launch first Analyzer-Class Agent with:
+   * ` $ java       launcher platform localhost  & ` 
+   
+1. Launch a Blackboard-Class Agent, Analyzer-Class Agents and, Reader-Monitor-Class Agent with:
+   * ` $       java launcher board      localhost NIDsBoardAgent  &`  
    * ` $       java launcher stage-node localhost SsdpAgent501 CLIPS  &`  
-1. Launch second Analyzer-Class Agent with:
    * ` $       java launcher stage-node localhost SsdpAgent515 Jess  &`  
-1. Launch a Reader-Monitor-Class Agent with:
-   * ` $       java launcher monitor localhost WatchdogAgent201  &`  
-1. Raise the execution level of agents to `5` with:
+   * ` $       java launcher monitor    localhost WatchdogAgent201  &` 
+   
+1. Raise the agents run-level to `5` and start malware scan with:
    * Click on button [5] on the menu bar.
-1. From command-line, start the malware scan with:
    * ` $ cp    pcap/examples/case01.pcap   var/pending/.`   
 
 
