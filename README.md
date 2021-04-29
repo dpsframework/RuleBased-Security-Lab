@@ -55,7 +55,7 @@ This laboratory example foccuses on implementation and testing of an intrusion d
 1. Prepare that application skeleton to include the agents of this example: 
    * `  rm -f README.md  `
    * `  mv config      config_old`
-   * `  mv nodes       nodes_old`      &nbsp;&nbsp;&nbsp;(Use:  `delete` and `rename`  for Windows OS)
+   * `  mv nodes       nodes_old`      &nbsp;&nbsp;&nbsp;(You can use:  `delete` and `rename`  on Windows OS)
 
 1. Create and update the _Malware-Analysis-Lab_ local repository:
    * `  git init . `
