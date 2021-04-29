@@ -64,7 +64,7 @@ Malware Analysis Laboratory example foccuses on implementation and testing of an
    * ` $ git pull origin master`
    
    
-1. Finally, remove the remote-repository from _Malware-Analysis-Lab_ with:
+1. Finally, remove the remote-origin from _Malware-Analysis-Lab_ on GitHub repository with:
    * ` $ git remote remove origin`
 
 
