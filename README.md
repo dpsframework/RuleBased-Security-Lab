@@ -47,6 +47,7 @@ Malware Analysis Laboratory example foccuses on implementation and testing of an
 ### 1.1. How to deploy this _Malware-Analysis-Lab_ 
 
 
+
 1. Download dpsFramework[7] middleware  from:
    * https://github.com/dpsframework/dpsFrameworkBuilder/releases/download/1.8/dpsFrameworkBuilder-full-1.8.jar
 1. Create a new Agent-Development environment with: 
@@ -70,29 +71,26 @@ Malware Analysis Laboratory example foccuses on implementation and testing of an
 
 ### 1.2 How to run this _Malware-Analysis-Lab_
 
+_Please, see **Appendix A**, for Windows Operating System users._
+
+
+
 1. Set **CLASSPATH** variable: 
-   * ` $  export CLASSPATH=lib/*:lib/pcap/*:  ` (Unix / OS X)
-   * ` $  set    CLASSPATH=lib/*;lib/pcap/*;  ` (Windows OS)
+   * ` $  export CLASSPATH=lib/*:lib/pcap/*:  ` 
 1. Launch the **JADE** multi-agent platform on **localhost** with: 
-   * ` $ java       launcher platform localhost  & `     (Linux & OS-X)
-   * ` $ start java launcher platform localhost `        (Windows)
+   * ` $ java       launcher platform localhost  & `     
 1. Launch a Blackboard-Class Agent with:
-   * ` $       java launcher board localhost NIDsBoardAgent  &`  (Linux & OS-X)
-   * ` $ start java launcher board localhost NIDsBoardAgent `    (Windows)
+   * ` $       java launcher board localhost NIDsBoardAgent  &`  
 1. Launch first Analyzer-Class Agent with:
-   * ` $       java launcher stage-node localhost SsdpAgent501 CLIPS  &`  (Linux & OS-X)
-   * ` $ start java launcher stage-node localhost SsdpAgent501 CLIPS `    (Windows)
+   * ` $       java launcher stage-node localhost SsdpAgent501 CLIPS  &`  
 1. Launch second Analyzer-Class Agent with:
-   * ` $       java launcher stage-node localhost SsdpAgent515 Jess  &`  (Linux & OS-X)
-   * ` $ start java launcher stage-node localhost SsdpAgent515 Jess `    (Windows)
+   * ` $       java launcher stage-node localhost SsdpAgent515 Jess  &`  
 1. Launch a Reader-Monitor-Class Agent with:
-   * ` $       java launcher monitor localhost WatchdogAgent201  &`  (Linux & OS-X)
-   * ` $ start java launcher monitor localhost WatchdogAgent201 `    (Windows)
+   * ` $       java launcher monitor localhost WatchdogAgent201  &`  
 1. Raise the execution level of agents to `5` with:
    * Click on button [5] on the menu bar.
 1. From command-line, start the malware scan with:
-   * ` $ cp    pcap/examples/case01.pcap   var/pending/.`     (Linux & OS-X)
-   * ` $ copy  pcap/examples/case01.pcap   var/pending/. `    (Windows)
+   * ` $ cp    pcap/examples/case01.pcap   var/pending/.`   
 
 
 
@@ -303,4 +301,35 @@ Malware Analysis Laboratory example foccuses on implementation and testing of an
 [22]: **Multi-Agent Systems**. Wooldridge, M. (2009). An Introduction to MultiAgent Systems, Second Edition. John Wiley & Sons Ltd. 
 
 [23]: **FIPA ACL**. [FIPA00008] FIPA Agent Communication Language Specification. Foundation for Intelligent Physical Agents, 2000. http://www.fipa.org/specs/fipa00008/ 
+
+
+
+-----
+
+
+
+## Appendix A
+
+### Command-line sentences for Windows users
+
+####  How to run this _Malware-Analysis-Lab_ on Windows OS
+
+1. Set **CLASSPATH** variable: 
+   * ` $  set    CLASSPATH=lib/*;lib/pcap/*;  `
+1. Launch the **JADE** multi-agent platform on **localhost** with: 
+   * ` $ start java launcher platform localhost `     
+1. Launch a Blackboard-Class Agent with:
+   * ` $ start java launcher board localhost NIDsBoardAgent `   
+1. Launch first Analyzer-Class Agent with:
+   * ` $ start java launcher stage-node localhost SsdpAgent501 CLIPS `    
+1. Launch second Analyzer-Class Agent with:
+   * ` $ start java launcher stage-node localhost SsdpAgent515 Jess `   
+1. Launch a Reader-Monitor-Class Agent with:
+   * ` $ start java launcher monitor localhost WatchdogAgent201 `   
+1. Raise the execution level of agents to `5` with:
+   * Click on button [5] on the menu bar.
+1. From command-line, start the malware scan with:
+   * ` $ copy  pcap/examples/case01.pcap   var/pending/. `   
+
+
 
