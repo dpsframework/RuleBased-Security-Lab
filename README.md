@@ -53,7 +53,7 @@ Malware Analysis Laboratory example foccuses on implementation and testing of an
    * ` $ cd Malware-Analysis-Lab`
    
 1. Prepare that application skeleton to this example with: 
-   * ` $ mv README.md   README.old`      &nbsp;&nbsp;&nbsp;(type:  $ rename ... for Windows users)
+   * ` $ mv README.md   README.old`      &nbsp;&nbsp;&nbsp;(` $ rename ... ` for Windows users)
    * ` $ mv config      config_Old`
 
    
