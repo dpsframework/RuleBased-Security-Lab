@@ -71,7 +71,7 @@ Malware Analysis Laboratory example foccuses on implementation and testing of an
 
 ### 1.2 How to run this _Malware-Analysis-Lab_
 
-_Please, see **Appendix A**, for Windows Operating System users._
+_Please, see [**Appendix A**](#appendix-a), for Windows Operating System users._
 
 
 
