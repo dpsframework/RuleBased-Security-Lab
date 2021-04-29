@@ -37,28 +37,28 @@ Francisco José Aguayo‑Canela<sup>1</sup>  ·  Héctor Alaiz‑Moretón<su
 * **Reader-Class**: They are agents with reading .PCAP file format capabilities. They can to transform datagram segments in (facts) format files, which are understandable by CLIPS[5] or Jess[6] inference engines.
 
  
-Malware Analysis Laboratory example foccuses on implementation and testing of an intrusion detection system which uses an agent-oriented distributed application deployment. It uses the JADE Framework[1] and the Middle-ware dpsFramework[7].  This example has been developed for demonstration and academic purposes only.
+This laboratory example foccuses on implementation and testing of an intrusion detection system which uses an agent-oriented distributed application deployment. It uses the JADE Framework[1] and the Middleware dpsFramework[7]. This example has been developed for demonstration and academic purposes only.
 
      
 
 ----
 
    
-### 1.1. How to build an empty _RuleBased-Security-Lab_ application
+### 1.1. How to build this _RuleBased-Security-Lab_ application skeleton
 
 
-1. Download dpsFramework[7] middleware and create new Agent-application titled _RuleBased-Security-Lab_:
+1. Download dpsFramework[7] and create new application titled _RuleBased-Security-Lab_:
    * https://github.com/dpsframework/dpsFrameworkBuilder/releases/download/1.8/dpsFrameworkBuilder-full-1.8.jar
    * `  java -jar dpsFrameworkBuilder-full-1.8.jar   --new=RuleBased-Security-Lab`
    * `  cd RuleBased-Security-Lab`
    
-1. Prepare that application skeleton to this example with: 
+1.Prepare that application skeleton to include the agents of this example: 
    * `  mv README.md   README.old`      &nbsp;&nbsp;&nbsp;(NOTE: ` $ rename ... ` for Windows users)
    * `  mv config      config_old`
    * `  mv nodes       nodes_old`
 
    
-1. Create and update _Malware-Analysis-Lab_ local repository:
+1. Create and update the _Malware-Analysis-Lab_ local repository:
    * `  git init . `
    * `  git branch -M master`
    * `  git remote add origin https://github.com/dpsframework/RuleBased-Security-Lab.git`
@@ -72,7 +72,7 @@ Malware Analysis Laboratory example foccuses on implementation and testing of an
 
 
 
-### 1.2 How to deploy and run those new agents of _RuleBased-Security-Lab_ 
+### 1.2 How to deploy those new _RuleBased-Security-Lab_ agents on JADE platform 
 
 Please, see [**Appendix A**](#appendix-a), for Windows users.
 
