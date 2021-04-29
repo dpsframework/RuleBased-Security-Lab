@@ -82,13 +82,13 @@ Please, see [**Appendix A**](#appendix-a), for Windows users.
    * `   export CLASSPATH=lib/*:lib/pcap/*:  ` 
    * `  java       launcher platform localhost  & ` 
    
-1. Launch a Blackboard-Class Agent, Analyzer-Class Agents and, Reader-Monitor-Class Agent with:
+1. Launch a Board-Class Agent, Analyzer-Class Agents and, Reader-Class Agent:
    * `        java launcher board      localhost IDSboard01  &`  
    * `        java launcher stage-node localhost UDPanalyzer01 CLIPS  &`  
    * `        java launcher stage-node localhost TCPanalyzer01 Jess  &`  
    * `        java launcher monitor    localhost PCAPreader01  &` 
    
-1. Raise the agents run-level to `5` and start malware scan with:
+1. Raise the agents run-level to `5` and start malware scan:
    * Click on button [5] on the menu bar.
    * `  cp    pcap/examples/case01.pcap   var/pending/.`   
 
@@ -97,7 +97,7 @@ Please, see [**Appendix A**](#appendix-a), for Windows users.
 
 
 
-### 1.3. Blackboard-Class Agents screenshot gallery
+### 1.3. Board-Class Agents screenshot gallery
 
 
 
@@ -118,7 +118,7 @@ Please, see [**Appendix A**](#appendix-a), for Windows users.
 
 
 
-### 1.5. Reader-Monitor-Class Agents screenshot gallery
+### 1.5. Reader-Class Agents screenshot gallery
 
 
 
