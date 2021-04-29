@@ -52,7 +52,7 @@ This laboratory example foccuses on implementation and testing of an intrusion d
    * `  java -jar dpsFrameworkBuilder-full-1.8.jar   --new=RuleBased-Security-Lab`
    * `  cd RuleBased-Security-Lab`
 
-1.Prepare that application skeleton to include the agents of this example: 
+1. Prepare that application skeleton to include the agents of this example: 
    * `  mv README.md   README.old`      &nbsp;&nbsp;&nbsp;(NOTE: ` $ rename ... ` for Windows users)
    * `  mv config      config_old`
    * `  mv nodes       nodes_old`
