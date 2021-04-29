@@ -178,8 +178,7 @@ Please, see [**Appendix A**](#appendix-a), for Windows users.
    * `   start     java launcher board      localhost IDSboard01  `  
    * `   start     java launcher stage-node localhost UDPanalyzer01 CLIPS  `  
    * `   start     java launcher stage-node localhost TCPanalyzer01 Jess  `  
-   * `   start     java launcher monitor    localhost PCAPreader01  
- ` 
+   * `   start     java launcher monitor    localhost PCAPreader01` 
    
 1. Raise the agents run-level to `5` and start malware scan with:
    * Click on button [5] on the menu bar.
