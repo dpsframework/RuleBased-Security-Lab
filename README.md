@@ -173,7 +173,7 @@ Please, see [**Appendix A**](#appendix-a), for Windows users.
 
 1. Set **CLASSPATH** variable and launch **JADE** multi-agent platform on **localhost**:
    * `   export CLASSPATH=lib/*;lib/pcap/*;  ` 
-   * `   start  java launcher platform localhost  & ` 
+   * `   start  java launcher platform localhost  ` 
    
 1. Launch a Blackboard-Class Agent, Analyzer-Class Agents and, Reader-Monitor-Class Agent with:
    * `   start     java launcher board      localhost IDSboard01  `  
