@@ -31,7 +31,7 @@ Francisco José Aguayo‑Canela<sup>1</sup>  ·  Héctor Alaiz‑Moretón<su
 * **Blackboard-Class**: The blackboard-class agents are responsible for displaying analysis results, managing the flow of analyzes and, update lastest Malware Rules from SNORT-Community[2]. This type of agents are connected to a HSQLite database[3].
 
 
-* **Analyzer-Class**: This type of agents have an integrated CLIPS[5] or Jess[6] expert-system. They use the SNORT[3] Rules inside of its Working-Memory to detect malware on TCP, IP or UDP datagrams.
+* **Analyzer-Class**: This type of agents have an integrated CLIPS[5] or Jess[6] expert-system. They use the SNORT[3] Rules inside of its Working-Memory to detect malware on TCP, IP or UDP datagrams[4].
 
 
 * **Reader-Monitor-Class**: They are agents with reading .PCAP file format capabilities. They can to transform datagram segments in (facts) format files, which are understandable by CLIPS[5] or Jess[6] inference engines.
@@ -53,7 +53,7 @@ Malware Analysis Laboratory example foccuses on implementation and testing of an
    * ` $ cd Malware-Analysis-Lab`
    
 1. Prepare that application skeleton to this example with: 
-   * ` $ mv README.md   README.old`      &nbsp;&nbsp;&nbsp;(` $ rename ... ` for Windows users)
+   * ` $ mv README.md   README.old`      &nbsp;&nbsp;&nbsp;(NOTE: ` $ rename ... ` for Windows users)
    * ` $ mv config      config_Old`
 
    
