@@ -82,16 +82,14 @@ Please, see [**Appendix A**](#appendix-a), for Windows users.
    * ` $ java       launcher platform localhost  & ` 
    
 1. Launch a Blackboard-Class Agent, Analyzer-Class Agents and, Reader-Monitor-Class Agent with:
-   * ` $       java launcher board      localhost NIDsBoardAgent  &`  
-   * ` $       java launcher stage-node localhost SsdpAgent501 CLIPS  &`  
-   * ` $       java launcher stage-node localhost SsdpAgent515 Jess  &`  
-   * ` $       java launcher monitor    localhost WatchdogAgent201  &` 
+   * ` $       java launcher board      localhost IDSboard01  &`  
+   * ` $       java launcher stage-node localhost UDPanalyzer01 CLIPS  &`  
+   * ` $       java launcher stage-node localhost TCPanalyzer01 Jess  &`  
+   * ` $       java launcher monitor    localhost PCAPreader01  &` 
    
 1. Raise the agents run-level to `5` and start malware scan with:
    * Click on button [5] on the menu bar.
    * ` $ cp    pcap/examples/case01.pcap   var/pending/.`   
-
-
 
 
 
@@ -321,12 +319,12 @@ Please, see [**Appendix A**](#appendix-a), for Windows users.
    * ` $  start  java launcher platform localhost  & ` 
    
 1. Launch a Blackboard-Class Agent, Analyzer-Class Agents and, Reader-Monitor-Class Agent with:
-   * ` $  start     java launcher board      localhost NIDsBoardAgent  `  
-   * ` $  start     java launcher stage-node localhost SsdpAgent501 CLIPS  `  
-   * ` $  start     java launcher stage-node localhost SsdpAgent515 Jess  `  
-   * ` $  start     java launcher monitor    localhost WatchdogAgent201  ` 
+   * ` $  start     java launcher board      localhost IDSboard01  `  
+   * ` $  start     java launcher stage-node localhost UDPanalyzer01 CLIPS  `  
+   * ` $  start     java launcher stage-node localhost TCPanalyzer01 Jess  `  
+   * ` $  start     java launcher monitor    localhost PCAPreader01  
+ ` 
    
 1. Raise the agents run-level to `5` and start malware scan with:
    * Click on button [5] on the menu bar.
    * ` $ copy    pcap/examples/case01.pcap   var/pending/.`   
-
