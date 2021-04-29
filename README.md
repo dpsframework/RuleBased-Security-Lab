@@ -200,10 +200,10 @@ Please, see [**Appendix A**](#appendix-a), for Windows users.
 
 | Agent interface      | Behaviour & Functions   | Image Third party components<br>and Developer guides  |
 |:--------             |:--------------------- |:---------   |
-|  <img src=images/logoPsMonitorAgent.gif" width="100px">   | • Behaviour:  <br> • Function:    | Image **1.**: Title of this image.   | 
-|  <img src=images/logoPsNode.gif" width="100px">   | • Behaviour:  <br> • Function:    | Image **2.**: Title of this image.   | 
-|  <img src=images/logoPsStageBussy.gif" width="100px">   | • Behaviour:  <br> • Function:    | Image **3.**: Title of this image.   | 
+|  <img src="images/logoPsMonitorAgent.gif" width="100px">   | • Behaviour:  <br> • Function:    | Image **1.**: Title of this image.   | 
+|  <img src="images/logoPsNode.gif" width="100px">   | • Behaviour:  <br> • Function:    | Image **2.**: Title of this image.   | 
+|  <img src="images/logoPsStageBussy.gif" width="100px">   | • Behaviour:  <br> • Function:    | Image **3.**: Title of this image.   | 
 
-|  <img src=images/logoPsBoard.gif" width="100px">   | • Behaviour:  <br> • Function:    | Image **4.**: Title of this image.   | 
+|  <img src="images/logoPsBoard.gif" width="100px">   | • Behaviour:  <br> • Function:    | Image **4.**: Title of this image.   | 
 
 
