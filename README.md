@@ -1,7 +1,6 @@
 
 ## Document title:  _Enriched multi‑agent middleware for building rule‑based distributed security solutions for IoT environments_
 
-### Example addendum
 
 
 #### The Journal of Supercomputing
@@ -25,7 +24,7 @@ Francisco José Aguayo‑Canela<sup>1</sup>  ·  Héctor Alaiz‑Moretón<su
 
 
 
-## 1. Example name: _RuleBased-Security-Lab_
+## 1. Example addendum: _RuleBased-Security-Lab_
 
 
 > This is an example of a distributed application made up of JADE Agents[1]. This example uses three main agent classes:
