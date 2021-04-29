@@ -55,6 +55,7 @@ Malware Analysis Laboratory example foccuses on implementation and testing of an
 1. Prepare that application skeleton to this example with: 
    * `  mv README.md   README.old`      &nbsp;&nbsp;&nbsp;(NOTE: ` $ rename ... ` for Windows users)
    * `  mv config      config_Old`
+   * `  mv nodes       nodes_Old`
 
    
 1. Create and update _Malware-Analysis-Lab_ local repository:
