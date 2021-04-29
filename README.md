@@ -160,9 +160,9 @@ Please, see [**Appendix A**](#appendix-a), for Windows users.
 
 ## Appendix A
 
-### Command-line sentences for Windows users
+### Windows OS command-line sentences
 
-####  How to deploy those new agents of _RuleBased-Security-Lab__ on Windows OS
+####  How to deploy those new agents of _RuleBased-Security-Lab_
 
 
 
@@ -170,13 +170,13 @@ Please, see [**Appendix A**](#appendix-a), for Windows users.
 1. Set **CLASSPATH** variable and launch **JADE** multi-agent platform on **localhost**:
    * `   export CLASSPATH=lib/*;lib/pcap/*;  ` 
    * `   start  java launcher platform localhost  ` 
-   
+
 1. Launch a Board-Class Agent, Analyzer-Class Agents and, Reader-Class Agent with:
    * `   start     java launcher board      localhost IDSboard01  `  
    * `   start     java launcher stage-node localhost UDPanalyzer01 CLIPS  `  
    * `   start     java launcher stage-node localhost TCPanalyzer01 Jess  `  
    * `   start     java launcher monitor    localhost PCAPreader01` 
-   
+
 1. Raise the agents run-level to `5` and start malware scan with:
    * Click on button [5] on the menu bar.
    * `  copy    pcap/examples/case01.pcap   var/pending/.`   
