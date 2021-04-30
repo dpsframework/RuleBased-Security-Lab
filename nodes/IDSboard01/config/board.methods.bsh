@@ -1,7 +1,6 @@
 //# Revised:   2021.04.28                               
 //#            [ RuleBased-Security-Lab example ]
-// ------------------------------------------------
-
+//# ------------------------------------------------
 
 
 import jade.content.lang.Codec;
@@ -210,6 +209,26 @@ import java.util.HashMap;
 import java.lang.NullPointerException;
 
 
+//# Imports
+//# ---------------------------------------------
+import jade.content.Concept;
+import jade.content.onto.basic.Action;
+import jade.content.onto.basic.Done;
+import jade.core.Agent;
+import jade.domain.FIPAException;
+import jade.domain.FIPAAgentManagement.UnsupportedFunction;
+import jade.domain.JADEAgentManagement.ShowGui;
+import jade.lang.acl.ACLMessage;
+import jade.lang.acl.MessageTemplate;
+import jade.security.JADESecurityException;
+import jade.util.Logger;
+
+import java.text.MessageFormat;
+
+import com.dpsframework.*;
+import com.dpsframework.domain.RMNGBehaviour;
+import com.dpsframework.util.*;
+
 
 
 
@@ -233,9 +252,9 @@ myBOB.clear();
 //# An emulate version of {service and systemctl} from Centos 7 - RHEL 
 //# @author:  FJAC et al. - SECOMUCI & SALBIS Research Group - UniLeon (2021).
 
-//------------------------------------------
-//service() A Java Scripted Object (Closure)
-//------------------------------------------
+//# ------------------------------------------
+//# service() A Java Scripted Object (Closure)
+//# ------------------------------------------
 service(){
 	// ------------------------------------------
 	SERVICE = ".service";
@@ -253,7 +272,7 @@ service(){
 	
 	
 	
-	// ------------------------------------------
+	//#  ------------------------------------------
 	public  boolean serviceExists(){
       sExists = false;
 		return sExists;
@@ -261,7 +280,7 @@ service(){
 
 	
 	
-	// ------------------------------------------
+	//#  ------------------------------------------
 	public  boolean enable(String  nameService ) {
 		if ( this.serviceExists(nameService) ){
 			serviceProp = new jade.util.leap.Properties();
@@ -278,7 +297,7 @@ service(){
 	}
 	
 	
-	// ------------------------------------------
+	//#  ------------------------------------------
 	public  boolean disable(String  nameService ) {
 		if ( this.serviceExists(nameService) ){
 			serviceProp = new jade.util.leap.Properties();
@@ -295,7 +314,7 @@ service(){
 	}
 	
 	
-	// ------------------------------------------
+	//#  ------------------------------------------
 	public  boolean enable( ) {
 		print(  "Usage: service().enable( nameOfService );");
 		return false;
@@ -311,7 +330,7 @@ service(){
 	
 	
 	
-	// ------------------------------------------
+	//#  ------------------------------------------
 	public String[]  BOB() {	
 		
 		String   summaryTest   = "";
@@ -343,7 +362,7 @@ service(){
 	}
 	
 	
-	// ------------------------------------------
+	//#  ------------------------------------------
 	public String BOB( String serviceName ){
 		
 		String sBOB = "";	sExists = false;
@@ -371,7 +390,7 @@ service(){
 	
 	
 	
-	// ------------------------------------------
+	//#  ------------------------------------------
 	public  String[] list(){
 		String[]    fs = this.listFS();
 		String[]    sNames;
@@ -390,7 +409,7 @@ service(){
 	
 	
 	
-	// ------------------------------------------
+	//#  ------------------------------------------
 	public  String[] listFS(){
 		File 		dirConfig = new File ( myNode.nodeConfigPath);
 		String[]    fileNames = dirConfig.list();
@@ -479,26 +498,6 @@ myBOB() {
   return this;
 } 
 
-//# Imports
-//# ---------------------------------------------
-import jade.content.Concept;
-import jade.content.onto.basic.Action;
-import jade.content.onto.basic.Done;
-import jade.core.Agent;
-import jade.domain.FIPAException;
-import jade.domain.FIPAAgentManagement.UnsupportedFunction;
-import jade.domain.JADEAgentManagement.ShowGui;
-import jade.lang.acl.ACLMessage;
-import jade.lang.acl.MessageTemplate;
-import jade.security.JADESecurityException;
-import jade.util.Logger;
-
-import java.text.MessageFormat;
-
-import com.dpsframework.*;
-import com.dpsframework.domain.RMNGBehaviour;
-import com.dpsframework.util.*;
-
 
 
 
@@ -513,6 +512,7 @@ import com.dpsframework.util.*;
 //# Revised:   2021.04.28                               
 //# [ RuleBased-Security-Lab example ]
 //# 
+
 String AFIRMATIVO  = "Correct !";
 String NEGATIVO    = "Oops____!";
 String AFFIRMATIVE = "Correct !";

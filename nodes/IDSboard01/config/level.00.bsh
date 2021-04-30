@@ -65,7 +65,12 @@ import com.dpsframework.util.JadeConsole;
 import com.dpsframework.util.PsConstants;
 import com.dpsframework.util.PsServices;
 
-
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 //# /////////////////////////////////////////////
 //# Technique: Testing if it level was requested by user a restart
@@ -88,6 +93,8 @@ myAgent .myNode().refresh();
 //# Technique: Some shell functions renamed
 public void clear()   { bsh.console.clearText(); }
 public void desktop() {  }
+
+
 
 
 
@@ -138,19 +145,10 @@ String getBshPrompt() {
 
 
 //# /////////////////////////////////////////////
-//# Technique: info about myBOB & Node perspective()
-//# outLogger(new Object[]{"level.00",	myAgent .getLocalName(), 
-//# 	"Setting Behaviours distribution over agent run-level", myBOB() .perspective() });
-
-
-
-//# /////////////////////////////////////////////
 //# Technique: change root.path of BeanShell Interpreter
 public void cdhome(){
 	cd(myNode .nodeConfigPath);
 }
-
-
 
 
 
@@ -175,38 +173,6 @@ outLogger(new Object[]{"level.00 ",	myAgent .getLocalName(),
 	"["+ myNode .currentExecLevel + "]", 
 	"has finished loading." });
 
-
-
-//# /////////////////////////////////////////
-//# Connection (myDB) only for IDS-Board-Agents
-
-String TICKET_DB_FILE_NAME = "nidsDB";
-String DATABASE_USER_ID ="sa";
-String DATABASE_PASSWORD = "password";
-
-
-//# Technique: HyperSonicSQL only for IDS-Board-Agents
-dbFile =  myNode.relativeVarPath +  "data/" + TICKET_DB_FILE_NAME;
-
-try {
-	Class.forName("org.hsqldb.jdbc.JDBCDriver");			
-	// Don't overwrite IF-EXISTS:
-	dbConnection = "jdbc:hsqldb:file:" + dbFile	+ ";ifexits=true";
-	myDB = DriverManager.getConnection(dbConnection, DATABASE_USER_ID, DATABASE_PASSWORD);		
-	outLogger(new Object[] {"setup", myNode.nodeName,
-			"Connected with:\n setup    : " + dbConnection });
-	
-} catch (SQLException e1) {
-	outLogger(new Object[] {"setup", myNode.nodeName,
-			"Can't connect to: " + dbConnection 	});
-	
-} catch (ClassNotFoundException e) {
-	System.err.println(" Error    : JDBCDriver from hsqldb Library is not accessible!");
-}
-
-
-myDB() { return myDB; }
-getDB(){ return myDB; }
 
 
 //# End-of-Level-00 config file.

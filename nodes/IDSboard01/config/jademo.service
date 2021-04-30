@@ -7,10 +7,10 @@
 # -----------------------------------------------
 
 
-service.description = Show DB Resultsets in Table-Grid Interface.
+service.description = JADE-Agent Management-Ontology.
 service.order       = Ac
 init.level          = 1
 run.level           = 3
-service.name        = showdb
+service.name        = jademo
 service.group       = basal
 service.enable      = 1

@@ -7,10 +7,10 @@
 # -----------------------------------------------
 
 
-service.description = JADE-Agent Management-Ontology.
-service.order       = Ac
-init.level          = 1
-run.level           = 3
-service.name        = jademo
+service.description = NIDS-DB management.
+service.order       = Ab
+init.level          = 0
+run.level           = 1
+service.name        = nidsDB
 service.group       = basal
 service.enable      = 1
