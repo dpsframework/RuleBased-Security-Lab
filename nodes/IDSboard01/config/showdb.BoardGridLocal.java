@@ -90,11 +90,36 @@ public class BoardGridLocal extends OneShotBehaviour {
 	}
 
 	public int onEnd() {
+		outLogger(true, new Object[]{getBehaviourName(), myAgent.getLocalName(), 
+			      "Notification message was:",
+			      "\n          * /------------------------------------------------+\n\n",
+			      rs,
+			      "\n\n          * \\------------------------------------------------+"
+		});
 		return exitValue;
 	}
 
 	
+	private void outLogger(Object[] o){
+		if   (! debugMode   ) { return; }
+		if   ( o.length == 0) { return; }
+		int    n  = o.length;
+		String mf = " {0}: [{1}]";    // {2} {3} {4} {5} 
+		for (int i = 2; i < n; i++ ){ mf += " {" + i +"}"; }
+		o[0] = (o[0]+"         ").substring(0, 9); 
+		Logger.println(MessageFormat.format(mf,o));
+		return;
+	}
 	
+	private void outLogger(boolean verbose, Object[] o){
+		if   ( verbose   ) { outLogger(o); }
+	}
+	
+	private void makeBanner() {
+		String diaLbl 	= "Diagram of '" + getBehaviourName() + "' Externalized Behaviour is shown below:";	
+		outLogger(new Object[] { getBehaviourName(), myAgent.getLocalName(), "Initialized." });
+		outLogger(verboseMode, new Object[] { getBehaviourName(), myAgent.getLocalName(), diaLbl, sb });
+	}	
 	
 	
 
