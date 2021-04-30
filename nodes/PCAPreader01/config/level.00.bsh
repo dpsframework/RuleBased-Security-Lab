@@ -48,8 +48,8 @@ import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyleContext;
 
-// /////////////////////////////////////////////
-// Technique: Testing if it level was requested by user a restart
+//# /////////////////////////////////////////////
+//# Technique: Testing if it level was requested by user a restart
 if ( myNode .currentExecLevel > 0 &&  myNode .currentExecLevel != 6 ) {		
 	outLogger(new Object[]{"level.00 ",	myAgent .getLocalName(), "It goes to exit from level", 
 			     "["+ myNode .currentExecLevel + "]", "now!"});	
@@ -57,21 +57,21 @@ if ( myNode .currentExecLevel > 0 &&  myNode .currentExecLevel != 6 ) {
 }
 
 
-// /////////////////////////////////////////////
-// Restart from Level:6
+//# /////////////////////////////////////////////
+//# Restart from Level:6
 myAgent .myNode().initializeNode();
 myAgent .myNode().refresh();
 
 
 
-// /////////////////////////////////////////////
-// Technique: Some shell functions renamed
+//# /////////////////////////////////////////////
+//# Technique: Some shell functions renamed
 public void clear()   { bsh.console.clearText(); }
 public void desktop() {  }
 
 
-// /////////////////////////////////////////////
-// Technique: Load Framework global help & utils.
+//# /////////////////////////////////////////////
+//# Technique: Load Framework global help & utils.
 if ( pathToFile( frameworkConfigPath + "framework.methods.bsh" ).exists() ){
 	source(      frameworkConfigPath + "framework.methods.bsh" );
 }
@@ -80,9 +80,9 @@ if ( pathToFile( nodeConfigPath + "node.methods.bsh" ).exists() ){
 }
 
 
-// /////////////////////////////////////////////
-// Technique: Cosmetic Fonts for Mac-Developers.
-if (  PsServices.getNativePath().equals(PsServices.i18n("dps.arch.mac"))   ) {
+//# /////////////////////////////////////////////
+//# Technique: Cosmetic Fonts for Mac-Developers.
+if (  PsServices.getNativePath().equals("mac")   ) {
 	sz = jconsole.getFont().size;
 	jconsole.setFont(new Font( "Monaco", Font.PLAIN, sz));
 }
@@ -90,8 +90,8 @@ if (  PsServices.getNativePath().equals(PsServices.i18n("dps.arch.mac"))   ) {
 
 
 
-///////////////////////////////////////////////
-//Technique: Prompt of BeanShell inside JADE Agent
+//# /////////////////////////////////////////////
+//# Technique: Prompt of BeanShell inside JADE Agent
 String getBshPrompt() {
 	sz = jconsole.getFont().size;
 		
@@ -102,7 +102,7 @@ String getBshPrompt() {
 		new Font("Monaco", Font.PLAIN, sz), 
 		new Color(  196,0,0 ) );	    	
 	} else {
-		myAgent.jadeConsole().print(  "\n[monitor]://" 
+		myAgent.jadeConsole().print(  "\n[reader]://" 
 				+myAgent.getLocalName()+"/"+pathToFile( bsh.cwd ) .getName() +"/", 
 				  new Font("Monaco", Font.PLAIN, sz), 
 				  new Color( 196,0,0  )  
@@ -114,26 +114,29 @@ String getBshPrompt() {
 
 
 
-
-// /////////////////////////////////////////////
-// Technique: info about myBOB & Node perspective()
+//# /////////////////////////////////////////////
+//# Technique: info about myBOB & Node perspective()
 outLogger(new Object[]{"level.00",	myAgent .getLocalName(), 
-	"Setting Behaviours distribution on Agent's runlevels", myBOB() .perspective() });
+	"Setting Behaviours distribution over agent run-level", myBOB() .perspective() });
 
 
+
+//# /////////////////////////////////////////////
+//# Technique: change root.path of BeanShell Interpreter
 public void cdhome(){
 	cd(myNode .nodeConfigPath);
 }
 
 
-///////////////////////////////////////////////
-//Technique: Level 0 --> setting in startup-Level
+
+//# /////////////////////////////////////////////
+//# Technique: Level 0 --> setting in startup-Level
 myNode .currentExecLevel = 0;
 runLevels( myBOB,   myNode .currentExecLevel );
 
 
-// /////////////////////////////////////////////
-// Technique: Level 0. started from bare init!
+//# /////////////////////////////////////////////
+//# Technique: Level 0. started from bare init!
 outLogger(new Object[]{"level.00 ",	myAgent .getLocalName(), 
 	"Level", 
 	"["+ myNode .currentExecLevel + "]", 

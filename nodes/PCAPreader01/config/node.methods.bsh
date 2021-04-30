@@ -10,13 +10,17 @@ nodeProp2.load( nodeConfigPath + "node.properties" );
 
 myBOB.clear();
 
+
+
+
+
 //# ----------------------------------------
 //#  [1] Chapter 10. Managing Services with systemd Red Hat Enterprise Linux 7 | 
 //#      Red Hat Customer Portal. (n.d.). Retrieved April 2, 2021, from 
 //#      https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/chap-managing_services_with_systemd
 //# ----------------------------------------
-// An emulate version of {service and systemctl} from Centos 7 - RHEL 
-// @author:  fjac et al. - SECOMUCI Research Group - UniLeon (2021).
+//# An emulate version of {service and systemctl} from Centos 7 - RHEL 
+//# @author:  FJAC et al. - SECOMUCI & SALBIS Research Group - UniLeon (2021).
 
 //------------------------------------------
 // service() A Java Scripted Object (Closure)
@@ -293,11 +297,11 @@ import com.dpsframework.util.*;
 
 
 
-//Local-Test functions
-//-----------------------------------------------------------------
-//Revised:   2021.04.28                               
-//[ RuleBased-Security-Lab example ]
-//
+//# Local-Test functions
+//# -----------------------------------------------------------------
+//# Revised:   2021.04.28                               
+//# [ RuleBased-Security-Lab example ]
+//# 
 String AFIRMATIVO  = "Correct !";
 String NEGATIVO    = "Oops____!";
 String AFFIRMATIVE = "Correct !";
@@ -344,19 +348,19 @@ void resultBanner(String q, String a) {
 	println( formatQ( 11 , '-' ) );
 }
 
-///////////////////////////////////////////////
-//Technique: Some monitors Functions 
+//# /////////////////////////////////////////////
+//# Technique: Some monitors Functions 
 Map testArea = new HashMap();
 Map myTest   = new HashMap();
 
 
 
-///////////////////////////////////////////////
-//Technique: Overload test() with: test(Object) and test(int)
+//# /////////////////////////////////////////////
+//# Technique: Overload test() with: test(Object) and test(int)
 void test(int h) {
 	test_MENU  = "menu";   test_MENU_CODE  = 99;
 	
-//	testArea.put(1000, "----------------------                ----------");
+//#	testArea.put(1000, "----------------------                ----------");
 	testArea.put(7000, "----------------------Open-Transform .PCAP files");
 	  myTest.put("pcap.transform"       ,  7200   );
 	  myTest.put("pcap.open"            ,  7100   );
@@ -420,8 +424,8 @@ void test(int h) {
 		}
 }
 
-///////////////////////////////////////////////
-//Technique: Overload test() with: test(Object) and test(int)
+//# /////////////////////////////////////////////
+//# Technique: Overload test() with: test(Object) and test(int)
 void test() { 
 	test(99); 
 }

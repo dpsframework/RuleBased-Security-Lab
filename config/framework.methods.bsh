@@ -463,7 +463,7 @@ public void help(Object o){
 
 public void help(int h) {
 idiom    = System.getProperty("user.language").startsWith("es") ? "es" : "";
-// idiom    = ""; // Lock for English. Someday in Castillian Spanish but, not by now!...
+idiom    = ""; // Lock for English. Someday in Castillian Spanish but, not by now!...
 
 helpFile  = ("help/help") + (idiom.length() == 0 ? "." : "_" + idiom + ".") ;
 

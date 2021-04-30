@@ -1,6 +1,10 @@
-// Revised:   2021.04.28                               
-//            [ RuleBased-Security-Lab example ]
-//
+//# Revised:   2021.04.28                               
+//#            [ RuleBased-Security-Lab example ]
+//# -----------------------------------------------
+
+import jade.domain.JADEAgentManagement.JADEManagementOntology;
+import jade.lang.acl.ACLMessage;
+import jade.lang.acl.MessageTemplate;
 import jade.content.Concept;
 import jade.content.onto.basic.Action;
 import jade.content.onto.basic.Done;
@@ -20,48 +24,16 @@ import com.dpsframework.domain.RMNGBehaviour;
 import com.dpsframework.util.*;
 
 
-/**
- * This behaviour serves the actions of the Problem-Solvers Ontology supported
- * by the PsNodeAgent and PsMonitorAgent.
- * 
- * <pre>
- * ---------------------------------- 
- * jamo (JADE Management Ontology)    
- * ---------------------------------- 
- *  +-----(A)----(B)----(C)----+      
- * Event   |                   |      
- *         |                   |      
- *         +-------------------+      
- *                                    
- * (A) Action ShowGui received        
- * (B) Callback to that Action        
- * (C) Prepare and send Done() action 
- *                    BeanShell.class 
- * ---------------------------------- 
- * 
- * </pre> 
- * 
- * @see RMNGBehaviour
- * 
- * @author Tiziana Trucco - TILAB
- * @author Fabio Bellifemine - TILAB
- * @author Giovanni Caire - TILAB
- * 
- * @author Adapted by Ph.D. Student Francisco J Aguayo Canela - (UniLeon)
- * 
- * <p>
- * <small>Department of Electric Engineering, Systems and Automatic<br>
- *         School of Industrial Engineering and Information Technology<br>
- *         &copy; <b>University of Leon</b> - Spain. <a
- *         href="http://www.unileon.es">{http://www.unileon.es}</a>
- * </small>
- */
+
+//# -----------------------------------------------
+//# Class
+//# -----------------------------------------------
 public class JAMONodeManagement2 extends RMNGBehaviour {
 
 	StringBuilder sb 	= new StringBuilder(
 			"          \n"+
 			"          * ---------------------------------- *\n"+
-			"          * jamo (JADE Management Ontology)    *\n"+
+			"          * jademo (JADE Management Ontology)  *\n"+
 			"          * ---------------------------------- *\n"+
 			"          *  +->---(A)--->(B)--->(C)----+      *\n"+
 			"          * Event   |                   |      *\n"+
@@ -161,13 +133,7 @@ public class JAMONodeManagement2 extends RMNGBehaviour {
 		
 		return notification;
 	}
-	
-	
-	
-	
-	
-	
-	
+
 	
 	private void outLogger(Object[] o){
 		if   (! debugMode   ) { return; }
@@ -191,3 +157,32 @@ public class JAMONodeManagement2 extends RMNGBehaviour {
 	}
 
 }  // End of Basal JADE.Management Behaviour for Show GUI on PsBoardAgent hide instances.
+
+
+
+
+
+
+
+//# ---------------------------------------------
+//# JADE Agent Management Ontology (JADEMO) Loader
+//# ---------------------------------------------
+
+mt1  = null; 
+mt7  = null;
+jademo = null;
+
+MessageTemplate mt1 = MessageTemplate.MatchPerformative(ACLMessage.REQUEST);
+MessageTemplate mt7 = MessageTemplate.and(mt1, MessageTemplate.MatchOntology(JADEManagementOntology.NAME));
+
+jademo = new JAMONodeManagement2( myAgent, mt7 );
+jademo.setBehaviourName( "jademo" ); 
+
+return ( JAMONodeManagement2 ) jademo; 
+
+
+
+//# ---------------------------------------------
+//# End of jademo.loader.java
+//# ---------------------------------------------
+

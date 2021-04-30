@@ -1,6 +1,7 @@
-// Revised:   2021.04.28                               
-//            [ RuleBased-Security-Lab example ]
-//
+//# Revised:   2021.04.28                               
+//#            [ RuleBased-Security-Lab example ]
+//# -----------------------------------------------
+
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;

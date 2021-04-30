@@ -1,6 +1,7 @@
-// Revised:   2021.04.28                               
-//            [ RuleBased-Security-Lab example ]
-//
+//# Revised:   2021.04.28                               
+//#            [ RuleBased-Security-Lab example ]
+//#
+
 import com.dpsframework.core.*;
 import com.dpsframework.core.engines.*;
 import com.dpsframework.core.behaviour.*;
@@ -66,47 +67,33 @@ import com.dpsframework.util.PsServices;
 
 
 
-///////////////////////////////////////////////
-//Technique: Test if restart agent it was requested by method: init (0);
-if (myNode .currentExecLevel >  0 	&&  
-	myNode .currentExecLevel != 6  	) {
-
-	outLogger(new Object[]{"level.00 ", myAgent.getLocalName(), 
-			"It goes to exit from level ["+ myNode .currentExecLevel + "] now!" });
-	
-	exit();  // It is really an exit with final Agent-life!	
+//# /////////////////////////////////////////////
+//# Technique: Testing if it level was requested by user a restart
+if ( myNode .currentExecLevel > 0 &&  myNode .currentExecLevel != 6 ) {		
+	outLogger(new Object[]{"level.00 ",	myAgent .getLocalName(), "It goes to exit from level", 
+			     "["+ myNode .currentExecLevel + "]", "now!"});	
+	exit();  // Really, it's a true EXIT!	
 }
 
 
-///////////////////////////////////////////////
-//Restart from Level:6
+
+//# /////////////////////////////////////////////
+//# Restart from Level:6
 myAgent .myNode().initializeNode();
 myAgent .myNode().refresh();
 
 
 
-///////////////////////////////////////////////
-//Technique: Some BeanShell functions renamed. 
+//# /////////////////////////////////////////////
+//# Technique: Some shell functions renamed
 public void clear()   { bsh.console.clearText(); }
 public void desktop() {  }
 
 
-///////////////////////////////////////////////
-//Technique: Level-0. A new Prompt to user JADE-Shell
-String getBshPrompt(){
-	sz = jconsole.getFont().size;
-	myAgent .jadeConsole() .print( "\n[" 
-	+myAgent.getLocalName()+"]:/"+pathToFile( bsh.cwd ) .getName() +"/", 
-	  new Font("Monaco", Font.PLAIN, sz), 
-	  new Color( 0,0,196 )  
-	);
-    return "$ > ";
-}
 
 
-
-///////////////////////////////////////////////
-//Technique: Load Framework global help & utils.
+//# /////////////////////////////////////////////
+//# Technique: Load Framework global help & utils.
 if ( pathToFile( frameworkConfigPath + "framework.methods.bsh" ).exists() ){
 	source(      frameworkConfigPath + "framework.methods.bsh" );
 }
@@ -115,50 +102,90 @@ if ( pathToFile( nodeConfigPath + "board.methods.bsh" ).exists() ){
 }
 
 
-
-///////////////////////////////////////////////
-//Technique: info about myBOB & others util commands
-outLogger(new Object[]{"level.00 ", myAgent.getLocalName(), 
-		"Running Script level.00.bsh inside of this Node-Agent.",
-		myBOB() .perspective()  });
-
-
-
-///////////////////////////////////////////////
-//Technique: change root.path of BeanShell Interpreter
-public void cdhome(){
-	cd(nodeConfigPath);
+//# /////////////////////////////////////////////
+//# Technique: Cosmetic Fonts for Mac-Developers.
+if (  PsServices.getNativePath().equals("mac")   ) {
+	sz = jconsole.getFont().size;
+	jconsole.setFont(new Font( "Monaco", Font.PLAIN, sz));
 }
 
 
 
-///////////////////////////////////////////////
-//Technique: Level 0 --> setting the startup Level
-myNode .currentExecLevel = 0;
-runLevels( myBOB,   myNode.currentExecLevel );
+
+//# /////////////////////////////////////////////
+//# Technique: Prompt of BeanShell inside JADE Agent
+String getBshPrompt() {
+	sz = jconsole.getFont().size;
+		
+	// Advanced used => advanced not void (full-path) so; (advanced = 1, unset("advanced");)	
+	if(  advanced == void  ){
+		myAgent.jadeConsole().print( "\n["
+	            +myAgent.getLocalName()+"]:/" + pathToFile( bsh.cwd ).getName() + "/", 
+		new Font("Monaco", Font.PLAIN, sz), 
+		new Color(  196,0,0 ) );	    	
+	} else {
+		myAgent.jadeConsole().print(  "\n[ids-board]://" 
+				+myAgent.getLocalName()+"/"+pathToFile( bsh.cwd ) .getName() +"/", 
+				  new Font("Monaco", Font.PLAIN, sz), 
+				  new Color( 196,0,0  )  
+				);
+	}	
+	return "# > ";
+}
 
 
 
-///////////////////////////////////////////////
-//Technique: Level 0. started from bare init!
+
+
+//# /////////////////////////////////////////////
+//# Technique: info about myBOB & Node perspective()
+//# outLogger(new Object[]{"level.00",	myAgent .getLocalName(), 
+//# 	"Setting Behaviours distribution over agent run-level", myBOB() .perspective() });
+
+
+
+//# /////////////////////////////////////////////
+//# Technique: change root.path of BeanShell Interpreter
+public void cdhome(){
+	cd(myNode .nodeConfigPath);
+}
+
+
+
+
+
+//# /////////////////////////////////////////////
+//# Technique: info about myBOB & others util commands
 outLogger(new Object[]{"level.00 ", myAgent.getLocalName(), 
-		"Level", "["+ myNode .currentExecLevel + "]", "has finished loading."});
+		"Running Script level.00.bsh inside of this Agent.",
+		myBOB() .perspective()  });
 
 
 
+//# /////////////////////////////////////////////
+//# Technique: Level 0 --> setting in startup-Level
+myNode .currentExecLevel = 0;
+runLevels( myBOB,   myNode .currentExecLevel );
 
 
-// /////////////////////////////////////////
-// Connection (myDB) only for NIDsBoardAgent
+//# /////////////////////////////////////////////
+//# Technique: Level 0. started from bare init!
+outLogger(new Object[]{"level.00 ",	myAgent .getLocalName(), 
+	"Level", 
+	"["+ myNode .currentExecLevel + "]", 
+	"has finished loading." });
 
-String TICKET_DB_FILE_NAME = "ticketDB";
+
+
+//# /////////////////////////////////////////
+//# Connection (myDB) only for IDS-Board-Agents
+
+String TICKET_DB_FILE_NAME = "nidsDB";
 String DATABASE_USER_ID ="sa";
 String DATABASE_PASSWORD = "password";
 
 
-// Technique: HyperSonicSQL only for NIDsBoardAgent
-// dbFile =  myNode.nodeVarPath.replace("\\", "/data/") + TICKET_DB_FILE_NAME;
-// Recall: move to data/ticketDB
+//# Technique: HyperSonicSQL only for IDS-Board-Agents
 dbFile =  myNode.relativeVarPath +  "data/" + TICKET_DB_FILE_NAME;
 
 try {
@@ -182,4 +209,4 @@ myDB() { return myDB; }
 getDB(){ return myDB; }
 
 
-//End-of-Level-00 config file.
+//# End-of-Level-00 config file.
