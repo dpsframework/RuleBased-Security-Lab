@@ -187,7 +187,7 @@ Please, see [**Appendix A**](#appendix-a), for Windows users.
 
 ### Windows OS command-line sentences
 
-####  How to deploy the new RuleBased-Security-Lab agents on JADE platform
+####  A.1. How to deploy the new RuleBased-Security-Lab agents on JADE platform
 
 
 
@@ -213,17 +213,16 @@ Please, see [**Appendix A**](#appendix-a), for Windows users.
 
 ### New incorporated functions and behaviours
 
-####  Distributed application 
+####  B.1. Distributed application 
 
 
 
 
 
 
-####  Board-Class Agents
+####  B.2. Board-Class Agents
 
-
-| Service name <br>and its file   | Function & Behaviour descriptions  |
+| Service name   | About new developed functions & behaviour  |
 |:--------             |:--------------------- | 
 |  <img src="images/logoPsMonitorAgent.gif" width="50px">   | • Behaviour:  <br> • Function:    | 
 |  <img src="images/logoPsNode.gif" width="50px">   | • Behaviour:  <br> • Function:    | 
