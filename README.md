@@ -117,12 +117,12 @@ Please, see [**Appendix A**](#appendix-a), for Windows users.
 ### 2.2. Analyzer-Class Agents
 
 
-| Agent<br>interface      | Behaviour<br>& Functions   | Image description  |
+| Agent<br>interface      | Behaviour<br>& Functions   | Image title<br>and description  |
 |:--------             |:--------------------- |:---------   |
-|  <img src="images/logoPsNode.gif" height="60px">   | • Behaviour:  <br> • Function:    | Image **5.**: Title of this image.   | 
-|  <img src="images/logoPsNode.gif" height="60px">   | • Behaviour:  <br> • Function:    | Image **6.**: Title of this image.   | 
-|  <img src="images/logoPsNode.gif" height="60px">   | • Behaviour:  <br> • Function:    | Image **7.**: Title of this image.   | 
-|  <img src="images/logoPsNode.gif" height="60px">   | • Behaviour:  <br> • Function:    | Image **8.**: Title of this image.   | 
+|  <img src="images/logoPsNode.gif" width="60px">   | • Behaviour:  <br> • Function:    | Image **5.**: Title of this image.   | 
+|  <img src="images/logoPsNode.gif" width="60px">   | • Behaviour:  <br> • Function:    | Image **6.**: Title of this image.   | 
+|  <img src="images/logoPsNode.gif" width="60px">   | • Behaviour:  <br> • Function:    | Image **7.**: Title of this image.   | 
+|  <img src="images/logoPsNode.gif" width="60px">   | • Behaviour:  <br> • Function:    | Image **8.**: Title of this image.   | 
 
 
 
@@ -135,10 +135,10 @@ Please, see [**Appendix A**](#appendix-a), for Windows users.
 
 | Agent<br>interface      | Behaviour<br>& Functions   | Image description  |
 |:--------             |:--------------------- |:---------   |
-|  <img src="images/logoPsMonitorAgent.gif" height="60px">   | • Behaviour:  <br> • Function:    | Image **9.**: Title of this image.   | 
-|  <img src="images/logoPsMonitorAgent.gif" height="60px">   | • Behaviour:  <br> • Function:    | Image **10.**: Title of this image.   | 
-|  <img src="images/logoPsMonitorAgent.gif" height="60px">   | • Behaviour:  <br> • Function:    | Image **11.**: Title of this image.   | 
-|  <img src="images/logoPsMonitorAgent.gif" height="60px">   | • Behaviour:  <br> • Function:    | Image **12.**: Title of this image.   | 
+|  <img src="images/logoPsMonitorAgent.gif" width="60px">   | • Behaviour:  <br> • Function:    | Image **9.**: Title of this image.   | 
+|  <img src="images/logoPsMonitorAgent.gif" width="60px">   | • Behaviour:  <br> • Function:    | Image **10.**: Title of this image.   | 
+|  <img src="images/logoPsMonitorAgent.gif" width="60px">   | • Behaviour:  <br> • Function:    | Image **11.**: Title of this image.   | 
+|  <img src="images/logoPsMonitorAgent.gif" width="60px">   | • Behaviour:  <br> • Function:    | Image **12.**: Title of this image.   | 
 
 
 
