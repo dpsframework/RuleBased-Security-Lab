@@ -91,7 +91,7 @@ try {
 	myAgent .myDB = DriverManager.getConnection(dbConnection, DATABASE_USER_ID, DATABASE_PASSWORD);		
 	outLogger(new Object[] {"setup", myNode.nodeName,
 			"Connected with:\n setup    : " + dbConnection });
-	this.myDB = myAgent.myDB;
+	myDB = myAgent.myDB;
 	
 } catch (SQLException e1) {
 	outLogger(new Object[] {"setup", myNode.nodeName,
@@ -104,7 +104,7 @@ try {
 
 myDB() { return myAgent .myDB; }
 getDB(){ return myAgent .myDB; }
-myDB = myAgent .myDB()
+
 
 
 

@@ -93,7 +93,7 @@ public class BoardGridLocal extends OneShotBehaviour {
 		outLogger(true, new Object[]{getBehaviourName(), myAgent.getLocalName(), 
 			      "Notification message was:",
 			      "\n          * /------------------------------------------------+\n\n",
-			      rs,
+			      myAgent.myDB,
 			      "\n\n          * \\------------------------------------------------+"
 		});
 		return exitValue;
