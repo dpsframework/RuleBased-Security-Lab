@@ -518,7 +518,7 @@ myBOB() {
 //Local-Test functions
 //-----------------------------------------------------------------
 //Revised:   2021.04.28                               
-//[ Snort-Agents-IoT example ]
+//[ RuleBased-Security-Lab example ]
 //
 String AFIRMATIVO  = "Correct !";
 String NEGATIVO    = "Oops____!";

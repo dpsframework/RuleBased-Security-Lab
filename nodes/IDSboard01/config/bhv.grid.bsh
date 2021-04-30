@@ -1,5 +1,5 @@
 // Revised:   2021.04.28                               
-//            [ Snort-Agents-IoT example ]
+//            [ RuleBased-Security-Lab example ]
 // 
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;

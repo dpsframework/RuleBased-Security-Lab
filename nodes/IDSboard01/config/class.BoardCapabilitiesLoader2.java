@@ -1,5 +1,5 @@
 // Revised:   2021.04.28                               
-//            [ Snort-Agents-IoT example ]
+//            [ RuleBased-Security-Lab example ]
 //
 import jade.core.Agent;
 import jade.core.behaviours.WakerBehaviour;
