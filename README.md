@@ -100,6 +100,13 @@ Please, see [**Appendix A**](#appendix-a), for Windows users.
 
 
 
+| Agent<br>interface      | Behaviour & Functions   | Image description  |
+|:--------             |:--------------------- |:---------   |
+|  <img src="images/logoPsBoard.gif" height="60px">   | • Behaviour:  <br> • Function:    | Image **1.**: Title of this image.   | 
+|  <img src="images/logoPsBoard.gif" height="60px">   | • Behaviour:  <br> • Function:    | Image **2.**: Title of this image.   | 
+|  <img src="images/logoPsBoard.gif" height="60px">   | • Behaviour:  <br> • Function:    | Image **3.**: Title of this image.   | 
+|  <img src="images/logoPsBoard.gif" height="60px">   | • Behaviour:  <br> • Function:    | Image **4.**: Title of this image.   | 
+
 
 
 
@@ -109,6 +116,12 @@ Please, see [**Appendix A**](#appendix-a), for Windows users.
 ### 1.4. Analyzer-Class Agents screenshot gallery
 
 
+| Agent<br>interface      | Behaviour & Functions   | Image description  |
+|:--------             |:--------------------- |:---------   |
+|  <img src="images/logoPsNode.gif" height="60px">   | • Behaviour:  <br> • Function:    | Image **5.**: Title of this image.   | 
+|  <img src="images/logoPsNode.gif" height="60px">   | • Behaviour:  <br> • Function:    | Image **6.**: Title of this image.   | 
+|  <img src="images/logoPsNode.gif" height="60px">   | • Behaviour:  <br> • Function:    | Image **7.**: Title of this image.   | 
+|  <img src="images/logoPsNode.gif" height="60px">   | • Behaviour:  <br> • Function:    | Image **8.**: Title of this image.   | 
 
 
 
@@ -117,6 +130,16 @@ Please, see [**Appendix A**](#appendix-a), for Windows users.
 
 
 ### 1.5. Reader-Class Agents screenshot gallery
+
+
+| Agent<br>interface      | Behaviour & Functions   | Image description  |
+|:--------             |:--------------------- |:---------   |
+|  <img src="images/logoPsMonitorAgent.gif" height="60px">   | • Behaviour:  <br> • Function:    | Image **9.**: Title of this image.   | 
+|  <img src="images/logoPsMonitorAgent.gif" height="60px">   | • Behaviour:  <br> • Function:    | Image **10.**: Title of this image.   | 
+|  <img src="images/logoPsMonitorAgent.gif" height="60px">   | • Behaviour:  <br> • Function:    | Image **11.**: Title of this image.   | 
+|  <img src="images/logoPsMonitorAgent.gif" height="60px">   | • Behaviour:  <br> • Function:    | Image **12.**: Title of this image.   | 
+
+
 
 
 
@@ -200,11 +223,11 @@ Please, see [**Appendix A**](#appendix-a), for Windows users.
 ####  Board-Class Agents
 
 
-| Agent<br>interface      | Behaviour & Functions   | Image description  |
-|:--------             |:--------------------- |:---------   |
-|  <img src="images/logoPsMonitorAgent.gif" width="50px">   | • Behaviour:  <br> • Function:    | Image **1.**: Title of this image.   | 
-|  <img src="images/logoPsNode.gif" width="50px">   | • Behaviour:  <br> • Function:    | Image **2.**: Title of this image.   | 
-|  <img src="images/logoPsStageBussy.gif" width="50px">   | • Behaviour:  <br> • Function:    | Image **3.**: Title of this image.   | 
-|  <img src="images/logoPsBoard.gif" height="60px">   | • Behaviour:  <br> • Function:    | Image **4.**: Title of this image.   | 
+| Service name <br>and its file   | Function & Behaviour descriptions  |
+|:--------             |:--------------------- | 
+|  <img src="images/logoPsMonitorAgent.gif" width="50px">   | • Behaviour:  <br> • Function:    | 
+|  <img src="images/logoPsNode.gif" width="50px">   | • Behaviour:  <br> • Function:    | 
+|  <img src="images/logoPsStageBussy.gif" width="50px">   | • Behaviour:  <br> • Function:    | 
+|  <img src="images/logoPsBoard.gif" height="60px">   | • Behaviour:  <br> • Function:    | 
 
 
