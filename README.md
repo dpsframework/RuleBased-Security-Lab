@@ -94,8 +94,9 @@ Please, see [**Appendix A**](#appendix-a), for Windows users.
 
 
 
+## 2. Screenshot gallery
 
-### 1.3. Board-Class Agents screenshot gallery
+### 2.1. Board-Class Agents 
 
 
 
@@ -113,7 +114,7 @@ Please, see [**Appendix A**](#appendix-a), for Windows users.
 
 
 
-### 1.4. Analyzer-Class Agents screenshot gallery
+### 2.2. Analyzer-Class Agents
 
 
 | Agent<br>interface      | Behaviour & Functions   | Image description  |
@@ -129,7 +130,7 @@ Please, see [**Appendix A**](#appendix-a), for Windows users.
 
 
 
-### 1.5. Reader-Class Agents screenshot gallery
+### 2.3. Reader-Class Agents 
 
 
 | Agent<br>interface      | Behaviour & Functions   | Image description  |
@@ -148,7 +149,7 @@ Please, see [**Appendix A**](#appendix-a), for Windows users.
 
 
 
-## 2. References
+## References
 
 
 
