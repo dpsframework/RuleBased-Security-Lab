@@ -1,0 +1,96 @@
+import jade.core.Agent;
+import jade.core.behaviours.OneShotBehaviour;
+import jade.lang.acl.ACLMessage;
+import jade.util.Logger;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.text.MessageFormat;
+
+import com.dpsframework.PsNodeAgent;
+import com.dpsframework.core.engines.RBEngine;
+
+/**
+ * Restart an Agent with ODEVICE integrated 
+ * Process = clear + setting odevice-folder + config.bat + exec.bat
+ * Conceptual Test 2: integrating O-DEVICE in JADE Agents
+ * 
+ * @author Ph.D. Francisco J Aguayo Canela (UniLeon)
+ * <p>
+ * <small>	Department of Electric Engineering, Systems and Automatic<br>
+ * 				School of Industrial Engineering and Information Technology<br>
+ * 				&copy; <b>University of Leon</b> - Spain.  
+ * 				<a href="http://www.unileon.es">{http://www.unileon.es}</a>
+ * </small>
+*/
+public class AgentRestartODEVICE2 extends OneShotBehaviour {
+
+	PsNodeAgent 		theAgent;
+
+	public AgentRestartODEVICE2(Agent a){
+		super(a);
+		theAgent = (PsNodeAgent) a;
+	}
+	
+	public void action() {
+		outLogger(new Object[]{getBehaviourName(), theAgent.getLocalName(),"Restarting O-DEVICE"});
+		
+	   	String oDeviceFolder 		= theAgent .myNode().nodeEnginePath .replace("\\","/");
+	   	String oDeviceFolderGlobal 	= "(defglobal ?*odevice-folder* = " + "\"" + oDeviceFolder + "\" )";
+	   	String fileName				= "restartODEVICE.bat";
+	   	String commandToRunning		= "(batch* " + theAgent .myNode().relativeEnginePath + fileName +")";
+	   	
+	 	String restartProcess 		= 
+			  "(clear)" 				+ System.lineSeparator() +
+			  oDeviceFolderGlobal		+ System.lineSeparator() +
+			  "(batch* " + theAgent .myNode().relativeEnginePath + "config.bat)" + System.lineSeparator() +
+			  "(batch* " + theAgent .myNode().relativeEnginePath + "exec.bat)"   + System.lineSeparator();
+
+	 	File oDeviceRestartFile 	= new File( theAgent .myNode().nodeEnginePath + fileName );
+	 	BufferedWriter bufferW 		= null;
+	 	FileWriter     fileW 		= null;
+	 	
+	 	
+	 	try {
+	 		if ( !oDeviceRestartFile.exists() ){
+	 			oDeviceRestartFile.createNewFile();
+	 		}
+	 		fileW = new FileWriter(oDeviceRestartFile.getAbsoluteFile(), false);
+	 		bufferW = new BufferedWriter(fileW);
+	 		bufferW.write(restartProcess);
+	 		
+	 	} catch (IOException e) {
+	 		outLogger(new Object[]{getBehaviourName(), theAgent.getLocalName(),"Error at creating file Restart-O-DEVICE"});
+	 		return;
+	 	} finally {
+	 		try{
+	 			if ( bufferW != null) { bufferW.close(); }
+	 			if ( fileW != null) { fileW.close(); }
+	 		} catch (IOException ex) {
+	 			outLogger(new Object[]{getBehaviourName(), theAgent.getLocalName(),"Error at closing file Restart-O-DEVICE"});
+	 			return;
+	 		}
+	 	}
+
+		ACLMessage queryMessage = theAgent .makeProcessMessage( RBEngine.EVAL_COMMAND , commandToRunning );
+		N2NREInitiator b 		= new N2NREInitiator(theAgent, queryMessage );
+	 	b.setBehaviourName( "oRest");
+	 	theAgent.addBehaviour(b);
+		outLogger(new Object[]{getBehaviourName(), theAgent.getLocalName(),"O-DEVICE will be restarted now!"});
+
+	}
+
+	private void outLogger(Object[] o){
+		if   (! theAgent.myNode().debuggingMode   ) { return; }
+		if   ( o.length == 0) { return; }
+		int    n  = o.length;
+		String mf = " {0}: [{1}]";    // {2} {3} {4} {5} 
+		for (int i = 2; i < n; i++ ){ mf += " {" + i +"}"; }
+		o[0] = (o[0]+"         ").substring(0, 9); 
+		Logger.println(MessageFormat.format(mf,o));
+		return;
+	}
+
+}

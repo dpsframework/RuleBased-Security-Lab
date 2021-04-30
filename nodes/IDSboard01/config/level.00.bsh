@@ -1,0 +1,185 @@
+// Revised:   2021.04.28                               
+//            [ Snort-Agents-IoT example ]
+//
+import com.dpsframework.core.*;
+import com.dpsframework.core.engines.*;
+import com.dpsframework.core.behaviour.*;
+import com.dpsframework.util.*;
+import com.dpsframework.domain.*;
+import com.dpsframework.PsNodeAgent;
+import com.dpsframework.PsNodeAgentGui;
+import com.dpsframework.*;
+import com.dpsframework.core.behaviour.BhConstants;
+import com.dpsframework.util.PsNodeSettings;
+import com.dpsframework.util.PsServices;
+import com.dpsframework.util.PsConstants;
+import com.dpsframework.domain.PsoNames;
+import com.dpsframework.core.engines.RBConstants;
+
+import jade.content.lang.Codec;
+import jade.content.lang.sl.SLCodec;
+import jade.core.AID;
+import jade.core.Agent;
+import jade.core.behaviours.Behaviour;
+import jade.core.behaviours.OneShotBehaviour;
+import jade.core.behaviours.TickerBehaviour;
+import jade.domain.DFService;
+import jade.domain.FIPAException;
+import jade.domain.FIPANames;
+import jade.domain.DFGUIManagement.DFAppletOntology;
+import jade.domain.FIPAAgentManagement.DFAgentDescription;
+import jade.domain.FIPAAgentManagement.FIPAManagementOntology;
+import jade.domain.FIPAAgentManagement.FailureException;
+import jade.domain.FIPAAgentManagement.ServiceDescription;
+import jade.domain.JADEAgentManagement.JADEManagementOntology;
+import jade.domain.JADEAgentManagement.ShowGui;
+import jade.lang.acl.ACLMessage;
+import jade.util.Logger;
+import jade.util.leap.HashMap;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.io.BufferedReader;
+import java.io.DataInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.text.MessageFormat;
+
+import javax.swing.ImageIcon;
+import javax.swing.SwingUtilities;
+
+import bsh.EvalError;
+import bsh.Interpreter;
+import bsh.util.NameCompletionTable;
+
+import com.dpsframework.core.behaviour.BhConstants;
+import com.dpsframework.domain.ProblemSolversOntology;
+import com.dpsframework.util.JadeConsole;
+import com.dpsframework.util.PsConstants;
+import com.dpsframework.util.PsServices;
+
+
+
+///////////////////////////////////////////////
+//Technique: Test if restart agent it was requested by method: init (0);
+if (myNode .currentExecLevel >  0 	&&  
+	myNode .currentExecLevel != 6  	) {
+
+	outLogger(new Object[]{"level.00 ", myAgent.getLocalName(), 
+			"It goes to exit from level ["+ myNode .currentExecLevel + "] now!" });
+	
+	exit();  // It is really an exit with final Agent-life!	
+}
+
+
+///////////////////////////////////////////////
+//Restart from Level:6
+myAgent .myNode().initializeNode();
+myAgent .myNode().refresh();
+
+
+
+///////////////////////////////////////////////
+//Technique: Some BeanShell functions renamed. 
+public void clear()   { bsh.console.clearText(); }
+public void desktop() {  }
+
+
+///////////////////////////////////////////////
+//Technique: Level-0. A new Prompt to user JADE-Shell
+String getBshPrompt(){
+	sz = jconsole.getFont().size;
+	myAgent .jadeConsole() .print( "\n[" 
+	+myAgent.getLocalName()+"]:/"+pathToFile( bsh.cwd ) .getName() +"/", 
+	  new Font("Monaco", Font.PLAIN, sz), 
+	  new Color( 0,0,196 )  
+	);
+    return "$ > ";
+}
+
+
+
+///////////////////////////////////////////////
+//Technique: Load Framework global help & utils.
+if ( pathToFile( frameworkConfigPath + "framework.methods.bsh" ).exists() ){
+	source(      frameworkConfigPath + "framework.methods.bsh" );
+}
+if ( pathToFile( nodeConfigPath + "board.methods.bsh" ).exists() ){
+	source(      nodeConfigPath + "board.methods.bsh" );
+}
+
+
+
+///////////////////////////////////////////////
+//Technique: info about myBOB & others util commands
+outLogger(new Object[]{"level.00 ", myAgent.getLocalName(), 
+		"Running Script level.00.bsh inside of this Node-Agent.",
+		myBOB() .perspective()  });
+
+
+
+///////////////////////////////////////////////
+//Technique: change root.path of BeanShell Interpreter
+public void cdhome(){
+	cd(nodeConfigPath);
+}
+
+
+
+///////////////////////////////////////////////
+//Technique: Level 0 --> setting the startup Level
+myNode .currentExecLevel = 0;
+runLevels( myBOB,   myNode.currentExecLevel );
+
+
+
+///////////////////////////////////////////////
+//Technique: Level 0. started from bare init!
+outLogger(new Object[]{"level.00 ", myAgent.getLocalName(), 
+		"Level", "["+ myNode .currentExecLevel + "]", "has finished loading."});
+
+
+
+
+
+// /////////////////////////////////////////
+// Connection (myDB) only for NIDsBoardAgent
+
+String TICKET_DB_FILE_NAME = "ticketDB";
+String DATABASE_USER_ID ="sa";
+String DATABASE_PASSWORD = "password";
+
+
+// Technique: HyperSonicSQL only for NIDsBoardAgent
+// dbFile =  myNode.nodeVarPath.replace("\\", "/data/") + TICKET_DB_FILE_NAME;
+// Recall: move to data/ticketDB
+dbFile =  myNode.relativeVarPath +  "data/" + TICKET_DB_FILE_NAME;
+
+try {
+	Class.forName("org.hsqldb.jdbc.JDBCDriver");			
+	// Don't overwrite IF-EXISTS:
+	dbConnection = "jdbc:hsqldb:file:" + dbFile	+ ";ifexits=true";
+	myDB = DriverManager.getConnection(dbConnection, DATABASE_USER_ID, DATABASE_PASSWORD);		
+	outLogger(new Object[] {"setup", myNode.nodeName,
+			"Connected with:\n setup    : " + dbConnection });
+	
+} catch (SQLException e1) {
+	outLogger(new Object[] {"setup", myNode.nodeName,
+			"Can't connect to: " + dbConnection 	});
+	
+} catch (ClassNotFoundException e) {
+	System.err.println(" Error    : JDBCDriver from hsqldb Library is not accessible!");
+}
+
+
+myDB() { return myDB; }
+getDB(){ return myDB; }
+
+
+//End-of-Level-00 config file.

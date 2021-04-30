@@ -1,0 +1,222 @@
+/**
+ * ---------------------------------------------------------------------------------
+ * Ph.D.Thesis    : Deposit-Number# 2012.0000.55
+ * 
+ * Title (en_US)  : Applied Techniques in Deployment of Rule-Based Expert Systems
+ *                  on Distributed Architecture using Multi-Agent Paradigm.
+ * 
+ * Title (es_ES)  : Tecnicas para despliegue de arquitectura distribuida en sistemas
+ *                  expertos basados en reglas empleando el paradigma multiagente.
+ *                  
+ * Ph.D. Student  : Francisco J Aguayo Canela 
+ * Thesis Director: Ph.D. Isaias Garcia Rodriguez 
+ * 
+ * ---------------------------------------------------------------------------------
+ * Ph.D. Program  : Intelligent Systems at Engineering Science (Cod. 212)
+ */
+import jade.content.Concept;
+import jade.content.onto.basic.Action;
+import jade.core.Agent;
+import jade.domain.FIPAException;
+import jade.domain.FIPAAgentManagement.UnsupportedFunction;
+import jade.lang.acl.ACLMessage;
+import jade.lang.acl.MessageTemplate;
+import jade.security.JADESecurityException;
+import jade.util.Logger;
+
+import java.text.MessageFormat;
+
+import com.dpsframework.*;
+import com.dpsframework.domain.*;
+import com.dpsframework.util.*;
+
+/**
+ * This behaviour serves the actions of the Problem-Solvers Ontology supported
+ * by the PsNodeAgent and PsMonitorAgent.
+ * 
+ * <pre>
+ * ---------------------------------- 
+ * nmig( Node Migration Behaviour)    
+ * ---------------------------------- 
+ *  +-----(A)----(B)----(B)*----+      
+ * Event                        |      
+ *                              |      
+ *      Node--------(C)*--------+      
+ *     was migrated.
+ *                                    
+ * (A) An action `Migrate` received.        
+ * (B)* Callback to that Action.        
+ * (C)* FIPA Request Protocol. 
+ *  
+ *  -----------
+ *  NOTE:
+ *  -----------
+ *  B* (done) Action is sending from MonitorAgent to NodeRequester.
+ *  C* [HN2NREInitiator + N2HNREResponder] FIPA-Request Protocol.
+ * --------------------------------------------------------------- 
+ * 
+ * </pre> 
+ * 
+ * @see RMNGBehaviour
+ * 
+ * @author Giovanni Caire - TILAB
+ * @author Tiziana Trucco - TILAB
+ * @author Fabio Bellifemine - TILAB
+ * @author Giovanni Caire - TILAB
+ * 
+ * @author Adapted by Ph.D. Student Francisco J Aguayo Canela - (UniLeon)
+ * 
+ * <p>
+ * <small>Department of Electric Engineering, Systems and Automatic<br>
+ *         School of Industrial Engineering and Information Technology<br>
+ *         &copy; <b>University of Leon</b> - Spain. <a
+ *         href="http://www.unileon.es">{http://www.unileon.es}</a>
+ * </small>
+ */
+public class NMIGManagement extends RMNGBehaviour implements BhConstants {
+
+	StringBuilder sb 	= new StringBuilder(
+			 		"          \n"+
+					"          * ---------------------------------- *\n"+
+					"          * nmig( Node Migration Management)   *\n"+
+					"          * ---------------------------------- *\n"+
+					"          *   +->---(A)--->(B)--->(B)*---+     *\n"+
+					"          * `miab`                       |     *\n"+
+					"          *  event!                      |     *\n"+
+					"          *                              |     *\n"+
+					"          *                              |     *\n"+
+					"          *      Node<<------(C)*-<<<----+     *\n"+
+					"          *     was migrated.                  *\n"+
+					"          *                                    *\n"+
+					"          * (A) An action `Migrate` received.  *\n"+  
+					"          * (B)* Callback to that Action.      *\n"+
+					"          * (C)* FIPA Request Protocol.        *\n"+
+					"          * ---------------------------------- *\n" 
+	);
+
+	boolean  	debugMode  	= false;	
+	boolean  	verboseMode = false;
+	boolean  	wasInformed = false;
+	
+	PsNodeAgent thePsNode	= null;
+	PsMonitorAgent 	theNode		= null;
+
+	/**
+	 * Problem-Solvers Ontology Management adapted to - JADE Management Ontology.
+	 * 
+	 * @param a PsNodeAgent.
+	 * @param mt Message Template
+	 * @param isDebugging debuggingMode
+	 * @param isVerbose  verboseMode
+	 */
+	public NMIGManagement(Agent a, MessageTemplate mt, boolean isDebugging, boolean isVerbose) {
+		super(a, mt, isDebugging, isVerbose);
+		
+		myAgent = a;
+		
+		debugMode = isDebugging;
+		verboseMode = isVerbose;
+		
+		if (myAgent instanceof PsNodeAgent ) { 
+			thePsNode 		= (PsNodeAgent) myAgent;
+			outLogger(verboseMode, new Object[] { "miab", myAgent.getLocalName(), 
+			"`PsNodeAgent` class selected to this node-instance." });
+
+			return;
+		}
+		
+		if (myAgent instanceof PsMonitorAgent ) { 
+			theNode 		= (PsMonitorAgent) myAgent;
+			outLogger(verboseMode, new Object[] { "miab", myAgent.getLocalName(), 
+			"`PsMonitorAgent` class selected to this node-instance." });
+
+			return;
+		}
+		outLogger(verboseMode, new Object[] { "nmig", myAgent.getLocalName(), 
+				"Sorry, this behaviours is only for PsMonitors/PsNodeAgents instances." });
+		
+	}
+
+	
+
+
+	
+	public void onStart() {
+		super.onStart();		
+		if ( !wasInformed ) {
+			String diaLbl 	= "Diagram of '" + getBehaviourName() + "' Behaviour is shown below:";	
+			outLogger(new Object[] { getBehaviourName(), myAgent.getLocalName(), "Initialized." });
+			outLogger(verboseMode, new Object[] { getBehaviourName(), myAgent.getLocalName(), diaLbl, sb });
+		}	
+		wasInformed = true;
+	}	
+	
+	
+	
+	
+	/**
+	 * Callback method inside PsNodeAgent and PsMonitors to prepare notification message.
+	 * 
+	 * @param slAction action object on content field.
+	 * @param request msg.
+	 */
+	public ACLMessage performAction(Action slAction, ACLMessage request)
+			throws JADESecurityException, FIPAException {
+		
+		if ( thePsNode == null && theNode == null ) {
+			outLogger(new Object[] { getBehaviourName(), myAgent.getLocalName(), 
+					"Sorry, this behaviours is only for PsMonitors/PsNodeAgents instances." });
+			return null;
+		}
+		
+		Concept action 			= slAction.getAction();
+
+		if (action instanceof Migrate) {
+			outLogger(new Object[]{getBehaviourName()+"_A", myAgent.getLocalName(), 
+		      "New migration-PROPOSE was received."});
+			
+			if ( thePsNode != null){
+				outLogger(new Object[]{getBehaviourName()+"_A", thePsNode.getLocalName(),
+						"Calling-back to this PsNodeAgent instance."});
+				thePsNode.migrateNodeAction((Migrate) action, request );
+			}
+				
+			if ( theNode != null ){
+				outLogger(new Object[]{getBehaviourName()+"_A", theNode.getLocalName(),
+						"Calling-back to this PsMonitorAgent instance."});
+				theNode.migrateNodeAction((Migrate) action, request); 
+			}
+						
+		} else {
+			throw new UnsupportedFunction();
+		}
+
+		outLogger(new Object[]{getBehaviourName()+"_C", myAgent.getLocalName(), 
+	      "Migration management has finished."});
+			
+		return null;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	private void outLogger(Object[] o){
+		if   (! debugMode   ) { return; }
+		if   ( o.length == 0) { return; }
+		int    n  = o.length;
+		String mf = " {0}: [{1}]";    // {2} {3} {4} {5} 
+		for (int i = 2; i < n; i++ ){ mf += " {" + i +"}"; }
+		o[0] = (o[0]+"         ").substring(0, 9); 
+		Logger.println(MessageFormat.format(mf,o));
+		return;
+	}
+	
+	private void outLogger(boolean verbose, Object[] o){
+		if   ( verbose   ) { outLogger(o); }
+	}
+
+}  // End of `nmig` initiator.

@@ -1,0 +1,36 @@
+/** -------------------------------------------------------------------------------
+ * Ph.D.Thesis    : Deposit-Number# 2012.0000.55
+ * Title (en_US)  : Applied Techniques in Deployment of Rule-Based Expert Systems
+ *                  on Distributed Architecture using Multi-Agent Paradigm.
+ * Title (es_ES)  : Tecnicas para despliegue de arquitectura distribuida en sistemas
+ *                  expertos basados en reglas empleando el paradigma multiagente.
+ * Ph.D. Student  : Francisco J Aguayo Canela 
+ * Thesis Director: Ph.D. Isaias Garcia Rodriguez 
+ * Ph.D. Program  : Intelligent Systems at Engineering Science (Cod. 212)
+ * -------------------------------------------------------------------------------- */
+
+
+
+/**
+ * Finite State Machine Analyzer and Interpreter Engine's Responses.
+ */
+
+////////////////////////////////////////
+// Technique: Selection by hand:
+
+// (0) Integrated in Agent:
+ import com.dpsframework.core.behaviour.VisitToAgendaDaemonState;
+ import com.dpsframework.core.behaviour.VisitToAgendaExecutorState;
+ import com.dpsframework.core.behaviour.FSMVisitToAgenda;
+
+// (1) By-default: Integrated in BeanShell:
+// source(   "class.VisitToAgendaDaemonState.bsh"		);
+// source(   "class.VisitToAgendaExecutorState.bsh"	);
+// source(   "class.FSMVisitToAgenda.bsh"				);
+
+
+v2ad = new FSMVisitToAgenda( myAgent );
+v2ad .setBehaviourName( "v2ad");
+
+return (FSMBehaviour) v2ad;
+

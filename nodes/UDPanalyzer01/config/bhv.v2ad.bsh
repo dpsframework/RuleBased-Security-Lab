@@ -1,0 +1,35 @@
+/** -------------------------------------------------------------------------------
+ * Ph.D.Thesis    : Deposit-Number# 2012.0000.55
+ * Title (en_US)  : Applied Techniques in Deployment of Rule-Based Expert Systems
+ *                  on Distributed Architecture using Multi-Agent Paradigm.
+ * Title (es_ES)  : Tecnicas para despliegue de arquitectura distribuida en sistemas
+ *                  expertos basados en reglas empleando el paradigma multiagente.
+ * Ph.D. Student  : Francisco J Aguayo Canela 
+ * Thesis Director: Ph.D. Isaias Garcia Rodriguez 
+ * Ph.D. Program  : Intelligent Systems at Engineering Science (Cod. 212)
+ * -------------------------------------------------------------------------------- */
+
+
+
+/**
+ * Finite State Machine Ticker-Behaviour Shock Absorber to Firing Rules Activated.
+ * 
+ * @see FSMBehaviour
+ */
+
+// (0) Integrated in Agent:
+ import com.dpsframework.core.behaviour.V2ADAgendaDaemonState;
+ import com.dpsframework.core.behaviour.V2ADAgendaExecutorState;
+ import com.dpsframework.core.behaviour.V2ADFSMBehaviour;
+
+// (1) By-default: Integrated in BeanShell:
+// source(   "class.V2ADAgendaExecutorState.bsh"		);
+// source(   "class.V2ADAgendaDaemonState.bsh"	);
+// source(   "class.V2ADFSMBehaviour.bsh"				);
+
+
+v2ad = new V2ADFSMBehaviour( myAgent );
+v2ad .setBehaviourName( "v2ad");
+
+return (V2ADFSMBehaviour) v2ad;
+

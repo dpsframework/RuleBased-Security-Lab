@@ -1,0 +1,659 @@
+//# Revised:   2021.04.28                               
+//#            [ RuleBased-Security-Lab example ]
+//#------------------------------------------------
+
+// /////////////////////////////////////////////
+// Technique: Imports (the order is really important). 
+import java.io.IOException;
+import java.text.MessageFormat;
+import java.io.BufferedReader;
+import java.io.DataInputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FilterInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.text.MessageFormat;
+import java.util.ArrayList;
+
+
+
+//Special for changing GUI. (Maniac Hackers only).
+//-------------------------------------------------------
+import javax.swing.plaf.basic.BasicTabbedPaneUI.*;
+import javax.swing.plaf.basic.BasicTabbedPaneUI.FocusHandler;
+import javax.swing.plaf.metal.MetalTabbedPaneUI.TabbedPaneLayout;
+import javax.swing.JComponent.AccessibleJComponent;
+import javax.swing.JLayeredPane.*;
+import javax.swing.JComponent.*;
+import javax.swing.RepaintManager.*;
+import java.security.AccessController;
+import java.awt.event.InvocationEvent;
+import java.awt.EventQueue;
+
+import com.sun.java.swing.*;
+import com.sun.java.swing.plaf.*;
+import com.sun.java.swing.plaf.motif.*;
+import com.sun.java.swing.plaf.motif.MotifLookAndFeel;
+import com.sun.java.swing.plaf.motif.icons.*;
+import com.sun.java.swing.plaf.motif.resources.*;
+import com.sun.java.swing.plaf.motif.MotifLookAndFeel;
+import com.sun.java.swing.plaf.nimbus.*;
+import com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel;
+import com.sun.java.swing.plaf.windows.*;
+import com.sun.java.swing.plaf.windows.icons.*;
+import com.sun.java.swing.plaf.windows.resources.*;
+import com.sun.java.swing.plaf.windows.WindowsLookAndFeel;
+//--------------------------------------------------------
+//end of special for changing GUI
+import jade.core.Agent;
+import jade.util.Logger;
+import jade.core.behaviours.*; 
+
+import jade.lang.acl.*;
+import jade.content.lang.Codec;
+import jade.content.lang.sl.SLCodec;
+import jade.content.onto.basic.*;;
+import jade.domain.FIPAAgentManagement.*;;
+import jade.domain.DFGUIManagement.*;
+import jade.domain.JADEAgentManagement.*;
+import jade.domain.DFService;
+import jade.domain.FIPAException;
+import jade.proto.*;
+import jade.proto.AchieveREInitiator;
+import jade.proto.AchieveREResponder;
+import jade.proto.SubscriptionInitiator;
+import jade.proto.states.*;
+
+import jade.content.Concept;
+import jade.content.onto.basic.Action;
+import jade.content.onto.basic.Done;
+import jade.domain.FIPAException;
+import jade.domain.RequestManagementBehaviour;
+import jade.domain.FIPAAgentManagement.UnsupportedFunction;
+import jade.domain.JADEAgentManagement.ShowGui;
+import jade.lang.acl.ACLMessage;
+import jade.lang.acl.MessageTemplate;
+import jade.security.JADESecurityException;
+
+
+import jade.core.messaging.*;;
+import jade.core.messaging.TopicManagementService;
+import jade.core.AID;
+import jade.core.behaviours.ThreadedBehaviourFactory;
+
+import jade.domain.FIPANames;
+import jade.domain.FIPAAgentManagement.*;
+
+import jade.content.AgentAction;
+import jade.content.lang.Codec;
+import jade.content.lang.Codec.CodecException;
+
+import jade.content.lang.sl.*;
+import jade.content.lang.sl.SLCodec;
+
+import jade.lang.acl.*;
+
+import jade.content.onto.*;
+import jade.content.onto.basic.*;
+
+import jade.content.*;
+import jade.content.onto.OntologyException;
+import jade.content.onto.basic.Action;
+
+import jade.content.onto.BasicOntology;
+import jade.content.onto.BeanOntology;
+import jade.content.onto.BeanOntologyException;
+import jade.content.onto.Ontology;
+import jade.content.onto.OntologyUtils;
+
+import jade.content.ContentManager;
+import jade.content.lang.Codec;
+import jade.content.lang.Codec.CodecException;
+import jade.content.lang.sl.SLCodec;
+import jade.content.onto.OntologyException;
+import jade.content.onto.basic.Action;
+import jade.core.CaseInsensitiveString;
+import jade.domain.FIPANames;
+import jade.lang.acl.ACLMessage;
+import jade.lang.acl.MessageTemplate;
+import jade.util.leap.Serializable;
+
+import bsh.Interpreter;
+import bsh.EvalError;
+
+
+import com.dpsframework.*;
+import com.dpsframework.domain.*;
+import com.dpsframework.util.*;
+import com.dpsframework.core.engines.*;
+import com.dpsframework.core.behaviour.*;
+
+
+
+import java.awt.*;
+import java.security.*;
+import java.awt.EventQueue;
+import javax.swing.text.*;
+import javax.swing.plaf.*;
+import javax.swing.text.BoxView;
+
+//import net.sf.clipsrules.jni.Router;
+//import jess.*;
+
+import java.awt.*;
+import java.awt.event.*;
+import java.util.*;
+import javax.swing.*;
+import javax.swing.Timer;
+import java.util.Date;
+import java.lang.System.*;
+import java.util.regex.*;
+
+import java.io.File;
+import java.io.IOException;
+import java.text.MessageFormat;
+import jade.util.leap.HashMap;
+
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+import java.util.regex.PatternSyntaxException;
+
+import jess.*;
+import jess.xml.*;
+import jess.tools.*;
+import jess.jsr94.*;
+import jess.awt.*;
+
+import java.util.HashMap;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.lang.NullPointerException;
+
+
+
+///////////////////////////////////////////////
+//Technique: myBOBActivated JADE-HashMap
+myBOBActivated 		= new jade.util.leap.HashMap();
+nodeProp2 			= new jade.util.leap.Properties();
+nodeProp2.load( nodeConfigPath + PsConstants.NodePKEYS.file_name );
+
+myBOBActivated      = new jade.util.leap.HashMap();
+myBOB.clear();
+
+
+//# ----------------------------------------
+//#  [1] Chapter 10. Managing Services with systemd Red Hat Enterprise Linux 7 | 
+//#      Red Hat Customer Portal. (n.d.). Retrieved April 2, 2021, from 
+//#      https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/chap-managing_services_with_systemd
+//# ----------------------------------------
+//An emulate version of {service and systemctl} from Centos 7 - RHEL 
+//@author:  fjac et al. - SECOMUCI Research Group - UniLeon (2021).
+
+//------------------------------------------
+//service() A Java Scripted Object (Closure)
+//------------------------------------------
+service(){
+	// ------------------------------------------
+	SERVICE = ".service";
+	LOADER  = ".loader.java";
+	// ------------------------------------------
+	public  boolean serviceExists( String nameService ){
+    sExists = false;
+		for( sn : this.list() ){
+			if( sn.equals( nameService ) ){
+				sExists = true;
+			}
+		}
+		return sExists;
+	}
+	
+	
+	
+	// ------------------------------------------
+	public  boolean serviceExists(){
+    sExists = false;
+		return sExists;
+	}
+
+	
+	
+	// ------------------------------------------
+	public  boolean enable(String  nameService ) {
+		if ( this.serviceExists(nameService) ){
+			serviceProp = new jade.util.leap.Properties();
+			serviceProp.load( myNode .nodeConfigPath + nameService + this.SERVICE );
+			serviceProp .setProperty( "service.enable", "1");	
+			serviceProp.store( myNode .nodeConfigPath + nameService + this.SERVICE );
+			return true;
+			
+		} else {
+			print(  "Usage: service().enable( nameOfService );");
+			return false;
+		}
+		
+	}
+	
+	
+	// ------------------------------------------
+	public  boolean disable(String  nameService ) {
+		if ( this.serviceExists(nameService) ){
+			serviceProp = new jade.util.leap.Properties();
+			serviceProp.load( myNode .nodeConfigPath + nameService + this.SERVICE );
+			serviceProp .setProperty( "service.enable", "0");	
+			serviceProp.store( myNode .nodeConfigPath + nameService + this.SERVICE );
+			return true;
+			
+		} else {
+			print(  "Usage: service().disble( nameOfService );");
+			return false;
+		}
+		
+	}
+	
+	
+	// ------------------------------------------
+	public  boolean enable( ) {
+		print(  "Usage: service().enable( nameOfService );");
+		return false;
+	}
+	
+	
+	
+	public  boolean disable( ) {
+		print(  "Usage: service().disable( nameOfService );");
+		return false;
+	}
+	
+	
+	
+	
+	// ------------------------------------------
+	public String[]  BOB() {	
+		
+		String   summaryTest   = "";
+		String[] sTest;
+		String[] sfNames       = this.listFS();	
+		String   sName         = "";
+		String   firstColon    = "";
+		
+		for ( sfn : sfNames ) {	
+			
+			sName = sfn.split(this.SERVICE)[0];
+			serviceProp = new jade.util.leap.Properties();
+			serviceProp.load( myNode .nodeConfigPath + sfn );
+						
+			summaryTest = 
+					serviceProp .getProperty( "service.order",            "UU") + ":" +
+					serviceProp .getProperty( "init.level" ,               "7") + ":" +
+					serviceProp .getProperty( "run.level",                 "0") + ":" +
+					serviceProp .getProperty( "service.name",          "noName") + ":" +
+					serviceProp .getProperty( "service.group",         "group") + ":" +
+					serviceProp .getProperty( "service.launcher", sName+this.LOADER ) + ":" +
+					serviceProp .getProperty( "service.enable",            "0") + ":" +
+					serviceProp .getProperty( "service.description", "Service") +
+					firstColon + summaryTest;
+			firstColon = "@@";
+		}
+		sTest = summaryTest.split("@@");
+		return sTest;
+	}
+	
+
+	public String status(){
+		return myBOB() .perspective();
+	}
+	
+	// ------------------------------------------
+	public String BOB( String serviceName ){
+		
+		String sBOB = "";	sExists = false;
+		
+		for( sn : this.list() ){
+			if( sn.equals(serviceName)){
+				sExists = true;
+			}
+		}
+		
+		if( !sExists ) { return "Usage: service() .BOB( serviceName ); ";}
+		
+		
+		for( sb : this.BOB()  ){
+			if( sb.split(":")[3].equals(serviceName)){
+				sBOB = sb;
+			}
+		}
+		return sBOB;
+		
+	}
+	
+	
+
+	public String status( String sN ){
+		return this.BOB( sN );
+	}
+	
+	
+	
+	// ------------------------------------------
+	public  String[] list(){
+		String[]    fs = this.listFS();
+		String[]    sNames;
+		String      sRaw   = ""; 
+    String      fColon = "";
+		
+		for( sn : fs){
+			sRaw = sn.split(this.SERVICE)[0] + fColon + sRaw;
+			fColon = ",";
+		}
+		// print("sRaw="+sRaw);
+		sNames = sRaw.split(",");
+		return sNames;
+	}
+	
+	
+	
+	
+	// ------------------------------------------
+	public  String[] listFS(){
+		File 		dirConfig = new File ( myNode.nodeConfigPath);
+		String[]    fileNames = dirConfig.list();
+		String      sfileRaw = "";
+		String[]    sfileNames;
+		String      firstColon = "";
+
+		for (int i = 0; i < fileNames.length ; i++) {
+			File serviceFile = new File(myNode.nodeConfigPath+fileNames[i]);
+			if ( serviceFile.isFile()) {
+				if ( fileNames[i].endsWith(this.SERVICE) ) {
+						sfileRaw = fileNames[i] + firstColon + sfileRaw ;
+						firstColon="@@";
+				}
+			}
+		}	
+		sfileNames = sfileRaw.split("@@");
+		return sfileNames;
+	}
+	
+	return this;
+}
+
+
+
+
+// /////////////////////////////////////////////
+// Technique: Level 0. Bootstrap instructions.
+// ============         ======================================        =======================
+// Name of Bhv.         Objective of Bhv.                             Type of Bhv.
+// ============         ======================================        =======================
+thBEps = null;  		//  Processing Commands inside Engine         ThreadedBehaviour (Thanks a lot to JADE Team!)
+acpb   = null;  		//  Agent Capabilities                        Waker Behvaviour (2 sec. delayed) 
+jamo   = null;  		//  JADE-Agent Management Ontology Actions    SimpleBehaviour (2 States)
+bkwm   = null;  		//  Backups of Working Memory                 Daemon  (2 states each 15 min. [900.000])
+rswm   = null;  		//  Restore requests                          OneShot (at the beginning)
+n2nr   = null;  		//  Node to Node Responder FMS                SimpleAchieveREResponder (6 States)
+e2nr   = null;  		//  Engine to Node Responder FSM              FSMBehaviour (3 States)
+e2as   = null;          //  Engine To AsynchronousShell               SimpleBehaviour
+e2aa   = null;          //  Engine To Node Analyzer Behaviour     	  SimpleBehaviour
+v2ad   = null;  		//  Visits to Agenda Activations              Daemon FSMBehaviour (2 states)
+v2bd   = null;  		//  Visits to Board-Agent                     Daemon FSMBehaviour (2 states)
+nmig   = null;  		//  Node-Agent Migration                      FSMBehaviour (On-demand)
+
+
+internalShellCLIPS  = null;
+internalRouterCLIPS = null; 
+internalShellJESS   = null;
+internalRouterJESS  = null; 
+jspShEng            = new JScrollPane();
+myShell             = null;
+
+
+///////////////////////////////////////////////
+//Technique: Collection my-Bundle-Of-Behaviour = myBOB variable 
+//       myBOB HashMap is inspired in Unix-Runlevels
+//myBOB.clear();
+//myBOB.put("00:0:1:jamo:Basal:bhv.jamo.bsh", jamo); 
+//myBOB.put("0a:0:0:acpb:Basal:bhv.acpb.bsh", acpb); // Because goes to level 1 is not equal to retart-agent (level.6)!!
+//
+//myBOB.put("2b:1:3:n2nr:RE_re:bhv.n2nr.bsh", n2nr); 
+//myBOB.put("2c:1:3:e2nr:RE_re:bhv.e2nr.bsh", e2nr); 
+//
+//myBOB.put("6a:3:5:e2as:Human:bhv.e2as.bsh", e2as); 
+//myBOB.put("6b:1:3:e2aa:Robot:bhv.e2aa.bsh", e2aa);
+//
+//myBOB.put("8a:3:5:v2ad:Demon:bhv.v2ad.bsh", v2ad); 
+//myBOB.put("8b:6:7:v2bd:Demon:bhv.v2bd.bsh", v2bd); 
+//
+//myBOB.put("fa:3:5:bkwm:Mngmt:bhv.bkwm.bsh", bkwm); 
+//myBOB.put("fb:3:5:rswm:Mngmt:bhv.rswm.bsh", rswm); 
+//
+//myBOB.put("fc:0:1:nmig:Mngmt:bhv.nmig.bsh", nmig); 
+
+
+myBOB.clear();
+
+
+
+
+
+//------------------------------------------
+//Load Bundle of Behaviour : myBOB
+//------------------------------------------
+String[] sList = service() .list();
+
+for( sl : sList ) {
+	sRaw = service().BOB( sl );
+	sVar = service().BOB( sl ).split(":")[3];
+	myBSh .set(sVar, null);
+	myBOB.put( sRaw, null  );
+	// print(sRaw); print(sVar);
+}
+
+//------------------------------------------
+//Load Bundle of Behaviour Activated
+//------------------------------------------
+for( String ka : myBOB.keySet().iterator() ){
+	boolean   status = bhvState( ka.split(":")[6]  );
+  String     clave = ka.split(":")[3];
+  myBOBActivated.put( clave , status );
+}
+
+
+
+//------------------------------------------
+//Bundle of Behaviour myBOB() .perspective();
+//------------------------------------------
+myBOB() {
+  public String perspective() {
+      StringBuilder sbMyBOBOriginal = new StringBuilder();
+
+      sbMyBOBOriginal.append("\n");
+      sbMyBOBOriginal.append(" * ---------------------------------------------------------- *\n");
+      sbMyBOBOriginal.append(" * myBOB (Bundle Of Behaviours)                               *\n");
+      sbMyBOBOriginal.append(" * ---------------------------------------------------------- *\n");
+      sbMyBOBOriginal.append(" * [0] = Alphabetical order behaviours loader Label           *\n");
+      sbMyBOBOriginal.append(" * [1] = Init Run-Level (when Behaviour is initialized)       *\n");
+      sbMyBOBOriginal.append(" * [2] = Running Run-Level (when Behaviour is loaded)         *\n");
+      sbMyBOBOriginal.append(" * [3] = Behaviour's name and variable's name                 *\n");
+      sbMyBOBOriginal.append(" * [4] = Belong to group...                                   *\n");
+      sbMyBOBOriginal.append(" * [5] = Behaviour loader file name                           *\n");
+      sbMyBOBOriginal.append(" *                                                            *\n");
+      sbMyBOBOriginal.append(" * === Level     ====   =====   ============   =======  ============================ *\n");
+      sbMyBOBOriginal.append(" * [0] [1]  [2]   [3]   [4]     [5]            [6]      [7]                          *\n");
+      sbMyBOBOriginal.append(" * ID  Init RunAt Name  Group   Loader         Enabled  Description                  *\n");
+      sbMyBOBOriginal.append(" * === ==== ==== ====== ======= ============   =======  ============================ *\n");
+
+      bA = myBOB.keySet().toArray();
+
+      Arrays.sort( bA );
+      for( String bK : bA ){
+          sbMyBOBOriginal.append(MessageFormat.format(
+          		            " *  {0} : {1} : {2} : {3} : {4} : {5} :  {6} : {7}\n", bK.split(":")     ));
+      }
+      sbMyBOBOriginal.append(" * ---------------------------------------------------------- * ");
+      return sbMyBOBOriginal.toString();
+  }
+  return this;
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Local-Test functions
+//-----------------------------------------------------------------
+//Revised:   2021.04.28                               
+//[ Snort-Agents-IoT example ]
+//
+String AFIRMATIVO  = "Correct !";
+String NEGATIVO    = "Oops____!";
+String AFFIRMATIVE = "Correct !";
+String NEGATIVE    = "Oops____!";
+int    LINE_LENGTH = 80;
+
+String answer     = (true) ? AFFIRMATIVE : NEGATIVE ;
+String test       = "";
+
+String formatQ(String t){
+	int l = LINE_LENGTH - t.length() - 11;
+	if (l > 0 ) {
+		return  t + new String( new char[ l ] ).replace( '\u0000', '.' ) + ": ";
+	} else {
+	return t + ": ";
+	}
+}
+
+String formatQ(int l, char c){
+	if (l > 0 ) {
+		return  ( new String( new char[ l ] ).replace( '\u0000', c )  );
+	}
+	return "";
+}
+
+void println(Object o ){ jconsole.print( o ); jconsole.print("\n"); }
+void println(){ 	jconsole.print("\n"); }
+void println(int r){for( int i=1; i<r ; ++i) { jconsole.print("\n"); } }
+
+int  acum  = 0; 
+int  phase = 0;
+
+void phaseBanner(String p) {
+	acum = 0;
+	++phase;
+	println( formatQ( LINE_LENGTH , '-' ) );
+	println( "(" + phase + ") " + p );
+	println( formatQ( LINE_LENGTH , '-' ) );
+}
+void resultBanner(String q, String a) {
+	++acum;
+	String ntest = "Test " +  phase + ".00"+ acum + ": " + q ;
+	println( formatQ( ntest  ) + a );
+	println( formatQ( 11 , '-' ) );
+}
+
+///////////////////////////////////////////////
+//Technique: Some monitors Functions 
+Map testArea = new HashMap();
+Map myTest   = new HashMap();
+
+
+
+///////////////////////////////////////////////
+//Technique: Overload test() with: test(Object) and test(int)
+void test(int h) {
+	test_MENU  = "menu";   test_MENU_CODE  = 99;
+	
+//	testArea.put(1000, "----------------------                ----------");
+	testArea.put(7000, "SSDP Agent: Methods and Interaction Protocols <<");
+	  myTest.put("review.pcap.pendings"             ,  7100   );
+	  myTest.put("malware.pattern.matching"         ,  7500   );
+	  myTest.put("aclmessage.malware.response"      ,  7540   );
+	
+	
+
+	
+
+	
+
+
+	switch (h) {
+		case test_MENU_CODE:
+			print( "--------  ------------------------------------------------");
+			print( "Test.ID   Description                          Launch-code");
+			print( "--------  ------------------------------------------------");
+			for( a : testArea.keySet() ){
+				print ("    : >>  " + testArea.get(a) ); 
+				for( e : myTest.entrySet() ){
+					if ( e.getValue() >= a && e.getValue() < (a + 1000) ){
+						tail = formatQ(44 - e.getKey().length(), ' '); 
+						print( "          "+e.getKey()    + tail + e.getValue() );
+					}
+				}
+			}
+			print( "--------  ------------------------------------------------");
+			println("\nSelect and commit with:   test( Launch-code # );");
+			break;
+			
+		case 7000: case 6000: case 5000: case 4000: 
+			print( "--------------------------------------------     ---------");
+			print( "Script file associated                           script.ID");
+			print( "--------------------------------------------     ---------");
+			for( e : myTest.entrySet() ){
+				if ( e.getValue() >= h && e.getValue() < (h + 1000) ){
+					tail = formatQ(54 - e.getKey().length(), ' '); 
+					print( e.getKey()    + tail + e.getValue() );
+				}
+			}
+			println("\nLaunch with:    test( script.ID );");
+			break;
+			
+		default:
+			for( e : myTest.entrySet() ){
+				if ( e.getValue() == h  ){
+					print("We proceed to open the test: " + e.getValue() );
+					nameOfTest = "test." + e.getKey() + "." + e.getValue() + ".bsh";
+					print("                       Name: " + nameOfTest  + "\n" );
+					if ( ! pathToFile(nameOfTest).exists() ) {
+				       print("Sorry, file not found.\n");
+						break;
+					}
+					source( nameOfTest  );
+				}
+			}
+
+			print( "Bye!" );
+			break;
+			
+		}
+}
+
+///////////////////////////////////////////////
+//Technique: Overload test() with: test(Object) and test(int)
+void test() { 
+	test(99); 
+}
+
+void test(Object o){ 	
+	if ( o == void ) {	
+		test(99);    
+	} else {
+		test(99);
+	}
+}
+
+

@@ -1,0 +1,29 @@
+// Revised:   2021.04.28                               
+//            [ Snort-Agents-IoT example ]
+// 
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import jade.core.Agent;
+import jade.core.behaviours.OneShotBehaviour;
+
+import javax.sql.RowSetListener;
+import javax.sql.rowset.CachedRowSet;
+import javax.swing.SwingUtilities;
+import javax.swing.event.TableModelListener;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+
+
+source( "class.BoardGridLocal.java" );
+
+stmt = myDB .createStatement();
+rs = stmt .executeQuery( "select * from ticketnids" );
+
+grid = new BoardGridLocal( myAgent, rs );
+grid.setBehaviourName( "grid" ); 
+
+return (BoardGridLocal) grid; 
+

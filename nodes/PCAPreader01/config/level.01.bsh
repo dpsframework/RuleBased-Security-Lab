@@ -1,0 +1,35 @@
+//# Revised:   2021.04.28                               
+//#            [ RuleBased-Security-Lab example ]
+//# -----------------------------------------------
+
+// /////////////////////////////////////////////
+// Technique: Demote from Level-5 
+if ( myNode .currentExecLevel > 3 ) {
+	outLogger(new Object[]{"level.01 ", myNode .nodeName, 
+		     "Demote level from", 
+		     "["+ myNode .currentExecLevel + "]", 
+		     "to level [3] and after, to level [1]."	});
+	init( 3 );
+}
+
+
+// /////////////////////////////////////////////
+// Technique: It was already on Level-1 
+if ( myNode .currentExecLevel == 1 ) { 
+	runLevels( myBOB,  myNode .currentExecLevel );
+	return;
+}
+
+
+// /////////////////////////////////////////////
+// Technique: Level 1. Close this level !
+myNode .currentExecLevel = 1;
+runLevels( myBOB,  myNode .currentExecLevel );
+
+
+// /////////////////////////////////////////////
+// Technique: Level 1. Final info!
+outLogger(new Object[]{"level.01 ", myNode .nodeName, 
+     "Level", 
+     "["+ myNode .currentExecLevel + "]", 
+     "has finished loading." });

@@ -1,0 +1,42 @@
+/** -------------------------------------------------------------------------------
+ * Ph.D.Thesis    : Deposit-Number# 2012.0000.55
+ * Title (en_US)  : Applied Techniques in Deployment of Rule-Based Expert Systems
+ *                  on Distributed Architecture using Multi-Agent Paradigm.
+ * Title (es_ES)  : Tecnicas para despliegue de arquitectura distribuida en sistemas
+ *                  expertos basados en reglas empleando el paradigma multiagente.
+ * Ph.D. Student  : Francisco J Aguayo Canela 
+ * Thesis Director: Ph.D. Isaias Garcia Rodriguez 
+ * Ph.D. Program  : Intelligent Systems at Engineering Science (Cod. 212)
+ * -------------------------------------------------------------------------------- */
+
+
+/**
+ * Generic Loader to create only `e2nr` Behaviour reference, 
+ * from Java or BeanShell Classes. Its activation is controled by execution
+ * level of agent. 
+ * 
+ * @See /config/framework.methods.bsh#runlevels(int n).
+ * @see E2NRFSMBehaviour
+ * 
+ * A JADE FSMBehaviour EngineToNodeResponder. (e2nr)
+ */
+
+// //////////////////////////////////////
+// Java Classes:
+import com.dpsframework.core.behaviour.E2NRCaptorState;
+import com.dpsframework.core.behaviour.E2NRProcessState;
+import com.dpsframework.core.behaviour.E2NRNoticerState;
+import com.dpsframework.core.behaviour.E2NRFSMBehaviour;
+
+
+////////////////////////////////////////
+// BeanShell Classes:
+//source(   "class.E2NRCaptorState.bsh");
+//source(   "class.E2NRProcessState.bsh");
+//source(   "class.E2NRNoticerState.bsh");
+//source(   "class.E2NRFSMBehaviour.bsh");
+
+e2nr = new E2NRFSMBehaviour( myAgent );
+e2nr.setBehaviourName("e2nr");
+
+return (E2NRFSMBehaviour) e2nr;

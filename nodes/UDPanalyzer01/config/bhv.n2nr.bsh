@@ -1,0 +1,35 @@
+/** -------------------------------------------------------------------------------
+ * Ph.D.Thesis    : Deposit-Number# 2012.0000.55
+ * Title (en_US)  : Applied Techniques in Deployment of Rule-Based Expert Systems
+ *                  on Distributed Architecture using Multi-Agent Paradigm.
+ * Title (es_ES)  : Tecnicas para despliegue de arquitectura distribuida en sistemas
+ *                  expertos basados en reglas empleando el paradigma multiagente.
+ * Ph.D. Student  : Francisco J Aguayo Canela 
+ * Thesis Director: Ph.D. Isaias Garcia Rodriguez 
+ * Ph.D. Program  : Intelligent Systems at Engineering Science (Cod. 212)
+ * -------------------------------------------------------------------------------- */
+
+
+
+/** --------------------------------------------------------------------------------
+ * Init of Node2NodeResponder instance:  BeanShell version of: n2nr.
+*/
+
+
+//(0) Integrated in Agent:  
+import com.dpsframework.core.behaviour.N2NREResponder;
+
+//(1) By-default: Integrated in BeanShell:
+// source(   "class.N2NREResponder.bsh"  );
+
+
+// /////////////////////////////////////////////
+// Technique: Initialize n2nr instance.
+
+mt8 	= new MTRepository( myAgent ) .getName( BhConstants.N2NRESPONDER_MT );
+
+n2nr 	= new N2NREResponder( myAgent, mt8 );
+n2nr    .setBehaviourName( "n2nr" );
+
+return (N2NREResponder) n2nr;
+

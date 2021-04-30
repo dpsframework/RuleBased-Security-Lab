@@ -1,0 +1,30 @@
+// Revised:   2021.04.28                               
+//            [ Snort-Agents-IoT example ]
+//
+// /////////////////////////////////////////////
+// Techniques: Promote from 3 if actual level is 1
+
+if ( myNode .currentExecLevel < 3 ) {
+
+	
+	outLogger(new Object[]{"level.05 ",  
+			      myNode .nodeName,   "Promote Level",   
+			      "["+ myNode .currentExecLevel + "]",     "before load Level [5]."});
+	
+	init( 3 );
+}
+
+
+// /////////////////////////////////////////////
+// Technique: Finishe runlevels
+myNode .currentExecLevel = 5;
+runLevels( myBOB,   myNode .currentExecLevel );
+
+
+
+///////////////////////////////////////////////
+//Techniques: Level 5. Final info!
+outLogger(new Object[]{"level.05 ", myNode .nodeName,   "Level", 
+		     "["+ myNode .currentExecLevel + "]", "has finished loading."});
+
+// End of runlevels...

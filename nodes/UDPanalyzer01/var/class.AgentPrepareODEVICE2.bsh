@@ -1,0 +1,182 @@
+import jade.core.Agent;
+import jade.core.behaviours.OneShotBehaviour;
+import jade.core.behaviours.SequentialBehaviour;
+import jade.lang.acl.ACLMessage;
+import jade.util.Logger;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.text.MessageFormat;
+
+import edu.csd.auth.gr.clips.tools.J2CF;
+import com.dpsframework.PsNodeAgent;
+import com.dpsframework.core.engines.RBEngine;
+import com.dpsframework.core.behaviour.N2NREInitiator;
+
+/**
+ * Convert Ontologies an Prepeare an Agent with O-DEVICE integrated 
+ * Phase 1 = clear + setting odevice-folder + config.bat + exec.bat
+ * Phase 2 = Conversion N-Triplets
+ * Phase 3 = Inferencing new rules and facts.
+ * 
+ * Conceptual Test 2: integrating O-DEVICE in JADE Agents
+ * 
+ * @author Ph.D. Francisco J Aguayo Canela (UniLeon)
+ * <p>
+ * <small>	Department of Electric Engineering, Systems and Automatic<br>
+ * 				School of Industrial Engineering and Information Technology<br>
+ * 				&copy; <b>University of Leon</b> - Spain.  
+ * 				<a href="http://www.unileon.es">{http://www.unileon.es}</a>
+ * </small>
+*/
+public class AgentPrepareODEVICE2 extends OneShotBehaviour {
+
+	PsNodeAgent 		theAgent;
+    String[] 			ontoURLs;
+	SequentialBehaviour multiPhase;
+
+	public AgentPrepareODEVICE2(Agent a, String[] ontos) { 
+		super(a);
+		theAgent = (PsNodeAgent) a;
+		ontoURLs = ontos;
+	}
+	
+	public AgentPrepareODEVICE2(Agent a) { 
+		this( a, new String[] {"file:///c:/pruebas/reasoners/pizza.owl",
+				"file:///c:/pruebas/reasoners/food.owl"
+	}
+	
+
+	
+	
+	public void action() {
+		outLogger(new Object[]{getBehaviourName(), theAgent.getLocalName(),"Preparing new Ontology translation in O-DEVICE"});
+		
+	   	String oDeviceFolder 		= theAgent .myNode().nodeEnginePath .replace("\\","/");
+	   	String oDeviceFolderGlobal 	= "(defglobal ?*odevice-folder* = " + "\"" + oDeviceFolder + "\" )";
+	   	String[] fileNames			= new String[] {"prepareODEVICEPh0.bat", "prepareODEVICEPh2.bat"};
+
+	   	
+	   	String abbr					= theAgent.myEngine().innerCommand("?*abbr*").toString();
+	   	String imports 				= theAgent.myEngine().innerCommand("?*imports").toString();
+	   	
+	   	abbr = "TRUE";
+	   	imports ="FALSE";
+
+		String oTripleFolder 		= oDeviceFolder  + "triple-facts/";
+		String oTripleFacts 		= oTripleFolder + "$triples.clp";	
+
+	 	String[] preparePhases = {
+				  "(clear)" 				+ System.lineSeparator() ,
+				  
+				  "(clear)" 				+ System.lineSeparator() +
+				  oDeviceFolderGlobal		+ System.lineSeparator() +
+				  "(batch* " + theAgent .myNode().relativeEnginePath + "config.bat)" + System.lineSeparator() +
+				  "(batch* " + theAgent .myNode().relativeEnginePath + "prepare.bat)"+ System.lineSeparator()};
+
+
+
+	   	for (int i = 0; i < 2 ; i++){
+		 	File oDevicePrepeareFile 	= new File( theAgent .myNode().nodeEnginePath + fileNames[i] );
+		 	BufferedWriter bufferW 		= null;
+		 	FileWriter     fileW 		= null;	   	
+		 	try {
+		 		if ( !oDevicePrepeareFile.exists() ){
+		 			oDevicePrepeareFile.createNewFile();
+		 		}
+		 		fileW = new FileWriter(oDevicePrepeareFile.getAbsoluteFile(), false);
+		 		bufferW = new BufferedWriter(fileW);
+		 		bufferW.write(preparePhases[i]);
+		 		
+		 	} catch (IOException e) {
+		 		outLogger(new Object[]{getBehaviourName(), theAgent.getLocalName(),"Error at creating file prepare-O-DEVICE"});
+		 		return;
+		 	} finally {
+		 		try{
+		 			if ( bufferW != null) { bufferW.close(); }
+		 			if ( fileW != null) { fileW.close(); }
+		 		} catch (IOException ex) {
+		 			outLogger(new Object[]{getBehaviourName(), theAgent.getLocalName(),"Error at closing file prepare-O-DEVICE"});
+		 			return;
+		 		}
+		 	}
+	   	}
+	   		
+
+	 	// /////////////////////////////////////
+	   	// Technique: All ready !
+	   	
+	 	multiPhase 				= new SequentialBehaviour( theAgent );
+		multiPhase .setBehaviourName("pphase");
+	   	ACLMessage queryMessage = null;
+		
+	 	// /////////////////////////////////////
+	   	// Phase-1
+		outLogger(new Object[]{getBehaviourName(), theAgent.getLocalName(),"O-DEVICE on Phase-1 (reset) !"});
+	   	String runningPhase1 = "(batch* " + theAgent .myNode().relativeEnginePath + fileNames[0] +")";
+
+		queryMessage = theAgent .makeProcessMessage( RBEngine.EVAL_COMMAND , runningPhase1 );
+		multiPhase.addSubBehaviour(new N2NREInitiator(theAgent, queryMessage ));
+
+		
+		
+	 	// /////////////////////////////////////
+	   	// Phase-2
+		for (String arg : ontoURLs){		
+		   	String[] j2cfParams	= new String[] {
+		   			"-onto" , 		arg
+			   		,"-out" , 		oTripleFacts
+			   		,"-abbr", 		abbr
+			   		,"-imports", 	imports
+			};		
+		 	multiPhase.addSubBehaviour(new OneShotWithParams( theAgent, j2cfParams ));
+		 	String s2 = ":: ";
+		 	for( String s : j2cfParams) { s2 += " " + s;}
+			outLogger(new Object[]{getBehaviourName(), theAgent.getLocalName(),"O-DEVICE on Phase-2 (Translating) !" + s2});
+			
+
+		}
+
+		
+	 	// /////////////////////////////////////
+	   	// Phase-3
+		outLogger(new Object[]{getBehaviourName(), theAgent.getLocalName(),"O-DEVICE on Phase-3 (Inferencing) !"});
+	   	String runningPhase3		= "(batch* " + theAgent .myNode().relativeEnginePath + fileNames[1] +")";
+		
+		queryMessage = theAgent .makeProcessMessage( RBEngine.EVAL_COMMAND , runningPhase3 );
+		multiPhase.addSubBehaviour(new N2NREInitiator(theAgent, queryMessage ));
+
+	 	
+	 	// /////////////////////////////////////
+	   	// Insert on Agent Agenda:
+		theAgent .addBehaviour(multiPhase);
+	}
+
+	
+	
+	private void outLogger(Object[] o){
+		if   (! theAgent.myNode().debuggingMode   ) { return; }
+		if   ( o.length == 0) { return; }
+		int    n  = o.length;
+		String mf = " {0}: [{1}]";    // {2} {3} {4} {5} 
+		for (int i = 2; i < n; i++ ){ mf += " {" + i +"}"; }
+		o[0] = (o[0]+"         ").substring(0, 9); 
+		Logger.println(MessageFormat.format(mf,o));
+		return;
+	}
+	
+	class OneShotWithParams extends OneShotBehaviour {
+		String[] jenaParams;
+		public OneShotWithParams(Agent a, String[] params){
+			super(a);
+			jenaParams = params;
+		}
+		public void action() {
+			outLogger(new Object[]{getBehaviourName(), myAgent.getLocalName(),"O-DEVICE is converting "+ jenaParams[1]+" !"});
+		   	J2CF.main(jenaParams);			
+		}
+	}
+
+}

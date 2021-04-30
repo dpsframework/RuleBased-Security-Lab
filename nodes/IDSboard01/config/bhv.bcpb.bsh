@@ -1,0 +1,12 @@
+// Revised:   2021.04.28                               
+//            [ Snort-Agents-IoT example ]
+// 
+import jade.core.Agent;
+import jade.core.behaviours.WakerBehaviour;
+
+source(   "class.BoardCapabilitiesLoader2.java"   );
+
+bcpb = new BoardCapabilitiesLoader2( myAgent,  1100L);
+bcpb .setBehaviourName( "bcpb" );
+
+return (BoardCapabilitiesLoader2) bcpb;

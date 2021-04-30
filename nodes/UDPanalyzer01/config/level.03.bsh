@@ -1,0 +1,26 @@
+/** -------------------------------------------------------------------------------
+ * Ph.D.Thesis    : Deposit-Number# 2012.0000.55
+ * Title (en_US)  : Applied Techniques in Deployment of Rule-Based Expert Systems
+ *                  on Distributed Architecture using Multi-Agent Paradigm.
+ * Title (es_ES)  : Tecnicas para despliegue de arquitectura distribuida en sistemas
+ *                  expertos basados en reglas empleando el paradigma multiagente.
+ * Ph.D. Student  : Francisco J Aguayo Canela 
+ * Thesis Director: Ph.D. Isaias Garcia Rodriguez 
+ * Ph.D. Program  : Intelligent Systems at Engineering Science (Cod. 212)
+ * -------------------------------------------------------------------------------- */
+
+
+
+///////////////////////////////////////////////
+//Technique: Level 3 --> setting the startup Level
+myNode .currentExecLevel = 3;
+runLevels( myBOB,   myNode.currentExecLevel );
+
+
+
+///////////////////////////////////////////////
+//Technique: Level 0. started from bare init!
+outLogger(new Object[]{"level.03 ", myAgent.getLocalName(), 
+		"Level", "["+ myNode .currentExecLevel + "]", "has finished loading."});
+
+//End-of-Level-03 config file.

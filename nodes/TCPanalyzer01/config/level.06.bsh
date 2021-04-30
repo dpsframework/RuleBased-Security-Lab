@@ -1,0 +1,40 @@
+//# Revised:   2021.04.28                               
+//#            [ RuleBased-Security-Lab example ]
+//#------------------------------------------------
+
+
+
+// /////////////////////////////////////////////
+// Techniques: Sorry but... I have to clean its Queue!
+outLogger(new Object[]{"level.06",  myNode .nodeName, 
+		     "Sorry but... I have to clean its Queue before restart!",
+		     "The number of Message Queue was: [" + myAgent .getCurQueueSize() + "]"  });
+
+
+	while( myAgent .getCurQueueSize() > 0 ) {			
+		ACLMessage toTrash = myAgent .receive();
+		toTrash = null;		
+	}
+	
+outLogger(new Object[]{"level.06",   myNode .nodeName, 
+		     "Number of message is now: [" + myAgent .getCurQueueSize() + "]"	});
+
+
+// /////////////////////////////////////////////
+// Techniques: Execution Level = 6 (Deactivating agents' behaviours)
+int previousLevel = myNode .currentExecLevel;
+
+myNode .currentExecLevel = PsConstants.KwBASED.runLevel_6;;
+runLevels( myBOB,   myNode .currentExecLevel );
+
+
+
+///////////////////////////////////////////////
+//Techniques: Try a shutdown of Agent !
+outLogger(new Object[]{"level.06",  myNode .nodeName, 
+		     "Try restart the Agent's Behaviours", 
+			 "through levels [0] to [1]. There are we go!"	});
+
+source( myNode.nodeConfigPath +  PsConstants.KwBASED.file_runLevel_0 );
+source( myNode.nodeConfigPath +  PsConstants.KwBASED.file_runLevel_1 );
+

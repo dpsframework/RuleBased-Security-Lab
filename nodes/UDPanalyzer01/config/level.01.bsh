@@ -1,0 +1,115 @@
+/** -------------------------------------------------------------------------------
+ * Ph.D.Thesis    : Deposit-Number# 2012.0000.55
+ * Title (en_US)  : Applied Techniques in Deployment of Rule-Based Expert Systems
+ *                  on Distributed Architecture using Multi-Agent Paradigm.
+ * Title (es_ES)  : Tecnicas para despliegue de arquitectura distribuida en sistemas
+ *                  expertos basados en reglas empleando el paradigma multiagente.
+ * Ph.D. Student  : Francisco J Aguayo Canela 
+ * Thesis Director: Ph.D. Isaias Garcia Rodriguez 
+ * Ph.D. Program  : Intelligent Systems at Engineering Science (Cod. 212)
+ * -------------------------------------------------------------------------------- */
+
+// /////////////////////////////////////////////
+// Technique: info about myBOB & others util commands
+outLogger(new Object[]{	"level.01 ", myAgent .getLocalName(), 
+		"Running Script level.01.bsh inside of this Node-Agent." });
+
+
+// /////////////////////////////////////////////
+// Technique: Demote from Level-5 
+if ( myNode .currentExecLevel > 3 ) {
+	outLogger(new Object[]{"level.01 ",myAgent .getLocalName(), 
+	     "Demote level from", "["+ myNode .currentExecLevel + "]", 
+	     "to level [3] and after, to level [1]." 	});
+	
+	init( 3 );
+}
+
+
+
+// /////////////////////////////////////////////
+// Technique: It was already on Level-1 
+if ( myNode .currentExecLevel == 1 ) { 
+	runLevels( myBOB,  myNode .currentExecLevel );
+	return;
+}
+
+
+
+
+// /////////////////////////////////////////////
+// Technique: Engine Router connection to Asynchronous Shell:
+if ( myAgent .getClass().getName().equalsIgnoreCase(PsConstants.FwCLASS.stage_agent)  ) {
+	
+	
+	// /////////////////////////////////////////////
+	// Technique: CLIPS-Engine re-connected to Syncrhonous Shell console
+	if (  myNode.engineSelected.equalsIgnoreCase("CLIPS") ) {
+
+		// Only for Test-Environment
+		internalShellCLIPS 	= new com.dpsframework.core.engines.ConsolePanelCLIPS(  innEngine  );
+		internalRouterCLIPS = (ConsoleRouterCLIPS) internalShellCLIPS;
+		jspShEng 			= new JScrollPane( (JTextArea)  internalRouterCLIPS.getJTextArea()   );
+
+		myGui2.setJspShEng( jspShEng );
+		myShell = internalShellCLIPS;	
+		initiatedSync  = 1 ;
+
+		myEngine .setRouter( myShell );
+		
+		// Something more secure ...
+		// innEngine is an alias of: myEngine.getRBEngine();
+		Runnable doBannerCLIPS = new Runnable() {
+			public void run() {
+				innEngine .eval("(printout t crlf)");
+				innEngine .eval("(printout t \"Giarratano, Joseph C and Riley, Gary\" crlf)");
+				innEngine .eval("(printout t crlf)");
+				innEngine .eval("(printout t \"Java Native Interface (JNI): \" crlf )");
+				innEngine .eval("(printout t \"C++ Language Integrated Production System (CLIPS) " + " \" crlf )");
+				innEngine .eval("(printout t crlf)");
+				innEngine .printBanner();
+				innEngine .printPrompt();
+				innEngine .setInputBufferCount(0);			}
+		};
+		SwingUtilities.invokeLater(doBannerCLIPS);
+
+	} 
+
+
+	
+	
+	// /////////////////////////////////////////////
+	// Technique: CLIPS Node on Test-Environment
+	if ( myNode.engineSelected.equalsIgnoreCase("JESS")) {	
+		
+		// Only for Test-Environment
+		internalShellJESS 	= new com.dpsframework.core.engines.ConsolePanelJESS(  innEngine  );
+		internalRouterJESS = (ConsoleRouterJESS) internalShellJESS;
+		jspShEng 			= new JScrollPane( (JTextArea)  internalRouterJESS.getJTextArea()   );
+
+		myGui2.setJspShEng( jspShEng );
+		myShell = internalShellJESS;	
+		initiatedSync  = 1 ;
+
+		myEngine .setRouter( myShell );
+
+
+	}
+	
+}
+
+
+
+
+
+// /////////////////////////////////////////////
+// Technique: Level 1. Close this level !
+myNode .currentExecLevel = 1;
+runLevels( myBOB,  myNode .currentExecLevel );
+
+
+// /////////////////////////////////////////////
+// Techniques: Level 1. Final info!
+outLogger(new Object[]{ "level.01 ",myAgent .getLocalName(),  
+	     "Level", "["+ myNode .currentExecLevel + "]", 
+	     "has finished loading." });

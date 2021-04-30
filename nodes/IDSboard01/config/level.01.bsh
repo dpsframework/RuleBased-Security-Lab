@@ -1,0 +1,151 @@
+// Revised:   2021.04.28                               
+//            [ Snort-Agents-IoT example ]
+//
+import jade.core.Agent;
+import jade.util.Logger;
+import jade.core.behaviours.*; 
+
+import jade.lang.acl.*;
+import jade.content.lang.Codec;
+import jade.content.lang.sl.SLCodec;
+import jade.content.onto.basic.*;;
+import jade.domain.FIPAAgentManagement.*;;
+import jade.domain.DFGUIManagement.*;
+import jade.domain.JADEAgentManagement.*;
+import jade.domain.DFService;
+import jade.domain.FIPAException;
+import jade.proto.*;
+import jade.proto.AchieveREInitiator;
+import jade.proto.AchieveREResponder;
+import jade.proto.SubscriptionInitiator;
+import jade.proto.states.*;
+
+import jade.core.messaging.*;;
+import jade.core.messaging.TopicManagementService;
+import jade.core.AID;
+import jade.core.behaviours.ThreadedBehaviourFactory;
+
+
+import jade.domain.FIPANames;
+import jade.domain.FIPAAgentManagement.*;
+
+import jade.content.AgentAction;
+import jade.content.lang.Codec;
+import jade.content.lang.Codec.CodecException;
+
+import jade.content.lang.sl.*;
+import jade.content.lang.sl.SLCodec;
+
+import jade.lang.acl.*;
+
+import com.dpsframework.util.*;
+import com.dpsframework.core.engines.*;
+import com.dpsframework.domain.*;
+import com.dpsframework.core.*;
+
+import jade.content.onto.*;
+import jade.content.onto.basic.*;
+
+import jade.content.*;
+import jade.content.onto.OntologyException;
+import jade.content.onto.basic.Action;
+
+import jade.content.onto.BasicOntology;
+import jade.content.onto.BeanOntology;
+import jade.content.onto.BeanOntologyException;
+import jade.content.onto.Ontology;
+import jade.content.onto.OntologyUtils;
+
+import jade.content.ContentManager;
+import jade.content.lang.Codec;
+import jade.content.lang.Codec.CodecException;
+import jade.content.lang.sl.SLCodec;
+import jade.content.onto.OntologyException;
+import jade.content.onto.basic.Action;
+import jade.core.CaseInsensitiveString;
+import jade.domain.FIPANames;
+import jade.lang.acl.ACLMessage;
+import jade.lang.acl.MessageTemplate;
+import jade.util.leap.Serializable;
+
+
+import bsh.Interpreter;
+import bsh.EvalError;
+
+import java.io.IOException;
+
+import java.awt.*;
+import java.security.*;
+import java.awt.EventQueue;
+import javax.swing.text.*;
+import javax.swing.plaf.*;
+import javax.swing.text.BoxView;   
+// For changing font-size box. (require javax library).
+
+import net.sf.clipsrules.jni.Router;
+import jess.*;
+
+import java.awt.*;
+import java.awt.event.*;
+import java.util.*;
+import javax.swing.*;
+import javax.swing.Timer;
+import java.util.Date;
+import java.lang.System.*;
+
+// /////////////////////////////////////////////
+// Technique: info about myBOB & others util commands
+outLogger(new Object[]{	"level.01 ", myAgent .getLocalName(), 
+		"Running Script level.01.bsh inside Board-Agent." });
+
+
+///////////////////////////////////////////////
+//Technique: Demote from Level-5 
+if ( myNode .currentExecLevel > 3 ) {
+	outLogger(new Object[]{"level.01 ",myAgent .getLocalName(), 
+	     "Demote level from", "["+ myNode .currentExecLevel + "]", 
+	     "to level [3] and after, to level [1]." 	});
+	
+	init( 3 );
+}
+
+
+
+///////////////////////////////////////////////
+//Technique: It was already on Level-1 
+if ( myNode .currentExecLevel == 1 ) { 
+	runLevels( myBOB,  myNode .currentExecLevel );
+	return;
+}
+
+
+
+///////////////////////////////////////////////
+//Technique: Level 1. Close this level !
+myNode .currentExecLevel = 1;
+
+try {
+	if ( myDfd != null){
+		outLogger("Making a deregister, please wait some seconds...");	
+
+		DFService.deregister( myAgent );
+		myDfd = null;
+		mySd = null;
+		myAgent.setDfd(myDfd);
+		myAgent.setSd(mySd);
+
+	}
+} catch (FIPAException e) {
+	
+}
+
+runLevels( myBOB,  myNode .currentExecLevel );
+
+
+
+///////////////////////////////////////////////
+//Techniques: Level 1. Final info!
+outLogger(new Object[]{ "level.01 ",myAgent .getLocalName(),  
+	     "Level", "["+ myNode .currentExecLevel + "]", 
+	     "has finished loading." });
+

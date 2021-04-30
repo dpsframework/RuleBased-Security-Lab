@@ -1,0 +1,37 @@
+/** -------------------------------------------------------------------------------
+ * Ph.D.Thesis    : Deposit-Number# 2012.0000.55
+ * Title (en_US)  : Applied Techniques in Deployment of Rule-Based Expert Systems
+ *                  on Distributed Architecture using Multi-Agent Paradigm.
+ * Title (es_ES)  : Tecnicas para despliegue de arquitectura distribuida en sistemas
+ *                  expertos basados en reglas empleando el paradigma multiagente.
+ * Ph.D. Student  : Francisco J Aguayo Canela 
+ * Thesis Director: Ph.D. Isaias Garcia Rodriguez 
+ * Ph.D. Program  : Intelligent Systems at Engineering Science (Cod. 212)
+ * -------------------------------------------------------------------------------- */
+
+
+
+/**
+ * Finite State Machine that restoring onetime 
+ * the previus state from Engine Working-Memory Dump File.
+ * 
+ * @see E2NRFSMBehaviour
+ */
+
+
+// (0) Integrated in Agent:
+import com.dpsframework.core.behaviour.RSWMFSMBehaviour;
+
+
+// (1) By-default: Integrated in BeanShell:
+// source(   "class.RSWMFSMBehaviour.bsh"		);
+// source(   "class.GENERICExecutorState.bsh"			);
+// source(   "class.GENERICDaemonState.bsh"	);
+
+// It's also possible: 
+// FSMRestoreWorkingMemory( myAgent, 2000L, NameOfAnotherDumpFile-in-var-Directory );
+rswm = new RSWMFSMBehaviour( myAgent ); 
+rswm .setBehaviourName( "rswm" );
+
+return (RSWMFSMBehaviour) rswm;
+

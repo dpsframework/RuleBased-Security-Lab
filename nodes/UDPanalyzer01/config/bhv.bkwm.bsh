@@ -1,0 +1,32 @@
+/** -------------------------------------------------------------------------------
+ * Ph.D.Thesis    : Deposit-Number# 2012.0000.55
+ * Title (en_US)  : Applied Techniques in Deployment of Rule-Based Expert Systems
+ *                  on Distributed Architecture using Multi-Agent Paradigm.
+ * Title (es_ES)  : Tecnicas para despliegue de arquitectura distribuida en sistemas
+ *                  expertos basados en reglas empleando el paradigma multiagente.
+ * Ph.D. Student  : Francisco J Aguayo Canela 
+ * Thesis Director: Ph.D. Isaias Garcia Rodriguez 
+ * Ph.D. Program  : Intelligent Systems at Engineering Science (Cod. 212)
+ * -------------------------------------------------------------------------------- */
+
+/**
+ * Generic Loader to create only `bkwm` Behaviour reference, 
+ * from Java packages or BeanShell Classes. Its activation is controled by execution
+ * level of agent. 
+ * 
+ * A JADE FSM-Behaviour (bkwm)
+ */
+
+
+// //////////////////////////////////////
+// Java Classes:
+import com.dpsframework.core.behaviour.BKWMFSMBehaviour;
+
+
+// Example of: 
+// bkwm = new FSMBackupWorkingMemory( myAgent  ); // Without second parameter, by default = 15 minutes
+bkwm 	= new BKWMFSMBehaviour( myAgent, 60L );    
+bkwm 	.setBehaviourName( "bkwm");
+
+return (BKWMFSMBehaviour) bkwm;
+

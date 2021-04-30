@@ -1,0 +1,41 @@
+/** -------------------------------------------------------------------------------
+ * Ph.D.Thesis    : Deposit-Number# 2012.0000.55
+ * Title (en_US)  : Applied Techniques in Deployment of Rule-Based Expert Systems
+ *                  on Distributed Architecture using Multi-Agent Paradigm.
+ * Title (es_ES)  : Tecnicas para despliegue de arquitectura distribuida en sistemas
+ *                  expertos basados en reglas empleando el paradigma multiagente.
+ * Ph.D. Student  : Francisco J Aguayo Canela 
+ * Thesis Director: Ph.D. Isaias Garcia Rodriguez 
+ * Ph.D. Program  : Intelligent Systems at Engineering Science (Cod. 212)
+ * -------------------------------------------------------------------------------- */
+
+/**
+ * This behaviour responds like MonitorAgent in Migration process.
+ * Node 2 MonitorAgent Responder: (n2hr)
+ * 
+ */
+import jade.core.Agent;
+
+import jade.content.Concept;
+import jade.content.onto.basic.Action;
+import jade.content.onto.basic.Done;
+import jade.domain.FIPAException;
+
+import jade.lang.acl.ACLMessage;
+import jade.lang.acl.MessageTemplate;
+import jade.security.JADESecurityException;
+import com.dpsframework.domain.*;
+
+////////////////////////////////////////
+// Technique: Behaviour integrated in BeanShell:
+// source(   "class.N2HREResponder.bsh"  );
+
+import com.dpsframework.core.behaviour.N2HREResponder;
+
+mt9 = new MTRepository( myAgent ) .getName( BhConstants.N2HR_MT );
+
+n2hr = new N2HREResponder( myAgent, mt9, new DataStore());
+n2hr.setBehaviourName( "n2hr" );
+
+return (N2HREResponder) n2hr; 
+

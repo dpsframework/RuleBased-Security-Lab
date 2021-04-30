@@ -1,0 +1,45 @@
+/** -------------------------------------------------------------------------------
+ * Ph.D.Thesis    : Deposit-Number# 2012.0000.55
+ * Title (en_US)  : Applied Techniques in Deployment of Rule-Based Expert Systems
+ *                  on Distributed Architecture using Multi-Agent Paradigm.
+ * Title (es_ES)  : Tecnicas para despliegue de arquitectura distribuida en sistemas
+ *                  expertos basados en reglas empleando el paradigma multiagente.
+ * Ph.D. Student  : Francisco J Aguayo Canela 
+ * Thesis Director: Ph.D. Isaias Garcia Rodriguez 
+ * Ph.D. Program  : Intelligent Systems at Engineering Science (Cod. 212)
+ * -------------------------------------------------------------------------------- */
+
+// /////////////////////////////////////////////
+// Techniques: Promote from 3 if actual level is 1
+
+if ( myNode .currentExecLevel < 3 ) {
+
+	
+	outLogger(new Object[]{"level.05 ",  
+			      myNode .nodeName,   "Promote Level",   
+			      "["+ myNode .currentExecLevel + "]",     "before load Level [5]."});
+	
+	init( 3 );
+}
+
+
+///////////////////////////////////////////////
+//Technique: Engine Router re-connected to Engine in Development-Enviroment level 5
+if ( myAgent .getClass().getName().equalsIgnoreCase(PsConstants.FwCLASS.stage_agent) ) {
+   myEngine .setRouter( myEngine );
+}
+
+
+// /////////////////////////////////////////////
+// Technique: Finishe runlevels
+myNode .currentExecLevel = 5;
+runLevels( myBOB,   myNode .currentExecLevel );
+
+
+
+///////////////////////////////////////////////
+//Techniques: Level 5. Final info!
+outLogger(new Object[]{"level.05 ", myNode .nodeName,   "Level", 
+		     "["+ myNode .currentExecLevel + "]", "has finished loading."});
+
+// End of runlevels...

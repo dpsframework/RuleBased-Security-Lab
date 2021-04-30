@@ -1,0 +1,67 @@
+/**
+ * ---------------------------------------------------------------------------------
+ * Ph.D.Thesis    : Deposit-Number# 2012.0000.55
+ * 
+ * Title (en_US)  : Applied Techniques in Deployment of Rule-Based Expert Systems
+ *                  on Distributed Architecture using Multi-Agent Paradigm.
+ * 
+ * Title (es_ES)  : Tecnicas para despliegue de arquitectura distribuida en sistemas
+ *                  expertos basados en reglas empleando el paradigma multiagente.
+ *                  
+ * Ph.D. Student  : Francisco J Aguayo Canela 
+ * Thesis Director: Ph.D. Isaias Garcia Rodriguez 
+ * 
+ * ---------------------------------------------------------------------------------
+ * Ph.D. Program  : Intelligent Systems at Engineering Science (Cod. 212)
+ */
+
+/**
+ * This behaviour serves the action Migrate from Problem-Solvers (PSO) supported
+ * by: PsNodeAgent, PsBoardAgent and PsMonitorAgent Class JADE's Agents.
+ * <p>
+ * 
+ * Node migration behaviour: (nmig)
+ * 
+ * @author Francisco J Aguayo Canela
+ *         <p>
+ *         <small>Department of Electric Engineering, Systems and Automatic<br>
+ *         School of Industrial Engineering and Information Technology<br>
+ *         &copy; <b>University of Leon</b> - Spain. <a
+ *         href="http://www.unileon.es">{http://www.unileon.es}</a></small>
+ */
+import jade.core.Agent;
+
+import jade.content.Concept;
+import jade.content.onto.basic.Action;
+import jade.content.onto.basic.Done;
+import jade.domain.FIPAException;
+
+import jade.lang.acl.ACLMessage;
+import jade.lang.acl.MessageTemplate;
+import jade.security.JADESecurityException;
+import com.dpsframework.domain.*;
+
+import com.dpsframework.core.behaviour.BhConstants;
+import com.dpsframework.core.behaviour.MTRepository;
+
+
+////////////////////////////////////////
+// Technique: Behaviour integrated in BeanShell:
+// source(   "class.NMIGManagement.bsh"  );
+
+import com.dpsframework.core.behaviour.H2NREInitiator;
+import com.dpsframework.core.behaviour.N2HREResponder;
+import com.dpsframework.core.behaviour.NMIGManagement;
+
+
+
+mt8 = new MTRepository( myAgent ) .getName( BhConstants.NMIG_MT );
+
+
+nmig = new NMIGManagement( myAgent, mt8 );
+nmig.setBehaviourName( "nmig" ); 
+
+
+
+return (NMIGManagement) nmig; 
+

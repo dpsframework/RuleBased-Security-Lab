@@ -1,0 +1,435 @@
+//# Revised:   2021.04.28                               
+//#            [ RuleBased-Security-Lab example ]
+// ------------------------------------------------
+
+
+
+myBOBActivated  = new jade.util.leap.HashMap();
+nodeProp2 		= new jade.util.leap.Properties();
+nodeProp2.load( nodeConfigPath + "node.properties" );
+
+myBOB.clear();
+
+//# ----------------------------------------
+//#  [1] Chapter 10. Managing Services with systemd Red Hat Enterprise Linux 7 | 
+//#      Red Hat Customer Portal. (n.d.). Retrieved April 2, 2021, from 
+//#      https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/chap-managing_services_with_systemd
+//# ----------------------------------------
+// An emulate version of {service and systemctl} from Centos 7 - RHEL 
+// @author:  fjac et al. - SECOMUCI Research Group - UniLeon (2021).
+
+//------------------------------------------
+// service() A Java Scripted Object (Closure)
+//------------------------------------------
+service(){
+	// ------------------------------------------
+	SERVICE = ".service";
+	LOADER  = ".loader.java";
+	// ------------------------------------------
+	public  boolean serviceExists( String nameService ){
+        sExists = false;
+		for( sn : this.list() ){
+			if( sn.equals( nameService ) ){
+				sExists = true;
+			}
+		}
+		return sExists;
+	}
+	
+	
+	
+	// ------------------------------------------
+	public  boolean serviceExists(){
+        sExists = false;
+		return sExists;
+	}
+
+	
+	
+	// ------------------------------------------
+	public  boolean enable(String  nameService ) {
+		if ( this.serviceExists(nameService) ){
+			serviceProp = new jade.util.leap.Properties();
+			serviceProp.load( myNode .nodeConfigPath + nameService + this.SERVICE );
+			serviceProp .setProperty( "service.enable", "1");	
+			serviceProp.store( myNode .nodeConfigPath + nameService + this.SERVICE );
+			return true;
+			
+		} else {
+			print(  "Usage: service().enable( nameOfService );");
+			return false;
+		}
+		
+	}
+	
+	
+	// ------------------------------------------
+	public  boolean disable(String  nameService ) {
+		if ( this.serviceExists(nameService) ){
+			serviceProp = new jade.util.leap.Properties();
+			serviceProp.load( myNode .nodeConfigPath + nameService + this.SERVICE );
+			serviceProp .setProperty( "service.enable", "0");	
+			serviceProp.store( myNode .nodeConfigPath + nameService + this.SERVICE );
+			return true;
+			
+		} else {
+			print(  "Usage: service().disble( nameOfService );");
+			return false;
+		}
+		
+	}
+	
+	
+	// ------------------------------------------
+	public  boolean enable( ) {
+		print(  "Usage: service().enable( nameOfService );");
+		return false;
+	}
+	
+	
+	
+	public  boolean disable( ) {
+		print(  "Usage: service().disable( nameOfService );");
+		return false;
+	}
+	
+	
+	
+	
+	// ------------------------------------------
+	public String[]  BOB() {	
+		
+		String   summaryTest   = "";
+		String[] sTest;
+		String[] sfNames       = this.listFS();	
+		String   sName         = "";
+		String   firstColon    = "";
+		
+		for ( sfn : sfNames ) {	
+			
+			sName = sfn.split(this.SERVICE)[0];
+			serviceProp = new jade.util.leap.Properties();
+			serviceProp.load( myNode .nodeConfigPath + sfn );
+						
+			summaryTest = 
+					serviceProp .getProperty( "service.order",            "UU") + ":" +
+					serviceProp .getProperty( "init.level" ,               "7") + ":" +
+					serviceProp .getProperty( "run.level",                 "0") + ":" +
+					serviceProp .getProperty( "service.name",          "noName") + ":" +
+					serviceProp .getProperty( "service.group",         "group") + ":" +
+					serviceProp .getProperty( "service.launcher", sName+this.LOADER ) + ":" +
+					serviceProp .getProperty( "service.enable",            "0") + ":" +
+					serviceProp .getProperty( "service.description", "Service") +
+					firstColon + summaryTest;
+			firstColon = "@@";
+		}
+		sTest = summaryTest.split("@@");
+		return sTest;
+	}
+	
+	
+	// ------------------------------------------
+	public String BOB( String serviceName ){
+		
+		String sBOB = "";	sExists = false;
+		
+		for( sn : this.list() ){
+			if( sn.equals(serviceName)){
+				sExists = true;
+			}
+		}
+		
+		if( !sExists ) { return "Usage: service() .BOB( serviceName ); ";}
+		
+		
+		for( sb : this.BOB()  ){
+			if( sb.split(":")[3].equals(serviceName)){
+				sBOB = sb;
+			}
+		}
+		return sBOB;
+		
+	}
+	
+	
+
+	
+	
+	
+	// ------------------------------------------
+	public  String[] list(){
+		String[]    fs = this.listFS();
+		String[]    sNames;
+		String      sRaw   = ""; 
+        String      fColon = "";
+		
+		for( sn : fs){
+			sRaw = sn.split(this.SERVICE)[0] + fColon + sRaw;
+			fColon = ",";
+		}
+		// print("sRaw="+sRaw);
+		sNames = sRaw.split(",");
+		return sNames;
+	}
+	
+	
+	
+	
+	// ------------------------------------------
+	public  String[] listFS(){
+		File 		dirConfig = new File ( myNode.nodeConfigPath);
+		String[]    fileNames = dirConfig.list();
+		String      sfileRaw = "";
+		String[]    sfileNames;
+		String      firstColon = "";
+
+		for (int i = 0; i < fileNames.length ; i++) {
+			File serviceFile = new File(myNode.nodeConfigPath+fileNames[i]);
+			if ( serviceFile.isFile()) {
+				if ( fileNames[i].endsWith(this.SERVICE) ) {
+						sfileRaw = fileNames[i] + firstColon + sfileRaw ;
+						firstColon="@@";
+				}
+			}
+		}	
+		sfileNames = sfileRaw.split("@@");
+		return sfileNames;
+	}
+	
+	
+	return this;
+}
+
+
+
+
+
+//# ------------------------------------------
+//#  Load Bundle of Behaviour : myBOB
+//# ------------------------------------------
+String[] sList = service() .list();
+
+for( sl : sList ) {
+	String   sRaw = service().BOB( sl );
+	String   sVar = service().BOB( sl ).split(":")[3];
+	myBSh .set(sVar, null);
+	myBOB.put( sRaw, null  );
+	// print(sRaw); print(sVar);
+}
+
+//# ------------------------------------------
+//#  Load Bundle of Behaviour Activated
+//# ------------------------------------------
+for( String ka : myBOB.keySet().iterator() ){
+	boolean   status = bhvState( ka.split(":")[6]  );
+    String     clave = ka.split(":")[3];
+    myBOBActivated.put( clave , status );
+}
+
+
+
+//# ------------------------------------------
+//#  Bundle of Behaviour myBOB() .perspective();
+//# ------------------------------------------
+myBOB() {
+    public String perspective() {
+        StringBuilder sbMyBOBOriginal = new StringBuilder();
+
+        sbMyBOBOriginal.append("\n");
+        sbMyBOBOriginal.append(" * ---------------------------------------------------------- *\n");
+        sbMyBOBOriginal.append(" * myBOB (Bundle Of Behaviours)                               *\n");
+        sbMyBOBOriginal.append(" * ---------------------------------------------------------- *\n");
+        sbMyBOBOriginal.append(" * [0] = Alphabetical order behaviours loader Label           *\n");
+        sbMyBOBOriginal.append(" * [1] = Init Run-Level (when Behaviour is initialized)       *\n");
+        sbMyBOBOriginal.append(" * [2] = Running Run-Level (when Behaviour is loaded)         *\n");
+        sbMyBOBOriginal.append(" * [3] = Behaviour's name and variable's name                 *\n");
+        sbMyBOBOriginal.append(" * [4] = Belong to group...                                   *\n");
+        sbMyBOBOriginal.append(" * [5] = Behaviour loader file name                           *\n");
+        sbMyBOBOriginal.append(" *                                                            *\n");
+        sbMyBOBOriginal.append(" * === Level     ====   =====   ============   =======  ============================ *\n");
+        sbMyBOBOriginal.append(" * [0] [1]  [2]   [3]   [4]     [5]            [6]      [7]                          *\n");
+        sbMyBOBOriginal.append(" * ID  Init RunAt Name  Group   Loader         Enabled  Description                  *\n");
+        sbMyBOBOriginal.append(" * === ==== ==== ====== ======= ============   =======  ============================ *\n");
+
+        bA = myBOB.keySet().toArray();
+
+        Arrays.sort( bA );
+        for( String bK : bA ){
+            sbMyBOBOriginal.append(MessageFormat.format(
+            		            " *  {0} : {1} : {2} : {3} : {4} : {5} :  {6} : {7}\n", bK.split(":")     ));
+        }
+        sbMyBOBOriginal.append(" * ---------------------------------------------------------- * ");
+        return sbMyBOBOriginal.toString();
+    }
+    return this;
+} 
+
+//# Imports
+//# ---------------------------------------------
+import jade.content.Concept;
+import jade.content.onto.basic.Action;
+import jade.content.onto.basic.Done;
+import jade.core.Agent;
+import jade.domain.FIPAException;
+import jade.domain.FIPAAgentManagement.UnsupportedFunction;
+import jade.domain.JADEAgentManagement.ShowGui;
+import jade.lang.acl.ACLMessage;
+import jade.lang.acl.MessageTemplate;
+import jade.security.JADESecurityException;
+import jade.util.Logger;
+
+import java.text.MessageFormat;
+
+import com.dpsframework.*;
+import com.dpsframework.domain.RMNGBehaviour;
+import com.dpsframework.util.*;
+
+
+
+
+
+
+
+
+
+
+//Local-Test functions
+//-----------------------------------------------------------------
+//Revised:   2021.04.28                               
+//[ Snort-Agents-IoT example ]
+//
+String AFIRMATIVO  = "Correct !";
+String NEGATIVO    = "Oops____!";
+String AFFIRMATIVE = "Correct !";
+String NEGATIVE    = "Oops____!";
+int    LINE_LENGTH = 80;
+
+String answer     = (true) ? AFFIRMATIVE : NEGATIVE ;
+String test       = "";
+
+String formatQ(String t){
+	int l = LINE_LENGTH - t.length() - 11;
+	if (l > 0 ) {
+		return  t + new String( new char[ l ] ).replace( '\u0000', '.' ) + ": ";
+	} else {
+	return t + ": ";
+	}
+}
+
+String formatQ(int l, char c){
+	if (l > 0 ) {
+		return  ( new String( new char[ l ] ).replace( '\u0000', c )  );
+	}
+	return "";
+}
+
+void println(Object o ){ jconsole.print( o ); jconsole.print("\n"); }
+void println(){ 	jconsole.print("\n"); }
+void println(int r){for( int i=1; i<r ; ++i) { jconsole.print("\n"); } }
+
+int  acum  = 0; 
+int  phase = 0;
+
+void phaseBanner(String p) {
+	acum = 0;
+	++phase;
+	println( formatQ( LINE_LENGTH , '-' ) );
+	println( "(" + phase + ") " + p );
+	println( formatQ( LINE_LENGTH , '-' ) );
+}
+void resultBanner(String q, String a) {
+	++acum;
+	String ntest = "Test " +  phase + ".00"+ acum + ": " + q ;
+	println( formatQ( ntest  ) + a );
+	println( formatQ( 11 , '-' ) );
+}
+
+///////////////////////////////////////////////
+//Technique: Some monitors Functions 
+Map testArea = new HashMap();
+Map myTest   = new HashMap();
+
+
+
+///////////////////////////////////////////////
+//Technique: Overload test() with: test(Object) and test(int)
+void test(int h) {
+	test_MENU  = "menu";   test_MENU_CODE  = 99;
+	
+//	testArea.put(1000, "----------------------                ----------");
+	testArea.put(7000, "----------------------Open-Transform .PCAP files");
+	  myTest.put("pcap.transform"       ,  7200   );
+	  myTest.put("pcap.open"            ,  7100   );
+
+	
+	
+
+	
+
+	
+
+
+	switch (h) {
+		case test_MENU_CODE:
+			print( "--------  ------------------------------------------------");
+			print( "Test.ID   Description                              testID#");
+			print( "--------  ------------------------------------------------");
+			for( a : testArea.keySet() ){
+				print ("    : >>  " + testArea.get(a) ); 
+				for( e : myTest.entrySet() ){
+					if ( e.getValue() >= a && e.getValue() < (a + 1000) ){
+						tail = formatQ(44 - e.getKey().length(), ' '); 
+						print( "          "+e.getKey()    + tail + e.getValue() );
+					}
+				}
+			}
+			print( "--------  ------------------------------------------------");
+			println("\nLaunch test with:   test( testID# );");
+			break;
+			
+		case 7000: case 6000: case 5000: case 4000: 
+			print( "--------------------------------------------     ---------");
+			print( "Script file associated                           script.ID");
+			print( "--------------------------------------------     ---------");
+			for( e : myTest.entrySet() ){
+				if ( e.getValue() >= h && e.getValue() < (h + 1000) ){
+					tail = formatQ(54 - e.getKey().length(), ' '); 
+					print( e.getKey()    + tail + e.getValue() );
+				}
+			}
+			println("\nLaunch with:   test( testID# );");
+			break;
+			
+		default:
+			for( e : myTest.entrySet() ){
+				if ( e.getValue() == h  ){
+					print("We proceed to open the test: " + e.getValue() );
+					nameOfTest = "test." + e.getValue() + "." + e.getKey() + ".java";
+					print("                       Name: " + nameOfTest  + "\n" );
+					if ( ! pathToFile(nameOfTest).exists() ) {
+				       print("Sorry, file not found.\n");
+						break;
+					}
+					source( nameOfTest  );
+				}
+			}
+
+			print( "Bye!" );
+			break;
+			
+		}
+}
+
+///////////////////////////////////////////////
+//Technique: Overload test() with: test(Object) and test(int)
+void test() { 
+	test(99); 
+}
+
+void test(Object o){ 	
+	if ( o == void ) {	
+		test(99);    
+	} else {
+		test(99);
+	}
+}

@@ -1,0 +1,141 @@
+//# Revised:   2021.04.28                               
+//#            [ RuleBased-Security-Lab example ]
+//# -----------------------------------------------
+
+import com.dpsframework.*;
+import com.dpsframework.domain.*;
+import com.dpsframework.core.engines.*;
+import com.dpsframework.core.behaviour.*;
+import com.dpsframework.core.behaviour.BhConstants;
+import com.dpsframework.util.*;
+import com.dpsframework.util.PsNodeSettings;
+import com.dpsframework.util.PsServices;
+import com.dpsframework.util.PsConstants;
+
+import com.dpsframework.domain.PsoNames;
+
+
+import javax.swing.AbstractListModel;
+import javax.swing.Box;
+import javax.swing.BoxLayout;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.DefaultListModel;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JSplitPane;
+import javax.swing.JTabbedPane;
+import javax.swing.JTextField;
+import javax.swing.JTextPane;
+import javax.swing.ListSelectionModel;
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
+import javax.swing.WindowConstants;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.LineBorder;
+import javax.swing.border.SoftBevelBorder;
+import javax.swing.border.TitledBorder;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+import javax.swing.text.AttributeSet;
+import javax.swing.text.SimpleAttributeSet;
+import javax.swing.text.StyleConstants;
+import javax.swing.text.StyleContext;
+
+// /////////////////////////////////////////////
+// Technique: Testing if it level was requested by user a restart
+if ( myNode .currentExecLevel > 0 &&  myNode .currentExecLevel != 6 ) {		
+	outLogger(new Object[]{"level.00 ",	myAgent .getLocalName(), "It goes to exit from level", 
+			     "["+ myNode .currentExecLevel + "]", "now!"});	
+	exit();  // Really, it's a true EXIT!	
+}
+
+
+// /////////////////////////////////////////////
+// Restart from Level:6
+myAgent .myNode().initializeNode();
+myAgent .myNode().refresh();
+
+
+
+// /////////////////////////////////////////////
+// Technique: Some shell functions renamed
+public void clear()   { bsh.console.clearText(); }
+public void desktop() {  }
+
+
+// /////////////////////////////////////////////
+// Technique: Load Framework global help & utils.
+if ( pathToFile( frameworkConfigPath + "framework.methods.bsh" ).exists() ){
+	source(      frameworkConfigPath + "framework.methods.bsh" );
+}
+if ( pathToFile( nodeConfigPath + "node.methods.bsh" ).exists() ){
+	source(      nodeConfigPath + "node.methods.bsh" );
+}
+
+
+// /////////////////////////////////////////////
+// Technique: Cosmetic Fonts for Mac-Developers.
+if (  PsServices.getNativePath().equals(PsServices.i18n("dps.arch.mac"))   ) {
+	sz = jconsole.getFont().size;
+	jconsole.setFont(new Font( "Monaco", Font.PLAIN, sz));
+}
+
+
+
+
+///////////////////////////////////////////////
+//Technique: Prompt of BeanShell inside JADE Agent
+String getBshPrompt() {
+	sz = jconsole.getFont().size;
+		
+	// Advanced used => advanced not void (full-path) so; (advanced = 1, unset("advanced");)	
+	if(  advanced == void  ){
+		myAgent.jadeConsole().print( "\n["
+	            +myAgent.getLocalName()+"]:/" + pathToFile( bsh.cwd ).getName() + "/", 
+		new Font("Monaco", Font.PLAIN, sz), 
+		new Color(  196,0,0 ) );	    	
+	} else {
+		myAgent.jadeConsole().print(  "\n[monitor]://" 
+				+myAgent.getLocalName()+"/"+pathToFile( bsh.cwd ) .getName() +"/", 
+				  new Font("Monaco", Font.PLAIN, sz), 
+				  new Color( 196,0,0  )  
+				);
+	}	
+	return "# > ";
+}
+
+
+
+
+
+// /////////////////////////////////////////////
+// Technique: info about myBOB & Node perspective()
+outLogger(new Object[]{"level.00",	myAgent .getLocalName(), 
+	"Setting Behaviours distribution on Agent's runlevels", myBOB() .perspective() });
+
+
+public void cdhome(){
+	cd(myNode .nodeConfigPath);
+}
+
+
+///////////////////////////////////////////////
+//Technique: Level 0 --> setting in startup-Level
+myNode .currentExecLevel = 0;
+runLevels( myBOB,   myNode .currentExecLevel );
+
+
+// /////////////////////////////////////////////
+// Technique: Level 0. started from bare init!
+outLogger(new Object[]{"level.00 ",	myAgent .getLocalName(), 
+	"Level", 
+	"["+ myNode .currentExecLevel + "]", 
+	"has finished loading." });
+

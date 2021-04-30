@@ -1,0 +1,47 @@
+/**
+ * ---------------------------------------------------------------------------------
+ * Ph.D.Thesis    : Deposit-Number# 2012.0000.55
+ * 
+ * Title (en_US)  : Applied Techniques in Deployment of Rule-Based Expert Systems
+ *                  on Distributed Architecture using Multi-Agent Paradigm.
+ * 
+ * Title (es_ES)  : Tecnicas para despliegue de arquitectura distribuida en sistemas
+ *                  expertos basados en reglas empleando el paradigma multiagente.
+ *                  
+ * Ph.D. Student  : Francisco J Aguayo Canela 
+ * Thesis Director: Ph.D. Isaias Garcia Rodriguez 
+ * 
+ * ---------------------------------------------------------------------------------
+ * Ph.D. Program  : Intelligent Systems at Engineering Science (Cod. 212)
+ */
+// /////////////////////////////////////////////
+// Technique: Sorry but... I have to clean its Queue!
+outLogger(new Object[]{"level.06 ", myNode .nodeName, 
+     "Sorry but... I have to clean its Queue before restart!",
+     "The number of Message Queue was: [" + myAgent .getCurQueueSize() + "]"  });
+	
+	while( myAgent .getCurQueueSize() > 0 ) {
+		
+		ACLMessage toTrash = myAgent .receive();
+		toTrash = null;
+	}
+		
+	outLogger(new Object[]{"level.06 ",  myNode .nodeName, 
+     "Number of message is now: [" + myAgent .getCurQueueSize() + "]" });
+// /////////////////////////////////////////////
+// Technique: Execution Level = 6 (Deactivating agents' behaviours)
+int previousLevel = myNode .currentExecLevel;
+myNode .currentExecLevel = PsConstants.KwBASED.runLevel_6;;
+runLevels( myBOB,   myNode .currentExecLevel );
+
+
+///////////////////////////////////////////////
+//Technique: Try a shutdown of Agent !
+outLogger(new Object[]{"level.06 ",  myNode .nodeName, 
+     "Try restart the Agent's Behaviours", 
+	 "through levels [0] to [1]. There are we go!" });
+
+myNode .currentExecLevel = PsConstants.KwBASED.runLevel_0;;
+source( myNode.nodeConfigPath +  PsConstants.KwBASED.file_runLevel_0 );
+source( myNode.nodeConfigPath +  PsConstants.KwBASED.file_runLevel_1 );
+

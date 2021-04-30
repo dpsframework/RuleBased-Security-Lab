@@ -1,0 +1,67 @@
+/** -------------------------------------------------------------------------------
+ * Ph.D.Thesis    : Deposit-Number# 2012.0000.55
+ * Title (en_US)  : Applied Techniques in Deployment of Rule-Based Expert Systems
+ *                  on Distributed Architecture using Multi-Agent Paradigm.
+ * Title (es_ES)  : Tecnicas para despliegue de arquitectura distribuida en sistemas
+ *                  expertos basados en reglas empleando el paradigma multiagente.
+ * Ph.D. Student  : Francisco J Aguayo Canela 
+ * Thesis Director: Ph.D. Isaias Garcia Rodriguez 
+ * Ph.D. Program  : Intelligent Systems at Engineering Science (Cod. 212)
+ * -------------------------------------------------------------------------------- */
+
+/**
+ * Expert System Files to load at Agent startup.
+ * The JADE WakerBehaviour (acpb) behaviour has 1.9 seconds of delayed.
+ */
+import jade.core.Agent;
+import jade.core.behaviours.WakerBehaviour;
+import com.dpsframework.core.behaviour.ACPBEngineLoader;
+
+
+////////////////////////////////////////
+// BeanShell Classe:
+// source(   "class.ACPBEngineLoader.bsh"  );
+
+
+// //////////////////////////////////////
+// Technique: Selection of files and startup procedures
+initLoad = new String[][]{};
+
+switch (myNode.engineSelected) {
+	case "CLIPS":
+		// /////////////////////////////////
+		// Engine CLIPS 6.31-CLIPSJNI 0.5
+		initLoad = new String[][] {
+				
+				 { "MAKE_CLEAR"		, "null"                                        		}				
+				,{ "LOAD_FILE"		, myNode .relativeEnginePath  + "sudoku.clp"     		}
+				,{ "LOAD_FILE"		, myNode .relativeEnginePath  + "solve.clp"     		}
+				,{ "LOAD_FILE"		, myNode .relativeEnginePath  + "output-frills.clp"     }
+				,{ "MAKE_RESET"		, "null"                                      			}
+				,{ "RUN_INFINITELY"	, "null"                                      			}
+		};
+		acpb = new ACPBEngineLoader( myAgent,  1200L, initLoad);
+		break;
+	
+	case "JESS":
+		// /////////////////////////////////
+		// Engine JESS 8.01a
+		initLoad = new String[][]	{			
+				
+				 { "MAKE_CLEAR"		, "null"                                        		}				
+				,{ "LOAD_FILE"		, myNode .relativeEnginePath  + "sudoku.clp"     		}
+				,{ "LOAD_FILE"		, myNode .relativeEnginePath  + "solve.clp"     		}
+				,{ "LOAD_FILE"		, myNode .relativeEnginePath  + "output-frills.clp"     }
+				,{ "MAKE_RESET"		, "null"                                      			}
+				,{ "RUN_INFINITELY"	, "null"                                      			}
+		};
+		acpb = new ACPBEngineLoader( myAgent,  1200L, initLoad);
+		break;
+	
+	default:
+		acpb = new ACPBEngineLoader( myAgent,  800L);
+	    break;
+}
+
+acpb .setBehaviourName( "acpb" );
+return (ACPBEngineLoader) acpb;

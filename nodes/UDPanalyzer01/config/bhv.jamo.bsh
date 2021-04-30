@@ -1,0 +1,36 @@
+/** -------------------------------------------------------------------------------
+ * Ph.D.Thesis    : Deposit-Number# 2012.0000.55
+ * Title (en_US)  : Applied Techniques in Deployment of Rule-Based Expert Systems
+ *                  on Distributed Architecture using Multi-Agent Paradigm.
+ * Title (es_ES)  : Tecnicas para despliegue de arquitectura distribuida en sistemas
+ *                  expertos basados en reglas empleando el paradigma multiagente.
+ * Ph.D. Student  : Francisco J Aguayo Canela 
+ * Thesis Director: Ph.D. Isaias Garcia Rodriguez 
+ * Ph.D. Program  : Intelligent Systems at Engineering Science (Cod. 212)
+ * -------------------------------------------------------------------------------- */
+
+
+
+/**
+ * Generic Loader to create only a `jamo` Behaviour reference, 
+ * from Java package or from BeanShell Classes. Its activation is controled by execution
+ * level inside of agent. 
+ * 
+ * @see JAMONodeManagement
+ */
+
+
+////////////////////////////////////////
+//Java Classes:
+import com.dpsframework.core.behaviour.JAMONodeManagement;
+
+// (1) By-default: Integrated in BeanShell:
+// source(   "class.JAMONodeManagement.bsh"  );
+
+
+mt7 = new MTRepository( myAgent ) .getName( BhConstants.JAMO_MT );
+
+jamo = new JAMONodeManagement( myAgent, mt7  );
+jamo.setBehaviourName( "jamo" ); 
+
+return (JAMONodeManagement) jamo; 

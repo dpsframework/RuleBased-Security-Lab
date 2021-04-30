@@ -1,0 +1,12 @@
+// Revised:   2021.04.28                               
+//            [ Snort-Agents-IoT example ]
+// 
+source( "class.JAMONodeManagement2.java" );
+
+mt7 = new MTRepository( myAgent ) .getName( BhConstants.JAMO_MT );
+
+jamo = new JAMONodeManagement2( myAgent, mt7 );
+jamo.setBehaviourName( "jamo" ); 
+
+return (JAMONodeManagement2) jamo; 
+

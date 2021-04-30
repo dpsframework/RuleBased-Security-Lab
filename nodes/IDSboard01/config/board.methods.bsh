@@ -1,0 +1,469 @@
+// Revised:   2021.04.28                               
+//            [ Snort-Agents-IoT example ]
+// 
+import jade.content.lang.Codec;
+import jade.content.lang.sl.SLCodec;
+import jade.core.Agent;
+import jade.core.behaviours.Behaviour;
+import jade.core.behaviours.DataStore;
+import jade.core.behaviours.TickerBehaviour;
+import jade.domain.DFService;
+import jade.domain.FIPAException;
+import jade.domain.FIPANames;
+import jade.domain.DFGUIManagement.DFAppletOntology;
+import jade.domain.FIPAAgentManagement.DFAgentDescription;
+import jade.domain.FIPAAgentManagement.FIPAManagementOntology;
+import jade.domain.FIPAAgentManagement.Property;
+import jade.domain.FIPAAgentManagement.ServiceDescription;
+import jade.domain.JADEAgentManagement.JADEManagementOntology;
+import jade.util.Logger;
+import jade.util.leap.HashMap;
+import jade.util.leap.Properties;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.io.BufferedReader;
+import java.io.DataInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.text.MessageFormat;
+
+import javax.swing.ImageIcon;
+import javax.swing.SwingUtilities;
+
+import bsh.EvalError;
+import bsh.Interpreter;
+import bsh.util.NameCompletionTable;
+import com.dpsframework.domain.ProblemSolversOntology;
+import com.dpsframework.util.JadeConsole;
+import com.dpsframework.util.PsConstants;
+import com.dpsframework.util.PsNodeSettings;
+import com.dpsframework.util.PsServices;
+
+import java.sql.Array;
+import java.sql.Blob;
+import java.sql.CallableStatement;
+import java.sql.Clob;
+import java.sql.Connection;
+import java.sql.DatabaseMetaData;
+import java.sql.DriverManager;
+import java.sql.NClob;
+import java.sql.PreparedStatement;
+import java.sql.SQLClientInfoException;
+import java.sql.SQLException;
+import java.sql.SQLWarning;
+import java.sql.SQLXML;
+import java.sql.Savepoint;
+import java.sql.Statement;
+import java.sql.Struct;
+import java.util.Map;
+import java.util.Properties;
+import java.util.concurrent.Executor;
+
+
+import java.io.IOException;
+import java.text.MessageFormat;
+import java.io.BufferedReader;
+import java.io.DataInputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FilterInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.util.Objects;
+import java.util.Date;
+import java.text.FieldPosition;
+import java.text.ParsePosition;
+import java.text.ParseException;
+import java.text.DateFormat;
+import java.text.DateFormatSymbols;
+import java.text.SimpleDateFormat.*;
+import java.text.MessageFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.regex.*;
+
+
+import bsh.EvalError;
+import bsh.Interpreter;
+import bsh.util.NameCompletionTable;
+
+
+import jade.core.Agent;
+import jade.util.Logger;
+import jade.core.behaviours.*; 
+
+import jade.util.leap.Serializable;
+import jade.content.Concept;
+import jade.core.Location;
+import jade.core.ContainerID;
+
+import jade.lang.acl.*;
+import jade.domain.FIPAAgentManagement.*;
+import jade.domain.DFService;
+import jade.domain.FIPAException;
+import jade.proto.*;
+import jade.proto.AchieveREInitiator;
+import jade.proto.AchieveREResponder;
+import jade.proto.SubscriptionInitiator;
+import jade.proto.states.*;
+
+import jade.core.messaging.*;
+import jade.core.messaging.TopicManagementService;
+import jade.core.AID;
+import jade.core.behaviours.ThreadedBehaviourFactory;
+import jade.content.schema.IRESchema;
+import jade.core.AID;
+import jade.core.Agent;
+import jade.core.CaseInsensitiveString;
+import jade.core.behaviours.Behaviour;
+import jade.core.behaviours.OneShotBehaviour;
+import jade.domain.DFGUIInterface;
+import jade.domain.FIPANames;
+import jade.domain.df;
+import jade.domain.DFGUIManagement.DFAppletOntology;
+import jade.domain.FIPAAgentManagement.DFAgentDescription;
+
+import jade.content.onto.*;
+import jade.content.onto.OntologyException;
+import jade.content.lang.Codec;
+import jade.content.lang.sl.SLCodec;
+import jade.content.onto.basic.*;
+
+import jade.domain.FIPANames;
+import jade.domain.FIPAAgentManagement.*;
+
+import jade.content.AgentAction;
+import jade.content.lang.Codec;
+import jade.content.lang.Codec.CodecException;
+
+import jade.content.lang.sl.*;
+import jade.content.lang.sl.SLCodec;
+
+import bsh.Interpreter;
+import bsh.EvalError;
+
+
+import java.awt.*;
+import java.awt.event.*;
+import java.util.*;
+import javax.swing.*;
+import javax.swing.Timer;
+import java.util.Date;
+import java.lang.System.*;
+
+import java.awt.event.*;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+import com.dpsframework.*;
+import com.dpsframework.domain.*;
+import com.dpsframework.core.engines.*;
+import com.dpsframework.core.behaviour.*;
+import com.dpsframework.util.*;
+
+
+
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+import java.util.regex.PatternSyntaxException;
+
+
+import java.util.HashMap;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.lang.NullPointerException;
+
+import jade.content.Concept;
+import jade.content.ContentManager;
+import jade.content.lang.Codec.CodecException;
+import jade.content.onto.OntologyException;
+import jade.content.onto.UngroundedException;
+import jade.content.onto.basic.Action;
+import jade.content.onto.basic.Done;
+import jade.core.AID;
+import jade.core.Agent;
+import jade.core.behaviours.DataStore;
+import jade.core.behaviours.OneShotBehaviour;
+import jade.domain.FIPANames;
+import jade.lang.acl.ACLMessage;
+import jade.util.Logger;
+
+import java.text.MessageFormat;
+
+import com.dpsframework.PsNodeAgent;
+import com.dpsframework.core.engines.RBConstants;
+import com.dpsframework.domain.ProblemSolversOntology;
+import com.dpsframework.util.PsConstants;
+
+import java.util.HashMap;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.lang.NullPointerException;
+
+///////////////////////////////////////////////
+// Technique: Level 0. Bootstrap instructions.
+// ==================      ======================================        =======================
+// Name of Bhv.            Objective of Bhv.                             Type of Bhv.
+// ==================      ======================================        =======================
+jamo   = null;  			//  JADE-Agent Management Ontology Actions   SimpleBehaviour (2 States)
+bcpb   = null;              //  Board Capabilities Loader Service        BoardCapabilitiesLoader.bsh 
+b2nr   = null;              //  Board To Node RE-Responder               SimpleAchieveREResponder.
+grid   = null;              //  Board Loader Resulset ticketDB on grid   BoardGridLoader2.bsh
+
+// /////////////////////////////////////////////
+// Techniques: Collection my-Bundle-Of-Behaviour = myBOB variable 
+//             Note: myBOB HashMap is inspired in Unix-Runlevels
+/**
+* Record Design proposal for runLevels applied to Agent paradigm.
+* 
+* @see node.methods runlevels().
+* 
+* 	 [0] = A label to print HashMap with some order
+*	 [1] = Level where Behaviour will be loaded 
+*	 [2] = Level where Behaviour will be activated 
+*	 [3] = Behaviour reference variable name 
+*	 [4] = Group of behaviour (without use) 
+*	 [5] = Behaviour definition JAVA file name 
+*
+*  ===============   ===== = = ==== ===== ============   =================
+*           Order:     0   1 2   3    4        5         Name of behaviour
+*  ===============   ===== = = ==== ===== ============   =================
+*   myBOB.put(       "01  :0:1:nmig:basal:bhv.nmig.bsh",       nmig  );	
+*/
+myBOB.clear();
+myBOB.put("00:0:1:jamo:basal:bhv.jamo.bsh", jamo);
+
+myBOB.put("0C:1:3:bcpb:basal:bhv.bcpb.bsh", bcpb); 
+
+myBOB.put("0B:3:5:grid:basal:bhv.grid.bsh", grid); 
+
+myBOB.put("A0:3:5:b2nr:basal:bhv.b2nr.bsh", b2nr); 
+
+
+
+///////////////////////////////////////////////
+//Technique: myBOBActivated HashMap
+myBOBActivated 	= new jade.util.leap.HashMap();
+nodeProp2 		= new jade.util.leap.Properties();
+
+nodeProp2.load( nodeConfigPath + PsConstants.BoardPKEYS.file_name );
+
+
+///////////////////////////////////////////////
+//Technique: Load myBOBActivate.
+//Outside of myBOB().perspective() because it is necessary init( 6 ); to reloading values.
+for( String ka : myBOB.keySet().iterator() ){
+	
+	boolean status =  bhvState(
+			nodeProp2.getProperty("ps.node.behaviour-"+ ka.split(":")[3]));
+	String clave = ka.split(":")[3];
+	myBOBActivated.put(	clave , status );
+}
+
+
+
+
+
+///////////////////////////////////////////////
+//Technique: example about myBOB like Object-Scripted (closure) inside JAVA!
+//It's possible to write myBOB() .perspective(); en JADE-Shell 
+myBOB() {
+	public String perspective() {
+	StringBuilder sbMyBOBOriginal = new StringBuilder();
+	
+	sbMyBOBOriginal.append("\n");
+	sbMyBOBOriginal.append(" * ---------------------------------------------------------- *\n");
+	sbMyBOBOriginal.append(" * myBOB (Bundle Of Node-Agent Behaviours proposal)           *\n");
+	sbMyBOBOriginal.append(" * ---------------------------------------------------------- *\n");
+	sbMyBOBOriginal.append(" * [0] = A label to ordering                                  *\n");
+	sbMyBOBOriginal.append(" * [1] = Level when Behaviour is initialized                  *\n");
+	sbMyBOBOriginal.append(" * [2] = Level when Behaviour is activated                    *\n");
+	sbMyBOBOriginal.append(" * [3] = Behaviour's name and variable's name                 *\n");
+	sbMyBOBOriginal.append(" * [4] = A label to behaviours' group                         *\n");
+	sbMyBOBOriginal.append(" * [5] = Externalized Behaviour definition file name          *\n");
+	sbMyBOBOriginal.append(" *                                                            *\n");
+	sbMyBOBOriginal.append(" * === Level     ====   =====   ============   =====  ======= *\n");
+	sbMyBOBOriginal.append(" * [0]  [1] [2]   [3]    [4]       [5]         Object Status  *\n");
+	sbMyBOBOriginal.append(" * ID  Make Actv Bhv    Area    File name      Name   Active  *\n");
+	sbMyBOBOriginal.append(" * === ==== ==== ====== ======= ============   =====  ======= *\n");
+	
+	
+	bA = myBOB.keySet().toArray();
+	
+	Arrays.sort( bA );
+	for( String bK : bA ){
+		bK += ":" + ((myBOBActivated.get( bK.split(":")[3])) ? "yes" : " -");
+		sbMyBOBOriginal.append(MessageFormat.format(" *  {0} : {1} : {2} : {3} : {4} : {5} : {3} : {6}\n",
+		bK.split(":")     ));
+	}
+	sbMyBOBOriginal.append(" * ---------------------------------------------------------- * ");
+	
+	return sbMyBOBOriginal.toString();
+	}
+	return this;
+} // End of BeanShell Scripting-Object with JAVA (@see ./var/doc/dps/index.html --> BeanShell Manual).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Local-Test functions
+// -----------------------------------------------------------------
+// Revised:   2021.04.28                               
+// [ Snort-Agents-IoT example ]
+//
+String AFIRMATIVO  = "Correct !";
+String NEGATIVO    = "Oops____!";
+String AFFIRMATIVE = "Correct !";
+String NEGATIVE    = "Oops____!";
+int    LINE_LENGTH = 80;
+
+ String answer     = (true) ? AFFIRMATIVE : NEGATIVE ;
+ String test       = "";
+
+ String formatQ(String t){
+	int l = LINE_LENGTH - t.length() - 11;
+	if (l > 0 ) {
+		return  t + new String( new char[ l ] ).replace( '\u0000', '.' ) + ": ";
+	} else {
+	return t + ": ";
+	}
+}
+
+ String formatQ(int l, char c){
+	if (l > 0 ) {
+		return  ( new String( new char[ l ] ).replace( '\u0000', c )  );
+	}
+	return "";
+}
+
+ void println(Object o ){ jconsole.print( o ); jconsole.print("\n"); }
+ void println(){ 	jconsole.print("\n"); }
+ void println(int r){for( int i=1; i<r ; ++i) { jconsole.print("\n"); } }
+
+ int  acum  = 0; 
+ int  phase = 0;
+
+ void phaseBanner(String p) {
+	acum = 0;
+	++phase;
+	println( formatQ( LINE_LENGTH , '-' ) );
+	println( "(" + phase + ") " + p );
+	println( formatQ( LINE_LENGTH , '-' ) );
+}
+ void resultBanner(String q, String a) {
+	++acum;
+	String ntest = "Test " +  phase + ".00"+ acum + ": " + q ;
+	println( formatQ( ntest  ) + a );
+	println( formatQ( 11 , '-' ) );
+}
+
+///////////////////////////////////////////////
+//Technique: Some monitors Functions 
+Map testArea = new HashMap();
+Map myTest   = new HashMap();
+
+
+
+///////////////////////////////////////////////
+//Technique: Overload test() with: test(Object) and test(int)
+void test(int h) {
+	test_MENU  = "menu";   test_MENU_CODE  = 99;
+	
+//	testArea.put(1000, "----------------------                ----------");
+	testArea.put(4000, "INTERACTION-PROTOCOL --");
+	  myTest.put("watchdog.receptions"  ,  4010   );
+	  myTest.put("ssdpAgent.inquiries"  ,  4020   );
+	  myTest.put("ssdpAgent.receptions" ,  4040   );
+	
+	
+
+	
+
+	
+
+
+	switch (h) {
+		case test_MENU_CODE:
+			print( "--------  ------------------------------------------------");
+			print( "Test.ID   Description                          Launch-code");
+			print( "--------  ------------------------------------------------");
+			for( a : testArea.keySet() ){
+				print ("    : >>  " + testArea.get(a) ); 
+				for( e : myTest.entrySet() ){
+					if ( e.getValue() >= a && e.getValue() < (a + 1000) ){
+						tail = formatQ(44 - e.getKey().length(), ' '); 
+						print( "          "+e.getKey()    + tail + e.getValue() );
+					}
+				}
+			}
+			print( "--------  ------------------------------------------------");
+			println("\nSelect and commit with:   test( Launch-code # );");
+			break;
+			
+		case 7000: case 6000: case 5000: case 4000: 
+			print( "--------------------------------------------     ---------");
+			print( "Script file associated                           script.ID");
+			print( "--------------------------------------------     ---------");
+			for( e : myTest.entrySet() ){
+				if ( e.getValue() >= h && e.getValue() < (h + 1000) ){
+					tail = formatQ(54 - e.getKey().length(), ' '); 
+					print( e.getKey()    + tail + e.getValue() );
+				}
+			}
+			println("\nLaunch with:    test( script.ID );");
+			break;
+			
+		default:
+			for( e : myTest.entrySet() ){
+				if ( e.getValue() == h  ){
+					print("We proceed to open the test: " + e.getValue() );
+					nameOfTest = "test." + e.getKey() + "." + e.getValue() + ".bsh";
+					print("                       Name: " + nameOfTest  + "\n" );
+					if ( ! pathToFile(nameOfTest).exists() ) {
+				       print("Sorry, file not found.\n");
+						break;
+					}
+					source( nameOfTest  );
+				}
+			}
+
+			print( "Bye!" );
+			break;
+			
+		}
+}
+
+///////////////////////////////////////////////
+//Technique: Overload test() with: test(Object) and test(int)
+void test() { 
+	test(99); 
+}
+
+void test(Object o){ 	
+	if ( o == void ) {	
+		test(99);    
+	} else {
+		test(99);
+	}
+}
+
