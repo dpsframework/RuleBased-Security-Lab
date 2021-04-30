@@ -54,10 +54,10 @@ This laboratory example foccuses on implementation and testing of an intrusion d
    * `  java -jar dpsFrameworkBuilder-full-1.8.jar   --new=RuleBased-Security-Lab`
    * `  cd RuleBased-Security-Lab`
 
-1. Prepare that application skeleton to include the agents of this example: 
+1. Prepare that application skeleton to include the agents of this example:  (Use: `delete` and `rename` on Windows)
    * `  rm -f README.md  `
    * `  mv config      config_old`
-   * `  mv nodes       nodes_old`      &nbsp;&nbsp;&nbsp;(You can use:  `delete` and `rename`  on Windows OS)
+   * `  mv nodes       nodes_old` 
 
 1. Create and update the _Malware-Analysis-Lab_ local repository:
    * `  git init . `
@@ -101,7 +101,7 @@ Please, see [**Appendix A**](#appendix-a), for Windows users.
 
 
 
-| Agent<br>interface      | Behaviour & Functions   | Image description  |
+| Agent<br>interface      | Behaviour<br>& Functions   | Image description  |
 |:--------             |:--------------------- |:---------   |
 |  <img src="images/logoPsBoard.gif" height="60px">   | • Behaviour:  <br> • Function:    | Image **1.**: Title of this image.   | 
 |  <img src="images/logoPsBoard.gif" height="60px">   | • Behaviour:  <br> • Function:    | Image **2.**: Title of this image.   | 
@@ -117,7 +117,7 @@ Please, see [**Appendix A**](#appendix-a), for Windows users.
 ### 2.2. Analyzer-Class Agents
 
 
-| Agent<br>interface      | Behaviour & Functions   | Image description  |
+| Agent<br>interface      | Behaviour<br>& Functions   | Image description  |
 |:--------             |:--------------------- |:---------   |
 |  <img src="images/logoPsNode.gif" height="60px">   | • Behaviour:  <br> • Function:    | Image **5.**: Title of this image.   | 
 |  <img src="images/logoPsNode.gif" height="60px">   | • Behaviour:  <br> • Function:    | Image **6.**: Title of this image.   | 
@@ -133,7 +133,7 @@ Please, see [**Appendix A**](#appendix-a), for Windows users.
 ### 2.3. Reader-Class Agents 
 
 
-| Agent<br>interface      | Behaviour & Functions   | Image description  |
+| Agent<br>interface      | Behaviour<br>& Functions   | Image description  |
 |:--------             |:--------------------- |:---------   |
 |  <img src="images/logoPsMonitorAgent.gif" height="60px">   | • Behaviour:  <br> • Function:    | Image **9.**: Title of this image.   | 
 |  <img src="images/logoPsMonitorAgent.gif" height="60px">   | • Behaviour:  <br> • Function:    | Image **10.**: Title of this image.   | 
