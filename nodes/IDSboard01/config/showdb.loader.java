@@ -52,7 +52,7 @@ source( "showdb.BoardGridLocal.java" );
 //# Grid DB refresh/show Behaviour Loader (showdb)
 //# ---------------------------------------------
 stmt = myDB .createStatement();
-rs = stmt .executeQuery( "select * from tickets" );
+rs = stmt .executeQuery( "select * from ticketnids" );
 
 showdb = new BoardGridLocal( myAgent, rs );
 showdb.setBehaviourName( "showdb" ); 
