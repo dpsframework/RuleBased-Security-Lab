@@ -1,0 +1,207 @@
++------+-------------------------------------------------------------
+|      |   Opción     Temática...
+| Help |   ---------  -----------------------------------------------
+| JADE |   help(1);   Consola de JADE y  BeanShell >  Shell de agente
++------+-------------------------------------------------------------
+
+ JADE-API:    
+   
+         myAgent;                    // Devuelve referencia al objeto.   
+         javap( jade.core.Agent );   // Des
+         
+         myAgent .getName();             
+         myAgent .getLocalName();       
+         myAgent .getHap();
+         
+         myAgent .getContentManager();   
+         myAgent .getState();      
+         myAgent .getAMS();
+         myAgent .getAID();              
+         myAgent .here();          
+         myAgent .getDefaultDF();
+ 
+         
++------+-------------------------------------------------------------
+Behaviour 
+management:
+
+         myAgent .addBehaviour( Behaviour-Name );
+         myAgent .removeBehaviour( Behaviour-Name );
+         
+                  
+                     
+         // It returns Collection of Behaviours.
+         IMPORTANT:  Only when is activated: setAccessibility( true );  
+         myAgent .getScheduler().getBehaviours();         
+         print( myAgent .getScheduler().getBehaviours());  
+         
+
+         
+
++------+-------------------------------------------------------------
+Queue 
+management:
+        
+         Filters: 'MessageTemplate'  
+         mt1 = MessageTemplate.MatchOntology( ProblemSolversOntology.getInstance().getName() );
+         
+         javap( MessageTemplate );
+         
+         Summary: 
+           MessageTemplate 
+                .match    ( ACLMessage )
+                .and      ( MessageTemplate, MesageTemplate  )
+                .or       ( MessageTemplate, MessageTemplate )
+                .not      ( MessageTemplate )
+           
+                .MatchInReplyTo      ( String )
+                .MatchCustom         ( ACLMessage,  boolean)
+                .MatchReplyTo        ( AID[]  )
+                .MatchOntology       ( String )
+                .MatchProtocol       ( String )
+                .MatchTopic          ( AID    )
+                .MatchContent        ( String )
+                .MatchReceiver       ( AID[]  )
+                .MatchEncoding       ( String )
+                .MatchSender         ( AID    )
+                .MatchReplyWith      ( String ) 
+                .MatchLanguage       ( String )
+                .MatchReplyByDate    ( Date   )
+                .MatchConversationId ( String )
+                .MatchPerformative   ( int    )
+                .MatchAll            ()
+             
+         mt2 = MessageTemplateAction.MatchProcess("CLIPS") ;
+         mt1 = MessageTemplate.and( mt1, mt2 );
+         mt2 = MessageTemplate.MatchProtocol( FIPANames.InteractionProtocol.FIPA_REQUEST);
+         mt1 = MessageTemplate.and( mt1, mt2 );
+         mt2 = MessageTemplate.MatchLanguage( FIPANames.ContentLanguage.FIPA_SL );
+         mt1 = MessageTemplate.and( mt1, mt2 );
+         
+
++------+-------------------------------------------------------------
+Receiving 
+& Sending 
+methods: 
+         
+         myAgent .receive( MessageTemplate );
+         myAgent .putBack(jade.lang.acl.ACLMessage);     // At beginning of queue.
+         myAgent .postMessage(jade.lang.acl.ACLMessage); // Direct to tail of queue.      
+         myAgent .getQueueSize();
+         myAgent .getCurQueueSize();
+         
+         myAgent .send(jade.lang.acl.ACLMessage);
+         myAgent .receive()
+         
+
++------+-------------------------------------------------------------
+Compound 
+ACL Messages:
+        
+         ACLMessage msg  = new ACLMessage(ACLMessage.QUERY_REF);
+         msg.addReceiver( new AID( "Jarvis", AID.ISLOCALNAME ) );
+         
+         msg.addReceiver( myAgent.getAID() );
+         msg.addUserDefinedParameter("psSender", myAgent.getLocalName()  );
+         
+         msg.setEncoding("fipa.acl.rep.string.std");
+         msg.setEnvelope(new Envelope());
+         msg.setDefaultEnvelope();
+         msg.getEnvelope().setComments("(facts 0 7 )" );
+         msg.setLanguage( FIPANames.ContentLanguage.FIPA_SL );
+         msg.setOntology( ProblemSolversOntology.getInstance().getName() );
+         msg.setProtocol("fipa-request");
+         msg.setSender( myAgent.getAID() );
+         msg;                                        FIPA String Format.
+
++------+-------------------------------------------------------------
+ 1) Building the
+    REPL Message
+		
+		
+		mrepl = myAgent .makeReplMessage( codeToProcess );
+
+		
++------+-------------------------------------------------------------
+ 2) Building N2NInitiator 
+    Objects with that 
+    REPL Message
+		
+
+		bhvName = "n2ni789" ;
+
+		
+		b = new N2NREInitiator(myAgent, mrepl);
+		b.setBehaviourName( bhvName );
+		
+		myAgent .addBehaviour( b );
+ 
++------+-------------------------------------------------------------
+Internal
+methods:
+ 
+         outLogger("Hola");      Recall: view on operanting system terminal
+         bhvState("0");          bhvState("No"); 
+            
+         init();
+         agentctl();
+            
+         requestShowGui( String nodeName );
+         hook(String nodeName );
+         requestMigrateBy( String MonitorAgentName );
+
++------+-------------------------------------------------------------
+Test
+methods:
+         phaseBanner( "Test set long-description banner.");
+         question   = "Visibility of Action Class";
+         answer     = (  evaluation ) ?  AFIRMATIVO : NEGATIVO ;
+         resultBanner( question, answer );
+     
+ 
++------+-------------------------------------------------------------
+Terminal   
+fonts &     
+aspect:   
+         jconsole.setFont(new Font( "Monaco", Font.PLAIN, 14));
+         setFont( jconsole, 11);
+         myGui 
+                  .setUI2Motif();
+                  .setUI2Windows();
+                  .setUI2Multi();
+                  .setUI2Metal();
+                  .setUI2Nimbus();
+ 
++------+-------------------------------------------------------------
+Agent
+variables:
+            myNode .scenario();
+            myNode .perspective();
+            myBOB() .perspective();
+            
+   
+            print( this.variables );
+            relativeBoardPath;
+            relativeConfigPath;
+            nodeConfigPath;        
+            myNode .getProperties();
+
+            myBOBActivated;    BOB = Bound Of Behaviours...
+            $_;
+            frameworkName;
+            frameworkConfigPath;
+            frameworkVarPath;
+
+            FileSeparator;         
+            nodeProp2;         for( n : nodeProp2 .stringPropertyNames() ) { 
+                                 print( nodeProp2.getProperty(n) + " = " + n ); 
+                               }  
+ 
+ 
+ 
++------+-------------------------------------------------------------
+| Help |   
+| JADE |  
++------+-------------------------------------------------------------
+ 
+     

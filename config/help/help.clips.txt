@@ -1,0 +1,60 @@
+ +------+-------------------------------------------------------------------------------------------
+|      |  ============================
+| Help |  CLIPS Language 6.31 
+| CLIPS|  @See: (../var/doc/engines/clips/CLIPSLanguageHelp.html)
+|      |  ============================
+|      |  
+|      |  REMEMBER: The Engine-Router is connected by-default to:  myEngine (The RBEngine protoype)
+|      |  ========
+|      |            You can change it with:
+|      |                       myEngine.addRouter( myShell );
+|      |
+|      |            And come back again with:
+| Help |                       myEngine.addRouter( myEngine );
+| CLIPS|  
+|      |  NOTE: When Router points to myShell object, the Tab-Synchronous CLIPS Shells are connected
+|      |        and its possible to write in CLIPS Language directly to Engine. 
+|      |        For API Functions access, you can always use innEngine. And for Normalized Functions 
+|      |        you can use myEngine object.  
+|      |  
+|      |  
+|      |  
+|      |  
+| Help |  ============================
+| CLIPS|  CLIPS Language 
+|      |  (Inside synchronous Shell Tab)
+|      |  ============================
+|      |   
+|      |  
+|      |  
+|      |  
+| Help |  
+| CLIPS|  
+|      |  ============================
+|      |  CLIPSJNI API Functions
+|      |  (Inside JADE-Shell Tab)
+|      |  ============================
+|      |  FAV = FactAddressValue
+|      |  Pri = PrimitiveValue  
+|      |  FA 
+|      |  
+| Help |   
+| CLIPS|  
+|      |  
+|      |  
+|      |   
+|      |  
+|      |  ============================
+|      |  
+|      |  
+|      |  
+| Help |  
+| CLIPS|  
+|      |  
+|      |  
+|      |  
+|      |  
+|      |  
+|      |  
++------+-------------------------------------------------------------------------------------------
+  

@@ -1,0 +1,60 @@
++-------+-------------------------------------------------------------
+| Help  |   Options    Help about...
+|Monitor|   ---------  -----------------------------------------------
+|& Node |   help(2);   Monitor  and  Node agents > Objects and methods
++-------+-------------------------------------------------------------
+
+ Terminal   jconsole.setFont(new Font( "Monaco", Font.PLAIN, 14));
+ fonts:     setFont( jconsole, 11);
+ 
+ Scenario:  myNode .scenario();
+            myNode .perspective();
+            myNode .getProperties();
+            
+ Globals:   print( this.variables );
+
+    
+ Behaviour: 
+            pcap;
+            jamo;
+;
+
+            $_;
+
+            frameworkName;
+            frameworkConfigPath;
+            frameworkVarPath;
+
+            FileSeparator;         
+            ...
+            
+
+
+ Prop.:     nodeProp2;         for( n : nodeProp2 .stringPropertyNames() ) { 
+                                 print( nodeProp2.getProperty(n) + " = " + n ); 
+                               }  
+ 
+ 
+ Methods:
+ 
+            outLogger("Hola");      Recall: view on operanting system terminal
+            bhvState("0");          bhvState("No"); 
+            
+            init();
+            agentctl();
+            
+            requestShowGui( String nodeName );
+            hook(String nodeName );
+            requestMigrateBy( String MonitorAgentName );
+            
+
+            
+
+            
+ 
+ 
++-------+-------------------------------------------------------------
+| Help  |   
+|Monitor|     
+|& Node |    
++-------+-------------------------------------------------------------

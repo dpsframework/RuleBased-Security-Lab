@@ -1,0 +1,43 @@
++------+-------------------------------------------------------------------------------------------
+|      |  ============================
+| Help |  BeanShell Manual at: ../var/doc/bsh/manual/bshmanual.html)
+| Shell|  ============================
+|      |  
+| Help |  ============================
+| Shell|  Returning a variable to the undefined state using the unset() command:
+|      |  ============================
+|      |  a == void;  // true 
+|      |  a=5;
+|      |  unset("a"); // note the quotes
+|      |  a == void;  // true
+| Help |  if ( a == void ) { ...
+| Shell|  
+|      |  ============================
+|      |  list = new String[] { "milk", "bread", "butter" };
+|      |  for( b : list ){
+|      |    print( b );
+|      |  }
+|      |    
+|      |  int [] array = new int [] { 1, 2, 3 };
+|      |  
+| Help |  for( i : array ) 
+| Shell|     print(i);
+|      |  
+|      |  for( char c : "a string" )
+|      |     print( c ); 
+|      |  
+|      |  ============================
+|      |  BeanShell Internal Commands
+|      |  ============================
+|      |  setFont( jconsole, 16);
+| Help |  clear();
+| Shell|  pwd();
+|      |  source( "name.of.file.to.execute" );
+|      |  cat( "name.of.file");
+|      |  cd( "to.path");
+|      |  exit();
+|      |  pathToFile( "name.of.file" ); 
+|      |  dir();
+|      |  javap( jade.core.Agent );    javap( java.lang.String );   etc...
++------+-------------------------------------------------------------------------------------------
+  

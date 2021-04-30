@@ -1,0 +1,533 @@
+# -------------------------------------------------- 
+# this.interpreter BeanShell Specials 
+# -------------------------------------------------- 
+this.interpreter.setShowResults( 
+source( "
+bsh.cwd; 
+dir(); 
+pwd(); 
+ayuda(); 
+help(); 
+clear(); 
+exit(); 
+path2File( 
+print( 
+rm( 
+setAccebility( 
+cd( 
+cat( 
+which( 
+jconsole.setFont(new Font( "Monaco", Font.PLAIN, 14));
+setFont( jconsole, 
+bsh.help.setFont; 
+bsh.help.dir; 
+show(); 
+javap( 
+
+# -------------------------------------------------- 
+# Proposal of PII2S, PsNodeAgent, PsBoardAgent, etc. 
+# -------------------------------------------------- 
+Engine2NodeResponder 
+Node2NodeREInitiator 
+Node2NodeREResponder 
+StateEngineCaptor 
+StateEngineNoticer 
+StateEngineProcessor 
+
+init();
+agentctl();
+
+# -------------------------------------------------- 
+# Members of PsStage - Test Environment 
+# -------------------------------------------------- 
+myAgent 
+myNode 
+myBSh 
+myBOB 
+myBOBActivated;
+
+myGui
+
+myGui2  
+.setUI2Motif();
+.setUI2Windows();
+.setUI2Multi();
+.setUI2Metal();
+.setUI2Nimbus();
+.setUI2Reset();
+.setUI();
+
+
+
+.refreshStatusBar();
+
+myContainer 
+ 
+.getProtocol();
+.getAddress();
+.getMain();
+.hashCode() 
+.getID();
+.getPort();
+
+
+myEngine 
+.printEngMethods() 
+.getMethodByKey(
+.getMethodByName(
+.innerCommand(String
+.innerCommand(String, String
+.innerCommand(int,    String
+.innerCommand(String sCode, String sValue, String sContent)
+
+.getN2NRmt( )
+.getEngineAID()
+
+myBOB 
+innEngine  
+PsStage 
+myShell 
+
+myEngine
+
+.bufferStatus();
+.startBuffer();
+.stopBuffer();
+.retainedBuffer();
+.getBuffer();
+.resetBuffer();
+
+.setRouter( myEngine);
+.setRouter( myShell);
+
+test(
+test.async.bsh
+test.coordination.bsh
+
+cdhome();
+
+.myNode()
+myNode 
+.myEngine() 
+myEngine 
+myBOB 
+myBOB() 
+
+.perspective() 
+.outLogger(Object[] 
+bhvState("0");
+
+.makeAndActiveCoordination( 
+
+.makeReplMessage() 
+.makeReplMessage(String receiver, String or StBuilder command) 
+.makeReplMessage(String receiverLocalName, String commandToEval)
+.makeReplMessage(String commandToEval)
+.makeReplMessage()
+
+.makeProcessMessage(String receiver, Strings Code, StringsValue,StringBuilderc ommandToEval) 
+.makeProcessMessage(String receiver, String sCode,String sValue) 
+.makeProcessMessage(String sCode, String sValue) 
+.makeProcessMessage(int iCode, String sValue) 
+.makeProcessMessage() 
+
+.makeProblemForMessage() 
+
+.makeAdvertiseMessage( String sCode, String sValue, String problem) 
+.makeAdvertiseMessage( String  nameOfdataFileAboutProblem) 
+.makeAdvertiseMessage( ) 
+
+.showGui() 
+hook( "NameofAgent"  
+.getDataStore() 
+.setDataStore( 
+DataStore();
+
+
+# -------------------------------------------------- 
+# Fields of Node-Layer 
+# -------------------------------------------------- 
+myNode 
+.scenario(); 
+.perspective(); 
+.printLoggin(); 
+
+
+.engineRequested
+.engineSelected
+
+frameworkName
+frameworkRootPath
+frameworkConfigPath
+
+FileSeparator
+
+nodeName
+nodeRootPath
+nodeConfigPath
+
+
+.frameworkName
+.frameworkRootPath
+.frameworkNodesPath
+.frameworkVarPath
+.frameworkLogPath
+.frameworkBinPath
+.frameworkConfigPath
+
+
+.thisFrameworkDir
+.thisNodeDir
+.thisNodeConfigDir
+.thisNodeEngineDir
+.thisNodeVarDir
+
+.nodeName
+.nodeRootPath
+.nodeConfigPath
+.nodeEnginePath
+.nodeVarPath
+.relativeNodePath
+.relativeConfigPath
+.relativeEnginePath
+.relativeVarPath
+.agentName
+.agentLocalName
+.debuggingMode
+.currentExecLevel 
+
+# -------------------------------------------------- 
+# Java Language - Java Language - Java Language 
+# -------------------------------------------------- 
+System.out.println( "
+.write( OutputStream.. 
+.hashCode() 
+Integer 
+.toHexString( 
+.getClass() 
+.getName() 
+.toCharArray() 
+.getSystemLookAndFeelClassName();
+UIManager 
+.setLookAndFeel( 
+
+
+# --------------------------------------------------
+# SQL statements
+# --------------------------------------------------
+myDB 
+.createStatement();
+.executeQuery( 
+.getMetaData();
+.getColumnCount();
+
+
+
+# -------------------------------------------------- 
+# JADE API, Constants and Special particles. 
+# -------------------------------------------------- 
+
+.match(
+.MatchCustom( 
+.MatchOntology( 
+.MatchSender( 
+
+
+.putO2AObject( 
+.getO2AObject()
+.setO2AManager(behaviours  
+.setEnabledO2ACommunication(boolean, int) 
+
+.ISGUID 
+
+.getAgent()
+.getBehaviourName()
+.getExecutionState();
+.done()
+.isRunnable();
+
+.getScheduler() 
+.getBehaviurs()
+
+.addBehaviour( 
+.addReceiver( 
+.addReplyTo( 
+.addUserDefinedParameter( 
+.reset(); 
+
+.Agent.putO2AObject( 
+
+.blockingReceive() 
+.blockingReceive(long) 
+.blockingReceive(MessageTemplate) 
+.blockingReceive(MessageTemplate,long) 
+.changeStateTo(LifeCycle) 
+.clean( 
+.clear() 
+.clearAllReceiver() 
+.clearAllReplyTo() 
+.clearUserDefinedParameter(java.lang.String) 
+.clone() 
+.containsKey(java.lang.Object) 
+.createReply() 
+.doActivate() 
+.doClone(jade.core.Location,String) 
+.doDelete() 
+.doMove(jade.core.Location) 
+.doSuspend() 
+.doTimeOut(Timer) 
+.doWait() 
+.doWait(long) 
+.doWake() 
+.exists() 
+.get(java.lang.Object) 
+.getAgentState() 
+.getAID() 
+.getAllIntendedReceiver() 
+.getAllPerformativeNames() 
+.getAllReceiver() 
+.getAllReplyTo() 
+.getAllUserDefinedParameters() 
+.getAMS() 
+.getArguments( ) 
+.getBootProperties() 
+.getByteSequenceContent() 
+.getCanonicalName() 
+.getClass() 
+.getContainerController( ) 
+.getContent() 
+.getContentManager() 
+.extractContent( ACLMessage, Action 
+.getContentObject() 
+.getConversationId() 
+.getCurQueueSize() 
+.getDefaultDF() 
+.getEncoding() 
+.getEnvelope() 
+.getHap() 
+.getHelper(String) 
+.getInReplyTo() 
+.getInteger(java.lang.String) 
+.getLanguage() 
+.getLocalName() 
+.getName( ) 
+.getO2AInterface(Class) 
+.getO2AObject() 
+.getOntology() 
+.getPerformative() 
+.getPerformative(int) 
+.getPostTimeStamp() 
+.getProperty(String,String) 
+.getProtocol() 
+.getQueueSize() 
+.getReplyBy() 
+.getReplyByDate() 
+.getReplyWith() 
+.getSender() 
+.getState() 
+.getUserDefinedParameter(java.lang.String) 
+.hasByteSequenceContent() 
+.here() 
+.isDirectory() 
+.isEmpty() 
+.isRestarting() 
+.join() 
+.keySet() 
+.notifyChangeBehaviourState(Behaviour,String,String) 
+.notifyRestarted(Behaviour) 
+.postMessage(ACLMessage) 
+.put(java.lang.Object,java.lang.Object) 
+.putBack(ACLMessage) 
+.receive() 
+.receive(MessageTemplate) 
+.registerO2AInterface(Class,Object) 
+.remove(java.lang.Object) 
+.removeBehaviour( 
+.removeReceiver(jade.core.AID) 
+.removeReplyTo(jade.core.AID) 
+.removeTimer(Behaviour) 
+.removeUserDefinedParameter(java.lang.String) 
+
+.restartLater(Behaviour,long) 
+.restore(InputStream) 
+.restoreBufferedState() 
+.run() 
+.send(ACLMessage) 
+.setAllUserDefinedParameters(jade.util.leap.Properties) 
+.setArguments(Object[]) 
+.setByteSequenceContent(byte[]) 
+.setContent(java.lang.String) 
+.setContentObject(java.io.Serializable) 
+.setConversationId(java.lang.String) 
+.setDefaultEnvelope() 
+.setEncoding("fipa.acl.rep.string.std");
+.setEnvelope(jade.domain.FIPAAgentManagement.Envelope) 
+.setGenerateBehaviourEvents(boolean) 
+.setInReplyTo(java.lang.String) 
+.setLanguage(java.lang.String) 
+.setO2AManager(Behaviour) 
+.setOntology(java.lang.String) 
+.setPerformative(int) 
+.setPostTimeStamp(long) 
+.setProtocol(java.lang.String) 
+.setQueueSize() 
+.setReplyByDate(java.util.Date) 
+.setReplyWith(java.lang.String) 
+.setSender(jade.core.AID) 
+.size() 
+.toString() 
+.toURL() 
+.values() 
+.waitUntilStarted() 
+ 
+
+Behaviour 
+ 
+configPath 
+dir(); 
+engineModel 
+enginePath 
+exit(); 
+frameworkName 
+frameworkPath 
+getCanonicalPath() 
+help(); 
+myAgent 
+myEngine 
+nodeName 
+nodePath 
+pathToFile( 
+print( 
+pwd(); 
+relativeConfigPath 
+relativeEnginePath 
+relativeNodePath 
+relativeVarPath 
+setAccessibility(true); 
+show(); 
+this.namespace 
+this.namespace.clear() 
+this.variables 
+varPath 
+
+# -------------------------------------------------- 
+# JADE Constants 
+# -------------------------------------------------- 
+ACLMessage 
+.ACCEPT_PROPOSAL 
+.AGREE 
+.AMS_FAILURE_AGENT_NOT_FOUND 
+.AMS_FAILURE_AGENT_UNREACHABLE 
+.AMS_FAILURE_FOREIGN_AGENT_NO_ADDRESS 
+.AMS_FAILURE_FOREIGN_AGENT_UNREACHABLE 
+.AMS_FAILURE_SERVICE_ERROR 
+.AMS_FAILURE_UNAUTHORIZED 
+.AMS_FAILURE_UNEXPECTED_ERROR 
+.CANCEL 
+.CFP 
+.CONFIRM 
+.DISCONFIRM 
+.DONT_NOTIFY_FAILURE 
+.FAILURE 
+.IGNORE_FAILURE 
+.INFORM 
+.INFORM_IF 
+.INFORM_REF 
+.NO_CLONE 
+.NOT_UNDERSTOOD 
+.PROPAGATE 
+.PROPOSE 
+.PROXY 
+.QUERY_IF 
+.QUERY_REF 
+.REAL_SENDER 
+.REFUSE 
+.REJECT_PROPOSAL 
+.REQUEST 
+.REQUEST_WHEN 
+.REQUEST_WHENEVER 
+.SF_TIMEOUT 
+.SUBSCRIBE 
+.SYNCH_DELIVERY 
+.TRACE 
+.UNKNOWN 
+.AP_ACTIVE 
+.AP_DELETED 
+.AP_IDLE 
+.AP_INITIATED 
+.AP_MAX 
+.AP_MIN 
+.AP_SUSPENDED 
+.AP_WAITING 
+.D_ACTIVE 
+.D_MAX 
+.D_MIN 
+.D_RETIRED 
+.D_SUSPENDED 
+.D_UNKNOWN 
+.MSG_QUEUE_CLASS 
+# -------------------------------------------------- 
+# jade.proto.AchieveREInitiator 
+# -------------------------------------------------- 
+jade.proto.AchieveREInitiator 
+.onStart() 
+.setDataStore(jade.core.behaviours.DataStore) 
+.registerHandleAllResultNotifications(jade.core.behaviours.Behaviour) 
+.registerHandleAgree(jade.core.behaviours.Behaviour) 
+.registerHandleInform(jade.core.behaviours.Behaviour) 
+.registerHandleRefuse(jade.core.behaviours.Behaviour) 
+.registerHandleFailure(jade.core.behaviours.Behaviour) 
+.registerPrepareRequests(jade.core.behaviours.Behaviour) 
+.registerHandleAllResponses(jade.core.behaviours.Behaviour) 
+.registerHandleOutOfSequence(jade.core.behaviours.Behaviour) 
+.registerHandleNotUnderstood(jade.core.behaviours.Behaviour) 
+.reset() 
+.reset(jade.lang.acl.ACLMessage) 
+.REQUEST_KEY 
+.ALL_REQUESTS_KEY 
+.REPLY_KEY 
+.ALL_RESPONSES_KEY 
+.ALL_RESULT_NOTIFICATIONS_KEY 
+
+
+# -------------------------------------------------- 
+# jade.proto.AchieveREResponder 
+# -------------------------------------------------- 
+
+
+jade.proto.AchieveREResponder 
+.registerPrepareResponse(jade.core.behaviours.Behaviour) 
+.createMessageTemplate(java.lang.String) 
+.registerHandleRequest(jade.core.behaviours.Behaviour) 
+.registerPrepareResultNotification(jade.core.behaviours.Behaviour) 
+
+
+.reset(jade.lang.acl.MessageTemplate) 
+.REQUEST_KEY 
+.RESPONSE_KEY 
+.RESULT_NOTIFICATION_KEY 
+
+
+
+# -------------------------------------------------- 
+# jade.acl.ACLMessage
+# -------------------------------------------------- 
+
+.getComments();
+
+
+
+
+# ----------------------------------------------
+# Jess from JADE-Shell
+# ----------------------------------------------
+
+.executeCommand("
+.factValue(
+.store(String, Object)
+.getGlobalContext()
+.store( String, Value );
+.fecth( String );
+
+
+.crosscommands[

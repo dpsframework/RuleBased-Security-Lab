@@ -1,0 +1,91 @@
++------+-------------------------------------------------------------
+|      |   Options    Help about...
+| Help |   ---------  -----------------------------------------------
+| Board|   help(3);   Ticket-board  agent       > Objects and methods
++------+-------------------------------------------------------------
+
+ Terminal   jconsole.setFont(new Font( "Monaco", Font.PLAIN, 14));
+ fonts:     setFont( jconsole, 11);
+ Flavour:   myGui 
+                  .setUI2Motif();
+                  .setUI2Windows();
+                  .setUI2Multi();
+                  .setUI2Metal();
+                  .setUI2Nimbus();
+ 
+            
++------+-------------------------------------------------------------
+ Globals:   print( this.variables );
+            boardConfigPath;
+            boardRootPath;
+            boardConfigPath;
+            relativeBoardPath;
+            relativeConfigPath;
+            nodeConfigPath;
+            myNode .scenario();
+            myNode .perspective();
+            myNode .getProperties();
+            
+
++------+-------------------------------------------------------------
+ Global     myBOBActivated;    BOB = Bound Of Behaviours...
+ objects:    
+            myAgent;           com.dpsframework.PsBoardAgent extends class jade.core.Agent
+                               javap( PsBoardAgent );
+                               javap( jade.core.Agent );
+                               
+            myDB;              org.hsqldb.jdbc.JDBCConnection
+                               javap( myDB );
+            mySd;              jade.domain.FIPAAgentManagement.ServiceDescription
+            myNode; 
+            myDfd;             jade.domain.FIPAAgentManagement.DFAgentDescription
+            
+            myBOB;             javap( myBOB );     
+                               print( myBOB .keySet() .toArray() );  
+                               jade.util.leap.Collection jade.util.leap.HashMap.values()
++------+-------------------------------------------------------------
+ Global
+            $_;
+
+            frameworkName;
+            frameworkConfigPath;
+            frameworkVarPath;
+            FileSeparator;               
+ DF:        myDfd;             print( myDfd );
+ Prop.:     nodeProp2;         for( n : nodeProp2 .stringPropertyNames() ) { 
+                                 print( nodeProp2.getProperty(n) + " = " + n ); 
+                               }  
+ 
++------+-------------------------------------------------------------
+Methods:
+ 
+            outLogger("Hola");      Recall: view on operanting system terminal
+            bhvState("0");          bhvState("No"); 
+            
+            init();
+            agentctl();
+            
+            requestShowGui( String nodeName );
+            hook(String nodeName );
+            requestMigrateBy( String MonitorAgentName );
+            
+            phaseBanner( "Test set long-description banner.");
+            question   = "Visibility of Action Class";
+            answer     = (  evaluation ) ?  AFIRMATIVO : NEGATIVO ;
+            resultBanner( question, answer );
+            
+
+            
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
++------+-------------------------------------------------------------
+| Help |   
+| Board|  
++------+-------------------------------------------------------------
+ 

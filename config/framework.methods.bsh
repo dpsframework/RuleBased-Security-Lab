@@ -1,0 +1,536 @@
+/**
+ *+-------------------------------------+------------------------------------+
+ *| Node    Board  Monitor  Stage       |    The dpsFramework Agents Project |
+ *|           __             ____       |                                    |
+ *|     __   /  \           /    \      + -----------------------------------|
+ *|  __/  \  \__/      __  /      \                                          |
+ *| /  \__/  /  \   __/  \ \      /                                          |
+ *| \__/     \__/  /  \__/  \____/   dpsFramework is a standard directory on |
+ *| /  \     /  \  \__/            file-system generated to launch groups of |
+ *| \__/     \__/              JADE Agents which they can run Expert Systems |
+ *|                           Applications based on CLIPS or Jess Technology.|
+ *|                                                                          |
+ *+--------------------------------------------------------------------------+
+ *|                                                                          |
+ *| GNU Lesser General Public License                                        |
+ *|                                                                          |
+ *| This library is free software; you can redistribute it and/or            |
+ *| modify it under the terms of the GNU Lesser General Public               |
+ *| License as published by the Free Software Foundation,                    |
+ *| version 2.1 of the License.                                              |
+ *|                                                                          |
+ *| This library is distributed in the hope that it will be useful,          |
+ *| but WITHOUT ANY WARRANTY; without even the implied warranty of           |
+ *| MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU        |
+ *| Lesser General Public License for more details.                          |
+ *|                                                                          |
+ *| You should have received a copy of the GNU Lesser General Public         |
+ *| License along with this library; if not, write to the                    |
+ *| Free Software Foundation, Inc., 59 Temple Place - Suite 330,             |
+ *| Boston, MA  02111-1307, USA.                                             |
+ *|                                                                          |
+ *+--------------------------------------------------------------------------+
+ *
+ */
+
+import java.sql.Array;
+import java.sql.Blob;
+import java.sql.CallableStatement;
+import java.sql.Clob;
+import java.sql.Connection;
+import java.sql.DatabaseMetaData;
+import java.sql.DriverManager;
+import java.sql.NClob;
+import java.sql.PreparedStatement;
+import java.sql.SQLClientInfoException;
+import java.sql.SQLException;
+import java.sql.SQLWarning;
+import java.sql.SQLXML;
+import java.sql.Savepoint;
+import java.sql.Statement;
+import java.sql.Struct;
+import java.util.Map;
+import java.util.Properties;
+import java.util.concurrent.Executor;
+
+
+import java.io.IOException;
+import java.text.MessageFormat;
+import java.io.BufferedReader;
+import java.io.DataInputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FilterInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.util.Objects;
+import java.util.Date;
+import java.text.FieldPosition;
+import java.text.ParsePosition;
+import java.text.ParseException;
+import java.text.DateFormat;
+import java.text.DateFormatSymbols;
+import java.text.SimpleDateFormat.*;
+import java.text.MessageFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.regex.*;
+
+
+import bsh.EvalError;
+import bsh.Interpreter;
+import bsh.util.NameCompletionTable;
+
+
+import jade.core.Agent;
+import jade.util.Logger;
+import jade.core.behaviours.*; 
+
+import jade.util.leap.Serializable;
+import jade.content.Concept;
+import jade.core.Location;
+import jade.core.ContainerID;
+
+import jade.lang.acl.*;
+import jade.domain.FIPAAgentManagement.*;
+import jade.domain.DFService;
+import jade.domain.FIPAException;
+import jade.proto.*;
+import jade.proto.AchieveREInitiator;
+import jade.proto.AchieveREResponder;
+import jade.proto.SubscriptionInitiator;
+import jade.proto.states.*;
+
+import jade.core.messaging.*;
+import jade.core.messaging.TopicManagementService;
+import jade.core.AID;
+import jade.core.behaviours.ThreadedBehaviourFactory;
+import jade.content.schema.IRESchema;
+import jade.core.AID;
+import jade.core.Agent;
+import jade.core.CaseInsensitiveString;
+import jade.core.behaviours.Behaviour;
+import jade.core.behaviours.OneShotBehaviour;
+import jade.domain.DFGUIInterface;
+import jade.domain.FIPANames;
+import jade.domain.df;
+import jade.domain.DFGUIManagement.DFAppletOntology;
+import jade.domain.FIPAAgentManagement.DFAgentDescription;
+
+import jade.content.onto.*;
+import jade.content.onto.OntologyException;
+import jade.content.lang.Codec;
+import jade.content.lang.sl.SLCodec;
+import jade.content.onto.basic.*;
+
+import jade.domain.FIPANames;
+import jade.domain.FIPAAgentManagement.*;
+
+import jade.content.AgentAction;
+import jade.content.lang.Codec;
+import jade.content.lang.Codec.CodecException;
+
+import jade.content.lang.sl.*;
+import jade.content.lang.sl.SLCodec;
+
+import bsh.Interpreter;
+import bsh.EvalError;
+
+
+import java.awt.*;
+import java.awt.event.*;
+import java.util.*;
+import javax.swing.*;
+import javax.swing.Timer;
+import java.util.Date;
+import java.lang.System.*;
+
+import java.awt.event.*;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+import com.dpsframework.*;
+import com.dpsframework.domain.*;
+import com.dpsframework.core.engines.*;
+import com.dpsframework.core.behaviour.*;
+import com.dpsframework.core.behaviour.BhConstants;
+
+import com.dpsframework.util.*;
+import com.dpsframework.util.PsServices;
+import com.dpsframework.util.PsConstants;
+
+import com.dpsframework.domain.PsoNames;
+
+
+
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+import java.util.regex.PatternSyntaxException;
+
+
+import java.util.HashMap;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.lang.NullPointerException;
+
+// /////////////////////////////////////////////
+// Technique: Local Custom Logger;
+public void outLogger(Object[] o){
+	if   (! myNode.debuggingMode   ) 	{ return; }
+	if   ( o.length == 0) 				{ return; }
+	int    n  	= o.length;
+	String mf 	= " {0}: [{1}]";    // {2} {3} {4} {5} .. 
+	o[0] 		= (o[0]+"         ").substring(0, 9); 	
+	for (int i = 2; i < n; i++ ){	mf += " {" + i +"}"; }  
+	Logger.println(MessageFormat.format(mf,o));
+	return;
+}
+
+public void outLogger(String s){
+	outLogger(new Object[] {"level.0"+myNode.currentExecLevel,  myNode.nodeName, s});
+}
+
+//Ref: http://stackoverflow.com/questions/7734202/boolean-parseboolean1-false (Ag.2016)
+boolean bhvState(String value){
+	boolean returnValue = false;
+	if ("1".equalsIgnoreCase(value)   || "yes".equalsIgnoreCase(value) ||
+		"on".equalsIgnoreCase(value)  || "true".equalsIgnoreCase(value)){
+		returnValue = true;			
+	}
+	return returnValue;
+}
+
+///////////////////////////////////////////
+//Technique: Agent Startup Fragmentation by Runlevels
+public void init(){ init (7); }  // View Current-Level.
+public void init(int executionLevel) {
+	String outInfo = "\n"+
+			 "Usage: init( [level] );          \n\n"+
+			 "Level 0. Shutdown the Agent.     \n"  + 
+			 "Level 1. Bootstrap instructions  \n"  +
+			 "Level 3. Capabilities and Bhvs.  \n"  +
+			 "Level 5. Open communications.    \n"  +
+			 "Level 6. Restart all behaviours. \n";	
+	String ce        = "Current Execution-Level is: ";
+	HashMap ex2File  = new HashMap();
+		
+	if ( myNode.currentExecLevel == executionLevel && !(executionLevel == 0) ) {
+		outLogger(new Object[]{
+				"init", myNode .nodeName, "Level", "["+ myNode .currentExecLevel + "]", "was already loaded."});
+		return;
+	}
+	
+	if ( executionLevel < 0 || executionLevel > 6 || executionLevel == 2 || executionLevel == 4 ){
+		jconsole.print(outInfo);
+		jconsole.print("\n\n" + ce.substring(0,ce.length()-2) + " now: '" +  myNode.currentExecLevel + "'" + "\n");
+		return;
+	}
+
+	ex2File.put(PsConstants.KwBASED.runLevel_0, PsConstants.KwBASED.file_runLevel_0);
+	ex2File.put(PsConstants.KwBASED.runLevel_1, PsConstants.KwBASED.file_runLevel_1);
+	ex2File.put(PsConstants.KwBASED.runLevel_3, PsConstants.KwBASED.file_runLevel_3);
+	ex2File.put(PsConstants.KwBASED.runLevel_5, PsConstants.KwBASED.file_runLevel_5);
+	ex2File.put(PsConstants.KwBASED.runLevel_6, PsConstants.KwBASED.file_runLevel_6);
+	
+	try {
+		// /////////////////////////////////////
+		// Techniques: Load file of level	
+		outLogger(new Object[]{"init("+executionLevel+")  ",  myNode .nodeName, 
+			     "Loading Level", "["+ executionLevel + "]", 
+			     "from script file:",  myNode.relativeConfigPath + ex2File.get(executionLevel)	});
+		
+		source( myNode.nodeConfigPath + (String) ex2File.get(executionLevel) );
+			
+ } catch (EvalError e0) {
+		System.err.println("Bsh Eval Error at level: "+ executionLevel + " in the script.");
+		e0.printStackTrace();
+ } catch (FileNotFoundException e1) {
+		System.err.println("File not found at Level: "+ executionLevel + " in the script.");
+		e1.printStackTrace();
+	} catch (IOException e2) {
+		System.err.println("Error I/O at Level: " + executionLevel + " in the script.");
+		e2.printStackTrace();
+	}
+	
+}
+
+public void agentctl(){ 
+	String outInfo = "Usage: agentctl( 'status' | 'restart'  );\n";
+	jconsole.print( outInfo );
+	return;
+}
+public void agentctl(String sLevel){
+	if ( sLevel.equals("status" )){ init(7); }
+	if ( sLevel.equals("restart")){ init(6); }
+	return;
+}
+
+
+
+
+/**
+* RunLevels applied to Agent paradigm.
+* 
+* @param bob  Bundle of Behaviours.
+* @param level Level of execution.
+* 
+* 	 k.split(":")[0] = A label to print HashMap with some order
+*	 k.split(":")[1] = Level where Behaviour will be loaded 
+*	 k.split(":")[2] = Level where Behaviour will be activated 
+*	 k.split(":")[3] = Behaviour reference variable name 
+*	 k.split(":")[4] = Group of behaviour (without use) 
+*	 k.split(":")[5] = Behaviour definition JAVA file name 
+*
+*  ===============   ===== = = ==== ===== ============
+*   Example            0   1 2   3    4        5
+*  ===============   ===== = = ==== ===== ============
+*   myBOB.put(       "00cp:0:1:cpbl:basal:bhv.cpbl.bsh", cpbl);	
+*
+*/
+public void runLevels(jade.util.leap.HashMap bob, int level){
+	
+	kS = bob.keySet().toArray();
+	Arrays.sort(kS);
+	
+	// /////////////////////////////////////////
+	// Level 6 Invoked !!  restarting all.
+	if ( level == PsConstants.KwBASED.runLevel_6) {
+	
+		for( String key : kS ) {
+			if ( ! eval( "(super." + key.split(":")[3] + " == null)" )  && 
+				 ! eval( "(super." + key.split(":")[3] + " == void)" )  &&
+				 myBOBActivated.get(key.split(":")[3])               ) {
+				
+				b = (Behaviour) eval( "super."+ key.split(":")[3] );		
+				myAgent .removeBehaviour( b );
+			
+				outLogger(new Object[]{"level.0"+level,  myNode .nodeName, 
+					     "Deactivating behaviour named: " + b.getBehaviourName(),   // Only for test...
+					     "["+ key.split(":")[3] + "]", 
+					     "invoked with 'init(" + myNode .currentExecLevel + ");'",
+					     "at command-line by the user."	});
+				
+				b = null;
+				bob.put( key, b );
+			}		
+		}
+		return;
+	}
+	
+	
+	// /////////////////////////////////////////
+	// Levels == 0 or 1 or 3 or 5 was Invoked
+
+	// /////////////////////////////////////////
+	// If Level invoked is the same of initializatin level
+	for( String key : kS ) {
+		if( level == Integer.valueOf(  key.split(":")[1] ) ){
+
+			// /////////////////////////////////
+			// If is active then, deactivating.			
+			if ( ! eval( "(super." + key.split(":")[3] + " == null)" )  && 
+				 ! eval( "(super." + key.split(":")[3] + " == void)" )  &&
+				 myBOBActivated.get(key.split(":")[3])               ) {
+				
+				b = (Behaviour) eval( "super."+ key.split(":")[3] );
+				
+				myAgent .removeBehaviour( b );
+					
+				outLogger(new Object[]{"level.0"+level, myNode .nodeName, 
+					     "Behaviour: "  + b.getBehaviourName(), // This is Only for test!
+					     "[" +  key.split(":")[3] + "]", 
+					     "has been removed from Agent's pool."});
+				
+				b = null;
+				bob.put( key, b  );  // for future pusposes..
+				
+			}
+			
+			if ( myBOBActivated.get(key.split(":")[3])  ) {
+				// /////////////////////////////////
+				// And reload it from its own file			
+				b = (Behaviour) source( myNode .nodeConfigPath + key.split(":")[5] );		
+				bob.put(  key, b   );
+				
+				outLogger(new Object[]{"level.0"+level, myNode .nodeName, 
+						 "Behaviour: " + b.getBehaviourName(), 
+						 "["+ key.split(":")[3] + "]", 
+						 "compiled from:",
+						 myNode .relativeConfigPath + key.split(":")[5]	});
+					 
+			}
+
+			
+		}
+	}
+	
+	// /////////////////////////////////////////
+	// Resume the activation of that behaviour
+	for( String key : kS ) {
+
+		if( level == Integer.valueOf(  key.split(":")[2] ) ){
+
+			if ( ! eval( "(super." + key.split(":")[3] + " == null)" )  && 
+				 ! eval( "(super." + key.split(":")[3] + " == void)" )  &&
+				 bob.get(key) != null                                   &&
+			     myBOBActivated.get(key.split(":")[3])               ){
+				
+				
+				b = (Behaviour) eval( "super."+ key.split(":")[3] );
+				
+				myAgent .removeBehaviour( b ); // for prevent errors in myBOB order design
+				myAgent .addBehaviour(    b );
+			
+				
+				outLogger(new Object[]{"level.0"+level, myNode .nodeName, 
+						     "Behaviour: " + b.getBehaviourName(),   // Only for test...
+						     "["+ key.split(":")[3] + "]", 
+						     "has been incorporated to Agent's pool"});
+			} 
+		}
+	}
+	
+	return;
+} // End of runLevels Method.
+
+
+
+
+// /////////////////////////////
+// Technique: Callback to callback for 
+//            packaging and sending Behaviour (Message in a bottle).
+public boolean requestMigrateBy(String nodeName) {
+	final String monitorNode = nodeName;
+	if( myAgent instanceof PsBoardAgent ){
+		jconsole.print( "Only Monitors or Nodes but not BlackBoard Agents. Sorry..\n");
+		return false;
+	}
+	return ( myAgent .requestMigrateBy( monitorNode ) );
+}
+
+
+// /////////////////////////////
+// Technique: Callback to ShowGui.
+public boolean requestShowGui( String nodeName ){
+	final String nodeToShowGui = nodeName;
+	return ( myAgent .requestShowGui(  nodeToShowGui ) );
+}
+
+
+///////////////////////////////////////////////
+//Technique: idem to requestShowGui but it were an historic function.
+public boolean hook(String nodeName ){
+	final String nodeToShowGui = nodeName;
+	return ( myAgent .requestShowGui(  nodeToShowGui ) );
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+* Help areas 
+* ========  ======================================
+* menu      Techniques for display main help menu.
+* jade      Techniques for using objects of API's JADE.
+* node      Techniques applied in Production Systems node-Agent.
+* board     Techniques applied in Ticket Board Agent.
+* shell     Techniques applied in BeanShell of agents.
+*/
+public void help() {     
+	help(99);    
+}
+
+public void help(Object o){ 	
+ if ( o == void ) {	
+ 	help(99);    
+ } else {
+ 	help(99);
+ }
+}
+
+public void help(int h) {
+idiom    = System.getProperty("user.language").startsWith("es") ? "es" : "";
+// idiom    = ""; // Lock for English. Someday in Castillian Spanish but, not by now!...
+
+helpFile  = ("help/help") + (idiom.length() == 0 ? "." : "_" + idiom + ".") ;
+
+HELP_MENU  = "menu";   HELP_MENU_CODE  = 99;
+HELP_JADE  = "jade";   HELP_JADE_CODE  = 1;
+HELP_NODE  = "node";   HELP_NODE_CODE  = 2;
+HELP_BOARD = "board";  HELP_BOARD_CODE = 3;
+HELP_SHELL = "shell";  HELP_SHELL_CODE = 4;
+HELP_JAVA  = "java";   HELP_JAVA_CODE  = 5;
+HELP_CLIPS = "clips";  HELP_CLIPS_CODE = 6;
+HELP_JESS  = "jess";   HELP_JESS_CODE  = 7;
+HELP_OSX   = "ss64";   HELP_OSX_CODE   = 8;
+
+switch (h) {
+	case HELP_MENU_CODE:
+		helpFile += HELP_MENU + ".txt";
+		break;
+	case HELP_JADE_CODE:
+		helpFile += HELP_JADE + ".txt";
+		break;
+	case HELP_NODE_CODE:
+		helpFile += HELP_NODE + ".txt";
+		break;
+	case HELP_BOARD_CODE:
+		helpFile += HELP_BOARD + ".txt";
+		break;
+	case HELP_SHELL_CODE:
+		helpFile += HELP_SHELL + ".txt";
+		break;
+	case HELP_JAVA_CODE:
+		helpFile += HELP_JAVA + ".txt";
+		break;
+	case HELP_CLIPS_CODE:
+		helpFile += HELP_CLIPS + ".txt";
+		break;
+	case HELP_JESS_CODE:
+		helpFile += HELP_JESS + ".txt";
+		break;
+	case HELP_OSX_CODE:
+		helpFile += HELP_OSX + ".txt";
+		break;
+	case 0:
+		help(99);
+		help(1);
+		help(2);
+		help(3);
+		help(4);
+		help(5);
+		help(6);
+		help(7);
+		help(8);
+		print(PsServices.i18n("app.bann.pack"));
+		break;
+	default:
+		helpFile += HELP_MENU + ".txt";
+		break;
+	}
+ 
+ // Debugger: print( "archivo = " + frameworkConfigPath + helpFile ) ;   
+	if ( pathToFile( frameworkConfigPath + helpFile).exists() ){
+		cat( frameworkConfigPath + helpFile );
+	}
+}
+
+
+
+//End of tools:--------------------------------------------------------------------
+
+
+

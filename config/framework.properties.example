@@ -1,0 +1,23 @@
+# ----------------------------------------------
+# Production Systems Framework Settings
+# ----------------------------------------------
+ps.framework.name          = bin
+ps.framework.node.serie    = Node,Monitor
+ps.framework.keypasswd     = password
+ps.framework.publickey     = asfjksd98843.9692adsf
+# -----------------------------------------------
+# Production Systems Framework Application Meta-data
+# ----------------------------------------------
+ps.framework.app.title     = Deploy Production Systems on JADE Platform
+ps.framework.app.created   = Date
+ps.framework.app.author    = Your name, over here.
+ps.framework.app.objective = You can simulate multiple lines with \\n symbol.
+# -----------------------------------------------
+# Production Systems Framework Application native libraries location (relative o absolute)
+# ----------------------------------------------
+ps.framework.app.nativelib = 
+## ps.framework.app.nativelib = ../var/lib
+## Example for MsWindows absolute path            :: ps.framework.app.nativelib = C:\\home\\unileon\\prototipos\\var\\lib
+## Example for MsWindows absolute path            :: ps.framework.app.nativelib = /home/unileon/dps/bin/lib
+## Example for Mac/Linux absolute path            :: ps.framework.app.nativelib = /var/local/lib
+## Example for all operating systems relative path:: ps.framework.app.nativelib = ../var/lib

@@ -1,0 +1,138 @@
+/**
+ *+-----------------------------------+---------------------------------------------+
+ *| Node   Board  Monitor  Stage      |    The dpsFramework Agents Project          |
+ *|          __            ____       |                                             |
+ *|     __  /  \          /    \      + --------------------------------------------|
+ *|  __/  \ \__/     __  /      \                                                   |
+ *| /  \__/ /  \  __/  \ \      /                                                   |
+ *| \__/    \__/ /  \__/  \____/     dpsFramework is a standard directory on        |
+ *| /  \    /  \ \__/                file-system generated to launch groups of      |
+ *| \__/    \__/                     JADE Agents which they can run Expert Systems  |
+ *|                                  Applications based on CLIPS or Jess Technology.|
+ *+--------------------------------------------------------------------------+------+
+ *|                                                                          |
+ *| GNU Lesser General Public License                                        |
+ *|                                                                          |
+ *| This library is free software; you can redistribute it and/or            |
+ *| modify it under the terms of the GNU Lesser General Public               |
+ *| License as published by the Free Software Foundation,                    |
+ *| version 2.1 of the License.                                              |
+ *|                                                                          |
+ *| This library is distributed in the hope that it will be useful,          |
+ *| but WITHOUT ANY WARRANTY; without even the implied warranty of           |
+ *| MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU        |
+ *| Lesser General Public License for more details.                          |
+ *|                                                                          |
+ *| You should have received a copy of the GNU Lesser General Public         |
+ *| License along with this library; if not, write to the                    |
+ *| Free Software Foundation, Inc., 59 Temple Place - Suite 330,             |
+ *| Boston, MA  02111-1307, USA.                                             |
+ *|                                                                          |
+ *+--------------------------------------------------------------------------+
+ *
+ */
+
+import com.dpsframework.*;
+import com.dpsframework.domain.*;
+import com.dpsframework.core.behaviour.*;
+import com.dpsframework.core.engines.*;
+
+import com.dpsframework.util.*;
+
+
+
+/**
+ * Initialize variables in Global-NameSpace.
+ * 
+ * @since 2017-09, revised at: 2018-081
+ * @version 1.7 RC-0.2018
+ * @author Francisco J. Aguayo
+ *
+ */
+frameworkName       = pathToFile( bsh.cwd ).getName();
+frameworkRootPath   = bsh.cwd  + "/" ; 
+frameworkConfigPath = bsh.cwd  + "/config/" ;
+frameworkVarPath    = bsh.cwd  + "/var/" ;
+frameworkLogPath    = bsh.cwd  + "/logs/" ;
+
+
+
+
+/**
+ * Set dpsFramework prompt.
+ * 
+ * @since 2017-09, revised at: 2018-081
+ * @version 1.7 RC-0.2018
+ * 
+ */
+bsh.prompt = "\n [dpsFramework://" + pathToFile( bsh.cwd ).getName() + "/]#  > ";
+getBshPrompt();
+
+
+
+
+
+/**
+ * Recover Prompt of Framework Java Bean-Shell.
+ * 
+ * @since 2017-09, revised at: 2018-081
+ * @version 1.7 RC-0.2018
+ * 
+ */
+setBshPrompt() 
+{
+	setNameSpace( this.caller.namespace );
+	bsh.prompt = "\n [dpsFramework://" + pathToFile( bsh.cwd ).getName() + "/]# > ";
+	getBshPrompt();
+}
+
+
+
+
+
+/**
+ * Lock bsh Original-clear() method.
+ * 
+ * @since 2017-09, revised at: 2018-081
+ * @version 1.7 RC-0.2018
+ * 
+ */
+clear() 
+{
+	setNameSpace( this.caller.namespace );
+	getBshPrompt();
+}
+
+
+
+
+
+/**
+ * Load framework's methods in this.namespace.
+ * 
+ * @since 2017-09, revised at: 2018-081
+ * @version 1.7 RC-0.2018
+ * 
+ */
+if ( pathToFile( frameworkConfigPath + "framework.methods.bsh" ).exists() )
+{
+	source(frameworkConfigPath + "framework.methods.bsh" );
+}
+
+
+
+
+
+/**
+ * Cosmetic.
+ * 
+ * @since 2017-09, revised at: 2018-081
+ * @version 1.7 RC-0.2018
+ * 
+ */
+print( PsServices.i18n( "app.bann.pack"     ) );
+print( PsServices.i18n( "shell.java.banner" ) );
+print(" -------------------------------------------------------------------\n");
+
+
+

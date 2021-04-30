@@ -1,0 +1,56 @@
++------+-------------------------------------------------------------------------------------------
+| Help |  ===========================
+| Jess |  Jess 7th and 8th:
+|      |  @See: (../var/doc/engines/jess/docs/index.html)
+|      |  ===========================   
+|      |    
+|      |  
+|      |  
+|      |  Pattern pattern = Pattern.compile("[^A-Za-z0-9.@_-~#]+");
+| Help |  Pattern spaces  = Pattern.compile( "\\s\\s+" );
+| Jess |  Matcher line = spaces.matcher("Hello World" );
+|      |  line.find();  // false
+|      |  Matcher line = spaces.matcher("Hello    World" );
+|      |  line.find();
+|      |   
+|      |  StringBuilder sb = new StringBuilder(); 
+|      |  javap( sb );
+|      |   
+|      |  GregorianCalendar calendario = new GregorianCalendar();
+|      |  javap( calendario );
+| Help |  calendario.setTime( new java.util.Date() );
+| Jess |   
+|      |  calendario;
+|      |  int weekOfYear = calendario.get(GregorianCalendar.WEEK_OF_YEAR);
+|      |  weekOfYear;
+|      |  
+|      |  Math.PI;           PI = Math.PI;
+|      |  javap( Math );
+| Help |  Math.cos( PI / 3  );
+| Jess |  Math.log( 10 );
+|      |  Math.E;
+|      |  Math.ceil( 8.442 );                Math.floor( 8.442 );
+|      |  Math.min( 3.324324, 3.4341239);    Math.max( 3.324324, 3.4341239);
+|      |  Math.sqrt( 100 );                  Math.sqrt( Math.E );
+|      |  Math.random();                     Math.random() * 1000;
+|      |  Math.random() * 10E3;      
+| Help |  
+| Jess |  sThermometer =  String.valueOf( 56L );
+|      |  String.valueOf( true );            String.valueOf( 554.2 );
+|      |  list = new StringTokenizer("Hello World", " " );
+|      |  for( a : list ){ print( a ); }
+|      |  
+|      |  
+|      |  
+| Help |  
+| Jess |  
+|      |  
+|      |  
+|      |  
+|      |  
+|      |  
+|      |  
+| Help |  
+| Jess |  
++------+-------------------------------------------------------------------------------------------
+ 
