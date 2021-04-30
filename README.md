@@ -97,7 +97,7 @@ Please, see [**Appendix A**](#appendix-a), for **Windows OS**.
 
 ## 2. Screenshot gallery
 
-### 2.1. Board-Class Agents: _IDSboard01_ agent
+### 2.1. Board-Class Agents: _IDS-board-agent_ 
 
 
 
@@ -115,7 +115,7 @@ Please, see [**Appendix A**](#appendix-a), for **Windows OS**.
 
 
 
-### 2.2. Analyzer-Class Agents: _UDPanalyzer01_ and _TCPanalyzer01_ agents
+### 2.2. Analyzer-Class Agents: _UDP-analyzer-agent_ and _TCPanalyzer-agent_
 
 
 | Agent<br>interface      | Behaviour<br>& Functions   | Image title<br>and description  |
@@ -131,7 +131,7 @@ Please, see [**Appendix A**](#appendix-a), for **Windows OS**.
 
 
 
-### 2.3. Reader-Class Agents: _PCAPreader01_ agent
+### 2.3. Reader-Class Agents: _PCAP-reader-agent_ 
 
 
 | Agent<br>interface      | Behaviour<br>& Functions   | Image description  |
