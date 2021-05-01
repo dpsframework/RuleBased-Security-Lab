@@ -102,7 +102,7 @@ Please, see [**Appendix A**](#appendix-a), for **Windows OS**.
 
 
 
-| Agent GUI<br>interface      | Behaviour<br>Service<br>& Functions   | Image description  |
+| Agent GUI<br>interface      | Behaviour, Services and<br>Functions   | Image description  |
 |:--------             |:--------------------- |:---------   |
 |  <img src="images/idsboard-01.png" width="170px">   | • BoardGridLocal<br> • nidsDB.service<br> • doPopulate  | **Image 1**. The log of activities associated with the translation of PCAP files, analyzed files, alerts found and updated rules is displayed on the table.   | 
 |  <img src="images/logoPsBoard.gif" height="60px">   | • Behaviour:  <br> • Function:    | Image **2.**: Title of this image.   | 
