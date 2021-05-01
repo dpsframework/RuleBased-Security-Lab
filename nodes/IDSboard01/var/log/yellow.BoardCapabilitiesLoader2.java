@@ -1,6 +1,7 @@
-// Revised:   2021.04.28                               
-//            [ RuleBased-Security-Lab example ]
-//
+//# Revised:   2021.04.28                               
+//#            [ RuleBased-Security-Lab example ]
+//#
+
 import jade.core.Agent;
 import jade.core.behaviours.WakerBehaviour;
 import jade.domain.DFService;
@@ -24,7 +25,7 @@ import com.dpsframework.util.PsConstants;
 import com.dpsframework.domain.ProblemSolversOntology;
 
 /**
- * Board Capabilities Loader: Yellow Pages Service Activatino.
+ * Board Capabilities Loader: Yellow Pages Service Activation.
  * 
  * @author Francisco J Aguayo Canela (UniLeon)
  * <p>

@@ -7,10 +7,10 @@
 # -----------------------------------------------
 
 
-service.description = JADE-Agent Management-Ontology.
-service.order       = Ac
-init.level          = 0
-run.level           = 1
-service.name        = jademo
+service.description = Board-to-NodeAnalizer-Rational-Effect-Responder
+service.order       = Ca
+init.level          = 3
+run.level           = 5
+service.name        = nodeRE
 service.group       = basal
 service.enable      = 1

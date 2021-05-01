@@ -153,55 +153,6 @@ public void cdhome(){
 
 
 
-
-//
-//
-//
-//
-////# /////////////////////////////////////////////
-////# Technique: close and flush ddbb.
-//public void shutdown(org.hsqldb.jdbc.JDBCConnection conn) throws SQLException {
-//    Statement st = conn.createStatement();
-//    st.execute("SHUTDOWN");
-//    conn.close(); 
-//}
-//
-//Statement st = myAgent .myDB() .createStatement();
-//          st.execute("SHUTDOWN");
-//          myAgent .myDB() .close(); 
-//
-//
-////# /////////////////////////////////////////
-////# Connection (myDB) only for IDS-Board-Agents
-//TICKET_DB_FILE_NAME   = "nidsDB";
-//DATABASE_USER_ID      = "sa";
-//DATABASE_PASSWORD     = "password";
-//dbFile                = myNode.relativeVarPath +  "data/" + TICKET_DB_FILE_NAME;
-//
-//try {
-//	
-//	dbConnection = "jdbc:hsqldb:file:" + dbFile	+ ";ifexits=true";
-//	myDB = DriverManager.getConnection(dbConnection, DATABASE_USER_ID, DATABASE_PASSWORD);		
-//	outLogger(new Object[] {"setup", myNode.nodeName,
-//			"Connected with:\n setup    : " + dbConnection });
-//
-//	
-//	
-//	
-//} catch (SQLException e1) {
-//	outLogger(new Object[] {"setup", myNode.nodeName,
-//			"Can't connect to: " + dbConnection 	});
-//	
-//} catch (ClassNotFoundException e) {
-//	System.err.println(" Error    : JDBCDriver from hsqldb Library is not accessible!");
-//}
-//
-//
-//myAgetn .myDB()  { return myDB; }
-//myAgetn .getDB() { return myDB; }
-
-
-
 //# /////////////////////////////////////////////
 //# Technique: info about myBOB & others util commands
 outLogger(new Object[]{"level.00 ", myAgent.getLocalName(), 
