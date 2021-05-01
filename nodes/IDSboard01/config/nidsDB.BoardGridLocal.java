@@ -87,8 +87,11 @@ public class BoardGridLocal extends OneShotBehaviour {
 	        
 			Runnable doPopulate = new Runnable() {
 				public void run() {
-					theBoard .myGui().tTable().setRowHeight(30);
 					theBoard .myGui().tTable().setModel(tableModel);
+					theBoard .myGui().tTable().setRowHeight(30);
+					theBoard .myGui().tTable().setRowHeight(5,50);
+					// theBoard .myGui().tTable().setBackground(Color.orange);
+					theBoard .myGui().tTable().setForeground(Color.blue);
 					exitValue = 1;
 				}
 			};
