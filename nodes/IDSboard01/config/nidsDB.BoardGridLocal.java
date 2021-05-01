@@ -92,6 +92,7 @@ public class BoardGridLocal extends OneShotBehaviour {
 					theBoard .myGui().tTable().setRowHeight(5,50);
 					// theBoard .myGui().tTable().setBackground(Color.orange);
 					theBoard .myGui().tTable().setForeground(Color.blue);
+					theBoard .myGui().tTable().setFont(new Font("Arial", Font.PLAIN, 12));
 					exitValue = 1;
 				}
 			};
