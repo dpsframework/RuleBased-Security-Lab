@@ -1,13 +1,6 @@
-/** -------------------------------------------------------------------------------
- * Ph.D.Thesis    : Deposit-Number# 2012.0000.55
- * Title (en_US)  : Deploy Production Systems on Distributed Architecture 
- *                  using Multi-Agent Paradigm: applied techniques
- * Title (es_ES)  : Tecnicas para despliegue de arquitectura distribuida en sistemas
- *                  expertos basados en reglas empleando el paradigma multiagente.
- * Ph.D. Student  : Francisco J Aguayo Canela 
- * Thesis Director: Ph.D. Isaias Garcia Rodriguez 
- * Ph.D. Program  : Intelligent Systems at Engineering Science (Cod. 212)
- * -------------------------------------------------------------------------------- */
+//# Revised:   2021.04.28                               
+//#            [ RuleBased-Security-Lab example ]
+//# -----------------------------------------------
 
 import jade.core.Agent;
 import jade.core.behaviours.WakerBehaviour;
@@ -33,14 +26,7 @@ import com.dpsframework.domain.ProblemSolversOntology;
 
 /**
  * Board Capabilities Loader: Yellow Pages Service Activatino.
- * 
  * @author Francisco J Aguayo Canela (UniLeon)
- * <p>
- * 		<small>	Department of Electric Engineering, Systems and Automatic<br>
- * 				School of Industrial Engineering and Information Technology<br>
- * 				&copy; <b>University of Leon</b> - Spain.  
- * 				<a href="http://www.unileon.es">{http://www.unileon.es}</a>
- * 		</small>
 */
 class BoardCapabilities extends WakerBehaviour {
 	 StringBuilder sb 	= new StringBuilder(

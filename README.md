@@ -104,8 +104,8 @@ Please, see [**Appendix A**](#appendix-a), for **Windows OS**.
 
 | <img src="images/logoPsBoard.gif" height="40px" align="left">Agent GUI<br>interface      | Main activated services, Behaviours and <br>functions   | Image description  |
 |:--------             |:--------------------- |:---------   |
-|  <img src="images/idsboard-01.png" width="170px">   | • BoardGridLocal<br> • nidsDB.service<br> • doPopulate  | **Image 1**. The log of activities associated with the translation of PCAP files, analyzed files, alerts found and updated rules is displayed on the table.   | 
-|  <img src="images/logoPsBoard.gif" height="60px">   | • Behaviour:  <br> • Function:    | Image **2.**: Title of this image.   | 
+|  <img src="images/idsboard-01.png" width="170px">   | • jadeMO.service<br> • nidsDB.service<br> • BoardGridLocal.class<br> • doPopulate()  | **Image 1**. The log of activities associated with the translation of PCAP files, analyzed files, alerts found and updated rules is displayed on the table.   | 
+|  <img src="images/idsboard-02.png" width="170px">   | • boardDF.service<br> • BoardCapabilities.class<br> • DFAgentDescription()  | **Image 2**. IDS Board agent is registered using; the boardDF service, the BoardCapabilities class, and a Waker behavior.   | 
 |  <img src="images/logoPsBoard.gif" height="60px">   | • Behaviour:  <br> • Function:    | Image **3.**: Title of this image.   | 
 |  <img src="images/logoPsBoard.gif" height="60px">   | • Behaviour:  <br> • Function:    | Image **4.**: Title of this image.   | 
 

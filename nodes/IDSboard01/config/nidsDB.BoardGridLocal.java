@@ -30,37 +30,6 @@ import com.dpsframework.PsBoardAgent;
 
 
 
-//# ORACLE Developer. ColoredTableCellRendere
-//# https://community.oracle.com/tech/developers/discussion/2100164/jtable-change-row-background-color
-class ColoredTableCellRenderer
-    extends DefaultTableCellRenderer
-{
-    public Component getTableCellRendererComponent
-        (JTable table, Object value, boolean selected, boolean focused, int row, int column)
-    {
-        setEnabled(table == null || table.isEnabled()); // see question above
-
-        if ((row % 2) == 0)
-            setBackground(Color.green);
-        else
-            setBackground(Color.lightGray);
-
-        super.getTableCellRendererComponent(table, value, selected, focused, row, column);
-
-        return this;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
 /**
  * Board Grid Loader JTable-TableModel.
  * 
