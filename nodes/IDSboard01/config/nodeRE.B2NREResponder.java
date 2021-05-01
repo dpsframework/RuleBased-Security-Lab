@@ -100,7 +100,7 @@ class B2NREResponder extends WakerBehaviour {
 		if   ( verbose   ) { outLogger(o); }
 	}
 
-	private void outLogger(String s){
+	private void outLogger(String s){ 
 		outLogger(new Object[] { getBehaviourName() , myAgent.getLocalName(), s});
 	}
 	
