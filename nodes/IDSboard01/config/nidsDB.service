@@ -8,7 +8,7 @@
 
 
 service.description = NIDS-DB management.
-service.order       = Ab
+service.order       = Aa
 init.level          = 0
 run.level           = 1
 service.name        = nidsDB

@@ -104,7 +104,7 @@ Please, see [**Appendix A**](#appendix-a), for **Windows OS**.
 
 | Agent<br>interface      | Behaviour<br>& Functions   | Image description  |
 |:--------             |:--------------------- |:---------   |
-|  <img src="images/logoPsBoard.gif" height="60px">   | • Behaviour:  <br> • Function:    | Image **1.**: Title of this image.   | 
+|  <img src="images/idsboard-01.png" width="110px">   | • Behaviour:  <br> • Function:    | Image **1.**: Title of this image.   | 
 |  <img src="images/logoPsBoard.gif" height="60px">   | • Behaviour:  <br> • Function:    | Image **2.**: Title of this image.   | 
 |  <img src="images/logoPsBoard.gif" height="60px">   | • Behaviour:  <br> • Function:    | Image **3.**: Title of this image.   | 
 |  <img src="images/logoPsBoard.gif" height="60px">   | • Behaviour:  <br> • Function:    | Image **4.**: Title of this image.   | 

@@ -17,7 +17,49 @@ import javax.swing.event.TableModelListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
+
+import java.awt.Color;
+import java.awt.Component;
+
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableCellRenderer;
+
+
+
 import com.dpsframework.PsBoardAgent;
+
+
+
+//# ORACLE Developer. ColoredTableCellRendere
+//# https://community.oracle.com/tech/developers/discussion/2100164/jtable-change-row-background-color
+class ColoredTableCellRenderer
+    extends DefaultTableCellRenderer
+{
+    public Component getTableCellRendererComponent
+        (JTable table, Object value, boolean selected, boolean focused, int row, int column)
+    {
+        setEnabled(table == null || table.isEnabled()); // see question above
+
+        if ((row % 2) == 0)
+            setBackground(Color.green);
+        else
+            setBackground(Color.lightGray);
+
+        super.getTableCellRendererComponent(table, value, selected, focused, row, column);
+
+        return this;
+    }
+}
+
+
+
+
+
+
+
+
+
+
 
 /**
  * Board Grid Loader JTable-TableModel.
@@ -76,6 +118,8 @@ public class BoardGridLocal extends OneShotBehaviour {
 	        
 			Runnable doPopulate = new Runnable() {
 				public void run() {
+					theBoard .myGui().tTable().setRowHeight(30);
+					theBoard .myGui().tTable().setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
 					theBoard .myGui().tTable().setModel(tableModel);
 					exitValue = 1;
 				}
@@ -91,7 +135,7 @@ public class BoardGridLocal extends OneShotBehaviour {
 
 	public int onEnd() {
 		outLogger(true, new Object[]{getBehaviourName(), myAgent.getLocalName(), 
-			      "Connection DB object: ",myAgent.myDB});
+			      "Connected DB: ",myAgent .myDB() });
 		return exitValue;
 	}
 
