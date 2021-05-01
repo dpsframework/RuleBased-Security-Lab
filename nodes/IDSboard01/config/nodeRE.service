@@ -13,4 +13,4 @@ init.level          = 3
 run.level           = 5
 service.name        = nodeRE
 service.group       = basal
-service.enable      = 1
+service.enable      = 0

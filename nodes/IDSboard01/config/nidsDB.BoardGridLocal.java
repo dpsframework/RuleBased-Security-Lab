@@ -119,7 +119,6 @@ public class BoardGridLocal extends OneShotBehaviour {
 			Runnable doPopulate = new Runnable() {
 				public void run() {
 					theBoard .myGui().tTable().setRowHeight(30);
-					theBoard .myGui().tTable().setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
 					theBoard .myGui().tTable().setModel(tableModel);
 					exitValue = 1;
 				}
@@ -128,7 +127,7 @@ public class BoardGridLocal extends OneShotBehaviour {
 			
 			
 		} catch (SQLException e) {
-			System.err.println( " grid     : [Error] in grid data loader Behaviour...!");
+			System.err.println( " SQLError : [Error] in DB-Table data loader Behaviour...!");
 		}
 		return;
 	}
