@@ -101,7 +101,7 @@ class B2NREResponder extends WakerBehaviour {
 	}
 
 	private void outLogger(String s){
-		outLogger(new Object[] {"b2nr", myAgent.getLocalName(), s});
+		outLogger(new Object[] { getBehaviourName() , myAgent.getLocalName(), s});
 	}
 	
 	private void makeBanner() {
