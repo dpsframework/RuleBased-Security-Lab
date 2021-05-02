@@ -110,7 +110,7 @@ Please see [**Appendix A**](#appendix-a), for **Windows operating system** and o
 |:--------             |:--------------------- |:---------   |
 |  <img src="images/idsboard-01.png" width="170px">   | • jadeMO.service<br> • nidsDB.service<br> • BoardGridLocal.class<br> • doPopulate()  | **Image 1**. The log of activities associated with the translation of PCAP files, analyzed files, alerts found and updated rules is displayed on the table.   | 
 |  <img src="images/idsboard-02.png" width="170px">   | • boardDF.service<br> • BoardCapabilities.class<br> • DFAgentDescription()  | **Image 2**. IDS Board agent is registered using; the boardDF service, the BoardCapabilities class, and a Waker behaviour.   | 
-|  <img src="images/logoPsBoard.gif" height="60px">   | • lstPCAP.service<br> • lstANLZ.service<br> • REresponderPCAP.class<br> • REresponderANLZ.class<br> • nidsDBupdate()  |  **Image 3**. An IDS board agent handles the requests of Reader-Class and Analyzer-Class agents  through the Listener Services and using communication _Rational-Effect_ behaviors .   | 
+|  <img src="images/logoPsBoard.gif" height="60px">   | • lstnPCAP.service<br> • lstnANLZ.service<br> • REresponderPCAP.class<br> • REresponderANLZ.class<br> • nidsDBupdate()  |  **Image 3**. An IDS board agent handles the requests of Reader-Class and Analyzer-Class agents  through the Listener Services and using communication _Rational-Effect_ behaviors .   | 
 |  <img src="images/logoPsBoard.gif" height="60px">   | • upSNORT.service<br> • BoardUpdateRules.class<br> • snort2clipsRules()  |  **Image 4**. Every 2 days an IDS-board agent downloads latest SNORT-Community Rules from Internet and converts it to CLIPS/Jess Rules through a simple conversion function. It informs of its availability to Analyzer-Class agents.   | 
 
 
@@ -124,10 +124,9 @@ Please see [**Appendix A**](#appendix-a), for **Windows operating system** and o
 
 | <img src="images/logoPsNode.gif" height="40px" align="left">Agent GUI<br>Interface   | Main activated Services, Behaviour and <br>Functions   | Image description  |
 |:--------             |:--------------------- |:---------   |
-|  <img src="images/logoPsNode.gif" height="40px">   | • Behaviour:  <br> • Function:    | Image **5.**: Title of this image.   | 
+|  <img src="images/logoPsNode.gif" height="40px">   | • inquireANLZ.service<br> • securityLAB.service<br> • REinquireANLZ.class<br> • REinitiatorRESULTS.class<br> • datagramFactsLoader()  |  **Image 5**. Every 15 minutes an Analyzer-Class agent inquires to the IDS-board-agent for pending analysis. If some of TCP-analyzer or UPD-analyzer agents receive a file as response, the _datagramFactsLoader()_ function load it in Working-Memory. All that FACTS are compared with SNORT Rules present in the Knowledge-Base. The REinitiatorRESULTS class sends an inform when analysis has finished.  
+Image **5.**: Title of this image.   | 
 |  <img src="images/logoPsNode.gif" height="40px">   | • Behaviour:  <br> • Function:    | Image **6.**: Title of this image.   | 
-|  <img src="images/logoPsNode.gif" height="40px">   | • Behaviour:  <br> • Function:    | Image **7.**: Title of this image.   | 
-|  <img src="images/logoPsNode.gif" height="40px">   | • Behaviour:  <br> • Function:    | Image **8.**: Title of this image.   | 
 
 
 
