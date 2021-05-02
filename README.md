@@ -27,7 +27,7 @@ Francisco José Aguayo‑Canela<sup>1</sup>  ·  Héctor Alaiz‑Moretón<su
 ## 1. Example addendum: _Rule-Based-Security-Lab_
 
 
-> This is an example of a distributed application made up of JADE Agents[**1**]. This example uses three main agent classes:
+> This is an example of a distributed application made up of JADE Agents[**1**]. <br>This example uses three main agent classes:
 
 
 * **Board-Class**: The Board-class agents are responsible for displaying analysis results, managing the flow of analyzes and, update lastest Malware Rules from SNORT-Community[**2**]. This type of agents are connected to HSQLite database[**3**].
