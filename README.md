@@ -211,7 +211,7 @@ Please, see [**Appendix A**](#appendix-a), for **Windows OS**.
 1. Launch classic JADE Agents:
    * `   start     java launcher acklin      localhost   `  
    * `   start     java launcher dumm        localhost   `  
-   * `   start     java launcher precog      localhost   `  
+   * `   start     java launcher sniff      localhost   `  
 
 
 

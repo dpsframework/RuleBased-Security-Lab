@@ -1,6 +1,8 @@
-// Revised:   2021.04.28                               
-//            [ RuleBased-Security-Lab example ]
-//
+//# Revised:   2021.04.28                               
+//#            [ RuleBased-Security-Lab example ]
+//#
+
+
 import jade.core.Agent;
 import jade.util.Logger;
 import jade.core.behaviours.*; 
