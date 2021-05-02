@@ -124,7 +124,7 @@ Please see [**Appendix A**](#appendix-a), for **Windows operating system** and o
 
 | <img src="images/logoPsNode.gif" height="40px" align="left">Agent GUI<br>Interface   | Main activated Services, Classes, Functions and Behaviour  | Image description  |
 |:--------             |:--------------------- |:---------   |
-|  <img src="images/logoPsNode.gif" height="40px">   | • analysis.service<br> • load\_WorkingMemory( )<br><br> • **RE**initANALYSIS<br> • **RE**initINFORM  | **Image 5**. Every 15 minutes Analyzer-Class agents request (**RE**initANALYSIS) to an IDS-board-agent for new pending analysis files. If agents receive a file as response, the `load_WorkingMemory( )` function load it in their Working-Memory and the analysis begins. <br>The **RE**initINFORM behaviour-class sends results to IDS-board agent when analysis has finished.  |
+|  <img src="images/logoPsNode.gif" height="40px">   | • analysis.service<br> • load\_WorkingMemory( )<br><br> • **RE**initANALYSIS<br> • **RE**initINFORM  | **Image 5**. Every 15 minutes Analyzer-Class agents request to an IDS-board-agent for new pending analysis files. If agents receive a file as response, the `load_WorkingMemory( )` function load it in their Working-Memory and the analysis begins. <br>The **RE**initINFORM behaviour-class sends results to IDS-board agent when analysis has finished.  |
 |  <img src="images/logoPsNode.gif" height="40px">   | • updateKBASE.service<br> • reload\_KBase( )<br><br> • **RE**initKBASE  |  **Image 6**. Every 24 hours Analyzer-Class agents request to an IDS-board agent the lastest updated SNORT rules converted to CLIPS/jess rules format. If agents receive a file as response, the `reload_KBase( )` function updates their Knowledge-Base and their engines are restarted. |
 
 
