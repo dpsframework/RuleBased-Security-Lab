@@ -8,9 +8,9 @@ import jade.core.behaviours.WakerBehaviour;
 //# -----------------------------------------------
 //# Class
 //# -----------------------------------------------
-source(   "boardDF.BoardCapabilities.java"   );
+source(   "boardDF.SDregistrator.java"   );
 
-boardDF = new BoardCapabilities( myAgent,  1100L);
+boardDF = new SDregistrator( myAgent,  1100L);
 boardDF .setBehaviourName( "boardDF" );
 
-return ( BoardCapabilities ) boardDF;
+return ( SDregistrator ) boardDF;

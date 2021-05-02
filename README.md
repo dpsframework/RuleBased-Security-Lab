@@ -108,8 +108,8 @@ Please see [**Appendix A**](#appendix-a), for **Windows operating system** and o
 
 | <img src="images/logoPsBoard.gif" height="40px" align="left">Agent GUI<br>Interface   | Main activated Services, Behaviour and <br>Functions   | Image description  |
 |:--------             |:--------------------- |:---------   |
-|  <img src="images/idsboard-01.png" width="170px">   | • nidsDB.service<br> • nidsDB.ShowGrid.class<br> • doPopulate()  | **Image 1**. The log of activities associated with the translation of PCAP files, analyzed files, alerts found and updated rules is displayed on the grid, on Ticket's repo table tab.   | 
-|  <img src="images/idsboard-02.png" width="170px">   | • boardDF.service<br> • BoardCapabilities.class<br> • DFAgentDescription()  | **Image 2**. IDS Board agent is registered using; the boardDF service, the BoardCapabilities class, and a Waker behaviour.   | 
+|  <img src="images/idsboard-01.png" width="170px">   | • nidsDB.service<br> • nidsDB.ShowGrid.class<br> • doPopulate()  | **Image 1**. Board-Class agents can show the log of activities associated with the translation of PCAP files, analyzed files records, alerts found and updated Snort rules. All that information is displayed on the grid, on first tab: "Ticket's repository table".   | 
+|  <img src="images/idsboard-02.png" width="170px">   | • boardDF.service<br> • boardDF.SDregistrator.class<br> • DFAgentDescription()  | **Image 2**. Each IDS-Board-agent is registered using; the boardDF service. Board-Class agents are critical in a possible real-world deployment. For this reason, these agents self-register in the **DF** agent catalogue and can be recovered thanks to the _fault tolerance_ provided by JADE when the DF agent uses persistence[11].  | 
 |  <img src="images/logoPsBoard.gif" height="60px">   | • lstnPCAP.service<br> • lstnANLZ.service<br> • REresponderPCAP.class<br> • REresponderANLZ.class<br> • nidsDBupdate()  |  **Image 3**. An IDS board agent handles the requests of Reader-Class and Analyzer-Class agents  through the Listener Services and using communication _Rational-Effect_ behaviors .   | 
 |  <img src="images/logoPsBoard.gif" height="60px">   | • upSNORT.service<br> • REresponderKBASE<br> • BoardUpdateRules.class<br> • snort2clipsRules()  |  **Image 4**. Every 2 days an IDS-board agent downloads latest SNORT-Community Rules from Internet and converts it to CLIPS/Jess Rules through a simple conversion function. It informs of its availability to Analyzer-Class agents.   | 
 
@@ -180,6 +180,9 @@ Please see [**Appendix A**](#appendix-a), for **Windows operating system** and o
 
 
 [9]: **Leon University** (SPAIN). <http://www.unileon.es>.  **Departamento de Ingeniería Eléctrica y de Sistemas y Automática**. Universidad de León. <https://departamentos.unileon.es/ingenieria-electrica-y-de-sistemas-y-automatica/>
+
+
+[10]: **Yellow pages JADE Service**. [**a**] Bellifemine, F.L., Caire, G., Greenwood, D.: Developing Multi-Agent Systems with JADE. Wiley Series in Agent Technology. (2007). [**b**] Cancedda, P. & Caire, G. (2010). JADE Tutorial Creating Ontologies by means of the Bean-Ontology Class, volume 15-April-2010 - JADE 4.0. Telecom Italia S.p.A. [**c**] Yellow Pages examples: <https://jade.tilab.com/documentation/examples/yellow-pages/>
 
 
 
