@@ -7,10 +7,10 @@
 # -----------------------------------------------
 
 
-service.description = NIDS-DB management.
+service.description = IDS-DDBB management.
 service.order       = Aa
 init.level          = 1
 run.level           = 3
-service.name        = nidsDB
+service.name        = idsDB
 service.group       = basal
 service.enable      = 1

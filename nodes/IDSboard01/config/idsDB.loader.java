@@ -54,7 +54,7 @@ import java.sql.Statement;
 //# -----------------------------------------------
 //# Class
 //# -----------------------------------------------
-source( "nidsDB.ShowGrid.java" );
+source( "idsDB.ShowGrid.java" );
 
 
 
@@ -75,10 +75,10 @@ qu = "select   AGENTNAME, FILENAME,  " +
 	     
 rs = stmt .executeQuery( qu );
 
-nidsDB = new ShowGrid( myAgent, rs );
-nidsDB.setBehaviourName( "nidsDB" ); 
+idsDB = new ShowGrid( myAgent, rs );
+idsDB.setBehaviourName( "idsDB" ); 
 
 
 
-return ( ShowGrid ) nidsDB; 
+return ( ShowGrid ) idsDB; 
 
