@@ -30,13 +30,13 @@ Francisco José Aguayo‑Canela<sup>1</sup>  ·  Héctor Alaiz‑Moretón<su
 > This is an example of a distributed application made up of JADE Agents[1]. This example uses three main agent classes:
 
 
-* **Board-Class**: The Board-class agents are responsible for displaying analysis results, managing the flow of analyzes and, update lastest Malware Rules from SNORT-Community[2]. This type of agents are connected to HSQLite database[3].
+* **Board-Class**: The Board-class agents are responsible for displaying analysis results, managing the flow of analyzes and, update lastest Malware Rules from SNORT-Community[**2**]. This type of agents are connected to HSQLite database[**3**].
 
 
-* **Analyzer-Class**: This type of agents have an integrated CLIPS[5] or Jess[6] expert-system. They use the SNORT[3] Rules inside of its Working-Memory to detect malware on TCP, IP or UDP datagrams[4].
+* **Analyzer-Class**: This type of agents have an integrated CLIPS[**5**] or Jess[6] expert-system. They use the SNORT[**3**] Rules inside of its Working-Memory to detect malware on TCP, IP or UDP datagrams[**4**].
 
 
-* **Reader-Class**: It class produces agents with reading .PCAP file format capabilities. They can to transform datagram segments in (facts) format files, which are understandable by CLIPS[5] or Jess[6] inference engines.
+* **Reader-Class**: It class produces agents with reading .PCAP file format capabilities. They can to transform datagram segments in (facts) format files, which are understandable by CLIPS[**5**] or Jess[**6**] inference engines.
 
  
 This laboratory example foccuses on implementation and testing of an intrusion detection system which uses an agent-oriented distributed application deployment. It uses the JADE Framework[1] and the Middleware dpsFramework[7]. This example has been developed for demonstration and academic purposes only.
@@ -109,7 +109,7 @@ Please see [**Appendix A**](#appendix-a), for **Windows operating system** and o
 | <img src="images/logoPsBoard.gif" height="40px" align="left">Agent GUI<br>Interface   | Main activated Services, Behaviour and <br>Functions   | Image description  |
 |:--------             |:--------------------- |:---------   |
 |  <img src="images/idsboard-01.png" width="170px">   | • nidsDB.service<br> • nidsDB.ShowGrid.class<br> • doPopulate()  | **Image 1**. Board-Class agents can show the log of activities associated with the translation of PCAP files, analyzed files records, alerts found and updated Snort rules. All that information is displayed on the grid, on first tab: "Ticket's repository table".   | 
-|  <img src="images/idsboard-02.png" width="170px">   | • boardDF.service<br> • boardDF.SDregistrator.class<br> • DFAgentDescription()  | **Image 2**. Each IDS-Board-agent is registered using; the boardDF service. Board-Class agents are critical in a possible real-world deployment. For this reason, these agents self-register in the **DF** agent catalogue and can be recovered thanks to the _fault tolerance_ provided by JADE when the DF agent uses persistence[11].  | 
+|  <img src="images/idsboard-02.png" width="170px">   | • boardDF.service<br> • boardDF.SDregistrator.class<br> • DFAgentDescription()  | **Image 2**. Each IDS-Board-agent is registered using; the boardDF service. Board-Class agents are critical in a possible real-world deployment. For this reason, these agents self-register in the **DF** agent catalogue and can be recovered thanks to the _fault tolerance_ provided by JADE when the DF agent uses persistence [**11**].  | 
 |  <img src="images/logoPsBoard.gif" height="60px">   | • lstnPCAP.service<br> • lstnANLZ.service<br> • REresponderPCAP.class<br> • REresponderANLZ.class<br> • nidsDBupdate()  |  **Image 3**. An IDS board agent handles the requests of Reader-Class and Analyzer-Class agents  through the Listener Services and using communication _Rational-Effect_ behaviors .   | 
 |  <img src="images/logoPsBoard.gif" height="60px">   | • upSNORT.service<br> • REresponderKBASE<br> • BoardUpdateRules.class<br> • snort2clipsRules()  |  **Image 4**. Every 2 days an IDS-board agent downloads latest SNORT-Community Rules from Internet and converts it to CLIPS/Jess Rules through a simple conversion function. It informs of its availability to Analyzer-Class agents.   | 
 
