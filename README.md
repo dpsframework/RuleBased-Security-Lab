@@ -138,12 +138,12 @@ Please see [**Appendix A**](#appendix-a), for **Windows operating system** and o
 ### 2.3. Reader-Class Agents: _PCAP-reader-agent_ 
 
 
-| <img src="images/logoPsMonitorAgent.gif" height="60px" align="left">Agent GUI<br>Interface   | Main activated Services, Behaviour and <br>Functions   | Image description  |
+| <img src="images/logoPsMonitorAgent.gif" width="40px" align="left">Agent GUI<br>Interface   | Main activated Services, Behaviour and <br>Functions   | Image description  |
 |:--------             |:--------------------- |:---------   |
-|  <img src="images/logoPsMonitorAgent.gif" height="60px">   | • Behaviour:  <br> • Function:    | Image **9.**: Title of this image.   | 
-|  <img src="images/logoPsMonitorAgent.gif" height="60px">   | • Behaviour:  <br> • Function:    | Image **10.**: Title of this image.   | 
-|  <img src="images/logoPsMonitorAgent.gif" height="60px">   | • Behaviour:  <br> • Function:    | Image **11.**: Title of this image.   | 
-|  <img src="images/logoPsMonitorAgent.gif" height="60px">   | • Behaviour:  <br> • Function:    | Image **12.**: Title of this image.   | 
+|  <img src="images/logoPsMonitorAgent.gif" width="40px">   | • Behaviour:  <br> • Function:    | Image **9.**: Title of this image.   | 
+|  <img src="images/logoPsMonitorAgent.gif" width="40px">   | • Behaviour:  <br> • Function:    | Image **10.**: Title of this image.   | 
+|  <img src="images/logoPsMonitorAgent.gif" width="40px">   | • Behaviour:  <br> • Function:    | Image **11.**: Title of this image.   | 
+|  <img src="images/logoPsMonitorAgent.gif" width="40px">   | • Behaviour:  <br> • Function:    | Image **12.**: Title of this image.   | 
 
 
 
