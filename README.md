@@ -145,6 +145,39 @@ Please see [**Appendix A**](#appendix-a), for **Windows operating system** and o
 
 
 
+-----
+
+
+
+## Appendix A
+
+### Windows OS command-line sentences
+
+####  A.1. How to deploy the new RuleBased-Security-Lab agents on JADE platform
+
+
+
+
+1. Set **CLASSPATH** variable and launch **JADE** multi-agent platform on **localhost**:
+   * `   export CLASSPATH=lib/*;lib/pcap/*;  ` 
+   * `   start  java launcher platform localhost  ` 
+
+1. Launch a Board-Class Agent, Analyzer-Class Agents and, Reader-Class Agent with:
+   * `   start     java launcher board      localhost IDSboard01  `  
+   * `   start     java launcher stage-node localhost UDPanalyzer01 CLIPS  `  
+   * `   start     java launcher stage-node localhost TCPanalyzer01 Jess  `  
+   * `   start     java launcher monitor    localhost PCAPreader01` 
+
+1. Raise the agents run-level to `5` and start malware scan with:
+   * Click on button [5] on the menu bar.
+   * `  copy    pcap/examples/case01.pcap   var/pending/.`   
+
+1. Launch classic JADE Agents:
+   * `   start     java launcher acklin      localhost   `  
+   * `   start     java launcher dumm        localhost   `  
+   * `   start     java launcher sniff      localhost   `  
+   
+
 
 
 
@@ -185,38 +218,5 @@ Please see [**Appendix A**](#appendix-a), for **Windows operating system** and o
 [10]: **Yellow pages JADE Service**. [**a**] Bellifemine, F.L., Caire, G., Greenwood, D.: Developing Multi-Agent Systems with JADE. Wiley Series in Agent Technology. (2007). [**b**] Cancedda, P. & Caire, G. (2010). JADE Tutorial Creating Ontologies by means of the Bean-Ontology Class, volume 15-April-2010 - JADE 4.0. Telecom Italia S.p.A. [**c**] Yellow Pages examples: <https://jade.tilab.com/documentation/examples/yellow-pages/>
 
 
-
------
-
-
-
-## Appendix A
-
-### Windows OS command-line sentences
-
-####  A.1. How to deploy the new RuleBased-Security-Lab agents on JADE platform
-
-
-
-
-1. Set **CLASSPATH** variable and launch **JADE** multi-agent platform on **localhost**:
-   * `   export CLASSPATH=lib/*;lib/pcap/*;  ` 
-   * `   start  java launcher platform localhost  ` 
-
-1. Launch a Board-Class Agent, Analyzer-Class Agents and, Reader-Class Agent with:
-   * `   start     java launcher board      localhost IDSboard01  `  
-   * `   start     java launcher stage-node localhost UDPanalyzer01 CLIPS  `  
-   * `   start     java launcher stage-node localhost TCPanalyzer01 Jess  `  
-   * `   start     java launcher monitor    localhost PCAPreader01` 
-
-1. Raise the agents run-level to `5` and start malware scan with:
-   * Click on button [5] on the menu bar.
-   * `  copy    pcap/examples/case01.pcap   var/pending/.`   
-
-1. Launch classic JADE Agents:
-   * `   start     java launcher acklin      localhost   `  
-   * `   start     java launcher dumm        localhost   `  
-   * `   start     java launcher sniff      localhost   `  
-   
 
 
