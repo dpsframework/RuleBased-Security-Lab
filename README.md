@@ -119,15 +119,15 @@ Please see [**Appendix A**](#appendix-a), for **Windows operating system** and o
 
 
 
-### 2.2. Analyzer-Class Agents: _UDP-analyzer-agent_ and _TCPanalyzer-agent_
+### 2.2. Analyzer-Class Agents: _UDP-analyzer-agent_ and _TCP-analyzer-agent_
 
 
-| Agent<br>interface      | Behaviour<br>& Functions   | Image title<br>and description  |
+| <img src="images/logoPsNode.gif" height="40px" align="left">Agent GUI<br>Interface   | Main activated Services, Behaviour and <br>Functions   | Image description  |
 |:--------             |:--------------------- |:---------   |
-|  <img src="images/logoPsNode.gif" width="60px">   | • Behaviour:  <br> • Function:    | Image **5.**: Title of this image.   | 
-|  <img src="images/logoPsNode.gif" width="60px">   | • Behaviour:  <br> • Function:    | Image **6.**: Title of this image.   | 
-|  <img src="images/logoPsNode.gif" width="60px">   | • Behaviour:  <br> • Function:    | Image **7.**: Title of this image.   | 
-|  <img src="images/logoPsNode.gif" width="60px">   | • Behaviour:  <br> • Function:    | Image **8.**: Title of this image.   | 
+|  <img src="images/logoPsNode.gif" height="40px">   | • Behaviour:  <br> • Function:    | Image **5.**: Title of this image.   | 
+|  <img src="images/logoPsNode.gif" height="40px">   | • Behaviour:  <br> • Function:    | Image **6.**: Title of this image.   | 
+|  <img src="images/logoPsNode.gif" height="40px">   | • Behaviour:  <br> • Function:    | Image **7.**: Title of this image.   | 
+|  <img src="images/logoPsNode.gif" height="40px">   | • Behaviour:  <br> • Function:    | Image **8.**: Title of this image.   | 
 
 
 
@@ -138,12 +138,12 @@ Please see [**Appendix A**](#appendix-a), for **Windows operating system** and o
 ### 2.3. Reader-Class Agents: _PCAP-reader-agent_ 
 
 
-| Agent<br>interface      | Behaviour<br>& Functions   | Image description  |
+| <img src="images/logoPsMonitorAgent.gif" height="60px" align="left">Agent GUI<br>Interface   | Main activated Services, Behaviour and <br>Functions   | Image description  |
 |:--------             |:--------------------- |:---------   |
-|  <img src="images/logoPsMonitorAgent.gif" width="60px">   | • Behaviour:  <br> • Function:    | Image **9.**: Title of this image.   | 
-|  <img src="images/logoPsMonitorAgent.gif" width="60px">   | • Behaviour:  <br> • Function:    | Image **10.**: Title of this image.   | 
-|  <img src="images/logoPsMonitorAgent.gif" width="60px">   | • Behaviour:  <br> • Function:    | Image **11.**: Title of this image.   | 
-|  <img src="images/logoPsMonitorAgent.gif" width="60px">   | • Behaviour:  <br> • Function:    | Image **12.**: Title of this image.   | 
+|  <img src="images/logoPsMonitorAgent.gif" height="60px">   | • Behaviour:  <br> • Function:    | Image **9.**: Title of this image.   | 
+|  <img src="images/logoPsMonitorAgent.gif" height="60px">   | • Behaviour:  <br> • Function:    | Image **10.**: Title of this image.   | 
+|  <img src="images/logoPsMonitorAgent.gif" height="60px">   | • Behaviour:  <br> • Function:    | Image **11.**: Title of this image.   | 
+|  <img src="images/logoPsMonitorAgent.gif" height="60px">   | • Behaviour:  <br> • Function:    | Image **12.**: Title of this image.   | 
 
 
 
