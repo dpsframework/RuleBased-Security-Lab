@@ -63,13 +63,13 @@ This laboratory example foccuses on implementation and testing of an intrusion d
    * `  mv config      config_old`
    * `  mv nodes       nodes_old` 
 
-1. Create and update the _RuleBased-Security-Lab_ local repository:
+1. Create and update this _RuleBased-Security-Lab_ local repository:
    * `  git init . `
    * `  git branch -M master`
    * `  git remote add origin https://github.com/dpsframework/RuleBased-Security-Lab.git`
    * `  git pull origin master`
 
-1. Finally, remove the remote-origin from _RuleBased-Security-Lab_ repository on GitHub:
+1. Remove the **origin** from _RuleBased-Security-Lab_ local repository:
    * `  git remote remove origin`
 
 
