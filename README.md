@@ -33,10 +33,10 @@ Francisco José Aguayo‑Canela<sup>1</sup>  ·  Héctor Alaiz‑Moretón<su
 * **Board-Class**: The Board-class agents are responsible for displaying analysis results, managing the flow of analyzes carried out by the agents and, update lastest Malware Rules from SNORT-Community[**2**]. This type of agents are connected to their own HSQLite database[**3**].
 
 
-* **Analyzer-Class**: This type of agents have an integrated CLIPS[**5**] or Jess[**6**] expert-system. They use the SNORT[**3**] Rules inside of its Working-Memory to detect malware on TCP, IP or UDP datagrams[**4**].
+* **Analyzer-Class**: This type of agents have an integrated CLIPS[**5**] or Jess[**6**] expert-system. They use the SNORT[**3**] Rules inside of its Working-Memory to detect malware on TCP, IP or UDP datagrams.
 
 
-* **Reader-Class**: It class produces agents with reading .PCAP file format capabilities. They can to transform datagram segments in (facts) format files, which are understandable by CLIPS[**5**] or Jess[**6**] inference engines.
+* **Reader-Class**: This class produces agents with capabilities to read and interpret files in PCAP[**4**] format. They can to transform datagram segments in (facts) format files, which are understandable by CLIPS[**5**] or Jess[**6**] inference engines.
 
  
 This laboratory example foccuses on implementation and testing of an intrusion detection system which uses an agent-oriented distributed application deployment. It uses the JADE Framework[**1**] and the Middleware dpsFramework[**7**]. This example has been developed for demonstration and academic purposes only.
