@@ -20,26 +20,26 @@ Francisco José Aguayo‑Canela<sup>1</sup>  ·  Héctor Alaiz‑Moretón<su
 <sup>(2)</sup>  _**SALBIS Research Group**_, Department of Electric, Systems and Automatics Engineering.
 
 
-![Universidad de Leon - Spain](images/marca-logo-color.jpg) Universidad de León (_Spain_) 
+![Universidad de Leon[**9**] - Spain](images/marca-logo-color.jpg) Universidad de León (_Spain_) 
 
 
 
 ## 1. Example addendum: _Rule-Based-Security-Lab_
 
 
-> This is an example of a distributed application made up of JADE Agents[1]. This example uses three main agent classes:
+> This is an example of a distributed application made up of JADE Agents[**1**]. This example uses three main agent classes:
 
 
 * **Board-Class**: The Board-class agents are responsible for displaying analysis results, managing the flow of analyzes and, update lastest Malware Rules from SNORT-Community[**2**]. This type of agents are connected to HSQLite database[**3**].
 
 
-* **Analyzer-Class**: This type of agents have an integrated CLIPS[**5**] or Jess[6] expert-system. They use the SNORT[**3**] Rules inside of its Working-Memory to detect malware on TCP, IP or UDP datagrams[**4**].
+* **Analyzer-Class**: This type of agents have an integrated CLIPS[**5**] or Jess[**6**] expert-system. They use the SNORT[**3**] Rules inside of its Working-Memory to detect malware on TCP, IP or UDP datagrams[**4**].
 
 
 * **Reader-Class**: It class produces agents with reading .PCAP file format capabilities. They can to transform datagram segments in (facts) format files, which are understandable by CLIPS[**5**] or Jess[**6**] inference engines.
 
  
-This laboratory example foccuses on implementation and testing of an intrusion detection system which uses an agent-oriented distributed application deployment. It uses the JADE Framework[1] and the Middleware dpsFramework[7]. This example has been developed for demonstration and academic purposes only.
+This laboratory example foccuses on implementation and testing of an intrusion detection system which uses an agent-oriented distributed application deployment. It uses the JADE Framework[**1**] and the Middleware dpsFramework[**7**]. This example has been developed for demonstration and academic purposes only.
 
 
 
@@ -53,7 +53,7 @@ This laboratory example foccuses on implementation and testing of an intrusion d
 ### 1.1. How to build this _Rule-Based-Security-Lab_ application development environment
 
 
-1. Download dpsFramework[7] and create new application titled _RuleBased-Security-Lab_:
+1. Download dpsFramework[**7**] and create new application titled _RuleBased-Security-Lab_:
    * https://github.com/dpsframework/dpsFrameworkBuilder/releases/download/1.8/dpsFrameworkBuilder-full-1.8.jar
    * `  java -jar dpsFrameworkBuilder-full-1.8.jar   --new=RuleBased-Security-Lab`
    * `  cd RuleBased-Security-Lab`
@@ -88,7 +88,7 @@ This laboratory example foccuses on implementation and testing of an intrusion d
    * `        java launcher monitor    localhost PCAPreader01  &` 
    
 1. Raise the agents run-level to `5` and start malware scan:
-   * Click on button [5] on the menu bar.
+   * Click on button titled [5] on the menu bar.
    * `  cp    pcap/examples/case01.pcap   var/pending/.`   
 
 
