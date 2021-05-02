@@ -106,11 +106,11 @@ Please see [**Appendix A**](#appendix-a), for **Windows operating system** and o
 
 
 
-| <img src="images/logoPsBoard.gif" height="40px" align="left">Agent GUI<br>Interface   | Main activated Services, Behaviour and <br>Functions   | Image description  |
+| <img src="images/logoPsBoard.gif" height="40px" align="left">Agent GUI<br>Interface   | Main activated Services, Functions and <br>Behaviour    | Image description  |
 |:--------             |:--------------------- |:---------   |
 |  <img src="images/idsboard-01.png" width="170px">   | • idsDB.service<br> • ShowGrid.class<br> • doPopulate( )  | **Image 1**. Board-Class agents can display the log of activities associated with the translation of PCAP files, analyzed files records, alerts found and updated Snort rules. All that information is shown in the grid, using first tab: "Ticket's repository table".   | 
 |  <img src="images/idsboard-02.png" width="170px">   | • boardDF.service<br> • SDregistrator.class  | **Image 2**. Each IDS-Board-agent instance is registered in the Directory Facilitator (**DF**) of JADE Platform. The Board-Class agents are critical in a possible real-world implementation. For this reason, these agents self-register in the **DF** agent catalogue and could be recovered thanks to the _fault tolerance_ provided by JADE when the DF Service uses persistence [**11**].  | 
-|  <img src="images/logoPsBoard.gif" height="60px">   | • registerFACTS.service<br> • registerINFORM.service<br> • distpatchANALYSIS.service<br> • REregisterFACTS.class<br> • REregisterINFORM.class<br> • REdispatchANALYSIS.class<br> • idsDBGridUpdate( )  | **Image 3**. An IDS-board agent instance handles the requests received from Reader-Class agents and from Analyzer-Class agents through three Listen Services. Those services require complex communicative acts and they use Interaction Protocol through implemented _Rational-Effect_ (**RE**) JADE behaviours.   | 
+|  <img src="images/logoPsBoard.gif" height="60px">   | • registerFACTS.service<br> • registerINFORM.service<br> • distpatchANALYSIS.service<br> • idsDBGridUpdate( )<br> • REregisterFACTS.class<br> • REregisterINFORM.class<br> • REdispatchANALYSIS.class  | **Image 3**. An IDS-board agent instance handles the requests received from Reader-Class agents and from Analyzer-Class agents through three Listen Services. Those services require complex communicative acts and they use Interaction Protocol through implemented _Rational-Effect_ (**RE**) JADE behaviours.   | 
 |  <img src="images/logoPsBoard.gif" height="60px">   | • updateRULES.service<br> • RulesDownloader.class<br> • snortToKBASE( )<br> • REdispatchKBASE.class  |  **Image 4**. Every 2 days, an IDS-board agent instance downloads the latest rules from the SNORT Community Website from the Internet and converts them to CLIPS / Jess rules through a simple conversion function `snortToKBASE( )`. When the agent receives a request message from Analyzer-Class agents, it compares date from request against date of updated SNORT Rules. And the IDS-board agent submit a new CLIPS KBASE format file if applicable.  | 
 
 
@@ -122,10 +122,10 @@ Please see [**Appendix A**](#appendix-a), for **Windows operating system** and o
 ### 2.2. Analyzer-Class Agents: _UDP-analyzer-agent_ and _TCP-analyzer-agent_
 
 
-| <img src="images/logoPsNode.gif" height="40px" align="left">Agent GUI<br>Interface   | Main activated Services, Behaviour and <br>Functions   | Image description  |
+| <img src="images/logoPsNode.gif" height="40px" align="left">Agent GUI<br>Interface   | Main activated Services, Functions and <br>Behaviour    | Image description  |
 |:--------             |:--------------------- |:---------   |
-|  <img src="images/logoPsNode.gif" height="40px">   | • analysis.service<br> • REinitANALYSIS.class<br> • REinitINFORM.class<br> • workingMemory_Loader()  | **Image 5**. Every 15 minutes Analyzer-Class agents request to an IDS-board-agent for new pending analysis files. If agents receive a file as response, the `workingMemory_Loader()` function load it in their Working-Memory. The REinitINFOMR behaviour-class sends results to IDS-board agent when analysis has finished.  |
-|  <img src="images/logoPsNode.gif" height="40px">   | • updateKBASE.service<br> • REinitKBASE.class<br> • knowledgeBase_Loader()  |  **Image 6**. Every 24 hours Analyzer-Class agents request to an IDS-board agent the lastest updated SNORT rules. If agents receive a file as response, the `knowledgeBase_Loader()` function updates their Knowledge-Base and their engines are restarted. |
+|  <img src="images/logoPsNode.gif" height="40px">   | • analysis.service<br> • REinitANALYSIS.classs<br> • workingMemory_Loader( )<br> • REinitINFORM.clas  | **Image 5**. Every 15 minutes Analyzer-Class agents request to an IDS-board-agent for new pending analysis files. If agents receive a file as response, the `workingMemory_Loader( )` function load it in their Working-Memory. The REinitINFOMR behaviour-class sends results to IDS-board agent when analysis has finished.  |
+|  <img src="images/logoPsNode.gif" height="40px">   | • updateKBASE.service<br> • knowledgeBase_Loader( )<br> • REinitKBASE.class  |  **Image 6**. Every 24 hours Analyzer-Class agents request to an IDS-board agent the lastest updated SNORT rules. If agents receive a file as response, the `knowledgeBase_Loader( )` function updates their Knowledge-Base and their engines are restarted. |
 
 
 
@@ -136,10 +136,10 @@ Please see [**Appendix A**](#appendix-a), for **Windows operating system** and o
 ### 2.3. Reader-Class Agents: _PCAP-reader-agent_ 
 
 
-| <img src="images/logoPsMonitorAgent.gif" width="40px" align="left">Agent GUI<br>Interface   | Main activated Services, Behaviour and <br>Functions   | Image description  |
+| <img src="images/logoPsMonitorAgent.gif" width="40px" align="left">Agent GUI<br>Interface   | Main activated Services, Functions and <br>Behaviour     | Image description  |
 |:--------             |:--------------------- |:---------   |
-|  <img src="images/logoPsMonitorAgent.gif" width="40px">   | • readerPCAP.service<br> • WatchdogDirectory.class<br> • watingForPCAP()<br> • transformToFACTS()  |  **Image 7**. Every 5 minutes Reader-Class agents are looking for new .PCAP files on `./var/pending/` diectory. If they find  a .PCAP file they move it to their own directories, open it and transform to expert system _Facts_ plain text file with `transformToFACTS()` function. |
-|  <img src="images/logoPsMonitorAgent.gif" width="40px">   | • dispatcherFACTS.service<br> • REinformFACTS.class<br>  |  **Image 8**. When Reader-Class agents receive a message from their owns reader/transform services, they compress the _Facts_ plain text file and send it as Inform-Message to IDS-board-agent. |
+|  <img src="images/logoPsMonitorAgent.gif" width="40px">   | • readerPCAP.service<br> • WatchdogDirectory.class<br> • watingForPCAP( )<br> • transformToFACTS( )  |  **Image 7**. Every 5 minutes Reader-Class agents are looking for new .PCAP files on `./var/pending/` diectory. If they find  a .PCAP file they move it to their own directories, open it and transform to expert system _Facts_ plain text file with `transformToFACTS( )` function. |
+|  <img src="images/logoPsMonitorAgent.gif" width="40px">   | • dispatcherFACTS.service<br> • REinitFACTS.class<br>  |  **Image 8**. When Reader-Class agents receive a message from their owns reader/transform services, they compress the _Facts_ plain text file and send it as Inform-Message to IDS-board-agent. |
 
 
 
