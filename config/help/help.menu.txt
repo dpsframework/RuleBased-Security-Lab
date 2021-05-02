@@ -5,10 +5,10 @@
 | Help |   help(2);   Monitor  and  Node agents > Objects and methods
 |      |   help(3);   Ticket-board  agent       > Objects and methods
 | menu |   help(4);   dpsFramework              >     OS command-line
-|      |   help(5);   Java                      >            Language  
-|      |   help(6);   CLIPS                     >           Language
+|      |   help(5);   Java                      >            Language
+|      |   help(6);   CLIPS                     >            Language
 |      |   help(7);   Jess                      >            Language
-|      |   help(8);   Bash Shell                >        Linux & OS-X 
+|      |   help(8);   Bash Shell                >        Linux & OS-X
 |      |   ----------------------------------------------------------
 |      |   help();    Help menu
 |      |   help(0);   Dump all
