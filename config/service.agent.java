@@ -1,7 +1,11 @@
+//# Revised:   2021.04.28                               
+//#            [ RuleBased-Security-Lab example ]
+//# ------------------------------------------------
 
 
-///////////////////////////////////////////////
-//Technique: myBOBActivated JADE-HashMap
+
+//# /////////////////////////////////////////////
+//# Technique: myBOBActivated JADE-HashMap
 myBOBActivated  = new jade.util.leap.HashMap();
 nodeProp2 		= new jade.util.leap.Properties();
 nodeProp2.load( nodeConfigPath + "node.properties" );
