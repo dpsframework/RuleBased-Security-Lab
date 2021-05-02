@@ -124,7 +124,7 @@ Please see [**Appendix A**](#appendix-a), for **Windows operating system** and o
 
 | <img src="images/logoPsNode.gif" height="40px" align="left">Agent GUI<br>Interface   | Main activated Services, Functions and <br>Behaviour    | Image description  |
 |:--------             |:--------------------- |:---------   |
-|  <img src="images/logoPsNode.gif" height="40px">   | • analysis.service<br> • REinitANALYSIS.class<br> • load_WorkigMemory( )<br> • REinitINFORM.class  | **Image 5**. Every 15 minutes Analyzer-Class agents request to an IDS-board-agent for new pending analysis files. If agents receive a file as response, the `load_WorkigMemory( )` function load it in their Working-Memory. The REinitINFOMR behaviour-class sends results to IDS-board agent when analysis has finished.  |
+|  <img src="images/logoPsNode.gif" height="40px">   | • analysis.service<br> • REinitANALYSIS.class<br> • load_WorkingMemory( )<br> • REinitINFORM.class  | **Image 5**. Every 15 minutes Analyzer-Class agents request to an IDS-board-agent for new pending analysis files. If agents receive a file as response, the `load_WorkingMemory( )` function load it in their Working-Memory. The REinitINFOMR behaviour-class sends results to IDS-board agent when analysis has finished.  |
 |  <img src="images/logoPsNode.gif" height="40px">   | • updateKBASE.service<br> • load_KnowledgeBase()<br> • REinitKBASE.class  |  **Image 6**. Every 24 hours Analyzer-Class agents request to an IDS-board agent the lastest updated SNORT rules. If agents receive a file as response, the `load_KnowledgeBase( )` function updates their Knowledge-Base and their engines are restarted. |
 
 
