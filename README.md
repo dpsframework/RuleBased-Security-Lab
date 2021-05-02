@@ -76,7 +76,6 @@ This laboratory example foccuses on implementation and testing of an intrusion d
 
 ### 1.2. How to deploy this _Rule-Based-Security-Lab_ agents on JADE platform
 
-Please see [**Appendix A**](#appendix-a), for **Windows operating system** and other additional tricks.
 
 1. Set **CLASSPATH** variable and launch **JADE** multi-agent platform on **localhost**:
    * `  export CLASSPATH=lib/*:lib/pcap/*:  ` 
@@ -92,6 +91,9 @@ Please see [**Appendix A**](#appendix-a), for **Windows operating system** and o
    * Click on button [5] on the menu bar.
    * `  cp    pcap/examples/case01.pcap   var/pending/.`   
 
+
+
+Please see [**Appendix A**](#appendix-a), for **Windows operating system** and other additional tricks.
 
 
 
