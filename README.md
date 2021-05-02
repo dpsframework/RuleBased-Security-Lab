@@ -70,7 +70,7 @@ This laboratory example foccuses on implementation and testing of an intrusion d
 
 
 
-### 1.2. How to deploy this new _Rule Based-Security-Lab_ agents on JADE platform
+### 1.2. How to deploy this _RuleBased-Security-Lab_ agents on JADE platform
 
 Please, see [**Appendix A**](#appendix-a), for **Windows OS**.
 
