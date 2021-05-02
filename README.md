@@ -124,7 +124,7 @@ Please see [**Appendix A**](#appendix-a), for **Windows operating system** and o
 
 | <img src="images/logoPsNode.gif" height="40px" align="left">Agent GUI<br>Interface   | Main activated Services, Behaviour and <br>Functions   | Image description  |
 |:--------             |:--------------------- |:---------   |
-|  <img src="images/logoPsNode.gif" height="40px">   | • analysis.service<br> • RErequestANLZ.class<br> • REinformANLZ.class<br> • workingMemroy_Loader()  | **Image 5**. Every 15 minutes Analyzer-Class agents request to IDS-board-agent for new pending analysis files. If agents receive a file as response, the `workingMemroy_Loader()` function load it in their Working-Memory. The REinformANLZ behaviour-class sends results to IDS-board agent when analysis has finished.  |
+|  <img src="images/logoPsNode.gif" height="40px">   | • analysis.service<br> • RErequestANLZ.class<br> • REinformANLZ.class<br> • workingMemroy_Loader()  | **Image 5**. Every 15 minutes Analyzer-Class agents request to an IDS-board-agent for new pending analysis files. If agents receive a file as response, the `workingMemroy_Loader()` function load it in their Working-Memory. The REinformANLZ behaviour-class sends results to IDS-board agent when analysis has finished.  |
 |  <img src="images/logoPsNode.gif" height="40px">   | • updateKBASE.service<br> • RErequestKBASE.class<br> • knowledgeBase_Loader()  |  **Image 6**. Every 24 hours Analyzer-Class agents request to an IDS-board agent the lastest updated SNORT rules. If agents receive a file as response, the `knowledgeBase_Loader()` function updates their Knowledge-Base and their engines are restarted. |
 
 
@@ -138,10 +138,8 @@ Please see [**Appendix A**](#appendix-a), for **Windows operating system** and o
 
 | <img src="images/logoPsMonitorAgent.gif" width="40px" align="left">Agent GUI<br>Interface   | Main activated Services, Behaviour and <br>Functions   | Image description  |
 |:--------             |:--------------------- |:---------   |
-|  <img src="images/logoPsMonitorAgent.gif" width="40px">   | • Behaviour:  <br> • Function:    | Image **9.**: Title of this image.   | 
-|  <img src="images/logoPsMonitorAgent.gif" width="40px">   | • Behaviour:  <br> • Function:    | Image **10.**: Title of this image.   | 
-|  <img src="images/logoPsMonitorAgent.gif" width="40px">   | • Behaviour:  <br> • Function:    | Image **11.**: Title of this image.   | 
-|  <img src="images/logoPsMonitorAgent.gif" width="40px">   | • Behaviour:  <br> • Function:    | Image **12.**: Title of this image.   | 
+|  <img src="images/logoPsMonitorAgent.gif" width="40px">   | • analysis.service<br> • RErequestANLZ.class<br> • REinformANLZ.class<br> • workingMemroy_Loader()  | **Image 7**. Every 15 minutes Analyzer-Class agents request to an IDS-board-agent for new pending analysis files. If agents receive a file as response, the `workingMemroy_Loader()` function load it in their Working-Memory. The REinformANLZ behaviour-class sends results to IDS-board agent when analysis has finished.  |
+|  <img src="images/logoPsMonitorAgent.gif" width="40px">   | • pcap.service<br> • pcap.Watchdog.class<br> • REinformPCAP.class<br> • watingForPCAP()<br> • transformToFacts()  |  **Image 8**. Every 5 minutes Reader-Class agents are looking for new .PCAP files on `./var/pending/` diectory. They move to their own directories, open it an transform to expert system _Facts_ plain text file wit `transformToFacts()` function. |
 
 
 
