@@ -63,7 +63,7 @@ This laboratory example foccuses on implementation and testing of an intrusion d
    * `  mv config      config_old`
    * `  mv nodes       nodes_old` 
 
-1. Create and update the _Malware-Analysis-Lab_ local repository:
+1. Create and update the _RuleBased-Security-Lab_ local repository:
    * `  git init . `
    * `  git branch -M master`
    * `  git remote add origin https://github.com/dpsframework/RuleBased-Security-Lab.git`
