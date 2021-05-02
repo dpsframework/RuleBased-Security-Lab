@@ -110,8 +110,8 @@ Please see [**Appendix A**](#appendix-a), for **Windows operating system** and o
 |:--------             |:--------------------- |:---------   |
 |  <img src="images/idsboard-01.png" width="170px">   | • jadeMO.service<br> • nidsDB.service<br> • BoardGridLocal.class<br> • doPopulate()  | **Image 1**. The log of activities associated with the translation of PCAP files, analyzed files, alerts found and updated rules is displayed on the table.   | 
 |  <img src="images/idsboard-02.png" width="170px">   | • boardDF.service<br> • BoardCapabilities.class<br> • DFAgentDescription()  | **Image 2**. IDS Board agent is registered using; the boardDF service, the BoardCapabilities class, and a Waker behaviour.   | 
-|  <img src="images/logoPsBoard.gif" height="60px">   | • lstPCAP.service<br> • lstANLZ.service<br> • REresponderPCAP.class<br> • REresponderANLZ.class<br> • nidsDBupdate()  | Image **3.**: An IDS bard agent handles the requests of Reader-Class and Analyzer-Class agents  through the Listener Services and using communication _Rational-Effect_ behaviors .   | 
-|  <img src="images/logoPsBoard.gif" height="60px">   | • Behaviour:  <br> • Function:    | Image **4.**: Title of this image.   | 
+|  <img src="images/logoPsBoard.gif" height="60px">   | • lstPCAP.service<br> • lstANLZ.service<br> • REresponderPCAP.class<br> • REresponderANLZ.class<br> • nidsDBupdate()  |  **Image 3**. An IDS board agent handles the requests of Reader-Class and Analyzer-Class agents  through the Listener Services and using communication _Rational-Effect_ behaviors .   | 
+|  <img src="images/logoPsBoard.gif" height="60px">   | • upSNORT.service<br> • BoardUpdateRules.class<br> • snort2clipsRules()  |  **Image 4**. Every 2 days an IDS-board agent downloads latest SNORT-Community Rules from Internet and converts it to CLIPS/Jess Rules through simple conversion. It informs of its availability to Analyzer-Class agents.   | 
 
 
 
