@@ -1,7 +1,7 @@
 +------+-------------------------------------------------------------
 |      |   Options    Help about...
-| Help |   ---------  -----------------------------------------------
-| Board|   help(3);   Ticket-board  agent       > Objects and methods
+| Board|   ---------  -----------------------------------------------
+| Help |   help(3);   Ticket-board  agent       > Objects and methods
 +------+-------------------------------------------------------------
 
  Terminal   jconsole.setFont(new Font( "Monaco", Font.PLAIN, 14));

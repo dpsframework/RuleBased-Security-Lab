@@ -93,7 +93,7 @@ This laboratory example foccuses on implementation and testing of an intrusion d
 
 
 
-* Please see [**Appendix A**](#appendix-a), for **Windows operating system** and other additional tricks.
+Please see [**Appendix A**](#appendix-a), for **Windows operating system** and other additional tricks.
 
 
 
@@ -106,7 +106,7 @@ This laboratory example foccuses on implementation and testing of an intrusion d
 
 
 
-| <img src="images/logoPsBoard.gif" height="40px" align="left">Agent GUI   | Main activated services, Behaviours and <br>functions   | Image description  |
+| <img src="images/logoPsBoard.gif" height="40px" align="left">Agent GUI   | Main activated Services, Behaviours and <br>Functions   | Image description  |
 |:--------             |:--------------------- |:---------   |
 |  <img src="images/idsboard-01.png" width="170px">   | • jadeMO.service<br> • nidsDB.service<br> • BoardGridLocal.class<br> • doPopulate()  | **Image 1**. The log of activities associated with the translation of PCAP files, analyzed files, alerts found and updated rules is displayed on the table.   | 
 |  <img src="images/idsboard-02.png" width="170px">   | • boardDF.service<br> • BoardCapabilities.class<br> • DFAgentDescription()  | **Image 2**. IDS Board agent is registered using; the boardDF service, the BoardCapabilities class, and a Waker behavior.   | 
