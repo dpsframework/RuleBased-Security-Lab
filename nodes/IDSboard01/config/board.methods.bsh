@@ -377,8 +377,11 @@ service(){
 		
 		
 		for( sb : this.BOB()  ){
-			if( sb.split(":")[3].equals(serviceName)){
+			//t = sb.split(":")[5].split("\\.")[0];
+			//System.out.println("El valor es: "+ t);
+			if( sb.split(":")[5].split("\\.")[0].equals(serviceName)){
 				sBOB = sb;
+				break;
 			}
 		}
 		return sBOB;
@@ -482,7 +485,7 @@ myBOB() {
       sbMyBOBOriginal.append(" *                                                            *\n");
       sbMyBOBOriginal.append(" * === Level     ====   =====   =================   =======  ============================ *\n");
       sbMyBOBOriginal.append(" * [0] [1]  [2]   [3]   [4]     [5]                 [6]      [7]                          *\n");
-      sbMyBOBOriginal.append(" * ID  Init RunAt Name  Group   Loader              Enabled  Description                  *\n");
+      sbMyBOBOriginal.append(" * ID  Init RunAt Bhvr  Group   Loader              Enabled  Description                  *\n");
       sbMyBOBOriginal.append(" * === ==== ==== ====== ======= =================   =======  ============================ *\n");
 
       bA = myBOB.keySet().toArray();
@@ -490,7 +493,7 @@ myBOB() {
       Arrays.sort( bA );
       for( String bK : bA ){
           sbMyBOBOriginal.append(MessageFormat.format(
-          		            " * {0} : {1} : {2} : {3} : {4} : {5} :  {6} : {7}\n", bK.split(":")     ));
+          		            " * {0} : {1}  : {2} : {3} : {4} : {5} :  {6} : {7}\n", bK.split(":")     ));
       }
       sbMyBOBOriginal.append(" * ---------------------------------------------------------- * ");
       return sbMyBOBOriginal.toString();

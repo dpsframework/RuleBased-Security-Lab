@@ -75,10 +75,10 @@ qu = "select   AGENTNAME, FILENAME,  " +
 	     
 rs = stmt .executeQuery( qu );
 
-idsDB = new ShowGrid( myAgent, rs );
-idsDB.setBehaviourName( "idsDB" ); 
+idsDBMgt = new ShowGrid( myAgent, rs );
+idsDBMgt.setBehaviourName( "idsDBMgt" ); 
 
 
 
-return ( ShowGrid ) idsDB; 
+return ( ShowGrid ) idsDBMgt; 
 

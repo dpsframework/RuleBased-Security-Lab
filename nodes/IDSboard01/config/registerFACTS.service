@@ -7,10 +7,10 @@
 # -----------------------------------------------
 
 
-service.description = IDS-DDBB management.
-service.order       = Aa
-init.level          = 1
-run.level           = 3
-service.name        = idsDBMgt
+service.description = Register PCAP.FACTS.files from Reader-Class Agents.
+service.order       = Ra
+init.level          = 3
+run.level           = 5
+service.name        = reFACTS
 service.group       = basal
-service.enable      = 1
+service.enable      = 0

@@ -23,7 +23,7 @@ outLogger(new Object[]{"level.06",   myNode .nodeName,
 //# Techniques: Execution Level = 6 (Deactivating agents' behaviours)
 int previousLevel = myNode .currentExecLevel;
 
-myNode .currentExecLevel = PsConstants.KwBASED.runLevel_6;;
+myNode .currentExecLevel = PsConstants.KwBASED.runLevel_6;
 
 try {
 	if ( myDfd != null){
