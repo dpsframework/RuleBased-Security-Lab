@@ -2,15 +2,15 @@
 |      |   Opciones   Ayuda sobre la materia...
 |      |   ---------  -----------------------------------------------
 |      |   help(1);   Consola de JADE y  BeanShell >  Shell de agente
-| Menu |   help(2);   Agentes Monitor y Nodo       >  Métodos/Objetos
-|      |   help(3);   Agente Pizarra               >  Métodos/Objetos
+| Menu |   help(2);   Agentes Monitor y Nodo       >  Mï¿½todos/Objetos
+|      |   help(3);   Agente Pizarra               >  Mï¿½todos/Objetos
 |Ayuda |   help(4);   Instalador dpsFramework      >  Terminal del SO
-|      |   help(5);   Java                         >         Lenguaje  
+|      |   help(5);   Java                         >         Lenguaje
 |      |   help(6);   CLIPS                        >         Lenguaje
 |      |   help(7);   Jess                         >         Lenguaje
-|      |   help(8);   Intérprete Bash del SO       >     Linux y OS-X 
+|      |   help(8);   Intï¿½rprete Bash del SO       >     Linux y OS-X
 |      |   ----------------------------------------------------------
-|      |   help();    Este menú de ayuda
+|      |   help();    Este menï¿½ de ayuda
 |      |   help(0);   Desplegar todas las ayudas
 +------+-------------------------------------------------------------
 | rev. |   2021/04/28               ejemplo   [RuleBase-Security-Lab]
