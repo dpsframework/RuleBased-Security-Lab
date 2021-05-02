@@ -220,27 +220,3 @@ Please see [**Appendix A**](#appendix-a), for **Windows operating system** and o
    
 
 
-
-
-
-## Appendix B
-
-### New incorporated functions and behaviours
-
-####  B.1. Distributed application 
-
-
-
-
-
-
-####  B.2. Board-Class Agents
-
-| Service name   | About new developed functions & behaviour  |
-|:--------             |:--------------------- | 
-|  <img src="images/logoPsMonitorAgent.gif" width="50px">   | • Behaviour:  <br> • Function:    | 
-|  <img src="images/logoPsNode.gif" width="50px">   | • Behaviour:  <br> • Function:    | 
-|  <img src="images/logoPsStageBussy.gif" width="50px">   | • Behaviour:  <br> • Function:    | 
-|  <img src="images/logoPsBoard.gif" height="60px">   | • Behaviour:  <br> • Function:    | 
-
-
