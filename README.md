@@ -125,7 +125,7 @@ Please see [**Appendix A**](#appendix-a), for **Windows operating system** and o
 | <img src="images/logoPsNode.gif" height="40px" align="left">Agent GUI<br>Interface   | Main activated Services, Behaviour and <br>Functions   | Image description  |
 |:--------             |:--------------------- |:---------   |
 |  <img src="images/logoPsNode.gif" height="40px">   | • requestANLZ.service<br> • securityLAB.service<br> • RErequestANLZ.class<br> • REinformRESULTS.class<br> • datagramFactsLoader()  |  **Image 5**. Every 15 minutes Analyzer-Class agents request to IDS-board-agent some pending analysis. If agents receive a file as response, the _datagramFactsLoader()_ function load it in their Working-Memory. All that FACTS are compared with SNORT Rules present in their Knowledge-Base. The REinformRESULTS behaviour-class sends results to IDS-board agent when analysis has finished.   |
-|  <img src="images/logoPsNode.gif" height="40px">   | • latestKBASE.service<br> • RErequestKBASE.class<br> • knowledgeBaseLoader()  |  **Image 6**. Every 24 hours Analyzer-Class agents request to IDS-board agent the lastest updated SNORT rules. If agents receive a file as response, the `knowledgeBaseLoader()` function updates their Knowledge-Base and their engines are restarted. |
+|  <img src="images/logoPsNode.gif" height="40px">   | • updateKBASE.service<br> • RErequestKBASE.class<br> • knowledgeBaseLoader()  |  **Image 6**. Every 24 hours Analyzer-Class agents request to IDS-board agent the lastest updated SNORT rules. If agents receive a file as response, the `knowledgeBaseLoader()` function updates their Knowledge-Base and their engines are restarted. |
 
 
 
