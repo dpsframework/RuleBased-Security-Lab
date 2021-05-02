@@ -46,7 +46,7 @@ This laboratory example foccuses on implementation and testing of an intrusion d
 ----
 
    
-### 1.1. How to build this _RuleBased-Security-Lab_ application skeleton
+### 1.1. How to build this _Rule-Based-Security-Lab_ application development environment
 
 
 1. Download dpsFramework[7] and create new application titled _RuleBased-Security-Lab_:
@@ -70,14 +70,14 @@ This laboratory example foccuses on implementation and testing of an intrusion d
 
 
 
-### 1.2. How to deploy this _RuleBased-Security-Lab_ agents on JADE platform
+### 1.2. How to deploy this _Rule-Based-Security-Lab_ agents on JADE platform
 
 Please, see [**Appendix A**](#appendix-a), for **Windows OS**.
 
 
 
 1. Set **CLASSPATH** variable and launch **JADE** multi-agent platform on **localhost**:
-   * `   export CLASSPATH=lib/*:lib/pcap/*:  ` 
+   * `  export CLASSPATH=lib/*:lib/pcap/*:  ` 
    * `  java       launcher platform localhost  & ` 
    
 1. Launch a Board-Class Agent, Analyzer-Class Agents and, Reader-Class Agent:
