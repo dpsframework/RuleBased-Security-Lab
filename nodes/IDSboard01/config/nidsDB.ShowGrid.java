@@ -35,7 +35,7 @@ import com.dpsframework.PsBoardAgent;
  *         &copy; <b>University of Leon</b> - Spain. <a
  *         href="http://www.unileon.es">{http://www.unileon.es}</a> </small>
  */
-public class BoardGridLocal extends OneShotBehaviour {
+public class ShowGrid extends OneShotBehaviour {
 	PsBoardAgent theBoard;
 	int exitValue;
 	boolean debugMode;
@@ -46,7 +46,7 @@ public class BoardGridLocal extends OneShotBehaviour {
 	ResultSetMetaData meta;
 	int columnCount;
 
-	public BoardGridLocal(Agent a, ResultSet rowSet) {
+	public ShowGrid(Agent a, ResultSet rowSet) {
 		super(a);
 		rs = rowSet;
 
