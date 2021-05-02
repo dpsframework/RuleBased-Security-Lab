@@ -125,7 +125,7 @@ Please see [**Appendix A**](#appendix-a), for **Windows operating system** and o
 | <img src="images/logoPsNode.gif" height="40px" align="left">Agent GUI<br>Interface   | Main activated Services, Functions and <br>Behaviour    | Image description  |
 |:--------             |:--------------------- |:---------   |
 |  <img src="images/logoPsNode.gif" height="40px">   | • analysis.service<br> • REinitANALYSIS.classs<br> • workingMemory_Loader( )<br> • REinitINFORM.clas  | **Image 5**. Every 15 minutes Analyzer-Class agents request to an IDS-board-agent for new pending analysis files. If agents receive a file as response, the `workingMemory_Loader( )` function load it in their Working-Memory. The REinitINFOMR behaviour-class sends results to IDS-board agent when analysis has finished.  |
-|  <img src="images/logoPsNode.gif" height="40px">   | • updateKBASE.service<br> • knowledgeBase_Loader( )<br> • REinitKBASE.class  |  **Image 6**. Every 24 hours Analyzer-Class agents request to an IDS-board agent the lastest updated SNORT rules. If agents receive a file as response, the `knowledgeBase_Loader( )` function updates their Knowledge-Base and their engines are restarted. |
+|  <img src="images/logoPsNode.gif" height="40px">   | • updateKBASE.service<br> • knowledgeBase_Loader()<br> • REinitKBASE.class  |  **Image 6**. Every 24 hours Analyzer-Class agents request to an IDS-board agent the lastest updated SNORT rules. If agents receive a file as response, the `knowledgeBase_Loader( )` function updates their Knowledge-Base and their engines are restarted. |
 
 
 
@@ -139,7 +139,7 @@ Please see [**Appendix A**](#appendix-a), for **Windows operating system** and o
 | <img src="images/logoPsMonitorAgent.gif" width="40px" align="left">Agent GUI<br>Interface   | Main activated Services, Functions and <br>Behaviour     | Image description  |
 |:--------             |:--------------------- |:---------   |
 |  <img src="images/logoPsMonitorAgent.gif" width="40px">   | • readerPCAP.service<br> • WatchdogDirectory.class<br> • watingForPCAP( )<br> • transformToFACTS( )  |  **Image 7**. Every 5 minutes Reader-Class agents are looking for new .PCAP files on `./var/pending/` diectory. If they find  a .PCAP file they move it to their own directories, open it and transform to expert system _Facts_ plain text file with `transformToFACTS( )` function. |
-|  <img src="images/logoPsMonitorAgent.gif" width="40px">   | • dispatcherFACTS.service<br> • REinitFACTS.class<br>  |  **Image 8**. When Reader-Class agents receive a message from their owns reader/transform services, they compress the _Facts_ plain text file and send it as Inform-Message to IDS-board-agent. |
+|  <img src="images/logoPsMonitorAgent.gif" width="40px">   | • dispatcherFACTS.service<br> • REinitFACTS.class<br>  |  **Image 8**. When Reader-Class agents receive a message from their owns reader/transform services `readerPCAP.service`, they compress the _Facts_ plain text file and send it as Inform-Message to an IDS-board-agent. |
 
 
 
