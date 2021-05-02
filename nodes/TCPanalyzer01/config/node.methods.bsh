@@ -321,7 +321,7 @@ service(){
 		
 		
 		for( sb : this.BOB()  ){
-			if( sb.split(":")[3].equals(serviceName)){
+			if( sb.split(":")[5].split("\\.")[0].equals(serviceName)){
 				sBOB = sb;
 			}
 		}
