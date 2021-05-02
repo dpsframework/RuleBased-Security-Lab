@@ -24,7 +24,7 @@ Francisco José Aguayo‑Canela<sup>1</sup>  ·  Héctor Alaiz‑Moretón<su
 
 
 
-## 1. Example addendum: _RuleBased-Security-Lab_
+## 1. Example addendum: _Rule-Based-Security-Lab_
 
 
 > This is an example of a distributed application made up of JADE Agents[1]. This example uses three main agent classes:
@@ -41,11 +41,15 @@ Francisco José Aguayo‑Canela<sup>1</sup>  ·  Héctor Alaiz‑Moretón<su
  
 This laboratory example foccuses on implementation and testing of an intrusion detection system which uses an agent-oriented distributed application deployment. It uses the JADE Framework[1] and the Middleware dpsFramework[7]. This example has been developed for demonstration and academic purposes only.
 
-     
+
+
+
 
 ----
 
-   
+
+
+
 ### 1.1. How to build this _Rule-Based-Security-Lab_ application development environment
 
 
