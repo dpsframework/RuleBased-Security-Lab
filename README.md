@@ -138,8 +138,8 @@ Please see [**Appendix A**](#appendix-a), for **Windows operating system** and o
 
 | <img src="images/logoPsMonitorAgent.gif" width="40px" align="left">Agent GUI<br>Interface   | Main activated Services, Behaviour and <br>Functions   | Image description  |
 |:--------             |:--------------------- |:---------   |
-|  <img src="images/logoPsMonitorAgent.gif" width="40px">   | • pcap.service<br> • pcap.Watchdog.class<br> • watingForPCAP()<br> • transformToFACTS()  |  **Image 7**. Every 5 minutes Reader-Class agents are looking for new .PCAP files on `./var/pending/` diectory. If they find  a .PCAP file they move it to their own directories, open it and transform to expert system _Facts_ plain text file with `transformToFacts()` function. |
-|  <img src="images/logoPsMonitorAgent.gif" width="40px">   | • dispatcher.service<br> • REinformFACTS.class<br>  • compressFACTSfile() |  **Image 8**. When Reader-Class agents receive message from their owns transform services, they compress the _Facts_ plain text file and send it, as Inform Message, to IDS-board-agent. |
+|  <img src="images/logoPsMonitorAgent.gif" width="40px">   | • reader.service<br> • reader.Watchdog.class<br> • watingForPCAP()<br> • transformToFACTS()  |  **Image 7**. Every 5 minutes Reader-Class agents are looking for new .PCAP files on `./var/pending/` diectory. If they find  a .PCAP file they move it to their own directories, open it and transform to expert system _Facts_ plain text file with `transformToFACTS()` function. |
+|  <img src="images/logoPsMonitorAgent.gif" width="40px">   | • dispatcher.service<br> • REinformFACTS.class<br>  • compressFACTSfile() |  **Image 8**. When Reader-Class agents receive a message from their owns reader/transform services, they compress the _Facts_ plain text file and send it as Inform-Message to IDS-board-agent. |
 
 
 
