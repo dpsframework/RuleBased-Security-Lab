@@ -105,8 +105,8 @@ public class ShowGrid extends OneShotBehaviour {
 
 	public int onEnd() {
 		outLogger(true,
-				new Object[] { getBehaviourName(), myAgent.getLocalName(),
-						"Connected DB: ", myAgent.myDB() });
+				new Object[] { getBehaviourName(), theBoard.getLocalName(),
+						"Connected DB: ", theBoard.myDB() });
 		return exitValue;
 	}
 
@@ -136,11 +136,11 @@ public class ShowGrid extends OneShotBehaviour {
 	private void makeBanner() {
 		String diaLbl = "Diagram of '" + getBehaviourName()
 				+ "' Externalized Behaviour is shown below:";
-		outLogger(new Object[] { getBehaviourName(), myAgent.getLocalName(),
+		outLogger(new Object[] { getBehaviourName(), theBoard.getLocalName(),
 				"Initialized." });
 		outLogger(verboseMode,
-				new Object[] { getBehaviourName(), myAgent.getLocalName(),
+				new Object[] { getBehaviourName(), theBoard.getLocalName(),
 						diaLbl, sb });
 	}
 
-} //# End of class BoardGridLocal
+} //# End of class ShowGrid

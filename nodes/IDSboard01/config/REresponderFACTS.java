@@ -23,35 +23,12 @@ import java.text.MessageFormat;
 
 import com.dpsframework.util.PsConstants;
 
-/**
- * 
- * (ACCEPT-PROPOSAL
- *  :sender  ( agent-identifier 
- *                 :name Agent@127.0.0.1:1099/JADE  
- *                 :addresses (sequence http://PEGASUS:7778/acc ))
- *  :receiver  (set ( agent-identifier 
- *                 :name Stage@127.0.0.1:1099/JADE  
- *                 :addresses (sequence http://PEGASUS:7778/acc )) )
- *  :content  "((done 
- *                (migrate :app bin 
- *                         :args CLIPS 
- *                         :clazz com.dpsframework.util.PsStageNode 
- *                         :container Container-1 
- *                         :node Stage)))" 
- *  :reply-with  Stage@127.0.0.1:1099/JADE1492848277320  
- *  :language  fipa-sl0  
- *  :ontology  Expert-Systems   
- *  :conversation-id  Basal_Migration 
- * )
- * 
- */
-
 
 public class REresponseFACTS extends SimpleAchieveREResponder implements {
 
 	StringBuilder sb = new StringBuilder("          \n"
 			+ "          * ---------------------------------- *\n"
-			+ "          * REresponseFACTS                    *\n"
+			+ "          * REresponderFACTS                   *\n"
 			+ "          * ---------------------------------- *\n"
 			+ "          * (A)---<-------------<------+       *\n"
 			+ "          *  |                         |       *\n"

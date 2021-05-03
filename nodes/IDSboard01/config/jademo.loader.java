@@ -97,7 +97,7 @@ public class JAMONodeManagement2 extends RMNGBehaviour {
 		Concept action = slAction.getAction();
 		
 		// SHOW_GUI
-		outLogger(new Object[]{getBehaviourName()+"_A", myAgent.getLocalName(), 
+		outLogger(new Object[]{getBehaviourName()+"_A", theBoard.getLocalName(), 
 	      "A new REQUEST message with Action ShowGui was received."});
 
 		if (action instanceof ShowGui) {
@@ -116,15 +116,15 @@ public class JAMONodeManagement2 extends RMNGBehaviour {
 		
 		try {
 			
-			myAgent.getContentManager().fillContent(notification, d);
+			theBoard.getContentManager().fillContent(notification, d);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
-		outLogger(new Object[]{getBehaviourName()+"_C", myAgent.getLocalName(), 
+		outLogger(new Object[]{getBehaviourName()+"_C", theBoard.getLocalName(), 
 			      "TicketBoard did it and Behaviour sent a notification message."});
-		outLogger(verboseMode, new Object[]{getBehaviourName()+"_C", myAgent.getLocalName(), 
+		outLogger(verboseMode, new Object[]{getBehaviourName()+"_C", theBoard.getLocalName(), 
 			      "Notification message was:",
 			      "\n          * /------------------------------------------------+\n\n",
 			      notification,
@@ -152,8 +152,8 @@ public class JAMONodeManagement2 extends RMNGBehaviour {
 	
 	private void makeBanner() {
 		String diaLbl 	= "Diagram of '" + getBehaviourName() + "' Externalized Behaviour is shown below:";	
-		outLogger(new Object[] { getBehaviourName(), myAgent.getLocalName(), "Initialized." });
-		outLogger(verboseMode, new Object[] { getBehaviourName(), myAgent.getLocalName(), diaLbl, sb });
+		outLogger(new Object[] { getBehaviourName(), theBoard.getLocalName(), "Initialized." });
+		outLogger(verboseMode, new Object[] { getBehaviourName(), theBoard.getLocalName(), diaLbl, sb });
 	}
 
 }  // End of Basal JADE.Management Behaviour for Show GUI on PsBoardAgent hide instances.
