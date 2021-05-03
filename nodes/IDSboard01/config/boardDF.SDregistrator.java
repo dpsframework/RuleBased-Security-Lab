@@ -70,8 +70,8 @@ public class SDregistrator extends WakerBehaviour {
 	    
 		mySd  = new ServiceDescription();
  		
- 		mySd.setName(theNode.myNode().nameOfBoardService);
- 		mySd.setType(theNode.myNode().nameOfBoardService);
+ 		mySd.setName(theNode.myNode().nameOfBoardService);  // "ids-board"
+ 		mySd.setType("web-service");
  		mySd.addProperties( new Property("framework", theNode.myNode().frameworkName));
  		mySd.addOntologies(JADEManagementOntology.NAME);
  		mySd.addOntologies(ProblemSolversOntology.NAME);
