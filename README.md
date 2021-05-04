@@ -102,35 +102,35 @@ Please see [**Appendix A**](#appendix-a), for **Windows operating system** and o
 ## 2. Screenshot galleries
 
 
-### 2.0 Previous version Screenshot-gallery
+### 2.0 Screenshot-gallery v1
 
-|  <img src="images_old/logoPsStageBussy.gif" height="40px" align="left">Agent GUI<br>Interface   | Previous version screenshot gallery   |
+|  <img src="images_old/logoPsStageBussy.gif" height="40px" align="left">Agent GUI<br>Interface   | Screenshot gallery v1   |
 |:--------             |:--------------------- |
-|  <img src="images_old/nidsBoardAgent-00.png" width="190px">       | •  **Image 00**. Previous version IDS-board Agent.   |
-|  <img src="images_old/nidsBoardAgent-01.png" width="190px">       | •  **Image 01**. Previous version IDS-board Agent.   |
-|  <img src="images_old/nidsBoardAgent-02.png" width="190px">       | •  **Image 02**. Previous version IDS-board Agent.   |
-|  <img src="images_old/nidsBoardAgent-211-01.png" width="190px">   | •  **Image 211-01**. Previous version IDS-board Agent.   | 
-|  <img src="images_old/nidsBoardAgent-213-01.png" width="190px">   | •  **Image 213.01**. Previous version IDS-board Agent.   |
-|  <img src="images_old/nidsBoardAgent-213-02.png" width="190px">   | •  **Image 213-02**. Previous version IDS-board Agent.   |
-|  <img src="images_old/nidsBoardAgent-213-03.png" width="190px">   | •  **Image 213-03**. Previous version IDS-board Agent.   |
-|  <img src="images_old/nidsBoardAgent-213-04.png" width="190px">   | •  **Image 213-04**. Previous version IDS-board Agent.   |
-|  <img src="images_old/nidsBoardAgent-213-05.png" width="190px">   | •  **Image 213-05**. Previous version IDS-board Agent.   |
-|  <img src="images_old/nidsBoardAgent-213-06.png" width="190px">   | •  **Image 213-06**. Previous version IDS-board Agent.   |
+|  <img src="images_old/nidsBoardAgent-00.png" width="190px">       | •  **Image 00**.  IDS-board Agent.   |
+|  <img src="images_old/nidsBoardAgent-01.png" width="190px">       | •  **Image 01**.  IDS-board Agent.   |
+|  <img src="images_old/nidsBoardAgent-02.png" width="190px">       | •  **Image 02**.  IDS-board Agent.   |
+|  <img src="images_old/nidsBoardAgent-211-01.png" width="190px">   | •  **Image 211-01**.  IDS-board Agent.   | 
+|  <img src="images_old/nidsBoardAgent-213-01.png" width="190px">   | •  **Image 213.01**.  IDS-board Agent.   |
+|  <img src="images_old/nidsBoardAgent-213-02.png" width="190px">   | •  **Image 213-02**.  IDS-board Agent.   |
+|  <img src="images_old/nidsBoardAgent-213-03.png" width="190px">   | •  **Image 213-03**.  IDS-board Agent.   |
+|  <img src="images_old/nidsBoardAgent-213-04.png" width="190px">   | •  **Image 213-04**.  IDS-board Agent.   |
+|  <img src="images_old/nidsBoardAgent-213-05.png" width="190px">   | •  **Image 213-05**.  IDS-board Agent.   |
+|  <img src="images_old/nidsBoardAgent-213-06.png" width="190px">   | •  **Image 213-06**.  IDS-board Agent.   |
 |  <img src="images_old/rmaJade1099-00.png" width="190px">          | •  **Image 1099**. JADE RMA Agent.   |
-|  <img src="images_old/ssdpAgent501-00.png" width="190px">         | •  **Image 501-00**. Previous version UPD analyzer Agent.   |
-|  <img src="images_old/ssdpAgent501-221-01.png" width="190px">     | •  **Image 501-221-01**. Previous version UPD analyzer Agent.   |
-|  <img src="images_old/ssdpAgent501-221-05.png" width="190px">     | •  **Image 501-221-05**. Previous version UPD analyzer Agent.   |
-|  <img src="images_old/ssdpAgent501-222-01.png" width="190px">     | •  **Image 501-222-01**. Previous version UPD analyzer Agent.   |
-|  <img src="images_old/ssdpAgent501-222-02.png" width="190px">     | •  **Image 501-222-02**. Previous version UPD analyzer Agent.   |
-|  <img src="images_old/ssdpAgent501-222-03.png" width="190px">     | •  **Image 501-222-03**. Previous version UPD analyzer Agent.   |
-|  <img src="images_old/ssdpAgent501-222-04.png" width="190px">     | •  **Image 501-222-04**. Previous version UPD analyzer Agent.   |
-|  <img src="images_old/watchdog201-00.png" width="190px">          | •  **Image 201.00**. Previous version PCAP reader Agent.   |
-|  <img src="images_old/watchdogAgent201-231-00.png" width="190px"> | •  **Image 201-231-00**. Previous version PCAP reader-Agent.   |
-|  <img src="images_old/watchdogAgent201-231-01.png" width="190px"> | •  **Image 201-231-01**. Previous version PCAP reader-Agent.   |
-|  <img src="images_old/watchdogAgent201-231-02.png" width="190px"> | •  **Image 201-231-02**. Previous version PCAP reader-Agent.   |
-|  <img src="images_old/watchdogAgent201-231-03.png" width="190px"> | •  **Image 201-231-03**. Previous version PCAP reader-Agent.   |
-|  <img src="images_old/watchdogAgent201-231-04.png" width="190px"> | •  **Image 201-231-04**. Previous version PCAP reader-Agent.   |
-|  <img src="images_old/watchdogAgent201-231-05.png" width="190px"> | •  **Image 201-231-05**. Previous version PCAP reader-Agent.   |
+|  <img src="images_old/ssdpAgent501-00.png" width="190px">         | •  **Image 501-00**.  UDP analyzer Agent.   |
+|  <img src="images_old/ssdpAgent501-221-01.png" width="190px">     | •  **Image 501-221-01**.  UDP analyzer Agent.   |
+|  <img src="images_old/ssdpAgent501-221-05.png" width="190px">     | •  **Image 501-221-05**.  UDP analyzer Agent.   |
+|  <img src="images_old/ssdpAgent501-222-01.png" width="190px">     | •  **Image 501-222-01**.  UDP analyzer Agent.   |
+|  <img src="images_old/ssdpAgent501-222-02.png" width="190px">     | •  **Image 501-222-02**.  UDP analyzer Agent.   |
+|  <img src="images_old/ssdpAgent501-222-03.png" width="190px">     | •  **Image 501-222-03**.  UDP analyzer Agent.   |
+|  <img src="images_old/ssdpAgent501-222-04.png" width="190px">     | •  **Image 501-222-04**.  UDP analyzer Agent.   |
+|  <img src="images_old/watchdog201-00.png" width="190px">          | •  **Image 201.00**.  PCAP reader Agent.   |
+|  <img src="images_old/watchdogAgent201-231-00.png" width="190px"> | •  **Image 201-231-00**.  PCAP reader-Agent.   |
+|  <img src="images_old/watchdogAgent201-231-01.png" width="190px"> | •  **Image 201-231-01**.  PCAP reader-Agent.   |
+|  <img src="images_old/watchdogAgent201-231-02.png" width="190px"> | •  **Image 201-231-02**.  PCAP reader-Agent.   |
+|  <img src="images_old/watchdogAgent201-231-03.png" width="190px"> | •  **Image 201-231-03**.  PCAP reader-Agent.   |
+|  <img src="images_old/watchdogAgent201-231-04.png" width="190px"> | •  **Image 201-231-04**.  PCAP reader-Agent.   |
+|  <img src="images_old/watchdogAgent201-231-05.png" width="190px"> | •  **Image 201-231-05**.  PCAP reader-Agent.   |
 
 
 
