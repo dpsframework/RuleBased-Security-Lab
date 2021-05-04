@@ -102,7 +102,7 @@ Please see [**Appendix A**](#appendix-a), for **Windows operating system** and o
 ## 2. Screenshot gallery
 
 
-### 2.1 Previous version Screenshot-gallery
+### 2.0 Previous version Screenshot-gallery
 
 |  <img src="images_old/logoPsStageBussy.gif" height="40px" align="left">Agents GUI<br>Interface   | Previous version screenshot gallery   |
 |:--------             |:--------------------- |
