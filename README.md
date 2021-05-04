@@ -101,6 +101,38 @@ Please see [**Appendix A**](#appendix-a), for **Windows operating system** and o
 
 ## 2. Screenshot gallery
 
+
+### 2.1 Previous version Screenshot-gallery
+
+|  <img src="images_old/logoPsStageBussy.gif" height="40px" align="left">Agent GUI<br>Interface   | Old version screenshot gallery   |
+|  <img src="nidsBoardAgent-00.png" width="280px">   | •  **Image 00**. nidsBoardAgent.   | 
+|  <img src="nidsBoardAgent-01.png" width="280px">   | •  **Image 00**. nidsBoardAgent.   | 
+|  <img src="nidsBoardAgent-02.png" width="280px">   | •  **Image 00**. nidsBoardAgent.   | 
+|  <img src="nidsBoardAgent-211-01.png" width="280px">   | •  **Image 00**. nidsBoardAgent.   | 
+|  <img src="nidsBoardAgent-213-01.png" width="280px">   | •  **Image 00**. nidsBoardAgent.   | 
+|  <img src="nidsBoardAgent-213-02.png" width="280px">   | •  **Image 00**. nidsBoardAgent.   | 
+|  <img src="nidsBoardAgent-213-03.png" width="280px">   | •  **Image 00**. nidsBoardAgent.   | 
+|  <img src="nidsBoardAgent-213-04.png" width="280px">   | •  **Image 00**. nidsBoardAgent.   | 
+|  <img src="nidsBoardAgent-213-05.png" width="280px">   | •  **Image 00**. nidsBoardAgent.   | 
+|  <img src="nidsBoardAgent-213-06.png" width="280px">   | •  **Image 00**. nidsBoardAgent.   | 
+|  <img src="rmaJade1099-00.png" width="280px">   | •  **Image 00**. nidsBoardAgent.   | 
+|  <img src="ssdpAgent501-00.png" width="280px">   | •  **Image 00**. nidsBoardAgent.   | 
+|  <img src="ssdpAgent501-221-01.png" width="280px">   | •  **Image 00**. nidsBoardAgent.   | 
+|  <img src="ssdpAgent501-221-05.png" width="280px">   | •  **Image 00**. nidsBoardAgent.   | 
+|  <img src="ssdpAgent501-222-01.png" width="280px">   | •  **Image 00**. nidsBoardAgent.   | 
+|  <img src="ssdpAgent501-222-02.png" width="280px">   | •  **Image 00**. nidsBoardAgent.   | 
+|  <img src="ssdpAgent501-222-03.png" width="280px">   | •  **Image 00**. nidsBoardAgent.   | 
+|  <img src="ssdpAgent501-222-04.png" width="280px">   | •  **Image 00**. nidsBoardAgent.   | 
+|  <img src="watchdog201-00.png" width="280px">   | •  **Image 00**. nidsBoardAgent.   | 
+|  <img src="watchdogAgent201-231-00.png" width="280px">   | •  **Image 00**. nidsBoardAgent.   | 
+|  <img src="watchdogAgent201-231-01.png" width="280px">   | •  **Image 00**. nidsBoardAgent.   | 
+|  <img src="watchdogAgent201-231-02.png" width="280px">   | •  **Image 00**. nidsBoardAgent.   | 
+|  <img src="watchdogAgent201-231-03.png" width="280px">   | •  **Image 00**. nidsBoardAgent.   | 
+|  <img src="watchdogAgent201-231-04.png" width="280px">   | •  **Image 00**. nidsBoardAgent.   | 
+|  <img src="watchdogAgent201-231-05.png" width="280px">   | •  **Image 00**. nidsBoardAgent.   | 
+
+
+
 ### 2.1. Board-Class Agents: _IDS-board-agent_ 
 
 
