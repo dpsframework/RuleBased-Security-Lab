@@ -104,7 +104,7 @@ Please see [**Appendix A**](#appendix-a), for **Windows operating system** and o
 
 ### 2.0 Previous version Screenshot-gallery
 
-|  <img src="images_old/logoPsStageBussy.gif" height="40px" align="left">Agents GUI<br>Interface   | Previous version screenshot gallery   |
+|  <img src="images_old/logoPsStageBussy.gif" height="40px" align="left">Agent GUI<br>Interface   | Previous version screenshot gallery   |
 |:--------             |:--------------------- |
 |  <img src="images_old/nidsBoardAgent-00.png" width="190px">       | •  **Image 00**. Previous version IDS-board Agent.   |
 |  <img src="images_old/nidsBoardAgent-01.png" width="190px">       | •  **Image 01**. Previous version IDS-board Agent.   |
