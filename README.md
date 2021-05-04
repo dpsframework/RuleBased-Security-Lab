@@ -104,32 +104,34 @@ Please see [**Appendix A**](#appendix-a), for **Windows operating system** and o
 
 ### 2.1 Previous version Screenshot-gallery
 
-|  <img src="images_old/logoPsStageBussy.gif" height="40px" align="left">Agent GUI<br>Interface   | Old version screenshot gallery   |
-|  <img src="nidsBoardAgent-00.png" width="280px">   | •  **Image 00**. nidsBoardAgent.   | 
-|  <img src="nidsBoardAgent-01.png" width="280px">   | •  **Image 00**. nidsBoardAgent.   | 
-|  <img src="nidsBoardAgent-02.png" width="280px">   | •  **Image 00**. nidsBoardAgent.   | 
-|  <img src="nidsBoardAgent-211-01.png" width="280px">   | •  **Image 00**. nidsBoardAgent.   | 
-|  <img src="nidsBoardAgent-213-01.png" width="280px">   | •  **Image 00**. nidsBoardAgent.   | 
-|  <img src="nidsBoardAgent-213-02.png" width="280px">   | •  **Image 00**. nidsBoardAgent.   | 
-|  <img src="nidsBoardAgent-213-03.png" width="280px">   | •  **Image 00**. nidsBoardAgent.   | 
-|  <img src="nidsBoardAgent-213-04.png" width="280px">   | •  **Image 00**. nidsBoardAgent.   | 
-|  <img src="nidsBoardAgent-213-05.png" width="280px">   | •  **Image 00**. nidsBoardAgent.   | 
-|  <img src="nidsBoardAgent-213-06.png" width="280px">   | •  **Image 00**. nidsBoardAgent.   | 
-|  <img src="rmaJade1099-00.png" width="280px">   | •  **Image 00**. nidsBoardAgent.   | 
-|  <img src="ssdpAgent501-00.png" width="280px">   | •  **Image 00**. nidsBoardAgent.   | 
-|  <img src="ssdpAgent501-221-01.png" width="280px">   | •  **Image 00**. nidsBoardAgent.   | 
-|  <img src="ssdpAgent501-221-05.png" width="280px">   | •  **Image 00**. nidsBoardAgent.   | 
-|  <img src="ssdpAgent501-222-01.png" width="280px">   | •  **Image 00**. nidsBoardAgent.   | 
-|  <img src="ssdpAgent501-222-02.png" width="280px">   | •  **Image 00**. nidsBoardAgent.   | 
-|  <img src="ssdpAgent501-222-03.png" width="280px">   | •  **Image 00**. nidsBoardAgent.   | 
-|  <img src="ssdpAgent501-222-04.png" width="280px">   | •  **Image 00**. nidsBoardAgent.   | 
-|  <img src="watchdog201-00.png" width="280px">   | •  **Image 00**. nidsBoardAgent.   | 
-|  <img src="watchdogAgent201-231-00.png" width="280px">   | •  **Image 00**. nidsBoardAgent.   | 
-|  <img src="watchdogAgent201-231-01.png" width="280px">   | •  **Image 00**. nidsBoardAgent.   | 
-|  <img src="watchdogAgent201-231-02.png" width="280px">   | •  **Image 00**. nidsBoardAgent.   | 
-|  <img src="watchdogAgent201-231-03.png" width="280px">   | •  **Image 00**. nidsBoardAgent.   | 
-|  <img src="watchdogAgent201-231-04.png" width="280px">   | •  **Image 00**. nidsBoardAgent.   | 
-|  <img src="watchdogAgent201-231-05.png" width="280px">   | •  **Image 00**. nidsBoardAgent.   | 
+|  <img src="images_old/logoPsStageBussy.gif" height="40px" align="left">Agents GUI<br>Interface   | Old version screenshot gallery   |
+|:--------             |:--------------------- |
+|  <img src="nidsBoardAgent-00.png" width="210px">   | •  **Image 00**. nidsBoardAgent.   |
+|  <img src="nidsBoardAgent-01.png" width="210px">   | •  **Image 00**. nidsBoardAgent.   |
+|  <img src="nidsBoardAgent-02.png" width="210px">   | •  **Image 00**. nidsBoardAgent.   |
+|  <img src="nidsBoardAgent-211-01.png" width="210px">   | •  **Image 00**. nidsBoardAgent.   | 
+|  <img src="nidsBoardAgent-213-01.png" width="210px">   | •  **Image 00**. nidsBoardAgent.   |
+|  <img src="nidsBoardAgent-213-02.png" width="210px">   | •  **Image 00**. nidsBoardAgent.   |
+|  <img src="nidsBoardAgent-213-03.png" width="210px">   | •  **Image 00**. nidsBoardAgent.   |
+|  <img src="nidsBoardAgent-213-04.png" width="210px">   | •  **Image 00**. nidsBoardAgent.   |
+|  <img src="nidsBoardAgent-213-05.png" width="210px">   | •  **Image 00**. nidsBoardAgent.   |
+|  <img src="nidsBoardAgent-213-06.png" width="210px">   | •  **Image 00**. nidsBoardAgent.   |
+|  <img src="rmaJade1099-00.png" width="210px">   | •  **Image 00**. nidsBoardAgent.   |
+|  <img src="ssdpAgent501-00.png" width="210px">   | •  **Image 00**. nidsBoardAgent.   |
+|  <img src="ssdpAgent501-221-01.png" width="210px">   | •  **Image 00**. nidsBoardAgent.   |
+|  <img src="ssdpAgent501-221-05.png" width="210px">   | •  **Image 00**. nidsBoardAgent.   |
+|  <img src="ssdpAgent501-222-01.png" width="210px">   | •  **Image 00**. nidsBoardAgent.   |
+|  <img src="ssdpAgent501-222-02.png" width="210px">   | •  **Image 00**. nidsBoardAgent.   |
+|  <img src="ssdpAgent501-222-03.png" width="210px">   | •  **Image 00**. nidsBoardAgent.   |
+|  <img src="ssdpAgent501-222-04.png" width="210px">   | •  **Image 00**. nidsBoardAgent.   |
+|  <img src="watchdog201-00.png" width="210px">   | •  **Image 00**. nidsBoardAgent.   |
+|  <img src="watchdogAgent201-231-00.png" width="210px">   | •  **Image 00**. nidsBoardAgent.   |
+|  <img src="watchdogAgent201-231-01.png" width="210px">   | •  **Image 00**. nidsBoardAgent.   |
+|  <img src="watchdogAgent201-231-02.png" width="210px">   | •  **Image 00**. nidsBoardAgent.   |
+|  <img src="watchdogAgent201-231-03.png" width="210px">   | •  **Image 00**. nidsBoardAgent.   |
+|  <img src="watchdogAgent201-231-04.png" width="210px">   | •  **Image 00**. nidsBoardAgent.   |
+|  <img src="watchdogAgent201-231-05.png" width="210px">   | •  **Image 00**. nidsBoardAgent.   |
+
 
 
 
@@ -142,7 +144,7 @@ Please see [**Appendix A**](#appendix-a), for **Windows operating system** and o
 |:--------             |:--------------------- |:---------   |
 |  <img src="images/idsboard-01.png" width="170px">   | • idsDB._service_<br> • ShowGrid\{.\}<br> • doPopulate( )  | **Image 1**. Board-Class agents can display the log of activities associated with the translation of PCAP files, analyzed files records, alerts found and updated Snort rules. All that information is shown in the grid, using first tab: "Ticket's repository table".   | 
 |  <img src="images/idsboard-02.png" width="170px">   | • boardDF._service_<br> • SDregistrator\{.\}  | **Image 2**. Each IDS-Board-agent instance is registered in the Directory Facilitator (**DF**) of JADE Platform. The Board-Class agents are critical in a possible real-world implementation. For this reason, these agents self-register in the **DF** agent catalogue and could be recovered thanks to the _fault tolerance_ provided by JADE when the DF Service uses persistence[**10a**].  | 
-|  <img src="images/logoPsBoard.gif" height="60px">   | • registerFACTS._service_<br> • registerINFORM._service_<br> • registerANALYSIS._service_<br> • idsDBGridUpdate( )<br><br> • **RE**responderFACTS<br> • **RE**responderINFORM<br> • **RE**responderANALYSIS  | **Image 3**. An IDS-board agent instance handles the requests received from Reader-Class agents and from Analyzer-Class agents through three Listen Services. Those services require complex communicative acts and they use Interaction Protocol through implemented _Rational-Effect_ (**RE**) JADE behaviours.  <br><br>_NOTE:_ These Behaviors always go in pairs. One for initializing the protocol (**RE**init..) and another as a response to meet that demand. | 
+|  <img src="images/logoPsBoard.gif" height="60px">   | • registerFACTS._service_<br> • registerINFORM._service_<br> • registerANALYSIS._service_<br> • idsDBGridUpdate( )<br><br> • **RE**responderFACTS<br> • **RE**responderINFORM<br> • **RE**responderANALYSIS  | **Image 3**. An IDS-board agent instance handles the requests received from Reader-Class agents and from Analyzer-Class agents through three Listen Services. Those services require complex communicative acts and they use Interaction Protocol through implemented _Rational-Effect_ (**RE**) JADE behaviours.  <br><br>_NOTE:_ These Behaviours always go in pairs. One for initializing the protocol (**RE**init..) and another as a response to meet that demand. | 
 |  <img src="images/logoPsBoard.gif" height="60px">   | • registerRULES._service_<br> • RulesDownloader\{.\}<br> • snortToCLIPS\_KBASE( )<br><br> • **RE**responderKBASE  |  **Image 4**. Every 2 days, an IDS-board agent instance downloads the latest rules on SNORT Community Website from the Internet and converts them to CLIPS / Jess rules through a simple conversion function `snortToCLIPS_KBASE( )`. When the agent receives a request message from Analyzer-Class agents, it compares date from request against date of updated SNORT Rules. And the IDS-board agent submit a new CLIPS KBASE format file if applicable.  | 
 
 
