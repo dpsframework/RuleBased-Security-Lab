@@ -139,7 +139,6 @@ Please see [**Appendix A**](#appendix-a), for **Windows operating system** and o
 
 
 
-
 | <img src="images/logoPsBoard.gif" height="40px" align="left">Agent GUI<br>Interface   | Main activated Services, Classes, Functions and Behaviour | Image description  |
 |:--------             |:--------------------- |:---------   |
 |  <img src="images/idsboard-01.png" width="170px">   | • idsDB._service_<br> • ShowGrid\{.\}<br> • doPopulate( )  | **Image 1**. Board-Class agents can display the log of activities associated with the translation of PCAP files, analyzed files records, alerts found and updated Snort rules. All that information is shown in the grid, using first tab: "Ticket's repository table".   | 
