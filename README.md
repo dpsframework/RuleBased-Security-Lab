@@ -99,7 +99,7 @@ Please see [**Appendix A**](#appendix-a), for **Windows operating system** and o
 
 
 
-## 2. Screenshot gallery
+## 2. Screenshot galleries
 
 
 ### 2.0 Previous version Screenshot-gallery
@@ -135,7 +135,7 @@ Please see [**Appendix A**](#appendix-a), for **Windows operating system** and o
 
 
 
-### 2.1. Board-Class Agents: _IDS-board-agent_ 
+### 2.1. Current version: Board-Class Agents -- _IDS-board_ 
 
 
 
@@ -152,7 +152,7 @@ Please see [**Appendix A**](#appendix-a), for **Windows operating system** and o
 
 
 
-### 2.2. Analyzer-Class Agents: _UDP-analyzer-agent_ and _TCP-analyzer-agent_
+### 2.2. Current version: Analyzer-Class Agents -- _UDP-analyzer_ and _TCP-analyzer_
 
 
 | <img src="images/logoPsNode.gif" height="40px" align="left">Agent GUI<br>Interface   | Main activated Services, Classes, Functions and Behaviour  | Image description  |
@@ -166,7 +166,7 @@ Please see [**Appendix A**](#appendix-a), for **Windows operating system** and o
 
 
 
-### 2.3. Reader-Class Agents: _PCAP-reader-agent_ 
+### 2.3. Current version: Reader-Class Agents -- _PCAP-reader_ 
 
 
 | <img src="images/logoPsMonitorAgent.gif" width="40px" align="left">Agent GUI<br>Interface   | Main activated Services, Classes, Functions and Behaviour  | Image description  |
